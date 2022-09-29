@@ -1,8 +1,0 @@
-{
-    "name": "IPAD自用脚本",
-    "task": [
-        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁查询, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png, enabled=false",
-        "0 9 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, tag=Bili漫画签到, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/manga.png, enabled=true",
-        "0,10,20 0 12 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/ExchangePoints.js, tag=哔哩哔哩漫画抢券, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/manga.png, enabled=false"
-    ]
-}

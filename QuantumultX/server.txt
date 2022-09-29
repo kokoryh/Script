@@ -1,2 +1,0 @@
-https://rss.teacat001.xyz/api/v1/client/subscribe?token=ce9d0426cbdddb13870e5bff85b3d0de, tag=Teacat, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/kokoryh/QuantumultX/master/subscription.txt, tag=Others, update-interval=-1, opt-parser=false, enabled=true

@@ -1,5 +1,0 @@
-shadowsocks=hk01-sri.entry.ikuuu.casa:11201, method=chacha20-ietf, password=iKuuuVPN, ssr-protocol=auth_aes128_md5, ssr-protocol-param=11415:uzeERq, obfs=tls1.2_ticket_auth, obfs-host=2339b11415.microsoft.com, fast-open=false, udp-relay=false, tag=深港IPLC
-vmess = uk01-vm5.entry.ikuuu.casa:467, method=chacha20-poly1305, password=680296ec-c68b-3c1d-931f-90b6f0560791, obfs=ws, obfs-host=bgp-07-01.entry-0.chinasnow.net, obfs-uri=/hls/cctv5phd.m3u8, tag=🇬🇧 英国
-vmess = ar01-vm5.entry.ikuuu.casa:456, method=chacha20-poly1305, password=680296ec-c68b-3c1d-931f-90b6f0560791, obfs=ws, obfs-host=bgp-06-01.entry-0.chinasnow.net, obfs-uri=/hls/cctv5phd.m3u8, tag=🇦🇷 阿根廷
-vmess = ru01-vm5.entry.ikuuu.casa:455, method=chacha20-poly1305, password=680296ec-c68b-3c1d-931f-90b6f0560791, obfs=ws, obfs-host=bgp-05-01.entry-0.chinasnow.net, obfs-uri=/hls/cctv5phd.m3u8, tag=🇷🇺 俄罗斯
-vmess = tr01-vm5.entry.ikuuu.casa:468, method=chacha20-poly1305, password=680296ec-c68b-3c1d-931f-90b6f0560791, obfs=ws, obfs-host=bgp-08-01.entry-0.chinasnow.net, obfs-uri=/hls/cctv5phd.m3u8, tag=🇹🇷 土耳其

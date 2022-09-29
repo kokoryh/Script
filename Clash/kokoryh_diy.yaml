@@ -111,7 +111,7 @@ cfw-bypass:
 proxy-providers:
   ProxyList:
     type: http
-    url: ""
+    url: "请填写远程节点列表"
     interval: 86400
     path: ./Proxy/ProxyList.yaml
     health-check:
