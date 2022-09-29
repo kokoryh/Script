@@ -1,0 +1,223 @@
+mode: rule
+log-level: info
+dns:
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+proxy-providers:
+  ProxyList:
+    url: "https://gist.githubusercontent.com/kokoryh/bf65b978bc3ea58d7dde6503604c2313/raw/Clash"
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  HK:
+    filter: 香港|HK|(?i)Hong
+    url: "https://gist.githubusercontent.com/kokoryh/bf65b978bc3ea58d7dde6503604c2313/raw/Clash"
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  TW:
+    filter: 台|TW|(?i)Taiwan
+    url: "https://gist.githubusercontent.com/kokoryh/bf65b978bc3ea58d7dde6503604c2313/raw/Clash"
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  JP:
+    filter: 日|JP|(?i)Japan
+    url: "https://gist.githubusercontent.com/kokoryh/bf65b978bc3ea58d7dde6503604c2313/raw/Clash"
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  US:
+    filter: 美|US|(?i)States|American
+    url: "https://gist.githubusercontent.com/kokoryh/bf65b978bc3ea58d7dde6503604c2313/raw/Clash"
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    use: 
+      - ProxyList
+
+  - name: "全球加速"
+    type: select
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+    proxies:
+      - PROXY
+      - FALLBACK
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+
+  - name: "国际媒体"
+    type: select
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
+    proxies:
+      - PROXY
+      - 香港节点
+      - 台湾节点
+      - 美国节点
+
+  - name: "Bilibili"
+    type: select
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Bili.png
+    proxies:
+      - DIRECT
+      - PROXY
+      - 香港节点
+      - 台湾节点
+
+  - name: "OneDrive"
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - 香港节点
+      - 美国节点
+
+  - name: "黑白名单"
+    type: select
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+    proxies:
+      - 全球加速
+      - PROXY
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - DIRECT
+
+  - name: "FALLBACK"
+    type: fallback
+    use: 
+      - ProxyList
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "香港节点"
+    type: url-test
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+    use:
+      - HK
+    tolerance: 50
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "台湾节点"
+    type: url-test
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+    use:
+      - TW
+    tolerance: 50
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "日本节点"
+    type: url-test
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+    use:
+      - JP
+    tolerance: 50
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "美国节点"
+    type: url-test
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+    use:
+      - US
+    tolerance: 100
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+rule-providers:
+  Unbreak:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Unbreak.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
+    interval: 86400
+
+  DMM:
+    type: http
+    behavior: classical
+    path: ./RuleSet/StreamingMedia/DMM.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Video/DMM.yaml
+    interval: 86400
+
+  Streaming:
+    type: http
+    behavior: classical
+    path: ./RuleSet/StreamingMedia/Streaming.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    interval: 86400
+
+  Bilibili:
+    type: http
+    behavior: classical
+    path: ./RuleSet/StreamingMedia/StreamingSE.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
+    interval: 86400
+
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./RuleSet/OneDrive.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml
+    interval: 86400
+
+  Global:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Global.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Global.yaml
+    interval: 86400
+
+  China:
+    type: http
+    behavior: classical
+    path: ./RuleSet/China.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/China.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,DMM,日本节点
+  - RULE-SET,Streaming,国际媒体
+  - RULE-SET,Bilibili,Bilibili
+  - RULE-SET,OneDrive,OneDrive
+  - RULE-SET,Global,全球加速
+  - RULE-SET,China,DIRECT
+
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR,fe80::/10,DIRECT
+
+  - GEOIP,CN,DIRECT
+  - MATCH,黑白名单

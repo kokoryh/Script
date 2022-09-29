@@ -1,0 +1,319 @@
+mixed-port: 7890
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+    - '*.localhost'
+    - '*.test'
+    - '*.local'
+    - '*.home.arpa'
+    - 'time.*.com'
+    - 'time.*.gov'
+    - 'time.*.edu.cn'
+    - 'time.*.apple.com'
+    - 'time1.*.com'
+    - 'time2.*.com'
+    - 'time3.*.com'
+    - 'time4.*.com'
+    - 'time5.*.com'
+    - 'time6.*.com'
+    - 'time7.*.com'
+    - 'ntp.*.com'
+    - 'ntp1.*.com'
+    - 'ntp2.*.com'
+    - 'ntp3.*.com'
+    - 'ntp4.*.com'
+    - 'ntp5.*.com'
+    - 'ntp6.*.com'
+    - 'ntp7.*.com'
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - '+.pool.ntp.org'
+    - 'time1.cloud.tencent.com'
+    - 'music.163.com'
+    - '*.music.163.com'
+    - '*.126.net'
+    - 'musicapi.taihe.com'
+    - 'music.taihe.com'
+    - 'songsearch.kugou.com'
+    - 'trackercdn.kugou.com'
+    - '*.kuwo.cn'
+    - 'api-jooxtt.sanook.com'
+    - 'api.joox.com'
+    - 'joox.com'
+    - 'y.qq.com'
+    - '*.y.qq.com'
+    - 'streamoc.music.tc.qq.com'
+    - 'mobileoc.music.tc.qq.com'
+    - 'isure.stream.qqmusic.qq.com'
+    - 'dl.stream.qqmusic.qq.com'
+    - 'aqqmusic.tc.qq.com'
+    - 'amobile.music.tc.qq.com'
+    - '*.xiami.com'
+    - '*.music.migu.cn'
+    - 'music.migu.cn'
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - 'msftconnecttest.com'
+    - 'msftncsi.com'
+    - 'localhost.ptlogin2.qq.com'
+    - 'localhost.sec.qq.com'
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - 'xbox.*.microsoft.com'
+    - 'xnotify.xboxlive.com'
+    - '+.battlenet.com.cn'
+    - '+.wotgame.cn'
+    - '+.wggames.cn'
+    - '+.wowsgame.cn'
+    - '+.wargaming.net'
+    - 'proxy.golang.org'
+    - 'stun.*.*'
+    - 'stun.*.*.*'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - '+.stun.*.*.*.*'
+    - 'heartbeat.belkin.com'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - '*.router.asus.com'
+    - 'mesu.apple.com'
+    - 'swscan.apple.com'
+    - 'swquery.apple.com'
+    - 'swdownload.apple.com'
+    - 'swcdn.apple.com'
+    - 'swdist.apple.com'
+    - 'lens.l.google.com'
+    - 'stun.l.google.com'
+    - '+.nflxvideo.net'
+    - '*.square-enix.com'
+    - '*.finalfantasyxiv.com'
+    - '*.ffxiv.com'
+    - '*.mcdn.bilivideo.cn'
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+cfw-bypass:
+  - localhost.ptlogin2.qq.com
+
+proxy-providers:
+  ProxyList:
+    type: http
+    url: ""
+    interval: 86400
+    path: ./Proxy/ProxyList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  HK:
+    filter: 香港|HK|(?i)Hong
+    type: file
+    path: ./Proxy/ProxyList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  TW:
+    filter: 台|TW|(?i)Taiwan
+    type: file
+    path: ./Proxy/ProxyList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  JP:
+    filter: 日|JP|(?i)Japan
+    type: file
+    path: ./Proxy/ProxyList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  US:
+    filter: 美|US|(?i)States|American
+    type: file
+    path: ./Proxy/ProxyList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    use: 
+      - ProxyList
+
+  - name: "全球加速"
+    type: select
+    proxies:
+      - PROXY
+      - FALLBACK
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+
+  - name: "国际媒体"
+    type: select
+    proxies:
+      - PROXY
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇺🇸 美国节点
+
+  - name: "Bilibili"
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+
+  - name: "OneDrive"
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - 🇭🇰 香港节点
+      - 🇺🇸 美国节点
+
+  - name: "黑白名单"
+    type: select
+    proxies:
+      - 全球加速
+      - DIRECT
+      - PROXY
+      - FALLBACK
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+
+  - name: "FALLBACK"
+    type: fallback
+    use: 
+      - ProxyList
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "🇭🇰 香港节点"
+    type: url-test
+    use:
+      - HK
+    tolerance: 50
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "🇹🇼 台湾节点"
+    type: url-test
+    use:
+      - TW
+    tolerance: 100
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "🇯🇵 日本节点"
+    type: url-test
+    use:
+      - JP
+    tolerance: 100
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+  - name: "🇺🇸 美国节点"
+    type: url-test
+    use:
+      - US
+    tolerance: 100
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 600
+
+rule-providers:
+  Unbreak:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Unbreak.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
+    interval: 86400
+
+  DMM:
+    type: http
+    behavior: classical
+    path: ./RuleSet/DMM.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Video/DMM.yaml
+    interval: 86400
+
+  Streaming:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Streaming.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    interval: 86400
+
+  Bilibili:
+    type: http
+    behavior: classical
+    path: ./RuleSet/StreamingSE.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
+    interval: 86400
+
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./RuleSet/OneDrive.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml
+    interval: 86400
+
+  Global:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Global.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Global.yaml
+    interval: 86400
+
+  China:
+    type: http
+    behavior: classical
+    path: ./RuleSet/China.yaml
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/China.yaml
+    interval: 86400
+
+  LAN:
+    type: http
+    behavior: classical
+    path: ./RuleSet/LAN.yaml
+    url: https://cdn.jsdelivr.net/gh/Hackl0us/SS-Rule-Snippet@main/Rulesets/Clash/Basic/LAN.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,DMM,🇯🇵 日本节点
+  - RULE-SET,Streaming,国际媒体
+  - RULE-SET,Bilibili,Bilibili
+  - RULE-SET,OneDrive,OneDrive
+  - RULE-SET,Global,全球加速
+  - RULE-SET,China,DIRECT
+  - RULE-SET,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,黑白名单
