@@ -1,0 +1,10 @@
+#!name=Bilibili自动换区
+#!desc=点击港台番剧直接切换线路
+#!author=NobyDa
+#!system=ios
+
+[Script]
+Bili Region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+
+[MITM]
+hostname = %APPEND% ap?.bili*i.com, ap?.bili*i.net
