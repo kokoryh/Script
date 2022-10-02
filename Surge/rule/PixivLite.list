@@ -1,4 +1,3 @@
 DOMAIN,api.pixivlite.cn
-DOMAIN,i.pixiv.re
-IP-CIDR,210.140.92.0/24
-IP-CIDR,210.140.131.220/30
+IP-CIDR,210.140.92.0/24,no-resolve
+IP-CIDR,210.140.131.222/32,no-resolve
