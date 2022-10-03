@@ -1,27 +1,8 @@
 #!name=Bilibili增强
 #!desc=去广告 + 自动换区
 
-[URL Rewrite]
-# ～ BiliBili_哔哩哔哩_屏蔽IP请求@ddgksf2013
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
-# ～ BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
-^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
-
-[Map Local]
-# ～ BiliBili_哔哩哔哩_屏蔽广告浮窗@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-# ～ BiliBili_哔哩哔哩_屏蔽首页右上活动[卸载重装]@ddgksf2013
-^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-# ～ BiliBili_哔哩哔哩_Defaultword@ddgksf2013
-^https://app.bilibili.com/x/v2/search/defaultwords data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-# ～ BiliBili_哔哩哔哩_Material_Ad@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-# ～ BiliBili_哔哩哔哩_小卡片广告@ddgksf2013
-^https://api.bilibili.com/pgc/season/player/cards data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 [Script]
 bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?|account\/(mine|myinfo\?)|search\/square)|resource\/show\/(tab\/v2|skin\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_json.js,script-update-interval=0
-bili-bangumi = type=http-response,pattern=^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_json.js,script-update-interval=0
 bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-proto.js,script-update-interval=0
 Bili Region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
 
