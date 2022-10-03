@@ -1,5 +1,5 @@
 #!name=Bilibili增强
-#!desc=拜托，没有广告的哔哩哔哩真的超酷的哎
+#!desc=拜托，没有广告的哔哩哔哩真的超酷的
 
 [URL Rewrite]
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
