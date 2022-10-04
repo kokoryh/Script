@@ -31,4 +31,4 @@ https:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png - reject
 全能扫描王 解锁部分高级特权 = type=http-response,pattern=https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/BlueGrave/Surge/master/Scripts/CamScanner.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% exhentai.org, ap*.intsig.net, ad.12306.cn, sofire.baidu.com, ndstatic.cdn.bcebos.com, pan.baidu.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com
+hostname = %APPEND% exhentai.org, ap*.intsig.net, ad.12306.cn, interface*.music.163.com, sofire.baidu.com, ndstatic.cdn.bcebos.com, pan.baidu.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com
