@@ -9,7 +9,7 @@
 ^https?:\/\/ad\.12306\.cn\/ - reject
 
 # 网易云音乐
-^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ url reject
+^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
 
 # 百度网盘广告屏蔽
 https:\/\/sofire\.baidu\.com\/ios\/.+ - reject
