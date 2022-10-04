@@ -20,4 +20,4 @@ bili-bangumi = type=http-response,pattern=^https?:\/\/api\.(bilibili|biliapi)\.(
 bili-search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net
+hostname = %APPEND% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net, api.live.bilibili.com
