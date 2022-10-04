@@ -1,0 +1,18 @@
+#!name=Bilibili增强
+#!desc=拜托，没有广告的哔哩哔哩真的超酷的
+
+[URL Rewrite]
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+
+[Map Local]
+# 屏蔽首页右上活动 (需卸载重装)
+^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/blank_dict.json"
+
+[Script]
+bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?|account\/(mine|myinfo\?)|search\/square)|resource\/show\/(tab|skin\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_json.js,script-update-interval=0
+bili-region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+bili-search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+
+[MITM]
+hostname = %APPEND% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net
