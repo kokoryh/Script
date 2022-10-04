@@ -8,6 +8,9 @@
 # 12306广告
 ^https?:\/\/ad\.12306\.cn\/ - reject
 
+# 网易云音乐
+^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ url reject
+
 # 百度网盘广告屏蔽
 https:\/\/sofire\.baidu\.com\/ios\/.+ - reject
 https:\/\/pan\.baidu\.com\/pmall\/order\/privilege\/info - reject
