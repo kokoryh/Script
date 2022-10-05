@@ -5,7 +5,7 @@
 # Redirect exhentai to e-hentai
 ^https?:\/\/exhentai\.org\/ https://e-hentai.org/ 302
 
-# 12306广告
+# 12306广告(应使用分流去除)
 ^https?:\/\/ad\.12306\.cn\/ - reject
 
 # 百度网盘广告屏蔽
