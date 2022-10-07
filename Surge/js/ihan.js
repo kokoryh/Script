@@ -15,7 +15,7 @@
 Quantumult X:
 
 [task_local]
-0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/Surge/js/ihan.js, tag=毛怪俱乐部签到
+0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/Surge/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/QuantumultX/images/mgclub.js
 
 [rewrite_local]
 # 获取毛怪俱乐部Cookie
@@ -34,7 +34,31 @@ const cookie = $.getdata("Cookie_MGClub") || ''; // 毛怪俱乐部Cookie
 if (typeof $request !== 'undefined') {
     GetCookie()
 } else {
-    // checkin()
+    checkin()
+}
+
+function checkin() {
+    const mgclub = {
+        url: 'https://2550505.com/sign/?',
+        headers: {
+            Cookie: cookie,
+        }
+    };
+    $.post(mgclub, async function(error, response, data) {
+        if (error && !data) {
+            $.msgBody = `请求失败!\n${error}`;
+        } else if (parseInt(response.status) == 200) {
+            $.msgBody = "签到成功！🎉";
+        } else if (/duplicate/.test(data)) {
+            $.msgBody = "今日已签过 ⚠️";
+        } else if (/过期/.test(data)) {
+            $.msgBody = "Cookie失效 ‼️‼️";
+        } else {
+            $.msgBody = `签到失败 ‼️\n${data}`;
+        }
+        $.msg($.name, ``, $.msgBody);
+        $.done();
+    })
 }
 
 function GetCookie() {
