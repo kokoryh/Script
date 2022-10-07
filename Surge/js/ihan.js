@@ -39,19 +39,21 @@ if (typeof $request !== 'undefined') {
 
 function checkin() {
     const mgclub = {
-        url: 'https://2550505.com/sign/?',
+        url: 'https://2550505.com/sign',
         headers: {
             Cookie: cookie,
         }
     };
     $.post(mgclub, async function(error, response, data) {
+        console.log(response);
+        console.log(data);
         if (error && !data) {
             $.msgBody = `请求失败!\n${error}`;
-        } else if (parseInt(response.status) == 200) {
+        } else if (parseInt(data.code) == 0) {
             $.msgBody = "签到成功！🎉";
-        } else if (/duplicate/.test(data)) {
+        } else if (parseInt(data.code == 105)) {
             $.msgBody = "今日已签过 ⚠️";
-        } else if (/过期/.test(data)) {
+        } else if (parseInt(data.code == 403)) {
             $.msgBody = "Cookie失效 ‼️‼️";
         } else {
             $.msgBody = `签到失败 ‼️\n${data}`;
