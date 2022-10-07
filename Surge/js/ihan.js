@@ -15,7 +15,7 @@
 Quantumult X:
 
 [task_local]
-0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/Surge/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/QuantumultX/images/mgclub.js
+0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/Surge/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/QuantumultX/images/mgclub.png, enabled=true
 
 [rewrite_local]
 # 获取毛怪俱乐部Cookie
