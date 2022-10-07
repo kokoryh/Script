@@ -49,11 +49,11 @@ function checkin() {
         console.log(data);
         if (error && !data) {
             $.msgBody = `请求失败!\n${error}`;
-        } else if (parseInt(data.code) == 0) {
+        } else if (/成功/.test(data)) {
             $.msgBody = "签到成功！🎉";
-        } else if (parseInt(data.code == 105)) {
+        } else if (/105/.test(data)) {
             $.msgBody = "今日已签过 ⚠️";
-        } else if (parseInt(data.code == 403)) {
+        } else if (/403/.test(data)) {
             $.msgBody = "Cookie失效 ‼️‼️";
         } else {
             $.msgBody = `签到失败 ‼️\n${data}`;
