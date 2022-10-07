@@ -44,7 +44,7 @@ function checkin() {
             Cookie: cookie,
         }
     };
-    $.post(mgclub, async function(error, response, data) {
+    $.get(mgclub, async function(error, response, data) {
         console.log(response);
         console.log(data);
         if (error && !data) {
