@@ -45,8 +45,6 @@ function checkin() {
         }
     };
     $.get(mgclub, async function(error, response, data) {
-        console.log(response);
-        console.log(data);
         if (error && !data) {
             $.msgBody = `请求失败!\n${error}`;
         } else if (/成功/.test(data)) {
