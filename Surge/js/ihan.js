@@ -42,6 +42,10 @@ function checkin() {
         url: 'https://2550505.com/sign',
         headers: {
             Cookie: cookie,
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/604.1 com.hanser.club/1.1.2',
+            'accept-encoding': 'gzip',
+            'Host': '2550505.com',
+            'Content-Type': 'application/json'
         }
     };
     $.get(mgclub, async function(error, response, data) {
@@ -49,7 +53,7 @@ function checkin() {
             $.msgBody = `请求失败!\n${error}`;
         } else if (/成功/.test(data)) {
             $.msgBody = "签到成功！🎉";
-        } else if (/105/.test(data)) {
+        } else if (/重复/.test(data)) {
             $.msgBody = "今日已签过 ⚠️";
         } else if (/403/.test(data)) {
             $.msgBody = "Cookie失效 ‼️‼️";
