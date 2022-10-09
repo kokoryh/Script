@@ -46,7 +46,7 @@ function checkin() {
             'Accept-Encoding': 'gzip',
             'Host': '2550505.com',
             'Content-Type': 'application/json',
-            'Authorization:': guid()
+            'Authorization': guid()
         }
     };
     $.get(mgclub, async function(error, response, data) {
