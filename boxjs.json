@@ -1,0 +1,20 @@
+{
+    "id": "kokoryh.app.sub",
+    "name": "kokoryh 脚本订阅",
+    "description": "该订阅兼容BoxJs以及QX Gallery",
+    "author": "@kokoryh",
+    "icon": "https://avatars.githubusercontent.com/u/75901403",
+    "repo": "https://github.com/kokoryh/Script/tree/master",
+    "apps": [{
+      "id": "MGClub",
+      "name": "毛怪俱乐部",
+      "keys": ["Cookie_MGClub"],
+      "descs_html": [
+        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js\">脚本注释</a></h4>"
+      ],
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js",
+      "author": "@NobyDa",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
+      "icons": ["https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png", "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"]
+    }]
+}

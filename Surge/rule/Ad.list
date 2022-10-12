@@ -1,2 +1,3 @@
 DOMAIN,ad.12306.cn
 IP-CIDR,203.107.1.1/24,no-resolve
+IP-CIDR,180.76.76.200/32,no-resolve
