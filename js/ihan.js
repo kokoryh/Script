@@ -92,10 +92,10 @@ function getCookie() {
                 }
             }
         } else {
-            $.msg("写入" + cookieName + "Cookie失败", "", ",Cookie关键值缺失");
+            $.msg("写入" + cookieName + "Cookie失败", "", ", Cookie关键值缺失");
         }
     } else {
-        $.msg("写入" + cookieName + "Cookie失败", "", ",配置错误, 无法读取请求头,");
+        $.msg("写入" + cookieName + "Cookie失败", "", ", 配置错误, 无法读取请求头");
     }
     $.done()
 }
