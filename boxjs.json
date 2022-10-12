@@ -13,7 +13,7 @@
         "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js\">脚本注释</a></h4>"
       ],
       "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js",
-      "author": "@NobyDa",
+      "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
       "icons": ["https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png", "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"]
     }]
