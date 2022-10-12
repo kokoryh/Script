@@ -33,7 +33,7 @@
         {
           "id": "bili_suit_list",
           "name": "装扮列表",
-          "val": "{}",
+          "val": "",
           "type": "textarea",
           "placeholder": "推荐由脚本自动获取装扮信息，如有特殊情况可手动填写，必须为Json格式",
           "autoGrow": true,
