@@ -5,3 +5,5 @@ payload:
   - DOMAIN-SUFFIX,hath.network
   - DOMAIN-SUFFIX,ehwiki.org
   - DOMAIN-SUFFIX,hentaiverse.org
+  - IP-CIDR,178.175.128.0/21,no-resolve
+  

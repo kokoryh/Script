@@ -11,5 +11,4 @@ var subtitle = obj['isp'];
 var ip = obj['query'];
 var description = "地区:" + obj['city'] + '\n' + "运营商:" + obj['isp'] + '\n' + "数据中心:" + obj['org'] + '\n' + "IP:" + obj['query'] + '\n' + "时区:" + obj['timezone'];
 
-
 $done({title, subtitle, ip, description});
