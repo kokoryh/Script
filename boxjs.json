@@ -16,5 +16,29 @@
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
       "icons": ["https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png", "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"]
+    }, {
+      "id": "BiliSuit",
+      "name": "B站装扮监控",
+      "keys": [
+        "bili_suit_list"
+      ],
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit.js",
+      "icons": [
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png"
+      ],
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js",
+      "settings": [
+        {
+          "id": "bili_suit_list",
+          "name": "装扮列表",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "推荐由脚本自动获取装扮信息，如有特殊情况可手动填写，必须为Json格式",
+          "autoGrow": true,
+          "desc": "多个装扮信息，如出现异常，请删除全部内容，避免直接编辑数据"
+        }
+      ]
     }]
 }
