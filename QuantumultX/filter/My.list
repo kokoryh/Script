@@ -1,3 +1,4 @@
 HOST,upos-hz-mirrorakam.akamaized.net,DIRECT
+HOST-SUFFIX,steampowered.com,全球加速
 HOST,ad.12306.cn,REJECT
 IP-CIDR,203.107.1.1/24,REJECT
