@@ -7,6 +7,12 @@ DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,.blogspot.
 DOMAIN-SUFFIX,goog
 
+DOMAIN,steammobile.akamaized.net
+DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,steamcommunity.com
+
 # Apple
 DOMAIN,testflight.apple.com
 DOMAIN-SUFFIX,appsto.re // Apple URL Shortener
