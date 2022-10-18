@@ -1,3 +1,10 @@
+DOMAIN-SUFFIX,gmail.com
+DOMAIN-SUFFIX,adguard.org
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,digicert-cn.com
+DOMAIN-SUFFIX,stripe.com
+DOMAIN,nssurge.com
+DOMAIN-SUFFIX,gstatic.com
 DOMAIN,in.appcenter.ms
 DOMAIN,receiptcheck.quantumult.app
 
