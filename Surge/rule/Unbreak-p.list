@@ -1,6 +1,27 @@
-# steam
+# Steam
 DOMAIN,steammobile.akamaized.net
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steamcommunity.com
+
+# Microsoft
+DOMAIN,login.live.com
+DOMAIN,storage.live.com
+DOMAIN,edge.activity.windows.com
+
+# adguard
+DOMAIN,filters.adtidy.org
+DOMAIN-SUFFIX,adguard.org
+
+DOMAIN,in.appcenter.ms
+DOMAIN,mozilla.cloudflare-dns.com
+DOMAIN,receiptcheck.quantumult.app
+DOMAIN,www.surge-activation.com
+DOMAIN,notability.com
+DOMAIN,api.mixpanel.com
+DOMAIN-SUFFIX,smoot.apple.cn
+DOMAIN-SUFFIX,digicert.com
+
+DOMAIN-SUFFIX,asmr.one
+DOMAIN-SUFFIX,nhentai.net

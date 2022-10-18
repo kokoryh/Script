@@ -1,2 +1,4 @@
 # b站视频流
 DOMAIN,upos-hz-mirrorakam.akamaized.net
+# cdn
+DOMAIN-SUFFIX,jsdelivr.net
