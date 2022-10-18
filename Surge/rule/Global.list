@@ -1,5 +1,9 @@
 DOMAIN-SUFFIX,gmail.com
+
+DOMAIN,filters.adtidy.org
+DOMAIN,ocsp.usertrust.com
 DOMAIN-SUFFIX,adguard.org
+
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,digicert-cn.com
 DOMAIN-SUFFIX,stripe.com
