@@ -26,6 +26,7 @@ DOMAIN,receiptcheck.quantumult.app
 DOMAIN,www.surge-activation.com
 DOMAIN,notability.com
 DOMAIN,api.mixpanel.com
+DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,smoot.apple.cn
 DOMAIN-SUFFIX,digicert.com
 
