@@ -4,6 +4,7 @@ DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steambroadcast.akamaized.net
 
 # Microsoft
 DOMAIN,login.live.com
