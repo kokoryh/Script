@@ -3,6 +3,7 @@
 
 [URL Rewrite]
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+^https?:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 ^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 
 [Map Local]
