@@ -6,9 +6,12 @@ var flags = new Map([["AC", "🇦🇨"], ["AE", "🇦🇪"], ["AF", "🇦🇫"],
 
 var body = $response.body;
 var obj = JSON.parse(body);
-var title = '🌼🌺🌸🌻';
-var subtitle = '☂️' + obj['isp'];
+var asn = obj['as'].split(' ')[0];
 var ip = obj['query'];
+
+
+var title = '🌼🌺🌸🌻';
+var subtitle = '⛱️' + asn + ' ' + ip;
 var description = "地区:" + obj['city'] + '\n' + "运营商:" + obj['isp'] + '\n' + "数据中心:" + obj['org'] + '\n' + "IP:" + obj['query'] + '\n' + "时区:" + obj['timezone'];
 
 $done({title, subtitle, ip, description});
