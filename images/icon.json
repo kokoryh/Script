@@ -1,0 +1,10 @@
+{
+    "name":"kokoryh 自用图标",
+    "description":"",
+    "icons":[
+        {"name":"available.png","url":"https://raw.githubusercontent.com/kokoryh/Script/master/images/available.png"},
+        {"name":"dest-hash.png","url":"https://raw.githubusercontent.com/kokoryh/Script/master/images/dest-hash.png"},
+        {"name":"mgclub.png","url":"https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"},
+        {"name":"shizuku.png","url":"https://raw.githubusercontent.com/kokoryh/Script/master/images/shizuku.png"}
+    ]
+}
