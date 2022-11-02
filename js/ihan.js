@@ -4,7 +4,7 @@
 脚本兼容: Quantumult X
 作者：@kokoryh
 
-如果转载，请注明出处
+纯自用，禁转载
 
 说明：
 打开毛怪俱乐部后，点击"签到"，如果通知获取cookie成功，则可以使用本脚本
@@ -42,7 +42,7 @@ function checkin() {
         url: 'https://2550505.com/sign',
         headers: {
             Cookie: cookie,
-            Authorization: guid(),
+            Authorization: uuid(),
             Host: '2550505.com',
             'Accept-Encoding': 'gzip',
             'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ function getCookie() {
     $.done()
 }
 
-function guid() {
+function uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
         return v.toString(16);
