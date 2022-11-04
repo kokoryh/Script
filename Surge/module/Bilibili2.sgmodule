@@ -7,8 +7,8 @@
 ^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 
 [Map Local]
-# 屏蔽首页右上活动 (需卸载重装)
-^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/blank_dict.json"
+# 屏蔽首页右上活动
+^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/bili_activity.json"
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/blank_dict.json"
 
 [Script]
