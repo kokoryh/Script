@@ -1,4 +1,10 @@
 # 为听不懂人话的傻逼专门设计的 DNS 防泄漏
+# 不懂原理不可怕，可怕的被错误的知识带偏
+# 更可怕的是以为自己是对的，从而不相信别人正确的，但是在你看来是错误的言论
+# 想想你在学生时代向老师请教知识，起码在你的意识内会认为老师是对的
+# 而在互联网上，你只会认为自己是对的
+# 该说是可笑呢？还是可悲呢？
+
 HOST-SUFFIX,dnsleaktest.com,PROXY
 HOST-SUFFIX,dnsleak.com,PROXY
 HOST-SUFFIX,expressvpn.com,PROXY
