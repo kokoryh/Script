@@ -1,0 +1,13 @@
+# 为听不懂人话的傻逼专门设计的 DNS 防泄漏
+HOST-SUFFIX,dnsleaktest.com,PROXY
+HOST-SUFFIX,dnsleak.com,PROXY
+HOST-SUFFIX,expressvpn.com,PROXY
+HOST-SUFFIX,nordvpn.com,PROXY
+HOST-SUFFIX,surfshark.com,PROXY
+HOST-SUFFIX,ipleak.net,PROXY
+HOST-SUFFIX,perfect-privacy.com,PROXY
+HOST-SUFFIX,browserleaks.com,PROXY
+HOST-SUFFIX,browserleaks.org,PROXY
+HOST-SUFFIX,vpnunlimited.com,PROXY
+HOST-SUFFIX,whoer.net,PROXY
+HOST-SUFFIX,whrq.net,PROXY
