@@ -4,7 +4,6 @@ HOST-SUFFIX,dnsleak.com,PROXY
 HOST-SUFFIX,expressvpn.com,PROXY
 HOST-SUFFIX,nordvpn.com,PROXY
 HOST-SUFFIX,nordcdn.com,PROXY
-HOST-SUFFIX,surfshark.com,PROXY
 HOST-SUFFIX,ipleak.net,PROXY
 HOST-SUFFIX,perfect-privacy.com,PROXY
 HOST-SUFFIX,browserleaks.com,PROXY
@@ -12,6 +11,10 @@ HOST-SUFFIX,browserleaks.org,PROXY
 HOST-SUFFIX,vpnunlimited.com,PROXY
 HOST-SUFFIX,whoer.net,PROXY
 HOST-SUFFIX,whrq.net,PROXY
+# astrill
+HOST-SUFFIX,astrill.com,PROXY
 HOST-SUFFIX,astrill.org,PROXY
-HOST-SUFFIX,dnsleak.asn247.com,PROXY
+HOST-SUFFIX,dnsleak.asn247.net,PROXY
+# surfshark
+HOST-SUFFIX,surfshark.com,PROXY
 HOST-SUFFIX,surfsharkdns.com,PROXY
