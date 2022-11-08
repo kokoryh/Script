@@ -8,7 +8,7 @@
 
 [Map Local]
 # 屏蔽首页右上活动
-^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/bili_activity.json"
+^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/bili_activity2.json"
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) data="https://raw.githubusercontent.com/kokoryh/Script/master/Surge/blank/blank_dict.json"
 
 [Script]
