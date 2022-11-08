@@ -45,7 +45,7 @@ if(url.includes("Dynamic/DynAll")){
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
-    if(!Object.keys(viewReplyObj.cmIpad).length){
+    if(!viewReplyObj.cmIpad || !Object.keys(viewReplyObj.cmIpad).length){
         console.log('cmIpad为空');
     } else {
         needProcessFlag = true;
