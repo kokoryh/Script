@@ -18,7 +18,6 @@ if(!headers[gzipStrName]){
 const isGzipCompress = headers[gzipStrName] === 'gzip';
 console.log(`isGzipCompress:${isGzipCompress}`);
 const unGzipBody = isGzipCompress ? pako.ungzip(binaryBody.slice(5)) : binaryBody.slice(5);
-console.log(unGzipBody);
 headers[gzipStrName] = 'identity';
 let body;
 const biliRoot = protobuf.Root.fromJSON(biliJson);
@@ -70,28 +69,31 @@ if(url.includes("Dynamic/DynAll")){
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
+    viewReplyObj.cmIpad = {};
+    needProcessFlag = true;
     console.log(JSON.stringify(viewReplyObj));
-    if(!viewReplyObj.cmIpad?.length){
-        console.log('cmIpad为空');
-    } else {
-        let adCount = 0;
-        const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
-        for(let i = 0; i < viewReplyObj.cmIpad.length; i++){
-            let item = viewReplyObj.cmIpad[i];
-            if(item.sourceContent?.value){
-                // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
-                const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
-                if(sourceContentDtoObj.adContent){
-                    adCount++;
-                }
-            }
-        }
-        viewReplyObj.cmIpad = [];
-        console.log(`up主推荐广告:${adCount}`);
-        if(adCount){
-            needProcessFlag = true;
-        }
-    }
+
+    // if(!viewReplyObj.cmIpad?.length){
+    //     console.log('cmIpad为空');
+    // } else {
+    //     let adCount = 0;
+    //     const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
+    //     for(let i = 0; i < viewReplyObj.cmIpad.length; i++){
+    //         let item = viewReplyObj.cmIpad[i];
+    //         if(item.sourceContent?.value){
+    //             // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
+    //             const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
+    //             if(sourceContentDtoObj.adContent){
+    //                 adCount++;
+    //             }
+    //         }
+    //     }
+    //     viewReplyObj.cmIpad = [];
+    //     console.log(`up主推荐广告:${adCount}`);
+    //     if(adCount){
+    //         needProcessFlag = true;
+    //     }
+    // }
 
     if(!viewReplyObj.relates?.length){
         console.log('relates相关推荐为空');
