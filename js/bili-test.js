@@ -71,13 +71,13 @@ if(url.includes("Dynamic/DynAll")){
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
     console.log(JSON.stringify(viewReplyObj));
-    if(!viewReplyObj.cms?.length){
-        console.log('cms为空');
+    if(!viewReplyObj.cmIpad?.length){
+        console.log('cmIpad为空');
     } else {
         let adCount = 0;
         const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
-        for(let i = 0; i < viewReplyObj.cms.length; i++){
-            let item = viewReplyObj.cms[i];
+        for(let i = 0; i < viewReplyObj.cmIpad.length; i++){
+            let item = viewReplyObj.cmIpad[i];
             if(item.sourceContent?.value){
                 // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
                 const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
@@ -86,7 +86,7 @@ if(url.includes("Dynamic/DynAll")){
                 }
             }
         }
-        viewReplyObj.cms = [];
+        viewReplyObj.cmIpad = [];
         console.log(`up主推荐广告:${adCount}`);
         if(adCount){
             needProcessFlag = true;
