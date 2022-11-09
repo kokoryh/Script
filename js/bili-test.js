@@ -39,13 +39,15 @@ if(url.includes("Dynamic/DynAll")){
         console.log('推荐话题topicList去除');
     }
 
-    // if(!dynAllReplyObj.upList){
-    //     console.log('upList为空');
-    // } else {
-    //     needProcessFlag = true;
-    //     dynAllReplyObj.upList = null;
-    //     console.log('最常访问upList去除');
-    // }
+    if(!dynAllReplyObj.upList){
+        console.log('upList为空');
+    } else if(dynAllReplyObj.upList[0].userItemType !== 'user_item_type_normal') {
+        console.log('有直播,不去除upList')
+    } else {
+        needProcessFlag = true;
+        dynAllReplyObj.upList = null;
+        console.log('最常访问upList去除');
+    }
 
     if(!dynAllReplyObj.dynamicList?.list?.length){
         console.log('动态列表list为空');
