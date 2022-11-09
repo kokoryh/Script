@@ -40,7 +40,7 @@ if(url.includes("Dynamic/DynAll")){
 
     if(!dynAllReplyObj.upList){
         console.log('upList为空');
-    } else if(dynAllReplyObj.upList[0].userItemType !== 'user_item_type_normal') {
+    } else if(dynAllReplyObj.upList.list[0].userItemType !== 'user_item_type_normal') {
         console.log('有直播,不去除upList')
     } else {
         needProcessFlag = true;
