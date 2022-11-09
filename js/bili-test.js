@@ -30,7 +30,6 @@ if(url.includes("Dynamic/DynAll")){
     console.log('动态DynAll');
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
     let dynAllReplyObj = dynAllReplyType.decode(unGzipBody);
-    console.log(JSON.stringify(dynAllReplyObj));
     if(!dynAllReplyObj.topicList){
         console.log('topicList为空');
     } else {
