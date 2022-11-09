@@ -30,6 +30,7 @@ if(url.includes("Dynamic/DynAll")){
     console.log('动态DynAll');
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
     let dynAllReplyObj = dynAllReplyType.decode(unGzipBody);
+    console.log(JSON.stringify(dynAllReplyObj));
     if(!dynAllReplyObj.topicList){
         console.log('topicList为空');
     } else {
@@ -69,31 +70,27 @@ if(url.includes("Dynamic/DynAll")){
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
-    viewReplyObj.cmIpad = {};
-    needProcessFlag = true;
-    console.log(JSON.stringify(viewReplyObj));
-
-    // if(!viewReplyObj.cmIpad?.length){
-    //     console.log('cmIpad为空');
-    // } else {
-    //     let adCount = 0;
-    //     const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
-    //     for(let i = 0; i < viewReplyObj.cmIpad.length; i++){
-    //         let item = viewReplyObj.cmIpad[i];
-    //         if(item.sourceContent?.value){
-    //             // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
-    //             const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
-    //             if(sourceContentDtoObj.adContent){
-    //                 adCount++;
-    //             }
-    //         }
-    //     }
-    //     viewReplyObj.cmIpad = [];
-    //     console.log(`up主推荐广告:${adCount}`);
-    //     if(adCount){
-    //         needProcessFlag = true;
-    //     }
-    // }
+    if(!viewReplyObj.cms?.length){
+        console.log('cms为空');
+    } else {
+        let adCount = 0;
+        const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
+        for(let i = 0; i < viewReplyObj.cms.length; i++){
+            let item = viewReplyObj.cms[i];
+            if(item.sourceContent?.value){
+                // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
+                const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
+                if(sourceContentDtoObj.adContent){
+                    adCount++;
+                }
+            }
+        }
+        viewReplyObj.cms = [];
+        console.log(`up主推荐广告:${adCount}`);
+        if(adCount){
+            needProcessFlag = true;
+        }
+    }
 
     if(!viewReplyObj.relates?.length){
         console.log('relates相关推荐为空');
