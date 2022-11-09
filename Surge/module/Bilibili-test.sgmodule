@@ -1,5 +1,5 @@
-#!name=Bilibili增强
-#!desc=拜托，没有广告的哔哩哔哩真的超酷的
+#!name=Bilibili模块测试
+#!desc=测试专用，非专业人士请勿使用
 
 [URL Rewrite]
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
