@@ -8,17 +8,11 @@
 问题反馈：ddgksf2013@163.com
 */
 const mainConfig = {};
-const modifyCardsUrls = ['/cardlist', 'video/community_tab', '/searchall'];
 const modifyTimeUrls = ['statuses/friends_timeline', 'statuses/unread_hot_timeline', 'groups/timeline'];
 const modifyOtherUrls = {
 	'ct=feed&a=trends': 'removeTopics'
 }
 function getModifyMethod(url) {
-	for (const s of modifyCardsUrls) {
-		if(url.indexOf(s) > -1) {
-			return 'removeCards';
-		}
-	}
 	for (const s of modifyTimeUrls) {
 		if(url.indexOf(s) > -1) {
 			return 'removeTimeLine';
@@ -35,11 +29,10 @@ function removeTopics(data) {
 	if(!data.data) {
 		return data;
 	}
-	//if(data.data.search_topic) {delete data.data.search_topic;}
+	// if(data.data.search_topic)  {delete data.data.search_topic;}
 	// if(data.data.topics) 	   {delete data.data.topics;}
-	// if(data.data.discover)     {delete data.data.discover;}
+	// if(data.data.discover)      {delete data.data.discover;}
 	if(data.data.order)     {data.data.order = ["search_topic"]}
-	
 	return data;
 }
 function isAd(data) {
@@ -52,7 +45,6 @@ function isAd(data) {
 	if(data.promotion && data.promotion.type == 'ad') {return true};
 	return false;
 }
-
 function isBlock(data) {
 	let blockIds = mainConfig.blockIds || [];
 	if(blockIds.length === 0) {
@@ -66,7 +58,6 @@ function isBlock(data) {
 	}
 	return false;
 }
-
 function removeTimeLine(data) {
 	for (const s of ["ad", "advertises", "trends"]) {
 		if(data[s]) {
@@ -86,36 +77,6 @@ function removeTimeLine(data) {
 		}
 	}
 	data.statuses = newStatuses;
-}
-function removeCards(data) {
-	if(!data.cards) {
-		return;
-	}
-	let newCards = [];
-	for (const card of data.cards) {
-		let cardGroup = card.card_group;
-		if(cardGroup && cardGroup.length > 0) {
-			let newGroup = [];
-			for (const group of cardGroup) {
-				let cardType = group.card_type;
-				if(cardType != 118) {
-					newGroup.push(group);
-				}
-			}
-			card.card_group = newGroup;
-			newCards.push(card);
-		} else {
-			let cardType = card.card_type;
-			if([9,165].indexOf(cardType) > -1) {
-				if(!isAd(card.mblog)) {
-					newCards.push(card);
-				}
-			} else {
-				newCards.push(card);
-			}
-		}
-	}
-	data.cards = newCards;
 }
 var body = $response.body;
 var url = $request.url;
