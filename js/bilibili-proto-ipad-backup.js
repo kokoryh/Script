@@ -41,6 +41,30 @@ if(url.includes("Dynamic/DynAll")){
     if(needProcessFlag){
         body = processNewBody(dynAllReplyType.encode(dynAllReplyObj).finish());
     }
+} else if(url.includes("View/View")){
+    console.log('视频播放页View/View');
+    const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
+    let viewReplyObj = viewReplyType.decode(unGzipBody);
+    if(!viewReplyObj.cmIpad || !Object.keys(viewReplyObj.cmIpad).length){
+        console.log('cmIpad为空');
+    } else {
+        needProcessFlag = true;
+        viewReplyObj.cmIpad = {};
+        console.log(`去除相关推荐上方广告`);
+    }
+
+    if(needProcessFlag){
+        let tIconMap = viewReplyObj.tIcon;
+        for (const i in tIconMap) {
+            if(tIconMap[i] === null){
+                // 解决tIcon的null is not an object问题
+                console.log(`tIconMap:${i}`);
+                delete tIconMap[i];
+            }
+        }
+
+        body = processNewBody(viewReplyType.encode(viewReplyObj).finish());
+    }
 } else {
     $notification.post('bilibili-proto', "路径匹配错误:", url);
 }
