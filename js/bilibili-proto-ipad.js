@@ -65,22 +65,6 @@ if(url.includes("Dynamic/DynAll")){
 
         body = processNewBody(viewReplyType.encode(viewReplyObj).finish());
     }
-} else if(url.includes("PlayURL/PlayView")){
-    console.log('PlayURL/PlayView/View');
-    const playViewReplyType = biliRoot.lookupType("bilibili.app.playurl.PlayViewReply");
-    let playViewReplyObj = playViewReplyType.decode(unGzipBody);
-    const oldBackgroundConf = playViewReplyObj.playArc?.backgroundPlayConf;
-    if(oldBackgroundConf && (!oldBackgroundConf.isSupport || oldBackgroundConf.disabled)){
-        console.log(`后台播放限制去除`);
-        playViewReplyObj.playArc.backgroundPlayConf.isSupport = true;
-        playViewReplyObj.playArc.backgroundPlayConf.disabled = false;
-        playViewReplyObj.playArc.backgroundPlayConf.extraContent = null;
-
-        needProcessFlag = true;
-        body = processNewBody(playViewReplyType.encode(playViewReplyObj).finish());
-    } else {
-        console.log('无需调整后台播放设置');
-    }
 } else {
     $notification.post('bilibili-proto', "路径匹配错误:", url);
 }
