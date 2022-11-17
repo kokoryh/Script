@@ -61,7 +61,7 @@ function isBlock(data) {
 function removeTimeLine(data) {
 	for (const s of ["ad", "advertises", "trends"]) {
 		if(data[s]) {
-			delete data[s];
+			data[s] = undefined;
 		}
 	}
 	if(!data.statuses) {
