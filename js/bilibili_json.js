@@ -1,11 +1,6 @@
 /*
-应用名称：自用B站去广告脚本
-脚本作者：Cuttlefish
-微信账号：公众号墨鱼手记
-更新时间：2022-11-08
-脚本版本：(74) 
-通知频道：https://t.me/ddgksf2021
-问题反馈：ddgksf2013@163.com
+修改自@ddgksf2013的B站去广告脚本
+将delete操作改为set，略微优化性能
 */
 
 const scriptName = "BiliBili";
@@ -143,9 +138,9 @@ if (magicJS.read(blackKey)) {
                             return itemList.has(e.id);
                         });
                         obj["data"]["sections_v2"][index].button = {};
-                        delete obj["data"]["sections_v2"][index].be_up_title;
-                        delete obj["data"]["sections_v2"][index].tip_icon;
-                        delete obj["data"]["sections_v2"][index].tip_title;
+                        obj["data"]["sections_v2"][index].be_up_title = undefined;
+                        obj["data"]["sections_v2"][index].tip_icon = undefined;
+                        obj["data"]["sections_v2"][index].tip_title = undefined;
                         //2022-02-16 add by ddgksf2013
                         for (let ii = 0; ii < obj["data"]["sections_v2"].length; ii++) {
                             if (obj.data.sections_v2[ii].title == "推荐服务" || obj.data.sections_v2[ii].title == "推薦服務") {
@@ -161,12 +156,12 @@ if (magicJS.read(blackKey)) {
                                 }
                             }
                             if (obj.data.sections_v2[ii].title == "创作中心" || obj.data.sections_v2[ii].title == "創作中心") {
-                                delete obj.data.sections_v2[ii].title;
-                                delete obj.data.sections_v2[ii].type;
+                                obj.data.sections_v2[ii].title = undefined;
+                                obj.data.sections_v2[ii].type = undefined;
                             }
                         }
-                        delete obj.data.vip_section_v2;
-                        delete obj.data.vip_section;
+                        obj.data.vip_section_v2 = undefined;
+                        obj.data.vip_section = undefined;
                         obj["data"]["sections_v2"][index]["items"] = items;
                         //2022-03-05 add by ddgksf2013
                         if (obj.data.hasOwnProperty("live_tip")) {
@@ -194,19 +189,6 @@ if (magicJS.read(blackKey)) {
                     body = JSON.stringify(obj);
                 } catch (err) {
                     magicJS.logError(`直播去广告出现异常：${err}`);
-                }
-                break;
-            // 右上角活动
-            case /^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity/.test(magicJS.request.url):
-                try {
-                    let obj = JSON.parse(magicJS.response.body);
-                    if(obj.data){
-                        obj.data.hash = "ddgksf2013";
-                        obj.data.online.icon = "";
-                    }
-                    body = JSON.stringify(obj);
-                } catch (err) {
-                    magicJS.logError(`右上角去广告出现异常：${err}`);
                 }
                 break;
             //屏蔽热搜
