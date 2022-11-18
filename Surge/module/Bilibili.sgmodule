@@ -9,6 +9,7 @@
 [Map Local]
 # 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json"
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [Script]
 bili-json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/list|feed\/index\?|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json.js,script-update-interval=0
