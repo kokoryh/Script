@@ -46,6 +46,7 @@ if(url.includes("Dynamic/DynAll")){
         dynAllReplyObj.upList.title = '正在直播';
         dynAllReplyObj.upList.moreLabel.title = '我的关注';
         dynAllReplyObj.upList.list = dynAllReplyObj.upList.list.slice(0, dynAllReplyObj.upList.showLiveNum);
+        dynAllReplyObj.upList.list[dynAllReplyObj.upList.showLiveNum - 1].separator = undefined;
     } else {
         needProcessFlag = true;
         dynAllReplyObj.upList = null;
