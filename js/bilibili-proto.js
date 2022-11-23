@@ -43,6 +43,9 @@ if(url.includes("Dynamic/DynAll")){
     } else if(dynAllReplyObj.upList.list[0].userItemType !== 3) {
         // 非normal情况，如直播(type = 1)
         // console.log('有直播,不去除upList');
+        dynAllReplyObj.upList.title = '正在直播';
+        dynAllReplyObj.upList.moreLabel.title = '我的关注';
+        dynAllReplyObj.upList.list = dynAllReplyObj.upList.list.slice(0, dynAllReplyObj.upList.showLiveNum);
     } else {
         needProcessFlag = true;
         dynAllReplyObj.upList = null;
