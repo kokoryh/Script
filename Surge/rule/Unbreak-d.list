@@ -3,3 +3,5 @@ DOMAIN,upos-hz-mirrorakam.akamaized.net
 IP-CIDR,103.151.150.0/23,no-resolve
 # cdn
 DOMAIN-SUFFIX,jsdelivr.net
+# 修正广告拦截的分流
+DOMAIN,ca.iadsdk.apple.com
