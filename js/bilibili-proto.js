@@ -43,7 +43,7 @@ if(url.includes("Dynamic/DynAll")){
     } else if(dynAllReplyObj.upList.showLiveNum !== 0) {
         // console.log('有直播,不去除upList');
         dynAllReplyObj.upList.title = '正在直播';
-        dynAllReplyObj.upList.moreLabel.title = '我的关注';
+        // dynAllReplyObj.upList.moreLabel.title = '我的关注';
         // dynAllReplyObj.upList.list = dynAllReplyObj.upList.list.slice(0, dynAllReplyObj.upList.showLiveNum);
         // dynAllReplyObj.upList.list[dynAllReplyObj.upList.showLiveNum - 1].separator = undefined;
     } else {
