@@ -5,7 +5,7 @@ if (obj.materialsList) {
         obj.advertParam.skipTime = 100;
         obj.advertParam.skipTimeAgain = 5;
         obj.advertParam.showSkipBtn = 0;
-    } else if (obj.materialsList.length > 1 && obj.advertParam.fixedscreen !== -1) {
+    } else if (obj.materialsList.length > 1) {
         obj.materialsList = [{}];
     }
 }
