@@ -20,6 +20,24 @@ if (magicJS.read(blackKey)) {
     let body = null;
     if (magicJS.isResponse) {
         switch (true) {
+            // 开屏广告（预加载）如果粗暴地关掉，那么就使用预加载的数据，就会导致关不掉
+            case /^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(magicJS.request.url):
+                try {
+                    let obj = JSON.parse(magicJS.response.body);
+                    if (obj.data) {
+                        for (let item of obj["data"]["list"]) {
+                            item["duration"] = 0;
+                            // 显示时间
+                            // 2040 年
+                            item["begin_time"] = 2240150400;
+                            item["end_time"] = 2240150400;
+                        }
+                    }
+                    body = JSON.stringify(obj);
+                } catch (err) {
+                    magicJS.logError(`开屏广告（预加载）出现异常：${err}`);
+                }
+                break;
             // 推荐去广告，最后问号不能去掉，以免匹配到story模式
             case /^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?/.test(magicJS.request.url):
                 try {
@@ -171,16 +189,6 @@ if (magicJS.read(blackKey)) {
                     magicJS.logError(`我的页面处理出现异常：${err}`);
                 }
                 break;
-            // 直播去广告
-            case /^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom/.test(magicJS.request.url):
-                try {
-                    let obj = JSON.parse(magicJS.response.body);
-                    obj["data"]["activity_banner_info"] = null;
-                    body = JSON.stringify(obj);
-                } catch (err) {
-                    magicJS.logError(`直播去广告出现异常：${err}`);
-                }
-                break;
             //屏蔽热搜
             case /^https?:\/\/app\.bilibili\.com\/x\/v2\/search\/square/.test(magicJS.request.url):
                 try {
@@ -195,17 +203,14 @@ if (magicJS.read(blackKey)) {
                     magicJS.logError(`热搜去广告出现异常：${err}`);
                 }
                 break;
-            //2022-03-05 add by ddgksf2013
-            case /https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?/.test(magicJS.request.url):
+            // 直播去广告
+            case /^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
-                    obj["data"]["vip"]["type"] = 2;
-                    obj["data"]["vip"]["status"] = 1;
-                    obj["data"]["vip"]["vip_pay_type"] = 1;
-                    obj["data"]["vip"]["due_date"] = 4669824160;
+                    obj["data"]["activity_banner_info"] = null;
                     body = JSON.stringify(obj);
                 } catch (err) {
-                    magicJS.logError(`1080P出现异常：${err}`);
+                    magicJS.logError(`直播去广告出现异常：${err}`);
                 }
                 break;
             // 追番去广告
@@ -249,24 +254,6 @@ if (magicJS.read(blackKey)) {
                     body = JSON.stringify(obj);
                 } catch (err) {
                     magicJS.logError(`观影页去广告出现异常：${err}`);
-                }
-                break;
-            // 开屏广告（预加载）如果粗暴地关掉，那么就使用预加载的数据，就会导致关不掉
-            case /^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(magicJS.request.url):
-                try {
-                    let obj = JSON.parse(magicJS.response.body);
-                    if (obj.data) {
-                        for (let item of obj["data"]["list"]) {
-                            item["duration"] = 0;
-                            // 显示时间
-                            // 2040 年
-                            item["begin_time"] = 2240150400;
-                            item["end_time"] = 2240150400;
-                        }
-                    }
-                    body = JSON.stringify(obj);
-                } catch (err) {
-                    magicJS.logError(`开屏广告（预加载）出现异常：${err}`);
                 }
                 break;
             default:
