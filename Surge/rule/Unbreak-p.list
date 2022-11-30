@@ -5,6 +5,7 @@ DOMAIN,api.ndsxfkjfvhzdsfio.quest
 
 # Steam(ios端专用)
 DOMAIN,steammobile.akamaized.net
+DOMAIN,steamcommunity-a.akamaihd.net
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamstatic.com
@@ -15,6 +16,9 @@ DOMAIN-SUFFIX,steambroadcast.akamaized.net
 DOMAIN,login.live.com
 DOMAIN,storage.live.com
 DOMAIN,edge.activity.windows.com
+
+# scriptable
+DOMAIN,gallery.scriptable.app
 
 # adguard
 DOMAIN,filters.adtidy.org
