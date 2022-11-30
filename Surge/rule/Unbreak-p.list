@@ -42,6 +42,10 @@ DOMAIN-SUFFIX,goodnotes.email
 DOMAIN-SUFFIX,goodnotescloud.com
 DOMAIN-SUFFIX,goodnotesplatform.com
 
+# 南+
+DOMAIN,www.summer-plus.net
+DOMAIN,bbs.imoutolove.me
+
 # 自用的其他软件分流
 DOMAIN,notability.com
 DOMAIN-SUFFIX,asmr.one
