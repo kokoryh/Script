@@ -32,7 +32,7 @@ DOMAIN-SUFFIX,codeberg.org
 
 # 代理软件
 DOMAIN,receiptcheck.quantumult.app
-DOMAIN,www.surge-activation.com
+DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,stash-activation.com
 
@@ -42,13 +42,18 @@ DOMAIN-SUFFIX,goodnotes.email
 DOMAIN-SUFFIX,goodnotescloud.com
 DOMAIN-SUFFIX,goodnotesplatform.com
 
-DOMAIN,in.appcenter.ms
-DOMAIN,mozilla.cloudflare-dns.com
+# 自用的其他软件分流
 DOMAIN,notability.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,smoot.apple.cn
-DOMAIN-SUFFIX,digicert.com
-
 DOMAIN-SUFFIX,asmr.one
 DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,peropero.net
+
+# 一些乱七八糟的不知道干嘛用的
+DOMAIN,in.appcenter.ms
+DOMAIN,mozilla.cloudflare-dns.com
+DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,usertrust.com
+DOMAIN-SUFFIX,amazontrust.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,smoot.apple.cn
+DOMAIN-SUFFIX,digicert.com
