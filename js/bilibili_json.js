@@ -24,7 +24,7 @@ if (magicJS.read(blackKey)) {
             case /^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
-                    if (obj.data) {
+                    if (obj.data && obj.data.list) {
                         for (let item of obj["data"]["list"]) {
                             item["duration"] = 0;
                             // 显示时间
