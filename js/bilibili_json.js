@@ -166,18 +166,6 @@ if (magicJS.read(blackKey)) {
                         obj["data"]["sections_v2"][index].tip_title = undefined;
                         //2022-02-16 add by ddgksf2013
                         for (let ii = 0; ii < obj["data"]["sections_v2"].length; ii++) {
-                            if (obj.data.sections_v2[ii].title == "推荐服务" || obj.data.sections_v2[ii].title == "推薦服務") {
-                                //obj.data.sections_v2[ii].items[0].title='\u516C\u773E\u865F';
-                                //obj.data.sections_v2[ii].items[1].title='\u58A8\u9B5A\u624B\u8A18';
-                            }
-                            if (obj.data.sections_v2[ii].title == "更多服務" || obj.data.sections_v2[ii].title == "更多服务") {
-                                if (obj.data.sections_v2[ii].items[0].id == 500) {
-                                    //obj.data.sections_v2[ii].items[0].title='\u516C\u773E\u865F';
-                                }
-                                if (obj.data.sections_v2[ii].items[1].id == 501) {
-                                    //obj.data.sections_v2[ii].items[1].title='\u58A8\u9B5A\u624B\u8A18';
-                                }
-                            }
                             if (obj.data.sections_v2[ii].title == "创作中心" || obj.data.sections_v2[ii].title == "創作中心") {
                                 obj.data.sections_v2[ii].title = undefined;
                                 obj.data.sections_v2[ii].type = undefined;
@@ -255,7 +243,7 @@ if (magicJS.read(blackKey)) {
                             module.items = module.items.filter((i) => i.blink.indexOf("www.bilibili.com") == -1);
                         }
                         if (module.style.startsWith("tip")) {
-                            module.items = null;
+                            module.items = [];
                         }
                     });
                     body = JSON.stringify(obj);
@@ -276,7 +264,7 @@ if (magicJS.read(blackKey)) {
                             module.items = module.items.filter((i) => i.blink.indexOf("www.bilibili.com") == -1);
                         }
                         if (module.style.startsWith("tip")) {
-                            module.items = null;
+                            module.items = [];
                         }
                     });
                     body = JSON.stringify(obj);
