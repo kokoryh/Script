@@ -30,10 +30,10 @@ hostname = app.bilibili.com
 
 const $ = new Env(`B站装扮信息提取`);
 var body = $response.body;
-if(body) {
+if (body) {
     var data = JSON.parse(body).data
     var skin = data.suit_items.skin[0]
-    var user_equip =  {
+    var user_equip = {
         "id": skin.suit_item_id,
         "name": skin.name,
         "preview": skin.properties.image_preview,
@@ -56,8 +56,9 @@ if(body) {
             "tail_icon_mode": "img"
         }
     }
-    if(data.suit_items.loading) {
-        var load_equip = {
+    var load_equip = undefined;
+    if (data.suit_items.loading) {
+        load_equip = {
             "id": user_equip.id,
             "name": user_equip.name,
             "ver": user_equip.ver,
@@ -65,14 +66,18 @@ if(body) {
         }
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
-    var success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
-    if (success1 && success2) {
-        $.msg("获取装扮信息成功 🎉️", "", "当前装扮：" + user_equip.name);
+    var success2 = false;
+    if (load_equip) {
+        success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
-    if (!success1) {
+    if (success1) {
+        $.msg("获取装扮信息成功 🎉️", "", "当前装扮：" + user_equip.name);
+    } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
-    if (data.suit_items.loading && !success2) {
+    if (!data.suit_items.loading) {
+        $.msg("无进度条装扮 ‼️", "", "无需在意本条报错");
+    } else if (!success2) {
         $.msg("获取load_equip失败 ‼️", "", "");
     }
 }
