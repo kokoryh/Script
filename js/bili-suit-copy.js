@@ -7,12 +7,12 @@ B站装扮拷贝
 纯自用，禁转载，转载死全家
 
 说明：
-进入B站装扮售卖详情页，如果通知获取装扮信息成功，则可以使用本脚本
+进入B站装扮售卖详情页，如果通知获取装扮信息成功，则可以使用本脚本。更换装扮需要退后台重进两次
 
 ----------------
 获取装扮信息(获取完即可关闭此重写)
 [rewrite_local]
-^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
+^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 
 [mitm]
 hostname = api.bilibili.com
