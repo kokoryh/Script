@@ -1,21 +1,35 @@
+/*
+B站装扮拷贝
+
+脚本兼容: Quantumult X
+作者：@kokoryh
+
+纯自用，禁转载，转载死全家
+
+说明：
+进入B站装扮售卖详情页，如果通知获取装扮信息成功，则可以使用本脚本
+
+----------------
+获取装扮信息(获取完即可关闭此重写)
+[rewrite_local]
+^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
+
+[mitm]
+hostname = api.bilibili.com
+
+----------------
+日常使用
+[rewrite_local]
+^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
+
+[mitm]
+hostname = app.bilibili.com
+
+----------------
+*/
+var user_equip = $prefs.valueForKey("bili_user_equip")
+var load_equip = $prefs.valueForKey("bili_load_equip")
 var obj = JSON.parse($response.body);
-obj.data.user_equip.id = 4978;
-obj.data.user_equip.name = "泠鸢登门喜鹊";
-obj.data.user_equip.preview = "https://i0.hdslb.com/bfs/garb/item/36070efe0f5c6d7a4cdc439586d2ac4e2b20ef15.jpg";
-obj.data.user_equip.ver = 1621566616;
-obj.data.user_equip.package_url = "https://i0.hdslb.com/bfs/garb/zip/37edfd6424f5aacac2ecdf78c23886b116c22a22.zip";
-obj.data.user_equip.package_md5 = "96f4d00dd5fe4322d1d403f47ebbd7d4";
-obj.data.user_equip.data.color_mode = "dark";
-obj.data.user_equip.data.color = "#ffffff";
-obj.data.user_equip.data.color_second_page = "#852333";
-obj.data.user_equip.data.side_bg_color = "#932936";
-obj.data.user_equip.data.tail_color = "#ffffff";
-obj.data.user_equip.data.tail_color_selected = "#fff4ac";
-obj.data.user_equip.data.tail_icon_ani = true;
-obj.data.user_equip.data.tail_icon_ani_mode = "once";
-obj.data.user_equip.data.head_myself_mp4_play = "loop";
-obj.data.user_equip.data.pub_btn_shade_color_top = "#ff3a4d";
-obj.data.user_equip.data.pub_btn_shade_color_bottom = "#f25866";
-obj.data.user_equip.data.pub_btn_plus_color = "#ffffff";
-obj.data.user_equip.data.tail_icon_mode = "img";
+if(user_equip) obj.data.user_equip = user_equip
+if(load_equip) obj.data.load_equip = load_equip
 $done({body: JSON.stringify(obj)});
