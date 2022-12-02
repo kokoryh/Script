@@ -56,11 +56,13 @@ if(body) {
             "tail_icon_mode": "img"
         }
     }
-    var load_equip = {
-        "id": user_equip.id,
-        "name": user_equip.name,
-        "ver": user_equip.ver,
-        "loading_url": data.suit_items.loading[0].properties.loading_url
+    if(data.suit_items.loading) {
+        var load_equip = {
+            "id": user_equip.id,
+            "name": user_equip.name,
+            "ver": user_equip.ver,
+            "loading_url": data.suit_items.loading[0].properties.loading_url
+        }
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
     var success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
@@ -70,7 +72,7 @@ if(body) {
     if (!success1) {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
-    if (!success2) {
+    if (data.suit_items.loading && !success2) {
         $.msg("获取load_equip失败 ‼️", "", "");
     }
 }
