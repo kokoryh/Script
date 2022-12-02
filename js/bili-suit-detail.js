@@ -6,17 +6,14 @@ B站装扮拷贝
 
 纯自用，禁转载，转载死全家
 
-用解析器解析这脚本的都给我滚
-[mitm]
-hostname = -ap?.bilibili.com
-
 说明：
 进入B站装扮售卖详情页，如果通知获取装扮信息成功，则可以使用本脚本。更换装扮需要退后台重进两次
+引用请自行去掉前面的#号，用解析器解析的都给我滚
 
 ----------------
 获取装扮信息(获取完即可关闭此重写)
 [rewrite_local]
-^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
+# ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 
 [mitm]
 hostname = api.bilibili.com
@@ -24,7 +21,7 @@ hostname = api.bilibili.com
 ----------------
 日常使用
 [rewrite_local]
-^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
+# ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
 
 [mitm]
 hostname = app.bilibili.com
