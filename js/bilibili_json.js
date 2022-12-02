@@ -38,6 +38,21 @@ if (magicJS.read(blackKey)) {
                     magicJS.logError(`开屏广告（预加载）出现异常：${err}`);
                 }
                 break;
+            // 屏蔽青少年弹窗（测试中）
+            case /^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/show/.test(magicJS.request.url):
+                try {
+                    let obj = JSON.parse(magicJS.response.body);
+                    if (obj.data && obj.data.show[0].id !== 999999999) {
+                        obj.data.show[0].id = 999999999;
+                        obj.data.show[0].stime = 1577808000;
+                        obj.data.show[0].etime = 1577808000;
+                        obj.data.show[0].ad_cb = "";
+                    }
+                    body = JSON.stringify(obj);
+                } catch (err) {
+                    magicJS.logError(`屏蔽青少年弹窗出现异常：${err}`);
+                }
+                break;
             // 推荐去广告，最后问号不能去掉，以免匹配到story模式
             case /^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?/.test(magicJS.request.url):
                 try {
