@@ -1,6 +1,6 @@
 var obj = JSON.parse($response.body);
+obj.data.teenager_frequency = 0;
 if (obj.data && obj.data.operate) {
     obj.data.operate = null;
-    obj.data.teenager_frequency = 0;
 }
 $done({body: JSON.stringify(obj)});
