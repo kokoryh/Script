@@ -40,5 +40,39 @@
           "desc": "多个装扮信息，如出现异常，请删除全部内容，避免直接编辑数据"
         }
       ]
+    }, {
+      "id": "BiliSuitCopy",
+      "name": "装扮拷贝",
+      "keys": [
+        "bili_user_equip",
+        "bili_load_equip"
+      ],
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-copy.js",
+      "icons": [
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
+      ],
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js",
+      "settings": [
+        {
+          "id": "bili_user_equip",
+          "name": "装扮信息",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "",
+          "autoGrow": true,
+          "desc": ""
+        },
+        {
+          "id": "bili_load_equip",
+          "name": "进度条信息",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "如果需要进度条信息和装扮信息不同，请善用复制粘贴",
+          "autoGrow": true,
+          "desc": "下拉出现的加载进度条"
+        }
+      ]
     }]
 }
