@@ -18,7 +18,6 @@ Quantumult X:
 0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js, tag=B站装扮监控, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
 
 [rewrite_local]
-# 获取毛怪俱乐部Cookie
 ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js
 
 [mitm]
