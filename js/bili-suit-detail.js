@@ -56,7 +56,7 @@ if (body) {
             "tail_icon_mode": "img"
         }
     }
-    var load_equip = undefined;
+    var load_equip = null;
     if (data.suit_items.loading) {
         load_equip = {
             "id": user_equip.id,
@@ -75,8 +75,8 @@ if (body) {
     } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
-    if (!data.suit_items.loading) {
-        $.msg("无进度条装扮 ‼️", "", "无需在意本条报错");
+    if (!load_equip) {
+        $.msg("无进度条装扮", "", "无需在意本条报错");
     } else if (!success2) {
         $.msg("获取load_equip失败 ‼️", "", "");
     }

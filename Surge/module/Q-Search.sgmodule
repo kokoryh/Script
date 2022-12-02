@@ -27,8 +27,6 @@
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+zh.+ http://www.zhihu.com/search?q=$1 302
 # xxx wb  (微博)
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+wb.+ https://s.weibo.com/weibo/$1 302
-# xxx wx  (微信)
-^https:\/\/duckduckgo.com\/\?q=([^+]+)\+wx.+ https://weixin.sogou.com/weixinwap?query=$1 302
 
 #>>>>>>>>>>>>>>>>>>>>>>>购物
 # xxx jd  (京东)

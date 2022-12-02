@@ -2,8 +2,8 @@
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 
 [URL Rewrite]
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 ^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 
 [Map Local]
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"

@@ -1,7 +1,7 @@
 /*
 修改自@ddgksf2013的微博国际版去广告脚本
 使趋势页更符合个人使用习惯
-将delete操作改为set，略微优化性能
+将delete操作改为set
 */
 const mainConfig = {};
 const modifyTimeUrls = ['statuses/friends_timeline', 'statuses/unread_hot_timeline', 'groups/timeline'];

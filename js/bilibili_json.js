@@ -1,6 +1,5 @@
 /*
 修改自@ddgksf2013的B站去广告脚本
-将delete操作改为set，略微优化性能
 */
 
 const scriptName = "BiliBili";
