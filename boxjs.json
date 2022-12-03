@@ -61,10 +61,10 @@
         {
           "id": "bili_skin_num",
           "name": "提取第几套主题",
-          "val": "",
+          "val": "1",
           "type": "text",
-          "placeholder": "1",
-          "desc": "针对某些有多套主题的装扮，默认1不需要输入，只允许输入数字"
+          "placeholder": "",
+          "desc": "针对某些有多套主题的装扮，默认为1，只允许输入数字"
         },
         {
           "id": "bili_user_equip",
@@ -85,10 +85,10 @@
         {
           "id": "bili_load_num",
           "name": "提取第几个加载动画",
-          "val": "",
+          "val": "1",
           "type": "text",
-          "placeholder": "1",
-          "desc": "针对某些有多个加载动画的装扮，默认1不需要输入，只允许输入数字"
+          "placeholder": "",
+          "desc": "针对某些有多个加载动画的装扮，默认为1，只允许输入数字"
         },
         {
           "id": "bili_load_equip",
