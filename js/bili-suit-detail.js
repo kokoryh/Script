@@ -1,6 +1,6 @@
 /*
 B站装扮拷贝
-版本：1.6
+版本：1.61
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -83,24 +83,24 @@ if (body) {
     }
     var skin_num_notice = "";
     var load_num_notice = "";
-    if (user_equip.length > 1) skin_num_notice = `\n该装扮有${user_equip.length}套主题，在boxjs中修改bili_skin_num参数可更换主题，默认使用第1套`;
-    if (load_equip.length > 1) load_num_notice = `\n该装扮有${load_equip.length}个加载动画，在boxjs中修改bili_load_num参数可更换加载动画，默认使用第1个`;
+    if (user_equip.length > 1) skin_num_notice = `，该装扮有${user_equip.length}套主题，在boxjs中修改bili_skin_num参数可更换主题，默认使用第1套`;
+    if (load_equip.length > 1) load_num_notice = `，该装扮有${load_equip.length}个加载动画，在boxjs中修改bili_load_num参数可更换加载动画，默认使用第1个`;
 
     var load_msg = "";
     if (noLoad) {
-        load_msg = "\n您已设置不提取加载动画";
+        load_msg = "您已设置不提取加载动画";
     } else if (load_equip.length === 0) {
-        load_msg = "\n当前装扮不含加载动画";
+        load_msg = "当前装扮不含加载动画";
     } else if (!success2) {
-        load_msg = "\n获取加载动画失败";
+        load_msg = "获取加载动画失败 ‼️";
     } else {
-        load_msg = "\n获取加载动画成功";
+        load_msg = "获取加载动画成功 🎉️";
     }
 
     if (success1) {
-        $.msg("获取装扮信息成功 🎉️", "", user_equip[0].name + skin_num_notice + load_msg);
+        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice);
     } else {
-        $.msg("获取装扮信息失败 ‼️", "", load_msg);
+        $.msg("获取装扮信息失败 ‼️", load_msg, "");
     }
 }
 $.done()
