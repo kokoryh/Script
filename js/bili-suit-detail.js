@@ -1,6 +1,6 @@
 /*
 B站装扮拷贝
-版本：1.53
+版本：1.6
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -10,7 +10,7 @@ B站装扮拷贝
 打开粉色B站进入装扮详情页，如果通知获取装扮信息成功，则可以使用本脚本
 更换装扮需要退后台重新打开app，重复两次
 如果不想提取加载动画，可在boxjs中将『不提取加载动画』开关打开
-如果装扮有多套主题，可在boxjs中填入『提取第几套主题』，加载动画同理
+如果装扮有多套主题，可在boxjs中填入『使用第几套主题』，加载动画同理
 粉色B站和白色B站均可使用本脚本
 如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-copy2.js
 引用请自行去掉前面的#号，用解析器解析的都给我滚
@@ -36,76 +36,71 @@ hostname = app.bilibili.com
 
 const $ = new Env(`B站装扮信息提取`);
 var noLoad = $.getdata("bili_no_load") === "true";
-// 针对某些装扮有多套皮肤或加载动画的情况，添加提取第n套的参数，默认提取第一套
-var skin_num = parseInt($.getdata("bili_skin_num") || 1);
-var load_num = parseInt($.getdata("bili_load_num") || 1);
-var skin_num_notice = "";
-// 针对可能有沙雕设置skin_num小于1
-if (skin_num < 1) {
-    skin_num = 1;
-    $.setdata("1", "bili_skin_num");
-    skin_num_notice = "\n你设置的skin_num值小于1，已重置为1！";
-}
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data;
-    var length = data.suit_items.skin.length;
-    // 针对bili_skin_num过大的情况，自动回退到最后一个skin
-    if (skin_num > length) {
-        skin_num = length;
-        $.setdata("1", "bili_skin_num");
-        skin_num_notice = "\n你设置的skin_num值过大，已重置为1！";
+    var user_equip = [];
+    var load_equip = [];
+    for(const skin of data.suit_items.skin) {
+        user_equip.push({
+            "id": skin.item_id,
+            "name": skin.name,
+            "preview": skin.properties.image_preview,
+            "ver": parseInt(skin.properties.ver),
+            "package_url": skin.properties.package_url,
+            "package_md5": skin.properties.package_md5,
+            "data": {
+                "color_mode": skin.properties.color_mode,
+                "color": skin.properties.color,
+                "color_second_page": skin.properties.color_second_page,
+                "side_bg_color": skin.properties.side_bg_color,
+                "tail_color": skin.properties.tail_color,
+                "tail_color_selected": skin.properties.tail_color_selected,
+                "tail_icon_ani": skin.properties.tail_icon_ani === "true",
+                "tail_icon_ani_mode": skin.properties.tail_icon_ani_mode,
+                "head_myself_mp4_play": skin.properties.head_myself_mp4_play,
+                "pub_btn_shade_color_top": skin.properties.pub_btn_shade_color_top,
+                "pub_btn_shade_color_bottom": skin.properties.pub_btn_shade_color_bottom,
+                "pub_btn_plus_color": skin.properties.pub_btn_plus_color,
+                "tail_icon_mode": skin.properties.tail_icon_mode || "img"
+            }
+        })
     }
-    var skin = data.suit_items.skin[skin_num -1];
-    var user_equip = {
-        "id": skin.item_id,
-        "name": skin.name,
-        "preview": skin.properties.image_preview,
-        "ver": parseInt(skin.properties.ver),
-        "package_url": skin.properties.package_url,
-        "package_md5": skin.properties.package_md5,
-        "data": {
-            "color_mode": skin.properties.color_mode,
-            "color": skin.properties.color,
-            "color_second_page": skin.properties.color_second_page,
-            "side_bg_color": skin.properties.side_bg_color,
-            "tail_color": skin.properties.tail_color,
-            "tail_color_selected": skin.properties.tail_color_selected,
-            "tail_icon_ani": skin.properties.tail_icon_ani === "true",
-            "tail_icon_ani_mode": skin.properties.tail_icon_ani_mode,
-            "head_myself_mp4_play": skin.properties.head_myself_mp4_play,
-            "pub_btn_shade_color_top": skin.properties.pub_btn_shade_color_top,
-            "pub_btn_shade_color_bottom": skin.properties.pub_btn_shade_color_bottom,
-            "pub_btn_plus_color": skin.properties.pub_btn_plus_color,
-            "tail_icon_mode": skin.properties.tail_icon_mode || "img"
-        }
-    }
-    var load_equip = null;
     if (data.suit_items.loading) {
-        var load = data.suit_items.loading[load_num - 1];
-        load_equip = {
-            "id": load.item_id,
-            "name": load.name,
-            "ver": load.properties.ver,
-            "loading_url": load.properties.loading_url
+        for(const load of data.suit_items.loading) {
+            load_equip.push({
+                "id": load.item_id,
+                "name": load.name,
+                "ver": load.properties.ver,
+                "loading_url": load.properties.loading_url
+            })
         }
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
     var success2 = false;
-    if (!noLoad && load_equip) {
+    if (!noLoad && load_equip.length !== 0) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
-    if (success1) {
-        $.msg("获取装扮信息成功 🎉️", "", `第${skin_num}套主题：` + user_equip.name + skin_num_notice);
-    } else {
-        $.msg("获取user_equip失败 ‼️", "", "");
-    }
+    var skin_num_notice = "";
+    var load_num_notice = "";
+    if (user_equip.length > 1) skin_num_notice = `\n该装扮有${user_equip.length}套主题，在boxjs中修改bili_skin_num参数可更换主题，默认使用第1套`;
+    if (load_equip.length > 1) load_num_notice = `\n该装扮有${load_equip.length}个加载动画，在boxjs中修改bili_load_num参数可更换加载动画，默认使用第1个`;
+
+    var load_msg = "";
     if (noLoad) {
-        $.msg("您已设置不提取加载动画", "", "");
-    } else if (!load_equip) {
-        $.msg("当前装扮不含加载动画", "", "");
+        load_msg = "\n您已设置不提取加载动画";
+    } else if (load_equip.length === 0) {
+        load_msg = "\n当前装扮不含加载动画";
     } else if (!success2) {
-        $.msg("获取load_equip失败 ‼️", "", "");
+        load_msg = "\n获取加载动画失败";
+    } else {
+        load_msg = "\n获取加载动画成功";
+    }
+
+    if (success1) {
+        $.msg("获取装扮信息成功 🎉️", "", user_equip[0].name + skin_num_notice + load_msg);
+    } else {
+        $.msg("获取装扮信息失败 ‼️", "", load_msg);
     }
 }
 $.done()
