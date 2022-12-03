@@ -39,10 +39,23 @@ var noLoad = $.getdata("bili_no_load") === "true";
 // 针对某些装扮有多套皮肤或加载动画的情况，添加提取第n套的参数，默认提取第一套
 var skin_num = parseInt($.getdata("bili_skin_num") || 1);
 var load_num = parseInt($.getdata("bili_load_num") || 1);
+var skin_num_notice = false;
 var body = $response.body;
 if (body) {
-    var data = JSON.parse(body).data
-    var skin = data.suit_items.skin[skin_num -1]
+    var data = JSON.parse(body).data;
+    var skin = data.suit_items.skin[skin_num -1];
+    // 针对忘记把bili_skin_num参数改回的情况，自动递减直到有skin数据
+    for(let i = 1; i < skin_num; i++) {
+        if(!skin){
+            skin = data.suit_items.skin[skin_num - 1 - i];
+        } else {
+            if(i !== 1) {
+                skin_num = skin_num -i;
+                skin_num_notice = true;
+            }
+            break;
+        }
+    }
     var user_equip = {
         "id": skin.item_id,
         "name": skin.name,
@@ -82,7 +95,7 @@ if (body) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
     if (success1) {
-        $.msg("获取装扮信息成功 🎉️", "", `当前第${skin_num}套装扮：` + user_equip.name);
+        $.msg("获取装扮信息成功 🎉️", "", `当前第${skin_num}套装扮：` + user_equip.name + skin_num_notice ? "\n您设置的 skin_num 值过大，请调整！" : "");
     } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
