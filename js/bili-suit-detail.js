@@ -35,10 +35,13 @@ hostname = app.bilibili.com
 
 const $ = new Env(`B站装扮信息提取`);
 var noLoad = $.getdata("bili_no_load") === "true";
+// 针对某些装扮有多套皮肤或加载动画的情况，添加提取第n套的参数，默认提取第一套
+var skin_num = parseInt($.getdata("bili_skin_num") || 1) - 1;
+var load_num = parseInt($.getdata("bili_load_num") || 1) - 1;
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data
-    var skin = data.suit_items.skin[0]
+    var skin = data.suit_items.skin[skin_num]
     var user_equip = {
         "id": skin.suit_item_id,
         "name": skin.name,
@@ -68,7 +71,7 @@ if (body) {
             "id": user_equip.id,
             "name": user_equip.name,
             "ver": user_equip.ver,
-            "loading_url": data.suit_items.loading[0].properties.loading_url
+            "loading_url": data.suit_items.loading[load_num].properties.loading_url
         }
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
