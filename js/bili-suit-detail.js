@@ -96,7 +96,7 @@ if (body) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
     if (success1) {
-        $.msg("获取装扮信息成功 🎉️", "", `第${skin_num}套装扮：` + user_equip.name + skin_num_notice);
+        $.msg("获取装扮信息成功 🎉️", "", `第${skin_num}套主题：` + user_equip.name + skin_num_notice);
     } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
