@@ -44,11 +44,11 @@
       "id": "BiliSuitCopy",
       "name": "装扮拷贝",
       "keys": [
-        "bili_skin_num",
         "bili_user_equip",
+        "bili_skin_num",
         "bili_no_load",
-        "bili_load_num",
-        "bili_load_equip"
+        "bili_load_equip",
+        "bili_load_num"
       ],
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-copy.js",
