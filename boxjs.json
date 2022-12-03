@@ -67,19 +67,19 @@
         },
         {
           "id": "bili_no_load",
-          "name": "不提取进度条信息",
+          "name": "不提取加载动画",
           "val": false,
           "type": "boolean",
-          "desc": "此选项为true时不提取进度条信息"
+          "desc": "此选项为true时不提取加载动画"
         },
         {
           "id": "bili_load_equip",
-          "name": "进度条信息",
+          "name": "加载动画信息",
           "val": "",
           "type": "textarea",
           "placeholder": "",
           "autoGrow": true,
-          "desc": "下拉出现的加载进度条"
+          "desc": "下拉出现的加载动画"
         }
       ]
     }]
