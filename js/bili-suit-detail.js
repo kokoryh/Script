@@ -1,6 +1,6 @@
 /*
 B站装扮拷贝
-
+版本：1.53
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -49,20 +49,14 @@ if (skin_num < 1) {
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data;
-    var skin = data.suit_items.skin[skin_num -1];
-    // 针对忘记把bili_skin_num参数改回的情况，自动递减直到有skin数据
-    for(let i = 0; i < skin_num; i++) {
-        if(!skin){
-            skin = data.suit_items.skin[skin_num - 2 - i];
-        } else {
-            if(i !== 0) {
-                skin_num = skin_num - i;
-                $.setdata("1", "bili_skin_num");
-                skin_num_notice = "\n你设置的skin_num值过大，已重置为1！";
-            }
-            break;
-        }
+    var length = data.suit_items.skin.length;
+    // 针对bili_skin_num过大的情况，自动回退到最后一个skin
+    if (skin_num > length) {
+        skin_num = length;
+        $.setdata("1", "bili_skin_num");
+        skin_num_notice = "\n你设置的skin_num值过大，已重置为1！";
     }
+    var skin = data.suit_items.skin[skin_num -1];
     var user_equip = {
         "id": skin.item_id,
         "name": skin.name,
@@ -102,7 +96,7 @@ if (body) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
     if (success1) {
-        $.msg("获取装扮信息成功 🎉️", "", `当前第${skin_num}套装扮：` + user_equip.name + skin_num_notice);
+        $.msg("获取装扮信息成功 🎉️", "", `第${skin_num}套装扮：` + user_equip.name + skin_num_notice);
     } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }

@@ -1,6 +1,6 @@
 /*
 B站装扮拷贝
-
+版本：1.53
 脚本兼容: Quantumult X
 作者：@kokoryh
 
