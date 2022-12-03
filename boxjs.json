@@ -45,6 +45,7 @@
       "name": "装扮拷贝",
       "keys": [
         "bili_user_equip",
+        "bili_no_load",
         "bili_load_equip"
       ],
       "author": "@kokoryh",
