@@ -43,7 +43,7 @@ if (body) {
     var data = JSON.parse(body).data
     var skin = data.suit_items.skin[skin_num -1]
     var user_equip = {
-        "id": skin.suit_item_id,
+        "id": skin.item_id,
         "name": skin.name,
         "preview": skin.properties.image_preview,
         "ver": parseInt(skin.properties.ver),
@@ -67,11 +67,12 @@ if (body) {
     }
     var load_equip = null;
     if (data.suit_items.loading) {
+        var load = data.suit_items.loading[load_num - 1];
         load_equip = {
-            "id": user_equip.id,
-            "name": user_equip.name,
-            "ver": user_equip.ver,
-            "loading_url": data.suit_items.loading[load_num - 1].properties.loading_url
+            "id": load.item_id,
+            "name": load.name,
+            "ver": load.properties.ver,
+            "loading_url": load.properties.loading_url
         }
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
