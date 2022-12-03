@@ -59,7 +59,7 @@ if (body) {
             "pub_btn_shade_color_top": skin.properties.pub_btn_shade_color_top,
             "pub_btn_shade_color_bottom": skin.properties.pub_btn_shade_color_bottom,
             "pub_btn_plus_color": skin.properties.pub_btn_plus_color,
-            "tail_icon_mode": "img"
+            "tail_icon_mode": skin.properties.tail_icon_mode || "img"
         }
     }
     var load_equip = null;
