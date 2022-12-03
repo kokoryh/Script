@@ -66,12 +66,12 @@
           "desc": ""
         },
         {
-					"id": "bili_no_load",
-					"name": "不提取进度条信息",
-					"val": false,
-					"type": "boolean",
-					"desc": "此选项为true时不提取进度条信息"
-				},
+          "id": "bili_no_load",
+          "name": "不提取进度条信息",
+          "val": false,
+          "type": "boolean",
+          "desc": "此选项为true时不提取进度条信息"
+        },
         {
           "id": "bili_load_equip",
           "name": "进度条信息",
