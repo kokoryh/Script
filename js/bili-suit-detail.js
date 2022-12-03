@@ -30,8 +30,7 @@ hostname = app.bilibili.com
 */
 
 const $ = new Env(`B站装扮信息提取`);
-var noLoad = $.getdata("bili_no_load");
-console.log(noLoad);
+var noLoad = $.getdata("bili_no_load") === "true";
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data
