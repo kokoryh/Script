@@ -83,8 +83,8 @@ if (body) {
     }
     var skin_num_notice = "";
     var load_num_notice = "";
-    if (user_equip.length > 1) skin_num_notice = `，该装扮有${user_equip.length}套主题，在boxjs中修改bili_skin_num参数可更换主题，默认使用第1套`;
-    if (load_equip.length > 1) load_num_notice = `，该装扮有${load_equip.length}个加载动画，在boxjs中修改bili_load_num参数可更换加载动画，默认使用第1个`;
+    if (user_equip.length > 1) skin_num_notice = `，该装扮有${user_equip.length}套主题，默认使用第1套，可前往boxjs修改`;
+    if (load_equip.length > 1) load_num_notice = `，该装扮有${load_equip.length}个加载动画，默认使用第1个，可前往boxjs修改`;
 
     var load_msg = "";
     if (noLoad) {
