@@ -30,6 +30,7 @@ hostname = app.bilibili.com
 */
 
 const $ = new Env(`B站装扮信息提取`);
+var noLoad = $.getdata("bili_no_load");
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data
@@ -68,7 +69,7 @@ if (body) {
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
     var success2 = false;
-    if (load_equip) {
+    if (!noLoad && load_equip) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
     if (success1) {
@@ -76,7 +77,9 @@ if (body) {
     } else {
         $.msg("获取user_equip失败 ‼️", "", "");
     }
-    if (!load_equip) {
+    if (noLoad) {
+        $.msg("您已设置不提取进度条装扮", "", "");
+    } else if (!load_equip) {
         $.msg("无进度条装扮", "", "无需在意本条报错");
     } else if (!success2) {
         $.msg("获取load_equip失败 ‼️", "", "");

@@ -65,11 +65,18 @@
           "desc": ""
         },
         {
+					"id": "bili_no_load",
+					"name": "不提取进度条信息",
+					"val": false,
+					"type": "boolean",
+					"desc": "此选项为true时不提取进度条信息"
+				},
+        {
           "id": "bili_load_equip",
           "name": "进度条信息",
           "val": "",
           "type": "textarea",
-          "placeholder": "如果需要进度条信息和装扮信息不同，请善用复制粘贴",
+          "placeholder": "",
           "autoGrow": true,
           "desc": "下拉出现的加载进度条"
         }
