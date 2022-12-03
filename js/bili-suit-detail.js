@@ -84,7 +84,7 @@ if (body) {
     if (noLoad) {
         $.msg("您已设置不提取加载动画", "", "");
     } else if (!load_equip) {
-        $.msg("无加载动画", "", "无需在意本条报错");
+        $.msg("当前装扮不含加载动画", "", "");
     } else if (!success2) {
         $.msg("获取load_equip失败 ‼️", "", "");
     }

@@ -32,15 +32,9 @@ hostname = app.bilibili.com
 
 ----------------
 */
+var obj = JSON.parse($response.body);
 var user_equip = $prefs.valueForKey("bili_user_equip");
 var load_equip = $prefs.valueForKey("bili_load_equip");
-var obj = JSON.parse($response.body);
-if(user_equip) {
-    user_equip = JSON.parse(user_equip);
-    obj.data["user_equip"] = user_equip;
-}
-if(load_equip) {
-    load_equip = JSON.parse(load_equip);
-    obj.data["load_equip"] = load_equip;
-}
+if(user_equip) obj.data["user_equip"] = JSON.parse(user_equip);
+if(load_equip) obj.data["load_equip"] = JSON.parse(load_equip);
 $done({body: JSON.stringify(obj)});
