@@ -56,7 +56,6 @@
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
       ],
-      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js",
       "settings": [
         {
           "id": "bili_skin_num",
