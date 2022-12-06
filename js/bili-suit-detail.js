@@ -1,6 +1,6 @@
 /*
-B站装扮拷贝
-版本：1.6.2
+B站装扮diy
+版本：1.6.3
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -13,7 +13,8 @@ B站装扮拷贝
 如果不想提取加载动画，可在boxjs中将『不提取加载动画』开关打开
 如果装扮有多套主题，可在boxjs中填入『使用第几套主题』，加载动画同理
 粉色B站和白色B站均可使用本脚本
-如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-copy2.js
+如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-diy2.js
+diy功能请自行下载需要的装扮包拼合为zip包上传到github，然后自行编写规范的配置文件
 引用请自行去掉前面的#号，用解析器解析的都给我滚
 
 ----------------
@@ -27,7 +28,7 @@ hostname = api.bilibili.com
 ----------------
 日常使用
 [rewrite_local]
-# ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-copy.js
+# ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 
 [mitm]
 hostname = app.bilibili.com
