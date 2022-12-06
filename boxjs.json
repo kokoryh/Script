@@ -86,7 +86,6 @@
           "val": "",
           "type": "textarea",
           "placeholder": "",
-          "autoGrow": true,
           "desc": "下拉出现的加载动画"
         },
         {
