@@ -63,7 +63,6 @@
           "val": "",
           "type": "textarea",
           "placeholder": "",
-          "autoGrow": true,
           "desc": ""
         },
         {
@@ -80,6 +79,14 @@
           "val": false,
           "type": "boolean",
           "desc": "此选项为true时不提取加载动画"
+        },
+        {
+          "id": "bili_load_equip",
+          "name": "加载动画信息",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "",
+          "desc": "下拉出现的加载动画"
         },
         {
           "id": "bili_load_num",
