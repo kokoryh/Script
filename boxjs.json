@@ -58,6 +58,15 @@
       ],
       "settings": [
         {
+          "id": "bili_user_equip",
+          "name": "装扮信息",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "",
+          "autoGrow": true,
+          "desc": ""
+        },
+        {
           "id": "bili_skin_num",
           "name": "使用第几套主题",
           "val": "1",

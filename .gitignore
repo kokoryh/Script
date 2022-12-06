@@ -3,7 +3,6 @@ node_modules
 /dist
 /pressure-ulcer-care
 *.rar
-*.zip
 *.7z
 .prettierrc.json
 
