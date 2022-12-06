@@ -53,7 +53,7 @@ if (body) {
             "package_url": skin.properties.package_url,
             "package_md5": skin.properties.package_md5,
             "data": {
-                "color_mode": skin.properties.color_mode || "",
+                "color_mode": skin.properties.color_mode || "light",
                 "color": skin.properties.color || "",
                 "color_second_page": skin.properties.color_second_page || "",
                 "side_bg_color": skin.properties.side_bg_color || "",
