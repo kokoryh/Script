@@ -41,8 +41,8 @@
         }
       ]
     }, {
-      "id": "BiliSuitCopy",
-      "name": "装扮拷贝",
+      "id": "BiliSuitDIY",
+      "name": "装扮DIY",
       "keys": [
         "bili_user_equip",
         "bili_skin_num",
@@ -51,7 +51,7 @@
         "bili_load_num"
       ],
       "author": "@kokoryh",
-      "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-copy.js",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-diy.js",
       "icons": [
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
