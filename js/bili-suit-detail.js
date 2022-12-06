@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.6.4
+版本：1.6.5
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -53,18 +53,18 @@ if (body) {
             "package_url": skin.properties.package_url,
             "package_md5": skin.properties.package_md5,
             "data": {
-                "color_mode": skin.properties.color_mode,
-                "color": skin.properties.color,
-                "color_second_page": skin.properties.color_second_page,
-                "side_bg_color": skin.properties.side_bg_color,
-                "tail_color": skin.properties.tail_color,
-                "tail_color_selected": skin.properties.tail_color_selected,
+                "color_mode": skin.properties.color_mode || "",
+                "color": skin.properties.color || "",
+                "color_second_page": skin.properties.color_second_page || "",
+                "side_bg_color": skin.properties.side_bg_color || "",
+                "tail_color": skin.properties.tail_color || "",
+                "tail_color_selected": skin.properties.tail_color_selected || "",
                 "tail_icon_ani": skin.properties.tail_icon_ani === "true",
-                "tail_icon_ani_mode": skin.properties.tail_icon_ani_mode,
-                "head_myself_mp4_play": skin.properties.head_myself_mp4_play,
-                "pub_btn_shade_color_top": skin.properties.pub_btn_shade_color_top,
-                "pub_btn_shade_color_bottom": skin.properties.pub_btn_shade_color_bottom,
-                "pub_btn_plus_color": skin.properties.pub_btn_plus_color,
+                "tail_icon_ani_mode": skin.properties.tail_icon_ani_mode || "once",
+                "head_myself_mp4_play": skin.properties.head_myself_mp4_play || "",
+                "pub_btn_shade_color_top": skin.properties.pub_btn_shade_color_top || "",
+                "pub_btn_shade_color_bottom": skin.properties.pub_btn_shade_color_bottom || "",
+                "pub_btn_plus_color": skin.properties.pub_btn_plus_color || "",
                 "tail_icon_mode": skin.properties.tail_icon_mode || "img"
             }
         })
