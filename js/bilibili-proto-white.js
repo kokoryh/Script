@@ -26,6 +26,13 @@ if (method !== "POST") {
 if(url.includes("Dynamic/DynAll")){
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
     let dynAllReplyObj = dynAllReplyType.decode(unGzipBody);
+    if(!dynAllReplyObj.topicList){
+        // console.log('topicList为空');
+    } else {
+        needProcessFlag = true;
+        dynAllReplyObj.topicList = null;
+        // console.log('推荐话题topicList去除');
+    }
 
     if(!dynAllReplyObj.upList){
         // console.log('upList为空');
