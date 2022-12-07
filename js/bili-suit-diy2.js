@@ -1,6 +1,5 @@
-var body = $response.body;
-if (body && body.length < 255) {
-    var obj = JSON.parse(body);
+var obj = JSON.parse($response.body);
+if (!obj.data.skin_colors) {
     var user_equip = $prefs.valueForKey("bili_user_equip");
     var load_equip = $prefs.valueForKey("bili_load_equip");
     if(user_equip) {
