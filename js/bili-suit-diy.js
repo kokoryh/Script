@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.6.7
+版本：1.6.8
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -37,10 +37,10 @@ hostname = app.bilibili.com
 ----------------
 */
 var obj = JSON.parse($response.body);
-var bili_user_equip = $prefs.valueForKey("bili_user_equip");
-var bili_load_equip = $prefs.valueForKey("bili_load_equip");
-if(bili_user_equip) {
-    var user_equip = JSON.parse(bili_user_equip);
+var user_equip = $prefs.valueForKey("bili_user_equip");
+var load_equip = $prefs.valueForKey("bili_load_equip");
+if(user_equip) {
+    user_equip = JSON.parse(user_equip);
     if (user_equip.length === 1) obj.data["user_equip"] = user_equip[0];
     else {
         var skin_num = parseInt($prefs.valueForKey("bili_skin_num") || 1);
@@ -53,8 +53,8 @@ if(bili_user_equip) {
         }
     }
 }
-if(bili_load_equip) {
-    var load_equip = JSON.parse(bili_load_equip);
+if(load_equip) {
+    load_equip = JSON.parse(load_equip);
     if (load_equip.length === 1) obj.data["load_equip"] = load_equip[0];
     else {
         var load_num = parseInt($prefs.valueForKey("bili_load_num") || 1);

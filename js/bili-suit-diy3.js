@@ -12,6 +12,6 @@ if (hour >= 22 || hour < 7) {
     skin_num = 1;
     load_num = 1;
 }
-obj.data["user_equip"] = JSON.parse(user_equip)[skin_num];
-obj.data["load_equip"] = JSON.parse(load_equip)[load_num];
+if (user_equip) obj.data["user_equip"] = JSON.parse(user_equip)[skin_num];
+if (load_equip) obj.data["load_equip"] = JSON.parse(load_equip)[load_num];
 $done({body: JSON.stringify(obj)});
