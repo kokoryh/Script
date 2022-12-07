@@ -33,6 +33,51 @@ if (magicJS.read(blackKey)) {
                     magicJS.logError(`热搜去广告出现异常：${err}`);
                 }
                 break;
+            // 我的页面处理，去除一些推广按钮
+            case /^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/.test(magicJS.request.url):
+                try {
+                    let obj = JSON.parse(magicJS.response.body);
+                    const itemList = new Set([396, 397, 398, 399, 402, 404, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501]);
+                    obj["data"]["sections_v2"].forEach((element, index) => {
+                        element["items"].forEach((e) => {
+                            if (e["id"] === 622) {
+                                e["title"] = "会员购";
+                                e["uri"] = "bilibili://mall/home";
+                            }
+                        });
+                        let items = element["items"].filter((e) => {
+                            return itemList.has(e.id);
+                        });
+                        obj["data"]["sections_v2"][index].button = {};
+                        obj["data"]["sections_v2"][index].be_up_title = undefined;
+                        obj["data"]["sections_v2"][index].tip_icon = undefined;
+                        obj["data"]["sections_v2"][index].tip_title = undefined;
+                        for (let ii = 0; ii < obj["data"]["sections_v2"].length; ii++) {
+                            if (obj.data.sections_v2[ii].title == "创作中心" || obj.data.sections_v2[ii].title == "創作中心") {
+                                obj.data.sections_v2[ii].title = undefined;
+                                obj.data.sections_v2[ii].type = undefined;
+                            }
+                        }
+                        obj.data.vip_section_v2 = undefined;
+                        obj.data.vip_section = undefined;
+                        obj["data"]["sections_v2"][index]["items"] = items;
+                        if (obj.data.hasOwnProperty("live_tip")) {
+                            obj["data"]["live_tip"] = {};
+                        }
+                        if (obj.data.hasOwnProperty("answer")) {
+                            obj["data"]["answer"] = {};
+                        }
+                        obj["data"]["vip_type"] = 2;
+                        obj["data"]["vip"]["type"] = 2;
+                        obj["data"]["vip"]["status"] = 1;
+                        obj["data"]["vip"]["vip_pay_type"] = 1;
+                        obj["data"]["vip"]["due_date"] = 4669824160;
+                    });
+                    body = JSON.stringify(obj);
+                } catch (err) {
+                    magicJS.logError(`我的页面处理出现异常：${err}`);
+                }
+                break;
             // 直播去广告
             case /^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom/.test(magicJS.request.url):
                 try {
