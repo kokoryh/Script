@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.6.5
+版本：1.6.6
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -87,7 +87,7 @@ if (body) {
     var skin_num_notice = "";
     var load_num_notice = "";
     if (user_equip.length > 1) skin_num_notice = `，该装扮有${user_equip.length}套主题，默认使用第1套，可前往boxjs修改`;
-    if (load_equip.length > 1) load_num_notice = `，该装扮有${load_equip.length}个加载动画，默认使用第1个，可前往boxjs修改`;
+    if (load_equip.length > 1) load_num_notice = `\n该装扮有${load_equip.length}个加载动画，默认使用第1个，可前往boxjs修改`;
 
     var load_msg = "";
     if (noLoad) {
@@ -101,9 +101,9 @@ if (body) {
     }
 
     if (success1) {
-        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice);
+        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice + load_num_notice);
     } else {
-        $.msg("获取装扮信息失败 ‼️", load_msg, "");
+        $.msg("获取装扮信息失败 ‼️", load_msg, load_num_notice);
     }
 }
 $.done()
