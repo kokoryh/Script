@@ -39,7 +39,7 @@ hostname = app.bilibili.com
 var obj = JSON.parse($response.body);
 var bili_user_equip = $prefs.valueForKey("bili_user_equip");
 var bili_load_equip = $prefs.valueForKey("bili_load_equip");
-if(user_equip) {
+if(bili_user_equip) {
     var user_equip = JSON.parse(bili_user_equip);
     if (user_equip.length === 1) obj.data["user_equip"] = user_equip[0];
     else {
@@ -53,7 +53,7 @@ if(user_equip) {
         }
     }
 }
-if(load_equip) {
+if(bili_load_equip) {
     var load_equip = JSON.parse(bili_load_equip);
     if (load_equip.length === 1) obj.data["load_equip"] = load_equip[0];
     else {
