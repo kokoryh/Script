@@ -13,11 +13,9 @@ if (hour >= 22 || hour < 7) {
     load_num = 1;
 }
 if (user_equip) {
-    var user_equip = JSON.parse(user_equip);
-    obj.data["user_equip"] = user_equip[skin_num];
+    obj.data["user_equip"] = JSON.parse(user_equip)[skin_num];
 }
 if (load_equip) {
-    var load_equip = JSON.parse(load_equip);
-    obj.data["load_equip"] = load_equip[load_num];
+    obj.data["load_equip"] = JSON.parse(load_equip)[load_num];
 }
 $done({body: JSON.stringify(obj)});
