@@ -5,6 +5,9 @@
 ^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 
+[Map Local]
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+
 [Script]
 bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy3.js,script-update-interval=0
 bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(search\/square|account\/mine),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json_white.js,script-update-interval=0
