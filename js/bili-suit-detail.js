@@ -50,6 +50,9 @@ if (body) {
     if (pushMode) {
         user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
         load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
+    } else if (noLoad) {
+        user_equip = [];
+        load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
     } else {
         user_equip = [];
         load_equip = [];
