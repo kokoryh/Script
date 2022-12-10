@@ -54,7 +54,7 @@
       ],
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-diy.js",
-      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js",
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-view.js",
       "icons": [
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
