@@ -139,6 +139,7 @@ if (typeof $response !== 'undefined') {
     var user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
     var load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
     var suit_view = getSuitView(user_equip, load_equip);
+    console.log(suit_view);
     $.setdata(suit_view, "bili_suit_view");
     $.done();
 }
