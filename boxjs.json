@@ -44,6 +44,8 @@
       "id": "BiliSuitDIY",
       "name": "装扮DIY",
       "keys": [
+        "bili_suit_view",
+        "bili_suit_push",
         "bili_user_equip",
         "bili_skin_num",
         "bili_no_load",
@@ -58,8 +60,24 @@
       ],
       "settings": [
         {
+          "id": "bili_suit_view",
+          "name": "装扮总览",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "",
+          "autoGrow": true,
+          "desc": "本栏仅供浏览，无实际意义"
+        },
+        {
+          "id": "bili_suit_push",
+          "name": "装扮追加",
+          "val": false,
+          "type": "boolean",
+          "desc": "此选项为true时新的装扮信息将追加于原本的数据后，为false时会覆盖原本的数据。若同时开启『不提取加载动画』，则仅追加主题"
+        },
+        {
           "id": "bili_user_equip",
-          "name": "装扮信息",
+          "name": "主题信息",
           "val": "",
           "type": "textarea",
           "placeholder": "",

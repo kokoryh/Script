@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.6.9
+版本：1.7.0
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -13,12 +13,13 @@ B站装扮diy
 2、更换新的装扮需要退后台重新打开app，重复两次
 3、如果不想提取加载动画，可在boxjs中将『不提取加载动画』开关打开
 4、如果装扮有多套主题，可在boxjs中填入『使用第几套主题』，加载动画同理
-5、粉色B站和白色B站均可使用本脚本
-6、如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-diy2.js
-7、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。仅适合有一定编程基础的人，小白请放弃此功能
+5、如果想追加其他装扮而不覆盖，可在boxjs中将『装扮追加』开关打开
+6、粉色B站和白色B站均可使用本脚本
+7、如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-diy2.js
+8、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。仅适合有一定编程基础的人，小白请放弃此功能
    配置格式和各配置项含义请『自行体会』，作为挡住小白的门槛
-8、『空间头图』可以本地替换，但由于我用不到，且日常使用也看不到，因此不会实现此功能。有需要请自行实现
-9、引用请自行去掉前面的#号，用解析器解析的都给我滚
+9、『空间头图』可以本地替换，但由于我用不到，且日常使用也看不到，因此不会实现此功能。有需要请自行实现
+10、引用请自行去掉前面的#号，用解析器解析的都给我滚
 
 ----------------
 获取装扮信息(获取完即可关闭此重写)
@@ -41,12 +42,20 @@ hostname = app.bilibili.com
 
 const $ = new Env(`B站装扮信息提取`);
 var noLoad = $.getdata("bili_no_load") === "true";
+var pushMode = $.getdata("bili_suit_push") === "true";
 var body = $response.body;
 if (body) {
     var data = JSON.parse(body).data;
-    var user_equip = [];
-    var load_equip = [];
-    for(const skin of data.suit_items.skin) {
+    var user_equip;
+    var load_equip;
+    if (pushMode) {
+        user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
+        load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
+    } else {
+        user_equip = [];
+        load_equip = [];
+    }
+    for (const skin of data.suit_items.skin) {
         user_equip.push({
             "id": skin.item_id,
             "name": skin.name,
@@ -86,10 +95,11 @@ if (body) {
     if (!noLoad && load_equip.length !== 0) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
+
     var skin_num_notice = "";
     var load_num_notice = "";
-    if (user_equip.length > 1) skin_num_notice = `，该装扮有${user_equip.length}套主题，默认使用第1套，可前往boxjs修改`;
-    if (load_equip.length > 1) load_num_notice = `\n该装扮有${load_equip.length}个加载动画，默认使用第1个，可前往boxjs修改`;
+    if (data.suit_items.skin.length > 1) skin_num_notice = `，该装扮有${data.suit_items.skin.length}套主题，默认使用第1套，可前往boxjs修改`;
+    if (data.suit_items.loading.length > 1) load_num_notice = `\n该装扮有${data.suit_items.loading.length}个加载动画，默认使用第1个，可前往boxjs修改`;
 
     var load_msg = "";
     if (noLoad) {
@@ -101,10 +111,24 @@ if (body) {
     } else {
         load_msg = "获取加载动画成功 🎉️";
     }
+  
+    // suit_view
+    var push_mode_notice = "\n你已开启装扮追加模式，以下为当前装扮总览：\n";
+    var suit_view = "主题编号, 名称, ID\n";
+    for(let i = 0; i < user_equip.length; i++) {
+        suit_view += `${i}, ${user_equip[i].name}, ${user_equip[i].id}\n`;
+    }
+    suit_view += "加载动画编号, 名称, ID\n";
+    for(let i = 0; i < load_equip.length; i++) {
+        suit_view += `${i}, ${load_equip[i].name}, ${load_equip[i].id}\n`;
+    }
+    var success3 = $.setdata(suit_view, "bili_suit_view");
 
-    if (success1) {
+    if (success1 && pushMode) {
+        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice + load_num_notice + push_mode_notice + suit_view);
+    } else if (success1) {
         $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice + load_num_notice);
-    } else {
+    }else {
         $.msg("获取装扮信息失败 ‼️", load_msg, load_num_notice);
     }
 }
