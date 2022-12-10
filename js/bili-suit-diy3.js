@@ -1,6 +1,6 @@
 // 白色B站 7:00~17:59 第一套装扮 | 18:00~21:59 第二套装扮 | 22:00~6:59 第三套装扮
 // 粉色B站 跟着boxjs里的选项走
-// 版本：1.7.0
+// 版本：1.7.1
 
 var obj = JSON.parse($response.body);
 var user_equip = $prefs.valueForKey("bili_user_equip");
