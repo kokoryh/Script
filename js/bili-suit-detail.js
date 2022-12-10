@@ -56,6 +56,11 @@ if (body) {
         load_equip = [];
     }
     for (const skin of data.suit_items.skin) {
+        for (let i = 0; i < user_equip.length; i++) {
+            if (user_equip[i].id === skin.item_id) {
+                user_equip.splice(i, 1);
+            }
+        }
         user_equip.push({
             "id": skin.item_id,
             "name": skin.name,
@@ -80,8 +85,13 @@ if (body) {
             }
         })
     }
-    if (data.suit_items.loading) {
+    if (!noLoad && data.suit_items.loading) {
         for(const load of data.suit_items.loading) {
+            for (let i = 0; i < load_equip.length; i++) {
+                if (load_equip[i].id === load.item_id) {
+                    load_equip.splice(i, 1);
+                }
+            }
             load_equip.push({
                 "id": load.item_id,
                 "name": load.name,
@@ -122,6 +132,7 @@ if (body) {
     for(let i = 0; i < load_equip.length; i++) {
         suit_view += `${i + 1}, ${load_equip[i].name}, ${load_equip[i].id}\n`;
     }
+    suit_view = suit_view.substring(0, suit_view.length - 1);
     var success3 = $.setdata(suit_view, "bili_suit_view");
 
     if (success1 && pushMode) {
