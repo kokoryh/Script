@@ -56,11 +56,9 @@ if (body) {
         load_equip = [];
     }
     for (const skin of data.suit_items.skin) {
-        for (let i = 0; i < user_equip.length; i++) {
-            if (user_equip[i].id === skin.item_id) {
-                user_equip.splice(i, 1);
-            }
-        }
+        user_equip = user_equip.filter(item => {
+            return item.id !== skin.item_id;
+        })
         user_equip.push({
             "id": skin.item_id,
             "name": skin.name,
@@ -87,11 +85,9 @@ if (body) {
     }
     if (!noLoad && data.suit_items.loading) {
         for(const load of data.suit_items.loading) {
-            for (let i = 0; i < load_equip.length; i++) {
-                if (load_equip[i].id === load.item_id) {
-                    load_equip.splice(i, 1);
-                }
-            }
+            load_equip = load_equip.filter(item => {
+                return item.id !== load.item_id;
+            })
             load_equip.push({
                 "id": load.item_id,
                 "name": load.name,
@@ -123,7 +119,7 @@ if (body) {
     }
   
     // suit_view
-    var push_mode_notice = "\n你已开启装扮追加模式，以下为当前装扮总览：\n";
+    var push_mode_notice = "\n你已开启装扮追加模式，以下为装扮总览：\n";
     var suit_view = "------主题编号, 名称, ID------\n";
     for(let i = 0; i < user_equip.length; i++) {
         suit_view += `${i + 1}, ${user_equip[i].name}, ${user_equip[i].id}\n`;
