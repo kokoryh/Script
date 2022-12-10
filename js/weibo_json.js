@@ -6,7 +6,8 @@
 const mainConfig = {};
 const modifyTimeUrls = ['statuses/friends_timeline', 'statuses/unread_hot_timeline', 'groups/timeline'];
 const modifyOtherUrls = {
-	'ct=feed&a=trends': 'removeTopics'
+	'ct=feed&a=trends': 'removeTopics',
+	'user_center': 'modifiedUserCenter'
 }
 function getModifyMethod(url) {
 	for (const s of modifyTimeUrls) {
@@ -29,6 +30,13 @@ function removeTopics(data) {
 	// if(data.data.topics) 	   {delete data.data.topics;}
 	// if(data.data.discover)      {delete data.data.discover;}
 	if(data.data.order) {data.data.order = ["search_topic"]}
+	return data;
+}
+function modifiedUserCenter(data) {
+	if(!data.data) {
+		return data;
+	}
+	data.data.cards = Object.values(data.data.cards).filter(item => !(item.items[0].type === 'personal_vip'));
 	return data;
 }
 function isAd(data) {
