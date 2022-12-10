@@ -92,7 +92,7 @@ if (body) {
     }
     var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
     var success2 = false;
-    if (!noLoad && load_equip.length !== 0) {
+    if (!noLoad && data.suit_items.loading.length !== 0) {
         success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
     }
 
@@ -103,8 +103,8 @@ if (body) {
 
     var load_msg = "";
     if (noLoad) {
-        load_msg = "您已设置不提取加载动画";
-    } else if (load_equip.length === 0) {
+        load_msg = "你已设置不提取加载动画";
+    } else if (data.suit_items.loading.length === 0) {
         load_msg = "当前装扮不含加载动画";
     } else if (!success2) {
         load_msg = "获取加载动画失败 ‼️";
@@ -114,20 +114,20 @@ if (body) {
   
     // suit_view
     var push_mode_notice = "\n你已开启装扮追加模式，以下为当前装扮总览：\n";
-    var suit_view = "主题编号, 名称, ID\n";
-    for(let i = 0; i < user_equip.length; i++) {
+    var suit_view = "------主题编号, 名称, ID------\n";
+    for(let i = 1; i <= user_equip.length; i++) {
         suit_view += `${i}, ${user_equip[i].name}, ${user_equip[i].id}\n`;
     }
-    suit_view += "加载动画编号, 名称, ID\n";
-    for(let i = 0; i < load_equip.length; i++) {
+    suit_view += "------加载动画编号, 名称, ID------\n";
+    for(let i = 1; i <= load_equip.length; i++) {
         suit_view += `${i}, ${load_equip[i].name}, ${load_equip[i].id}\n`;
     }
     var success3 = $.setdata(suit_view, "bili_suit_view");
 
     if (success1 && pushMode) {
-        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice + load_num_notice + push_mode_notice + suit_view);
+        $.msg("获取装扮信息成功 🎉️", load_msg, data.name + skin_num_notice + load_num_notice + push_mode_notice + suit_view);
     } else if (success1) {
-        $.msg("获取装扮信息成功 🎉️", load_msg, user_equip[0].name + skin_num_notice + load_num_notice);
+        $.msg("获取装扮信息成功 🎉️", load_msg, data.name + skin_num_notice + load_num_notice);
     }else {
         $.msg("获取装扮信息失败 ‼️", load_msg, load_num_notice);
     }
