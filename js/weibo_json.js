@@ -33,7 +33,7 @@ function removeTopics(data) {
 	return data;
 }
 function modifiedUserCenter(data) {
-	if(!data.data) {
+	if(data.data.length === 0) {
 		return data;
 	}
 	data.data.cards = Object.values(data.data.cards).filter(item => !(item.items[0].type === 'personal_vip'));
