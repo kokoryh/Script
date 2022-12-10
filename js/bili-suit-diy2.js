@@ -1,3 +1,4 @@
+// 版本：1.6.9
 var obj = JSON.parse($response.body);
 if (!obj.data.skin_colors) {
     var user_equip = $prefs.valueForKey("bili_user_equip");
