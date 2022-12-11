@@ -59,10 +59,7 @@ if (typeof $response !== 'undefined') {
             load_equip = [];
         }
         for (const skin of data.suit_items.skin) {
-            user_equip = user_equip.filter(item => {
-                return item.id !== skin.item_id;
-            })
-            user_equip.push({
+            const new_skin = {
                 "id": skin.item_id,
                 "name": skin.name,
                 "preview": skin.properties.image_preview,
@@ -84,19 +81,18 @@ if (typeof $response !== 'undefined') {
                     "pub_btn_plus_color": skin.properties.pub_btn_plus_color || "",
                     "tail_icon_mode": skin.properties.tail_icon_mode || "img"
                 }
-            })
+            };
+            pushEquip(user_equip, new_skin);
         }
         if (!noLoad && data.suit_items.loading) {
             for(const load of data.suit_items.loading) {
-                load_equip = load_equip.filter(item => {
-                    return item.id !== load.item_id;
-                })
-                load_equip.push({
+                const new_load = {
                     "id": load.item_id,
                     "name": load.name,
                     "ver": load.properties.ver,
                     "loading_url": load.properties.loading_url
-                })
+                };
+                pushEquip(load_equip, new_load);
             }
         }
         var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
@@ -142,6 +138,20 @@ if (typeof $response !== 'undefined') {
     console.log(suit_view);
     $.setdata(suit_view, "bili_suit_view");
     $.done();
+}
+
+function pushEquip(equip_list, new_equip) {
+    let no_repeat = true;
+    for (let i = 0; i < equip_list.length; i++) {
+        if (equip_list[i].id === new_equip.id) {
+            no_repeat = false;
+            equip_list[i] = new_equip;
+            break;
+        }
+    }
+    if (no_repeat) {
+        equip_list.push(new_equip);
+    }
 }
 
 function getSuitView(user_equip, load_equip) {
