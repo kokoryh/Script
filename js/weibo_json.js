@@ -1,13 +1,13 @@
 /*
 修改自@ddgksf2013的微博国际版去广告脚本
 使趋势页更符合个人使用习惯
-将delete操作改为set
 */
 const mainConfig = {};
 const modifyTimeUrls = ['statuses/friends_timeline', 'statuses/unread_hot_timeline', 'groups/timeline'];
 const modifyOtherUrls = {
 	'ct=feed&a=trends': 'removeTopics',
-	'user_center': 'modifiedUserCenter'
+	'user_center': 'modifiedUserCenter',
+	'interface/sdk/sdkad.php': 'removePhpScreenAds'
 }
 function getModifyMethod(url) {
 	for (const s of modifyTimeUrls) {
@@ -37,6 +37,26 @@ function modifiedUserCenter(data) {
 		return data;
 	}
 	data.data.cards = Object.values(data.data.cards).filter(item => !(item.items[0].type === 'personal_vip'));
+	return data;
+}
+function removePhpScreenAds(data){
+	if(!data.ads || data.ads.length === 0){
+		return data;
+	}
+	data.show_push_splash_ad = false;
+	data.ads = [];
+	// data.background_delay_display_time = 24*60*60;
+	// data.lastAdShow_delay_display_time = 24*60*60*7;
+	// data.realtime_ad_video_stall_time  = 24*60*60;
+	// data.realtime_ad_timeout_duration  = 24*60*60*7;
+	// for (let item of data["ads"]) {
+    //     item["displaytime"]            = 0; 
+    //     item["displayintervel"]        = 24*60*60;;
+    //     item["allowdaydisplaynum"]     = 0; 
+	// 	item["displaynum"]             = 0;
+    //     item["begintime"]              = "2029-12-30 00:00:00";
+	// 	item["endtime"]                = "2029-12-30 23:59:59";
+    // }
 	return data;
 }
 function isAd(data) {
@@ -87,8 +107,14 @@ var url = $request.url;
 let method = getModifyMethod(url);
 if(method) {
 	var func = eval(method);
-	let data = JSON.parse(body);
-	new func(data);
-	body = JSON.stringify(data);
+	if(method === 'removePhpScreenAds') {
+		let data = JSON.parse(body.substring(0, body.length - 2));
+		new func(data);
+		body = JSON.stringify(data) + "OK";
+	} else {
+		let data = JSON.parse(body);
+		new func(data);
+		body = JSON.stringify(data);
+	}
 }
 $done({body});
