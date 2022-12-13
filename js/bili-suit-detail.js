@@ -97,19 +97,19 @@ if (typeof $response !== 'undefined') {
         }
         var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
         var success2 = false;
-        if (!noLoad && data.suit_items.loading.length !== 0) {
+        if (!noLoad && data.suit_items.loading && data.suit_items.loading.length !== 0) {
             success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
         }
 
         var skin_num_notice = "";
         var load_num_notice = "";
         if (data.suit_items.skin.length > 1) skin_num_notice = `，该装扮有${data.suit_items.skin.length}套主题，默认使用第1套，可前往boxjs修改`;
-        if (data.suit_items.loading.length > 1) load_num_notice = `\n该装扮有${data.suit_items.loading.length}个加载动画，默认使用第1个，可前往boxjs修改`;
+        if (data.suit_items.loading && data.suit_items.loading.length > 1) load_num_notice = `\n该装扮有${data.suit_items.loading.length}个加载动画，默认使用第1个，可前往boxjs修改`;
 
         var load_msg = "";
         if (noLoad) {
             load_msg = "你已设置不提取加载动画";
-        } else if (data.suit_items.loading.length === 0) {
+        } else if (!data.suit_items.loading || data.suit_items.loading.length === 0) {
             load_msg = "当前装扮不含加载动画";
         } else if (!success2) {
             load_msg = "获取加载动画失败 ‼️";
