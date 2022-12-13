@@ -44,19 +44,8 @@ function removePhpScreenAds(data){
 		return data;
 	}
 	data.show_push_splash_ad = false;
+	data.background_delay_display_time = 604800;
 	data.ads = [];
-	// data.background_delay_display_time = 24*60*60;
-	// data.lastAdShow_delay_display_time = 24*60*60*7;
-	// data.realtime_ad_video_stall_time  = 24*60*60;
-	// data.realtime_ad_timeout_duration  = 24*60*60*7;
-	// for (let item of data["ads"]) {
-    //     item["displaytime"]            = 0; 
-    //     item["displayintervel"]        = 24*60*60;;
-    //     item["allowdaydisplaynum"]     = 0; 
-	// 	item["displaynum"]             = 0;
-    //     item["begintime"]              = "2029-12-30 00:00:00";
-	// 	item["endtime"]                = "2029-12-30 23:59:59";
-    // }
 	return data;
 }
 function isAd(data) {
