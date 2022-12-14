@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.7.1
+版本：1.7.2
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -17,7 +17,7 @@ B站装扮diy
 7、如果只想让白色B站使用本脚本，而粉色B站不使用，请使用bili-suit-diy2.js
 8、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。仅适合有一定编程基础的人，小白请放弃此功能
    配置格式和各配置项含义请『自行体会』，作为挡住小白的门槛
-9、空间头图可以本地替换，但由于我用不到，且日常使用也看不到，因此不会实现此功能。有需要请自行实现
+9、空间头图和头像框均可以替换，但由于我用不到，因此不会实现此功能。有需要请自行实现
 10、引用请自行去掉前面的#号，用解析器解析的都给我滚
 
 ----------------
@@ -38,14 +38,13 @@ hostname = app.bilibili.com
 
 ----------------
 */
-
 const $ = new Env(`B站装扮信息提取`);
 if (typeof $response !== 'undefined') {
-    var noLoad = $.getdata("bili_no_load") === "true";
-    var pushMode = $.getdata("bili_suit_push") === "true";
     var body = $response.body;
     if (body) {
         var data = JSON.parse(body).data;
+        var noLoad = $.getdata("bili_no_load") === "true";
+        var pushMode = $.getdata("bili_suit_push") === "true";
         var user_equip;
         var load_equip;
         if (pushMode) {
