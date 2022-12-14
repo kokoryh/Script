@@ -3,11 +3,12 @@
 使趋势页更符合个人使用习惯
 */
 const mainConfig = {};
-const modifyTimeUrls = ['statuses/friends_timeline', 'statuses/unread_hot_timeline', 'groups/timeline'];
+const modifyTimeUrls = ['statuses/friends/timeline', 'statuses/friends_timeline', 'statuses/unread_friends_timeline', 'statuses/unread_hot_timeline'];
 const modifyOtherUrls = {
 	'ct=feed&a=trends': 'removeTopics',
 	'user_center': 'modifiedUserCenter',
-	'interface/sdk/sdkad.php': 'removePhpScreenAds'
+	'interface/sdk/sdkad.php': 'removePhpScreenAds',
+	'a=get_coopen_ads': 'removeIntlOpenAds'
 }
 function getModifyMethod(url) {
 	for (const s of modifyTimeUrls) {
@@ -46,6 +47,22 @@ function removePhpScreenAds(data){
 	data.show_push_splash_ad = false;
 	data.background_delay_display_time = 604800;
 	data.ads = [];
+	return data;
+}
+function removeIntlOpenAds(data) {
+	if(!data.data || data.data.length === 0) {
+		return data;
+	}
+	data.data.ad_list = [];
+	data.data.gdt_video_ad_ios = [];
+	data.data.display_ad = 0;
+	data.data.ad_ios_id = null;
+	data.data.app_ad_ios_id = null;
+	data.data.reserve_ad_ios_id = "";
+	data.data.reserve_app_ad_ios_id = "";
+	data.data.ad_duration = 604800;
+	data.data.ad_cd_interval = 604800;
+	data.data.pic_ad = [];
 	return data;
 }
 function isAd(data) {
