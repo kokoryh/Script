@@ -96,7 +96,7 @@ if (typeof $response !== 'undefined') {
         }
         var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
         var success2 = false;
-        if (!noLoad && data.suit_items.loading && data.suit_items.loading.length !== 0) {
+        if (!noLoad && data.suit_items.loading?.length) {
             success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
         }
 
@@ -108,7 +108,7 @@ if (typeof $response !== 'undefined') {
         var load_msg = "";
         if (noLoad) {
             load_msg = "你已设置不提取加载动画";
-        } else if (!data.suit_items.loading || data.suit_items.loading.length === 0) {
+        } else if (!data.suit_items.loading?.length) {
             load_msg = "当前装扮不含加载动画";
         } else if (!success2) {
             load_msg = "获取加载动画失败 ‼️";

@@ -24,7 +24,7 @@ function getModifyMethod(url) {
 	return null;
 }
 function removeTopics(data) {
-	if(!data.data || data.data.length === 0) {
+	if(!data.data?.length) {
 		return data;
 	}
 	// if(data.data.search_topic)  {delete data.data.search_topic;}
@@ -34,14 +34,14 @@ function removeTopics(data) {
 	return data;
 }
 function modifiedUserCenter(data) {
-	if(!data.data || data.data.length === 0) {
+	if(!data.data?.length) {
 		return data;
 	}
 	data.data.cards = Object.values(data.data.cards).filter(item => !(item.items[0].type === 'personal_vip'));
 	return data;
 }
 function removePhpScreenAds(data){
-	if(!data.ads || data.ads.length === 0){
+	if(!data.ads?.length){
 		return data;
 	}
 	data.show_push_splash_ad = false;
@@ -50,7 +50,7 @@ function removePhpScreenAds(data){
 	return data;
 }
 function removeIntlOpenAds(data) {
-	if(!data.data || data.data.length === 0) {
+	if(!data.data?.length) {
 		return data;
 	}
 	data.data.ad_list = [];
