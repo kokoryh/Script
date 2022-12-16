@@ -11,7 +11,7 @@ if (!obj.data.skin_colors) {
     var hour = new Date().getHours();
     if (hour >= 22 || hour < 7) {
         skin_num = 2;
-        load_num = 1;
+        load_num = 2;
     } else if (hour >= 18 && hour < 22) {
         skin_num = 1;
         load_num = 1;
