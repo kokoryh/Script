@@ -47,7 +47,7 @@
         "bili_suit_push",
         "bili_no_load",
         "bili_suit_view",
-        "@bili_suit.settings",
+        "@bili_suit.diy",
         "bili_user_equip",
         "bili_load_equip"
       ],
@@ -74,7 +74,7 @@
           "desc": "此选项为true时不提取加载动画"
         },
         {
-          "id": "@bili_suit.settings.skip_pink",
+          "id": "@bili_suit.diy.skip_pink",
           "name": "对粉色B站不生效",
           "val": false,
           "type": "boolean",
@@ -90,7 +90,7 @@
           "desc": "本栏仅供浏览，无实际意义"
         },
         {
-          "id": "bili_skin_num",
+          "id": "@bili_suit.diy.skin_num",
           "name": "使用第几套主题",
           "val": "1",
           "type": "text",
@@ -98,7 +98,7 @@
           "desc": "针对有多套主题的装扮，默认为1，只允许输入数字"
         },
         {
-          "id": "bili_load_num",
+          "id": "@bili_suit.diy.load_num",
           "name": "使用第几个加载动画",
           "val": "1",
           "type": "text",
@@ -110,6 +110,7 @@
           "name": "主题信息",
           "val": "",
           "type": "textarea",
+          "rows": 2,
           "placeholder": "",
           "desc": ""
         },
@@ -118,6 +119,7 @@
           "name": "加载动画信息",
           "val": "",
           "type": "textarea",
+          "rows": 2,
           "placeholder": "",
           "desc": "下拉出现的加载动画"
         }
