@@ -69,7 +69,7 @@ function setEquip(equip, equip_num, type, param) {
 
 function getNum(num, type) {
     if (!num) return 1;
-    else if (parseInt(num)) return num;
+    else if (parseInt(num) >= 0) return num;
     else return num.split(/;|；/)[type + 1].split(":")[0];
 }
 
