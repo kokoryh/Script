@@ -69,7 +69,7 @@ function setEquip(equip, equip_num, type, param) {
 function getNum(num, type) {
     if (!num) return 1;
     else if (parseInt(num)) return num;
-    else return num.split(";")[type + 1].split(":")[1];
+    else return num.split(";")[type + 1].split(":")[0];
 }
 
 // 判断是粉色B站还是白色B站, 0为粉色B站, 1为白色B站

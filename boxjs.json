@@ -5,7 +5,7 @@
   "repo": "https://github.com/kokoryh/Script/tree/master",
   "icon": "https://avatars.githubusercontent.com/u/75901403",
   "description": "该订阅兼容BoxJs以及QX Gallery",
-  "apps": 
+  "apps":
   [
     {
       "id": "MGClub",
@@ -23,7 +23,7 @@
       "keys": [
         "Cookie_MGClub"
       ]
-    }, 
+    },
     {
       "id": "BiliSuit",
       "name": "B站装扮监控",
@@ -48,7 +48,7 @@
           "desc": "多个装扮信息，如出现异常，请删除全部内容，避免直接编辑数据"
         }
       ]
-    }, 
+    },
     {
       "id": "BiliSuitDIY",
       "name": "装扮DIY",
@@ -106,7 +106,7 @@
           "val": "1",
           "type": "text",
           "placeholder": "",
-          "desc": "针对有多套主题的装扮，默认为1，只允许输入数字"
+          "desc": "针对有多套主题的装扮，默认为1\n允许为粉色B站和白色B站分别配置，示例：;1;2 表示粉色B站使用第一套，白色B站使用第二套"
         },
         {
           "id": "bili_load_num",
@@ -114,7 +114,7 @@
           "val": "1",
           "type": "text",
           "placeholder": "",
-          "desc": "针对有多个加载动画的装扮，默认为1，只允许输入数字"
+          "desc": "针对有多个加载动画的装扮，默认为1\n允许为粉色B站和白色B站分别配置，示例：;1;2 表示粉色B站使用第一个，白色B站使用第二个"
         },
         {
           "id": "bili_user_equip",
