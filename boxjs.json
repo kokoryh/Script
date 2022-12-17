@@ -62,7 +62,6 @@
       "keys": [
         "bili_suit_push",
         "bili_no_load",
-        "bili_skip_pink",
         "bili_suit_view",
         "bili_skin_num",
         "bili_load_num",
@@ -85,13 +84,6 @@
           "desc": "此选项为true时不提取加载动画"
         },
         {
-          "id": "bili_skip_pink",
-          "name": "对粉色B站不生效",
-          "val": false,
-          "type": "boolean",
-          "desc": "此选项为true时脚本对粉色B站不生效"
-        },
-        {
           "id": "bili_suit_view",
           "name": "装扮总览",
           "val": "",
@@ -106,7 +98,7 @@
           "val": "1",
           "type": "text",
           "placeholder": "",
-          "desc": "针对有多套主题的装扮，默认为1。允许为粉色B站和白色B站分别配置，示例：;1;2 表示粉色B站使用第1套，白色B站使用第2套"
+          "desc": "默认为1。填入0表示使用默认配置。可分别配置粉色和白色B站，示例：;1;2 表示粉色B站使用第1套，白色B站使用第2套"
         },
         {
           "id": "bili_load_num",
@@ -114,7 +106,7 @@
           "val": "1",
           "type": "text",
           "placeholder": "",
-          "desc": "针对有多个加载动画的装扮，默认为1。允许为粉色B站和白色B站分别配置，示例：;1;2 表示粉色B站使用第1个，白色B站使用第2个"
+          "desc": "默认为1。填入0表示使用默认配置。可分别配置粉色和白色B站，示例：;1;2 表示粉色B站使用第1个，白色B站使用第2个"
         },
         {
           "id": "bili_user_equip",
