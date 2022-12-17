@@ -1,27 +1,32 @@
 {
-    "id": "kokoryh.app.sub",
-    "name": "kokoryh 脚本订阅",
-    "description": "该订阅兼容BoxJs以及QX Gallery",
-    "author": "@kokoryh",
-    "icon": "https://avatars.githubusercontent.com/u/75901403",
-    "repo": "https://github.com/kokoryh/Script/tree/master",
-    "apps": [{
+  "id": "kokoryh.app.sub",
+  "name": "kokoryh 脚本订阅",
+  "author": "@kokoryh",
+  "repo": "https://github.com/kokoryh/Script/tree/master",
+  "icon": "https://avatars.githubusercontent.com/u/75901403",
+  "description": "该订阅兼容BoxJs以及QX Gallery",
+  "apps": 
+  [
+    {
       "id": "MGClub",
       "name": "毛怪俱乐部",
-      "keys": ["Cookie_MGClub"],
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
+      "icons": [
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png",
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"
+      ],
       "descs_html": [
         "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js\">脚本注释</a></h4>"
       ],
       "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js",
-      "author": "@kokoryh",
-      "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
-      "icons": ["https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png", "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"]
-    }, {
+      "keys": [
+        "Cookie_MGClub"
+      ]
+    }, 
+    {
       "id": "BiliSuit",
       "name": "B站装扮监控",
-      "keys": [
-        "bili_suit_list"
-      ],
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit.js",
       "icons": [
@@ -29,6 +34,9 @@
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
       ],
       "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js",
+      "keys": [
+        "bili_suit_list"
+      ],
       "settings": [
         {
           "id": "bili_suit_list",
@@ -40,23 +48,26 @@
           "desc": "多个装扮信息，如出现异常，请删除全部内容，避免直接编辑数据"
         }
       ]
-    }, {
+    }, 
+    {
       "id": "BiliSuitDIY",
       "name": "装扮DIY",
-      "keys": [
-        "bili_suit_push",
-        "bili_no_load",
-        "bili_suit_view",
-        "@bili_suit.diy",
-        "bili_user_equip",
-        "bili_load_equip"
-      ],
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-diy.js",
-      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js",
       "icons": [
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
+      ],
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js",
+      "keys": [
+        "bili_suit_push",
+        "bili_no_load",
+        "bili_skip_pink",
+        "bili_suit_view",
+        "bili_skin_num",
+        "bili_load_num",
+        "bili_user_equip",
+        "bili_load_equip"
       ],
       "settings": [
         {
@@ -74,7 +85,7 @@
           "desc": "此选项为true时不提取加载动画"
         },
         {
-          "id": "@bili_suit.diy.skip_pink",
+          "id": "bili_skip_pink",
           "name": "对粉色B站不生效",
           "val": false,
           "type": "boolean",
@@ -90,7 +101,7 @@
           "desc": "本栏仅供浏览，无实际意义"
         },
         {
-          "id": "@bili_suit.diy.skin_num",
+          "id": "bili_skin_num",
           "name": "使用第几套主题",
           "val": "1",
           "type": "text",
@@ -98,7 +109,7 @@
           "desc": "针对有多套主题的装扮，默认为1，只允许输入数字"
         },
         {
-          "id": "@bili_suit.diy.load_num",
+          "id": "bili_load_num",
           "name": "使用第几个加载动画",
           "val": "1",
           "type": "text",
@@ -110,7 +121,7 @@
           "name": "主题信息",
           "val": "",
           "type": "textarea",
-          "rows": 2,
+          "rows": 1,
           "placeholder": "",
           "desc": ""
         },
@@ -119,10 +130,11 @@
           "name": "加载动画信息",
           "val": "",
           "type": "textarea",
-          "rows": 2,
+          "rows": 1,
           "placeholder": "",
           "desc": "下拉出现的加载动画"
         }
       ]
-    }]
+    }
+  ]
 }
