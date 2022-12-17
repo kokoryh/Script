@@ -39,39 +39,41 @@ hostname = app.bilibili.com
 ----------------
 */
 var obj = JSON.parse($response.body);
+var type = getType(obj);
 var skip_pink = $prefs.valueForKey("bili_skip_pink") === "true";
-if (skip_pink && obj.data.skin_colors) {
+if (skip_pink && !type) {
     $done();
 } else {
     var user_equip = $prefs.valueForKey("bili_user_equip");
     var load_equip = $prefs.valueForKey("bili_load_equip");
-    if (user_equip) {
-        user_equip = JSON.parse(user_equip);
-        if (user_equip.length === 1) obj.data["user_equip"] = user_equip[0];
-        else {
-            var skin_num = parseInt($prefs.valueForKey("bili_skin_num") || 1);
-            if (skin_num > user_equip.length) {
-                obj.data["user_equip"] = user_equip[0];
-                $prefs.setValueForKey("1", "bili_skin_num");
-                $notify("bili_skin_num参数设置过大", "", "转为使用第1套主题，bili_skin_num已重置为1");
-            } else {
-                obj.data["user_equip"] = user_equip[skin_num - 1];
-            }
-        }
-    }
-    if (load_equip) {
-        load_equip = JSON.parse(load_equip);
-        if (load_equip.length === 1) obj.data["load_equip"] = load_equip[0];
-        else {
-            var load_num = parseInt($prefs.valueForKey("bili_load_num") || 1);
-            if (load_num > load_equip.length) {
-                obj.data["load_equip"] = load_equip[0];
-                $prefs.setValueForKey("1", "bili_load_num");
-                $notify("bili_load_num参数设置过大", "", "转为使用第1个加载动画，bili_load_num已重置为1");
-            } else {
-                obj.data["load_equip"] = load_equip[load_num - 1];
-            }
-        }
-    }
+    var skin_num = $prefs.valueForKey("bili_skin_num");
+    var load_num = $prefs.valueForKey("bili_load_num");
+    setEquip(user_equip, skin_num, type, "user_equip");
+    setEquip(load_equip, load_num, type, "load_equip");
     $done({body: JSON.stringify(obj)});
+}
+
+function setEquip(equip, num, type, param) {
+    if (equip) {
+        let new_equip = JSON.parse(equip);
+        let skin_num = getNum(num, type);
+        if (skin_num <= new_equip.length) {
+            obj.data[param] = new_equip[skin_num - 1];
+        } else {
+            obj.data[param] = new_equip[0];
+            $notify(`${param}参数设置过大`, "", "请检查BoxJs设置");
+        }
+    }
+}
+
+function getNum(num, type) {
+    if (!num) return 1;
+    else if (parseInt(num)) return num;
+    else return num.split(";")[type + 1].split(":")[1];
+}
+
+// 判断是粉色B站还是白色B站, 0为粉色B站, 1为白色B站
+function getType(obj) {
+    if (obj.data.skin_colors) return 0;
+    return 1;
 }
