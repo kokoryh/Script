@@ -75,7 +75,7 @@
         },
         {
           "id": "@bili_suit_settings.skip_pink",
-          "name": "脚本对粉色B站不生效",
+          "name": "对粉色B站不生效",
           "val": false,
           "type": "boolean",
           "desc": "此选项为true时脚本对粉色B站不生效"
