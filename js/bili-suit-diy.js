@@ -38,30 +38,30 @@ hostname = app.bilibili.com
 
 ----------------
 */
-var obj = JSON.parse($response.body);
-var type = getType(obj);
-var skip_pink = $prefs.valueForKey("bili_skip_pink") === "true";
+let obj = JSON.parse($response.body);
+let type = getType(obj);
+let skip_pink = $prefs.valueForKey("bili_skip_pink") === "true";
 if (skip_pink && !type) {
     $done();
 } else {
-    var user_equip = $prefs.valueForKey("bili_user_equip");
-    var load_equip = $prefs.valueForKey("bili_load_equip");
-    var skin_num = $prefs.valueForKey("bili_skin_num");
-    var load_num = $prefs.valueForKey("bili_load_num");
+    let user_equip = $prefs.valueForKey("bili_user_equip");
+    let load_equip = $prefs.valueForKey("bili_load_equip");
+    let skin_num = $prefs.valueForKey("bili_skin_num");
+    let load_num = $prefs.valueForKey("bili_load_num");
     setEquip(user_equip, skin_num, type, "user_equip");
     setEquip(load_equip, load_num, type, "load_equip");
     $done({body: JSON.stringify(obj)});
 }
 
-function setEquip(equip, num, type, param) {
+function setEquip(equip, equip_num, type, param) {
     if (equip) {
-        let new_equip = JSON.parse(equip);
-        let skin_num = getNum(num, type);
-        if (skin_num <= new_equip.length) {
-            obj.data[param] = new_equip[skin_num - 1];
+        let equip_list = JSON.parse(equip);
+        let num = getNum(equip_num, type);
+        if (num <= equip_list.length) {
+            obj.data[param] = equip_list[num - 1];
         } else {
-            obj.data[param] = new_equip[0];
-            $notify(`${param}参数设置过大`, "", "请检查BoxJs设置");
+            obj.data[param] = equip_list[0];
+            $notify(`参数设置过大`, "", "请检查BoxJs设置");
         }
     }
 }

@@ -40,13 +40,13 @@ hostname = app.bilibili.com
 */
 const $ = new Env(`B站装扮信息提取`);
 if (typeof $response !== 'undefined') {
-    var body = $response.body;
+    let body = $response.body;
     if (body) {
-        var data = JSON.parse(body).data;
-        var noLoad = $.getdata("bili_no_load") === "true";
-        var pushMode = $.getdata("bili_suit_push") === "true";
-        var user_equip;
-        var load_equip;
+        let data = JSON.parse(body).data;
+        let noLoad = $.getdata("bili_no_load") === "true";
+        let pushMode = $.getdata("bili_suit_push") === "true";
+        let user_equip;
+        let load_equip;
         if (pushMode) {
             user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
             load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
@@ -84,7 +84,7 @@ if (typeof $response !== 'undefined') {
             pushEquip(user_equip, new_skin);
         }
         if (!noLoad && data.suit_items.loading) {
-            for(const load of data.suit_items.loading) {
+            for (const load of data.suit_items.loading) {
                 const new_load = {
                     "id": load.item_id,
                     "name": load.name,
@@ -94,18 +94,18 @@ if (typeof $response !== 'undefined') {
                 pushEquip(load_equip, new_load);
             }
         }
-        var success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
-        var success2 = false;
+        let success1 = $.setdata(JSON.stringify(user_equip), "bili_user_equip");
+        let success2 = false;
         if (!noLoad && data.suit_items.loading?.length) {
             success2 = $.setdata(JSON.stringify(load_equip), "bili_load_equip");
         }
 
-        var skin_num_notice = "";
-        var load_num_notice = "";
+        let skin_num_notice = "";
+        let load_num_notice = "";
         if (data.suit_items.skin.length > 1) skin_num_notice = `，该装扮有${data.suit_items.skin.length}套主题，默认使用第1套，可前往boxjs修改`;
         if (data.suit_items.loading?.length > 1) load_num_notice = `\n该装扮有${data.suit_items.loading.length}个加载动画，默认使用第1个，可前往boxjs修改`;
 
-        var load_msg = "";
+        let load_msg = "";
         if (noLoad) {
             load_msg = "你已设置不提取加载动画";
         } else if (!data.suit_items.loading?.length) {
@@ -115,10 +115,9 @@ if (typeof $response !== 'undefined') {
         } else {
             load_msg = "获取加载动画成功 🎉️";
         }
-    
-        // suit_view
-        var push_mode_notice = "\n你已开启装扮追加模式，以下为装扮总览：\n";
-        var suit_view = getSuitView(user_equip, load_equip);
+
+        let push_mode_notice = "\n你已开启装扮追加模式，以下为装扮总览：\n";
+        let suit_view = getSuitView(user_equip, load_equip);
         $.setdata(suit_view, "bili_suit_view");
 
         if (success1 && pushMode) {
@@ -131,9 +130,9 @@ if (typeof $response !== 'undefined') {
     }
     $.done()
 } else {
-    var user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
-    var load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
-    var suit_view = getSuitView(user_equip, load_equip);
+    let user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
+    let load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');
+    let suit_view = getSuitView(user_equip, load_equip);
     console.log(suit_view);
     $.setdata(suit_view, "bili_suit_view");
     $.done();
@@ -154,12 +153,12 @@ function pushEquip(equip_list, new_equip) {
 }
 
 function getSuitView(user_equip, load_equip) {
-    var suit_view = "--------主题编号, 名称, ID--------\n";
-    for(let i = 0; i < user_equip.length; i++) {
+    let suit_view = "--------主题编号, 名称, ID--------\n";
+    for (let i = 0; i < user_equip.length; i++) {
         suit_view += `${i + 1}, ${user_equip[i].name}, ${user_equip[i].id}\n`;
     }
     suit_view += "--------加载动画编号, 名称, ID--------\n";
-    for(let i = 0; i < load_equip.length; i++) {
+    for (let i = 0; i < load_equip.length; i++) {
         suit_view += `${i + 1}, ${load_equip[i].name}, ${load_equip[i].id}\n`;
     }
     suit_view = suit_view.substring(0, suit_view.length - 1);
