@@ -47,7 +47,7 @@
         "bili_suit_push",
         "bili_no_load",
         "bili_suit_view",
-        "bili_suit_settings",
+        "@bili_suit.settings",
         "bili_user_equip",
         "bili_load_equip"
       ],
@@ -74,7 +74,7 @@
           "desc": "此选项为true时不提取加载动画"
         },
         {
-          "id": "bili_skip_pink",
+          "id": "@bili_suit.settings.skip_pink",
           "name": "对粉色B站不生效",
           "val": false,
           "type": "boolean",
