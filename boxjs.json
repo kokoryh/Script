@@ -65,6 +65,7 @@
         "bili_suit_view",
         "bili_skin_num",
         "bili_load_num",
+        "@bili_suit.loop",
         "bili_user_equip",
         "bili_load_equip"
       ],
@@ -107,6 +108,38 @@
           "type": "text",
           "placeholder": "",
           "desc": "默认为1。填入0表示不使用脚本修改。可分别配置粉色和白色B站，示例：;3;1 表示粉色B站使用第3个动画，白色B站使用第1个动画"
+        },
+        {
+          "id": "@bili_suit.loop.pink_skin",
+          "name": "粉色B站主题切换顺序",
+          "val": "1",
+          "type": "text",
+          "placeholder": "",
+          "desc": "默认为1。按照填入的编号顺序进行循环切换，示例：1,3 表示按照编号1，3的顺序循环切换主题"
+        },
+        {
+          "id": "@bili_suit.loop.pink_load",
+          "name": "粉色B站加载动画切换顺序",
+          "val": "1",
+          "type": "text",
+          "placeholder": "",
+          "desc": "默认为1。按照填入的编号顺序进行循环切换，示例：1,3,1 表示按照编号1，3，1的顺序切换加载动画"
+        },
+        {
+          "id": "@bili_suit.loop.white_skin",
+          "name": "白色B站主题切换顺序",
+          "val": "1",
+          "type": "text",
+          "placeholder": "",
+          "desc": "默认为1。按照填入的编号顺序进行循环切换，示例：2 表示固定主题为编号2"
+        },
+        {
+          "id": "@bili_suit.loop.white_load",
+          "name": "白色B站加载动画切换顺序",
+          "val": "1",
+          "type": "text",
+          "placeholder": "",
+          "desc": "默认为1。按照填入的编号顺序进行循环切换，示例：1,3,3 表示按照编号1，3，3的顺序切换加载动画"
         },
         {
           "id": "bili_user_equip",
