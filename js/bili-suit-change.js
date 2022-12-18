@@ -47,16 +47,17 @@ let loop_data = bili_suit ? JSON.parse(bili_suit).loop : {
     "pink_load": "1,3,5",
     "white_skin": "1,4",
     "white_load": "3"
-}
+};
 let pink_skin = handleData(loop_data.pink_skin.trim());
 let pink_load = handleData(loop_data.pink_load.trim());
 let white_skin = handleData(loop_data.white_skin.trim());
 let white_load = handleData(loop_data.white_load.trim());
 let new_skin_num = handleNum(bili_skin_num, pink_skin, white_skin);
 let new_load_num = handleNum(bili_load_num, pink_load, white_load);
+getNext5Data(new_skin_num, new_load_num, pink_skin, pink_load, white_skin, white_load);
 $prefs.setValueForKey(new_skin_num, "bili_skin_num");
 $prefs.setValueForKey(new_load_num, "bili_load_num");
-getNext5Data(new_skin_num, new_load_num, pink_skin, pink_load, white_skin, white_load);
+$done();
 
 function getNext5Data(skin_num, load_num, pink_skin, pink_load, white_skin, white_load) {
     let sn = skin_num;
@@ -69,7 +70,7 @@ function getNext5Data(skin_num, load_num, pink_skin, pink_load, white_skin, whit
         let pl = ln.split(";")[1].split(":")[0];
         let ws = sn.split(";")[2].split(":")[0];
         let wl = ln.split(";")[2].split(":")[0];
-        log += `第${i + 1}次   主题${ps},加载动画${pl}    主题${ws},加载动画${wl}\n`
+        log += `第${i + 1}次   主题${ps},加载动画${pl}    主题${ws},加载动画${wl}\n`;
         // console.log(sn + "   " + ln);
     }
     console.log(log);
@@ -83,9 +84,9 @@ function handleNum(num, pink_item, white_item) {
         else pink_index = 0;
         if (white_index < white_item.length - 1) white_index++;
         else white_index = 0;
-        return `;${pink_item[pink_index]}:${pink_index};${white_item[white_index]}:${white_index}`
+        return `;${pink_item[pink_index]}:${pink_index};${white_item[white_index]}:${white_index}`;
     } else {
-        return `;${pink_item[0]}:0;${white_item[0]}:0`
+        return `;${pink_item[0]}:0;${white_item[0]}:0`;
     }
 }
 
