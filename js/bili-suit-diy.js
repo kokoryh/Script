@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.8.0
+版本：1.8.1
 脚本兼容: Quantumult X
 作者：@kokoryh
 
@@ -13,7 +13,7 @@ B站装扮diy
 3、如果不想提取加载动画，可在boxjs中将『不提取加载动画』开关打开
 4、如果想保留原有装扮，可在boxjs中将『装扮追加』开关打开
 5、如果有多套主题，可在boxjs中填入『使用第几套主题』，加载动画同理。填写前请仔细阅读该选项下的简介
-6、装扮的定时切换请按照定时脚本的要求正确配置
+6、装扮的定时切换请按照定时脚本的要求正确配置。配置cron-计算一次循环有几次-前往boxjs填写『切换顺序』
 7、粉色B站和白色B站均可使用本脚本
 8、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。仅适合有一定编程基础的人，配置格式和各配置项含义请『自行体会』，作为挡住小白的门槛
 9、空间头图和头像框均可以替换，但由于我用不到，因此不会实现此功能。有需要请自行实现
@@ -57,7 +57,7 @@ if (body) {
 function setEquip(equip, equip_num, type, param) {
     if (equip) {
         let equip_list = JSON.parse(equip);
-        let num = getNum(equip_num, type);
+        let num = getNum(equip_num.trim(), type);
         if (num === "0") {}
         else if (num <= equip_list.length) {
             obj.data[param] = equip_list[num - 1];

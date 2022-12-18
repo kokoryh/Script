@@ -111,7 +111,7 @@
         },
         {
           "id": "@bili_suit.loop.pink_skin",
-          "name": "粉色B站主题切换顺序",
+          "name": "粉色B站-主题切换顺序",
           "val": "1",
           "type": "text",
           "placeholder": "",
@@ -119,7 +119,7 @@
         },
         {
           "id": "@bili_suit.loop.pink_load",
-          "name": "粉色B站加载动画切换顺序",
+          "name": "粉色B站-加载动画切换顺序",
           "val": "1",
           "type": "text",
           "placeholder": "",
@@ -127,7 +127,7 @@
         },
         {
           "id": "@bili_suit.loop.white_skin",
-          "name": "白色B站主题切换顺序",
+          "name": "白色B站-主题切换顺序",
           "val": "1",
           "type": "text",
           "placeholder": "",
@@ -135,7 +135,7 @@
         },
         {
           "id": "@bili_suit.loop.white_load",
-          "name": "白色B站加载动画切换顺序",
+          "name": "白色B站-加载动画切换顺序",
           "val": "1",
           "type": "text",
           "placeholder": "",
