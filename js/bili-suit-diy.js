@@ -58,20 +58,20 @@ function setEquip(equip, equip_num, type, param) {
     if (equip) {
         let equip_list = JSON.parse(equip);
         let num = getNum(equip_num.trim(), type);
-        if (num === "0") {}
-        else if (num <= equip_list.length) {
+        if (num === 0) {
+        } else if (num <= equip_list.length) {
             obj.data[param] = equip_list[num - 1];
         } else {
-            obj.data[param] = equip_list[0];
             $notify("B站装扮DIY", "", "参数设置过大，请检查BoxJs设置");
+            obj.data[param] = equip_list[0];
         }
     }
 }
 
 function getNum(num, type) {
     if (!num) return 1;
-    else if (parseInt(num) >= 0) return num;
-    else if (/([;；]\d+(:\d+)?){2}/.test(num)) return num.split(/;|；/)[type + 1].split(":")[0];
+    else if (parseInt(num) >= 0) return parseInt(num);
+    else if (/([;；]\d+(:\d+)?){2}/.test(num)) return parseInt(num.split(/;|；/)[type + 1].split(":")[0]);
     else {
         $notify("B站装扮DIY", "", "参数格式非法，请检查BoxJs设置");
         return 1;
