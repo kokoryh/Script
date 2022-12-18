@@ -41,7 +41,7 @@ hostname = app.bilibili.com
 */
 let body = $response.body;
 if (body) {
-    let obj = JSON.parse(body);
+    var obj = JSON.parse(body);
     let type = getType(obj);
     let user_equip = $prefs.valueForKey("bili_user_equip");
     let load_equip = $prefs.valueForKey("bili_load_equip");
