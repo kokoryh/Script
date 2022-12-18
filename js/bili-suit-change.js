@@ -43,10 +43,10 @@ let bili_skin_num = $prefs.valueForKey("bili_skin_num");
 let bili_load_num = $prefs.valueForKey("bili_load_num");
 let bili_suit = $prefs.valueForKey("bili_suit");
 let loop_data = bili_suit ? JSON.parse(bili_suit).loop : {
-    "pink_skin": "1,2,3,4,5",
-    "pink_load": "1,3,5",
-    "white_skin": "1,4",
-    "white_load": "3"
+    "pink_skin": "1",
+    "pink_load": "1",
+    "white_skin": "1",
+    "white_load": "1"
 };
 let pink_skin = handleData(loop_data.pink_skin.trim());
 let pink_load = handleData(loop_data.pink_load.trim());
@@ -62,15 +62,15 @@ $done();
 function getNext5Data(skin_num, load_num, pink_skin, pink_load, white_skin, white_load) {
     let sn = skin_num;
     let ln = load_num;
-    let log = "后续5次更换顺序如下：\n        粉色B站            白色B站\n";
-    for (let i = 0; i < 5; i++) {
-        sn = handleNum(sn, pink_skin, white_skin);
-        ln = handleNum(ln, pink_load, white_load);
+    let log = "后续5次更换顺序如下(第0次为当前配置)：\n        粉色B站            白色B站\n";
+    for (let i = 0; i < 6; i++) {
         let ps = sn.split(";")[1].split(":")[0];
         let pl = ln.split(";")[1].split(":")[0];
         let ws = sn.split(";")[2].split(":")[0];
         let wl = ln.split(";")[2].split(":")[0];
         log += `第${i + 1}次   主题${ps},加载动画${pl}    主题${ws},加载动画${wl}\n`;
+        sn = handleNum(sn, pink_skin, white_skin);
+        ln = handleNum(ln, pink_load, white_load);
         // console.log(sn + "   " + ln);
     }
     console.log(log);
