@@ -68,7 +68,7 @@ function getNext5Data(skin_num, load_num, pink_skin, pink_load, white_skin, whit
         let pl = ln.split(";")[1].split(":")[0];
         let ws = sn.split(";")[2].split(":")[0];
         let wl = ln.split(";")[2].split(":")[0];
-        log += `第${i + 1}次   主题${ps},加载动画${pl}    主题${ws},加载动画${wl}\n`;
+        log += `第${i}次   主题${ps},加载动画${pl}    主题${ws},加载动画${wl}\n`;
         sn = handleNum(sn, pink_skin, white_skin);
         ln = handleNum(ln, pink_load, white_load);
         // console.log(sn + "   " + ln);
