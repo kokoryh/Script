@@ -59,6 +59,8 @@ function setEquip(equip, equip_num, type, param) {
         let equip_list = JSON.parse(equip);
         let num = getNum(equip_num.trim(), type);
         if (num === 0) {
+        } else if (equip_list.length === 1) {
+            obj.data[param] = equip_list[0];
         } else if (num <= equip_list.length) {
             obj.data[param] = equip_list[num - 1];
         } else {
