@@ -35,9 +35,17 @@
       ],
       "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js",
       "keys": [
+        "bili_get_list",
         "bili_suit_list"
       ],
       "settings": [
+        {
+          "id": "bili_get_list",
+          "name": "获取数据",
+          "val": false,
+          "type": "boolean",
+          "desc": "此选项为true时为装扮监控获取数据，为false时为装扮DIY获取数据"
+        },
         {
           "id": "bili_suit_list",
           "name": "装扮列表",

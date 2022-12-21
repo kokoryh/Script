@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.8.2
+版本：1.8.3
 脚本兼容: Quantumult X
 作者：@kokoryh
 
