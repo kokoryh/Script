@@ -48,6 +48,7 @@ const $ = new Env(`B站装扮信息提取`);
 if (typeof $response !== 'undefined') {
     let getSuitList = $.getdata("bili_get_list") === "true";
     if (getSuitList) {
+        const suitList = JSON.parse($.getdata("bili_suit_list") || '{}');
         getSuitInfo();
     }
     let body = $response.body;
@@ -176,12 +177,12 @@ function getSuitView(user_equip, load_equip) {
 }
 
 function getSuitInfo() {
-    var body = $response.body;
+    let body = $response.body;
     if (body) {
-        var data = JSON.parse(body).data;
+        let data = JSON.parse(body).data;
         if (data) {
             suitList[data.name] = [data.item_id, 0];
-            var success = $.setdata(JSON.stringify(suitList), "bili_suit_list");
+            let success = $.setdata(JSON.stringify(suitList), "bili_suit_list");
             if (!success) {
                 $.msg("更新装扮列表失败 ‼️", "", "");
             } else {
