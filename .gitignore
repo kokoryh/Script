@@ -24,5 +24,10 @@ yarn-error.log*
 *.sln
 *.sw?
 
-/js/test.js
 装扮定制
+/js/test.js
+/Clash/c*.yaml
+/QuantumultX/ip*
+/Stash/*main.yaml
+/Surge/final*
+/Surge/参考配置
