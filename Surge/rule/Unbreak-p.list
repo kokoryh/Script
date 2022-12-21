@@ -1,6 +1,6 @@
 # 机场
 DOMAIN,rss.teacat001.xyz
-DOMAIN,dy.sooos.cc
+DOMAIN,dy.wangchen.xyz
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 
 # Steam(ios端专用)
@@ -34,7 +34,7 @@ DOMAIN-SUFFIX,notion.so
 # codeberg
 DOMAIN-SUFFIX,codeberg.org
 
-# 代理软件
+# 代理软件激活检测
 DOMAIN,receiptcheck.quantumult.app
 DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,nssurge.com
