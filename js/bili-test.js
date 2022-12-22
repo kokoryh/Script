@@ -75,6 +75,7 @@ if(url.includes("Dynamic/DynAll")){
     // console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
+    console.log(JSON.stringify(viewReplyObj));
     if(!viewReplyObj.cms?.length){
         // console.log('cms为空');
     } else {
