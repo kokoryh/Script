@@ -1,5 +1,5 @@
 # Bilibili
-DOMAIN,grpc.biliapi.net
+# DOMAIN,grpc.biliapi.net
 IP-CIDR,203.107.1.1/24,no-resolve
 
 # 贴吧屏蔽域名dns查询
