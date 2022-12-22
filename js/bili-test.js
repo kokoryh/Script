@@ -136,10 +136,10 @@ if(url.includes("Dynamic/DynAll")){
         body = processNewBody(viewReplyType.encode(viewReplyObj).finish());
     }
 } else if(url.includes("PlayURL/PlayView")){
-    // console.log('PlayURL/PlayView/View');
+    console.log('PlayURL/PlayView/View');
     const playViewReplyType = biliRoot.lookupType("bilibili.app.playurl.PlayViewReply");
     let playViewReplyObj = playViewReplyType.decode(unGzipBody);
-    console.log(playViewReplyObj);
+    console.log(JSON.stringify(playViewReplyObj));
     const oldBackgroundConf = playViewReplyObj.playArc?.backgroundPlayConf;
     if(oldBackgroundConf && (!oldBackgroundConf.isSupport || oldBackgroundConf.disabled)){
         // console.log(`后台播放限制去除`);
