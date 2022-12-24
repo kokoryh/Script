@@ -1,3 +1,5 @@
+// 快捷指令似乎无法发起api请求，请勿使用此脚本
+
 let $ = kokoryh();
 SwitchRegion().then(() => $done());
 
