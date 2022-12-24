@@ -168,6 +168,64 @@
           "desc": "下拉出现的加载动画"
         }
       ]
+    },
+    {
+      "id": "AppstoreAutoSwitch",
+      "name": "Appstore策略自动切换",
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/appstore-switch.js",
+      "icons": [
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/appstore.png",
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/appstore.png"
+      ],
+      "keys": [
+        "Appstore_Notify",
+        "Appstore_Policy",
+        "Appstore_Direct",
+        "Appstore_Proxy",
+        "Appstore_Disabled"
+      ],
+      "settings": [
+        {
+          "id": "Appstore_Notify",
+          "name": "静默运行",
+          "val": false,
+          "type": "boolean",
+          "desc": "开启后将不再发出切换策略通知"
+        },
+        {
+          "id": "Appstore_Policy",
+          "name": "策略组名",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "Appstore分流的策略组名"
+        },
+        {
+          "id": "Appstore_Direct",
+          "name": "中国大陆-子策略名",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "Appstore分流策略组里的中国大陆子策略组名"
+        },
+        {
+          "id": "Appstore_Proxy",
+          "name": "代理-子策略名",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "Appstore分流策略组里的代理子策略组名"
+        },
+        {
+          "id": "Appstore_Disabled",
+          "name": "WiFi黑名单",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "WiFi名称以逗号分隔，名单内将跳过策略切换"
+        }
+      ]
     }
   ]
 }
