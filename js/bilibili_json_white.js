@@ -1,12 +1,8 @@
-/*
-修改自@ddgksf2013的B站去广告脚本
-*/
-
 const scriptName = "BiliBili";
 const storyAidKey = "bilibili_story_aid";
 const blackKey = "bilibili_feed_black";
 let magicJS = MagicJS(scriptName, "INFO");
-//Customize blacklist
+// Customize blacklist
 let blacklist = [];
 if (magicJS.read(blackKey)) {
     blacklist = magicJS.read(blackKey).split(";");

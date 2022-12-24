@@ -139,7 +139,7 @@ if (typeof $response !== 'undefined') {
             $.msg("获取装扮信息失败 ‼️", load_msg, load_num_notice);
         }
     }
-    $.done()
+    $.done();
 } else {
     let user_equip = JSON.parse($.getdata("bili_user_equip") || '[]');
     let load_equip = JSON.parse($.getdata("bili_load_equip") || '[]');

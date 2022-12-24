@@ -32,9 +32,9 @@ const $ = new Env(`毛怪俱乐部`);
 const cookie = $.getdata("Cookie_MGClub") || ''; // 毛怪俱乐部Cookie
 
 if (typeof $request !== 'undefined') {
-    getCookie()
+    getCookie();
 } else {
-    checkin()
+    checkin();
 }
 
 function checkin() {
