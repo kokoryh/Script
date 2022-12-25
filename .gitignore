@@ -1,10 +1,6 @@
 装扮定制
-/js/dev/test.js
-/Clash/c*.yaml
-/QuantumultX/ip*
-/Stash/*main.yaml
-/Surge/final*
 /Surge/参考配置
+/js/dev/test.js
 
 .DS_Store
 node_modules
