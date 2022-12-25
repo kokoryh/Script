@@ -119,7 +119,7 @@ proxy-providers:
     path: ./Proxy/ProxyList.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 
   HK:
@@ -128,7 +128,7 @@ proxy-providers:
     path: ./Proxy/ProxyList.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 
   TW:
@@ -137,7 +137,7 @@ proxy-providers:
     path: ./Proxy/ProxyList.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 
   JP:
@@ -146,7 +146,7 @@ proxy-providers:
     path: ./Proxy/ProxyList.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 
   US:
@@ -155,7 +155,7 @@ proxy-providers:
     path: ./Proxy/ProxyList.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 
 proxy-groups:
@@ -222,7 +222,7 @@ proxy-groups:
     use: 
       - ProxyList
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 3600
 
   - name: "🇭🇰 香港节点"
     type: url-test
@@ -231,7 +231,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 3600
 
   - name: "🇹🇼 台湾节点"
     type: url-test
@@ -240,7 +240,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 3600
 
   - name: "🇯🇵 日本节点"
     type: url-test
@@ -249,7 +249,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 3600
 
   - name: "🇺🇸 美国节点"
     type: url-test
@@ -258,7 +258,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 3600
 
 rule-providers:
   Unbreak:
@@ -266,63 +266,63 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Unbreak.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
-    interval: 86400
+    interval: 172800
 
   Steam:
     type: http
     behavior: classical
     path: ./RuleSet/Steam.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
-    interval: 86400
+    interval: 172800
 
   OneDrive:
     type: http
     behavior: classical
     path: ./RuleSet/OneDrive.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
-    interval: 86400
+    interval: 172800
 
   DMM:
     type: http
     behavior: classical
     path: ./RuleSet/DMM.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Video/DMM.yaml
-    interval: 86400
+    interval: 172800
 
   Streaming:
     type: http
     behavior: classical
     path: ./RuleSet/Streaming.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
-    interval: 86400
+    interval: 172800
 
   Global:
     type: http
     behavior: classical
     path: ./RuleSet/Global.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Global.yaml
-    interval: 86400
+    interval: 172800
 
   Bilibili:
     type: http
     behavior: classical
     path: ./RuleSet/StreamingSE.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
-    interval: 86400
+    interval: 172800
 
   China:
     type: http
     behavior: classical
     path: ./RuleSet/China.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/China.yaml
-    interval: 86400
+    interval: 172800
 
   LAN:
     type: http
     behavior: classical
     path: ./RuleSet/LAN.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/main/Rulesets/Clash/Basic/LAN.yaml
-    interval: 86400
+    interval: 172800
 
 rules:
   - RULE-SET,Unbreak,DIRECT
