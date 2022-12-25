@@ -62,7 +62,9 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('最常访问upList去除');
     }
 
-    if (!dynAllReplyObj.dynamicList?.list?.length) {
+    if (isIpad) {
+        console.log('ipad不处理动态列表');
+    } else if (!dynAllReplyObj.dynamicList?.list?.length) {
         console.log('动态列表list为空');
     } else {
         let adCount = 0;
@@ -85,6 +87,15 @@ if (url.includes("Dynamic/DynAll")) {
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
+
+    // if(!viewReplyObj.cmIpad || !Object.keys(viewReplyObj.cmIpad).length){
+    //     console.log('cmIpad为空');
+    // } else {
+    //     needProcessFlag = true;
+    //     viewReplyObj.cmIpad = {};
+    //     console.log(`去除相关推荐上方广告`);
+    // }
+
     if (!viewReplyObj.cms?.length) {
         console.log('cms为空');
     } else {
