@@ -5,11 +5,10 @@
   "repo": "https://github.com/kokoryh/Script/tree/master",
   "icon": "https://avatars.githubusercontent.com/u/75901403",
   "description": "该订阅兼容BoxJs以及QX Gallery",
-  "apps":
-  [
+  "apps": [
     {
-      "id": "MGClub",
       "name": "毛怪俱乐部",
+      "id": "MGClub",
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
       "icons": [
@@ -25,8 +24,8 @@
       ]
     },
     {
-      "id": "BiliSuit",
       "name": "B站装扮监控",
+      "id": "BiliSuit",
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit.js",
       "icons": [
@@ -58,8 +57,8 @@
       ]
     },
     {
-      "id": "BiliSuitDIY",
       "name": "装扮DIY",
+      "id": "BiliSuitDIY",
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-suit-diy.js",
       "icons": [
@@ -170,8 +169,8 @@
       ]
     },
     {
-      "id": "AppstoreAutoSwitch",
       "name": "Appstore策略自动切换",
+      "id": "AppstoreAutoSwitch",
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/appstore-switch.js",
       "icons": [

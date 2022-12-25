@@ -1,10 +1,1 @@
-var obj = JSON.parse($response.body);
-if (obj.materialsList) {
-    if (obj.materialsList.length === 1) {
-        obj.materialsList[0].filePath = "";
-        obj.advertParam.skipTime = 10;
-    } else if (obj.materialsList.length > 1) {
-        obj.materialsList = [{}];
-    }
-}
-$done({body: JSON.stringify(obj)});
+var obj=JSON.parse($response.body);obj.materialsList&&(1===obj.materialsList.length?(obj.materialsList[0].filePath="",obj.advertParam.skipTime=10):1<obj.materialsList.length&&(obj.materialsList=[{}])),$done({body:JSON.stringify(obj)});
