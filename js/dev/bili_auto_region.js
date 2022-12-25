@@ -153,20 +153,6 @@ function nobyda() {
             })
         }
     }
-    const get = (options, callback) => {
-        if (isQuanX) {
-            options["method"] = "GET";
-            $task.fetch(options).then(response => {
-                callback(null, adapterStatus(response), response.body)
-            }, reason => callback(reason.error, null, null))
-        }
-        if (isHTTP) {
-            if (isSurge) options.headers['X-Surge-Skip-Scripting'] = false;
-            $httpClient.get(options, (error, response, body) => {
-                callback(error, adapterStatus(response), body)
-            })
-        }
-    }
     return {
         getPolicy,
         setPolicy,
@@ -174,7 +160,6 @@ function nobyda() {
         isQuanX,
         notify,
         read,
-        ssid,
-        get
+        ssid
     }
 }
