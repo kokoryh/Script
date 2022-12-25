@@ -7,13 +7,16 @@ const biliJson = {"nested":{"bilibili":{"nested":{"ad":{"nested":{"v1":{"options
 console.log(`b站proto-2022.11.18`);
 const url = $request.url;
 const method = $request.method;
-const requestHeader = $request.headers;
-console.log(JSON.stringify(requestHeader));
-let isIpad = false;
-if (/ipad/i.test(requestHeader["user-agent"])) isIpad = true;
 let headers = $response.headers;
 const isQuanX = typeof $task !== "undefined";
 const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.body;
+
+const requestHeader = $request.headers;
+console.log(JSON.stringify(requestHeader));
+let isIpad = false;
+let ua = isQuanX ? "User-Agent" : "user-agent";
+if (/ipad/i.test(requestHeader[ua])) isIpad = true;
+
 let gzipStrName = 'grpc-encoding';
 if (!headers[gzipStrName]) {
     // Loon QX做调整
