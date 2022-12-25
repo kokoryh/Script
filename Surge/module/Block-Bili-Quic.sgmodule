@@ -1,5 +1,0 @@
-#!name=Block Bilibili Quic
-#!desc=屏蔽4483与9305端口的BiliBili的QUIC CDN
-
-[Rule]
-AND,((PROTOCOL,UDP),(OR,((DEST-PORT,4483),(DEST-PORT,9305)))),REJECT-NO-DROP

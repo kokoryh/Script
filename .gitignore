@@ -1,3 +1,11 @@
+装扮定制
+/js/test.js
+/Clash/c*.yaml
+/QuantumultX/ip*
+/Stash/*main.yaml
+/Surge/final*
+/Surge/参考配置
+
 .DS_Store
 node_modules
 /dist
@@ -23,11 +31,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-装扮定制
-/js/test.js
-/Clash/c*.yaml
-/QuantumultX/ip*
-/Stash/*main.yaml
-/Surge/final*
-/Surge/参考配置
