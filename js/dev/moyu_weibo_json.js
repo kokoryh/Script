@@ -3,7 +3,7 @@
  > 应用名称：墨鱼自用QX微博&微博国际版净化
  > 脚本作者：@Zmqcherish, @Cuttlefish
  > 微信账号：墨鱼手记
- > 更新时间：2022-12-24
+ > 更新时间：2022-12-25
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 原作者库：https://github.com/zmqcherish
@@ -23,7 +23,7 @@
 
 
 
-const version = 'V2.0.64';
+const version = 'V2.0.65';
 
 const mainConfig = {
         isDebug: !1,
@@ -188,7 +188,7 @@ function removeSearchMain(e) {
 }
 
 function checkSearchWindow(e) {
-    return !!mainConfig.removeSearchWindow && "card" == e.category && (e.data?.itemid == "finder_window" || e.data?.itemid == "more_frame" || e.data?.card_type == 208 || e.data?.card_type == 19 || e.data?.mblog?.page_info?.actionlog?.source?.includes("ad"))
+    return !!mainConfig.removeSearchWindow && "card" == e.category && (e.data?.itemid == "hot_search_push" || e.data?.itemid == "finder_window" || e.data?.itemid == "more_frame" || e.data?.card_type == 208 || e.data?.card_type == 19 || e.data?.mblog?.page_info?.actionlog?.source?.includes("ad"))
 }
 
 function removeSearch(e) {
