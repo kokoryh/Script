@@ -16,7 +16,7 @@ function EnvInfo() {
                     Location: url
                 },
                 body: "{}"
-            }) : $done());
+            }) : $done({body: JSON.stringify(raw)}));
     } else {
         const res = {
             url: url.replace(/%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&/g, '&')
