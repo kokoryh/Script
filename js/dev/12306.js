@@ -4,7 +4,8 @@ if (obj.materialsList) {
         obj.materialsList[0].filePath = "";
         obj.advertParam.skipTime = 10;
         obj.advertParam.skipTimeAgain = 5;
-        obj.advertParam.showSkipBtn = -1;
+        obj.advertParam.showSkipBtn = 0;
+        obj.advertParam.displayNumDi = 0;
     } else if (obj.materialsList.length > 1) {
         obj.materialsList = [{}];
     }
