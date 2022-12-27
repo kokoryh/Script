@@ -66,7 +66,7 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('动态列表list为空');
     } else {
         let adCount = 0;
-        let adRegex = [/拼多多.*补贴/, /互动抽奖/];
+        let adRegex = [/拼多多.*补贴/];
         let whiteRegex = [/互动抽奖/];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             if (item.cardType === 15) {
@@ -74,11 +74,11 @@ if (url.includes("Dynamic/DynAll")) {
                 return false;
             }
             let content = JSON.stringify(item.extend.origDesc);
-            // for (const regex of whiteRegex) {
-            //     if (regex.test(content)) {
-            //         return true;
-            //     }
-            // }
+            for (const regex of whiteRegex) {
+                if (regex.test(content)) {
+                    return true;
+                }
+            }
             for (const regex of adRegex) {
                 if (regex.test(content)) {
                     adCount++;
