@@ -973,15 +973,15 @@ function ALPN_Handle(cnt,palpn) {
 }
 
 function Mock2QXReject(row) {
-  if (/blank.*dict/.test(row)) {
+  if (/dict/.test(row)) {
     return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-dict"
-  } else if (/blank.*array/.test(row)) {
+  } else if (/array/.test(row)) {
     return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-array"
-  } else if (/blank.*(png|jpg|gif)/.test(row)) {
-    return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-img"
-  } else if (/blank.*(html|txt)/.test(row)) {
+  } else if (/(txt|html)/.test(row)) {
     return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-200"
-  }
+  } else if (/(png|jpg|gif)/.test(row)) {
+    return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-img"
+  } 
 }
 
 //url-regex 转换成 Quantumult X
@@ -997,7 +997,7 @@ function URX2QX(subs) {
         if (subs[i].slice(0, 9) == "URL-REGEX") {  // regex 类型
             rw = subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1] + " url " + "reject-200"
             nrw.push(rw)
-        } else if (/data=.+blank/.test(subs[i]) && subs.indexOf("[Map Local]") != -1) {
+        } else if (/data=.*blank/.test(subs[i]) && subs.indexOf("[Map Local]") != -1) {
             rw = Mock2QXReject(subs[i])
             nrw.push(rw)
         } else if (subs[i].indexOf("data=") != -1 && subs.indexOf("[Map Local]") != -1){ // Map Local 类型
