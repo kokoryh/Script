@@ -997,7 +997,7 @@ function URX2QX(subs) {
         if (subs[i].slice(0, 9) == "URL-REGEX") {  // regex 类型
             rw = subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1] + " url " + "reject-200"
             nrw.push(rw)
-        } else if (subs[i].indexOf("data=.+blank") != -1 && subs.indexOf("[Map Local]") != -1) {
+        } else if (/data=.+blank/.test(subs[i]) && subs.indexOf("[Map Local]") != -1) {
             rw = Mock2QXReject(subs[i])
             nrw.push(rw)
         } else if (subs[i].indexOf("data=") != -1 && subs.indexOf("[Map Local]") != -1){ // Map Local 类型
