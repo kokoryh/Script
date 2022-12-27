@@ -68,17 +68,18 @@ if (url.includes("Dynamic/DynAll")) {
         let adCount = 0;
         let adKeyword = ["拼多多"];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
-            if (item.cardType !== 15) {
-                return true;
+            if (item.cardType === 15) {
+                adCount++;
+                return false;
             }
             let content = JSON.stringify(item.extend.origDesc);
             for (const word of adKeyword) {
-                if (!content.includes(word)) {
-                    return true;
+                if (content.includes(word)) {
+                    adCount++;
+                    return false;
                 }
             }
-            adCount++;
-            return false;
+            return true;
         });
         if (adCount) {
             needProcessFlag = true;
