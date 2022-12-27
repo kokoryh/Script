@@ -12,7 +12,7 @@ const isQuanX = typeof $task !== "undefined";
 const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.body;
 
 const requestHeader = $request.headers;
-console.log(JSON.stringify(requestHeader));
+// console.log(JSON.stringify(requestHeader));
 let isIpad = false;
 let ua = isQuanX ? "User-Agent" : "user-agent";
 if (/ipad/i.test(requestHeader[ua])) isIpad = true;
@@ -62,15 +62,20 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('最常访问upList去除');
     }
 
-    if (isIpad) {
-        console.log('ipad不处理动态列表');
-    } else if (!dynAllReplyObj.dynamicList?.list?.length) {
+    if (!dynAllReplyObj.dynamicList?.list?.length) {
         console.log('动态列表list为空');
     } else {
         let adCount = 0;
+        let adKeyword = ["拼多多"];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             if (item.cardType !== 15) {
                 return true;
+            }
+            let content = JSON.stringify(item.extend.origDesc);
+            for (const word of adKeyword) {
+                if (!content.includes(word)) {
+                    return true;
+                }
             }
             adCount++;
             return false;
