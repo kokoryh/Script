@@ -8,10 +8,8 @@
 
 [Map Local]
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
-# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
 [Script]
 bili-json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/(splash\/list|feed\/index\?|account\/myinfo\?|search\/square),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json.js,script-update-interval=0

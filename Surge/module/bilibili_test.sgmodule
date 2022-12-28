@@ -2,22 +2,38 @@
 #!desc=测试专用，非专业人士请勿使用
 
 [URL Rewrite]
+# 屏蔽搜索框关键词
 ^https?:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 ^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+# 屏蔽IP请求
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 
 [Map Local]
+# 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
-^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
+# 屏蔽青少年弹窗(测试中)
+# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
+# 屏蔽直播间广告浮窗
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# B漫开屏
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# B漫装扮
+# ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
 [Script]
+# 装扮DIY
 bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili-suit-diy.js,script-update-interval=0
+# 开屏广告 | 推荐页banner和广告 | 我的页面 | 1080P | 热搜 | 标签栏
 bili-json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/list|feed\/index\?|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js,script-update-interval=0
+# 视频播放页广告 | 动态页广告 | 播放器选项
 bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili-proto.js,script-update-interval=0
+# 直播间推广
 bili-live = type=http-response,pattern=^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js,script-update-interval=0
+# 番剧页 & 观影页广告
 bili-bangumi = type=http-response,pattern=^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js,script-update-interval=0
+# 自动换区
 bili-region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili_auto_region.js
+# 搜索换区
 bili-search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili_auto_region.js
 
 [MITM]
