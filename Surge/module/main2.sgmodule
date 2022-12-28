@@ -5,10 +5,11 @@
 # Redirect exhentai to e-hentai
 ^https?:\/\/exhentai\.org\/ https://e-hentai.org/ 302
 
+[Map Local]
 # 百度网盘广告屏蔽
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
-^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
+^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
+^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
 [MITM]
 hostname = %APPEND% exhentai.org, pan.baidu.com
