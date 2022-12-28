@@ -1,20 +1,20 @@
-/** 
+/**
 ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2022-12-27 17:30⟧
 ----------------------------------------------------------
 🛠 发现 𝐁𝐔𝐆 请反馈: https://t.me/Shawn_Parser_Bot
 ⛳️ 关注 🆃🅶 相关频道: https://t.me/QuanX_API
 📖 使用 教程: https://shrtm.nu/4ECS
-🗣 🆃🄷🄰🄽🄺🅂 🆃🄾  @Jamie CHIEN, @M**F**, @c0lada, @Peng-YM, @vinewx, @love4taylor, @shadowdogy 
+🗣 🆃🄷🄰🄽🄺🅂 🆃🄾  @Jamie CHIEN, @M**F**, @c0lada, @Peng-YM, @vinewx, @love4taylor, @shadowdogy
 
-🤖 主要功能: 
+🤖 主要功能:
 ❶ 将其它格式的⟦服务器订阅⟧解析成 𝐐𝐮𝐚𝐧𝐭𝐮𝐦𝐮𝐥𝐭 𝐗 格式
 ☑︎ 支持 𝐕2𝐫𝐚𝐲𝐍/𝗦𝗦(𝗥/𝗗)/𝗛𝗧𝗧𝗣(𝗦)/𝗧𝗿𝗼𝗷𝗮𝗻/𝗤𝘂𝗮𝗻𝘁𝘂𝗺𝘂𝗹𝘁(𝗫)/𝗦𝘂𝗿𝗴𝗲/𝐂𝐥𝐚𝐬𝐡/𝐒𝐡𝐚𝐝𝐨𝐰𝐫𝐨𝐜𝐤𝐞𝐭/𝐋𝐨𝐨𝐧 格式
 ☑︎ 提供说明 1⃣️ 中的可选个性化参数(筛选、重命名 等)
-❷ 𝗿𝗲𝘄𝗿𝗶𝘁𝗲(重写) & 𝗳𝗶𝗹𝘁𝗲𝗿(分流) 的 转换 & 筛选 
+❷ 𝗿𝗲𝘄𝗿𝗶𝘁𝗲(重写) & 𝗳𝗶𝗹𝘁𝗲𝗿(分流) 的 转换 & 筛选
 ☑︎ 用于禁用/修改远程引用中某(几)项 𝗿𝗲𝘄𝗿𝗶𝘁𝗲/𝗵𝗼𝘀𝘁𝗻𝗮𝗺𝗲/𝗳𝗶𝗹𝘁𝗲𝗿
 ☑︎ 𝐒𝐮𝐫𝐠𝐞/𝐂𝐥𝐚𝐬𝐡 类型规则 𝗹𝗶𝘀𝘁 与 模块 𝐦𝐨𝐝𝐮𝐥𝐞 的解析使用
 ----------------------------------------------------------
-0️⃣ 在 ⟦订阅链接⟧ 后加 "#" 使用, 不同参数用 "&" 连接 
+0️⃣ 在 ⟦订阅链接⟧ 后加 "#" 使用, 不同参数用 "&" 连接
 ⚠️ ☞ "你的订阅连接#emoji=1&tfo=1&in=香港+台湾"
 ❖ 本地资源片段引用, 请将参数如 "#in=xxx&out=yyy" 填入资源片段的第 ① 行
 ❖ 🚦 支持中文, "操作" 以下特殊字符时请先替换(URL-Encode) 🚦
@@ -100,7 +100,7 @@
 
 /**
 * 使用说明，
-0️⃣ 在QuantumultX 配置文件中[general] 部分，加入 
+0️⃣ 在QuantumultX 配置文件中[general] 部分，加入
 resource_parser_url = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 ⚠️⚠️如提示"没有自定义解析器"，请长按右下角图标后点击左侧刷新按钮，更新资源，后台退出 app，直到出现解析器说明
 
@@ -150,7 +150,7 @@ const Field = {
   "filter" : "filter_remote",
   "rewrite": "rewrite_remote",
   "server" : "server_remote"
-}  
+}
 
 
 SubFlow() //流量通知
@@ -163,7 +163,7 @@ var Psfilter = mark0 && para1.indexOf("sfilter=") != -1 ? Base64.decode(para1.sp
 var Preg = mark0 && para1.indexOf("regex=") != -1 ? decodeURIComponent(para1.split("regex=")[1].split("&")[0]).replace(/\，/g,",") : null; //server正则过滤参数
 var Pregout = mark0 && para1.indexOf("regout=") != -1 ? decodeURIComponent(para1.split("regout=")[1].split("&")[0]).replace(/\，/g,",") : null; //server正则删除参数
 var Pregdel = mark0 && para1.indexOf("delreg=") != -1 ? decodeURIComponent(para1.split("delreg=")[1].split("&")[0]).replace(/\，/g,",") : null; // 正则删除参数
-var Phin0 = mark0 && para1.indexOf("inhn=") != -1 ? (para1.split("inhn=")[1].split("&")[0].split("+")).map(decodeURIComponent) : null; //hostname 
+var Phin0 = mark0 && para1.indexOf("inhn=") != -1 ? (para1.split("inhn=")[1].split("&")[0].split("+")).map(decodeURIComponent) : null; //hostname
 var Phout0 = mark0 && para1.indexOf("outhn=") != -1 ? (para1.split("outhn=")[1].split("&")[0].split("+")).map(decodeURIComponent) : null; //hostname
 var Preplace = mark0 && para1.indexOf("replace=") != -1 ? para1.split("replace=")[1].split("&")[0] : null; //filter/rewrite 正则替换
 var Pemoji = mark0 && para1.indexOf("emoji=") != -1 ? para1.split("emoji=")[1].split("&")[0] : null;
@@ -318,7 +318,7 @@ function Parser() {
         $notify(link0,type0,content0)
       }
       total = ResourceParse();
-      
+
     } catch (err) {
       $notify("❌ 解析出现错误", "⚠️ 请点击通知，发送订阅链接进行反馈", err, bug_link);
     }
@@ -365,7 +365,7 @@ function ParseUnknown(cnt){
     if(cnt) {
       $notify("⚠️ 链接返回内容并非有效订阅"+ "⟦" + subtag + "⟧","⁉️ 请自行检查原始链接，返回内容 👇️👇️",JSON.stringify(cnt), bug_link)
     }
-    
+
   } catch(err) {
     $notify("😭 未能识别该订阅格式：  " + "⟦" + subtag + "⟧",  "⚠️ 将直接导入Quantumult X \n 如认为是 BUG, 请点通知跳转并发送链接反馈", "链接返回内容:\n"+cnt, bug_link);
   }
@@ -384,8 +384,8 @@ function ResourceParse() {
   } else if (type0 == "QuanX" || type0 == "Clash" || type0 == "Surge") {
     total = Subs2QX(isQuanX(content0).join("\n"), Pudp0, Ptfo0, Pcert0, PTls13);
   } else if (type0 == "sgmodule") { // surge module 模块/含 url-regex 的 rule-set
-    flag = 2 
-    total = SGMD2QX(content0) // 转换 
+    flag = 2
+    total = SGMD2QX(content0) // 转换
     total = Rewrite_Filter(total, Pin0, Pout0,Preg,Pregout); // 筛选过滤
     if (Preplace) { total = ReplaceReg(total, Preplace) }
     total = total.filter( (ele,pos)=>total.indexOf(ele) == pos); //重写重复检查
@@ -403,9 +403,9 @@ function ResourceParse() {
     flag = 3;
     total = Rule_Handle(content0.split("\n").map(item=>item.trim()).filter(Boolean), Pout0, Pin0).filter(Boolean);
     if (Preg && total.length!=0) { // 正则筛选规则 filter
-    total = total.map(Regex).filter(Boolean) 
+    total = total.map(Regex).filter(Boolean)
     RegCheck(total, "分流引用", "regex", Preg)
-  } 
+  }
     if (Pregout && total.length!=0) { // 正则删除规则 filter
     total = total.map(RegexOut).filter(Boolean)
     RegCheck(total, "分流引用", "regout", Pregout)
@@ -429,18 +429,18 @@ function ResourceParse() {
     flag = -1;
     total = ""
   }
-  
+
   //开始处理
   if (flag == 1) { //server 类型统一处理
     total = isQuanX(total.filter(Boolean).join("\n"))
     if (Pinfo == 1 && ntf_flow == 0) { //假节点类型的流量通知
       flowcheck(total)
     }
-    if (Pin0 || Pout0) { total = Filter(total, Pin0, Pout0) } // in & out 
+    if (Pin0 || Pout0) { total = Filter(total, Pin0, Pout0) } // in & out
     if (Preg) { total = total.map(Regex).filter(Boolean)  // regex
-      RegCheck(total, "节点订阅", "regex", Preg)} 
+      RegCheck(total, "节点订阅", "regex", Preg)}
     if (Pregout) { total = total.map(RegexOut).filter(Boolean)  // regex out
-      RegCheck(total, "节点订阅", "regout", Pregout)} 
+      RegCheck(total, "节点订阅", "regout", Pregout)}
     if (Psfilter) { total = FilterScript(total, Psfilter) }
     if (Prrname) {
       Prn = Prrname;
@@ -489,10 +489,10 @@ function ResourceParse() {
   } else if (flag == -1){ //未知类型
     total = content0
     $done({ content: content0 })
-  } 
+  }
   if (Pcnt == 1 && flag !=1) {$notify("解析后最终返回内容" , "总数量： " +total.split("\n").length, total)}
   return total
-  
+
 }
 
 //响应头流量处理部分
@@ -539,7 +539,7 @@ function flowcheck(cnt) {
 
 // regex 后的检查
 function RegCheck(total, typen, paraname,regpara) {
-  if(total.length == 0){ 
+  if(total.length == 0){
     $notify("‼️ " + typen + "  ➟ " + "⟦" + subtag + "⟧", "⛔️ 筛选正则: " + paraname + "=" + regpara, "⚠️ 筛选后剩余项为 0️⃣ , 请检查正则参数及原始链接", nan_link)
   }else if((typen != "节点订阅" && Pntf0 !=0) || (typen == "节点订阅" && Pntf0 ==1)){
     var nolist = total.length <= 10 ? emojino[total.length] : total.length
@@ -673,11 +673,11 @@ function TagCheck_QX(content) {
             }
             if (ni != 0) { duplist.push(nm) }
             nmlist.push(nm)
-          if (Pcap) { 
+          if (Pcap) {
             item = Capitalize(item,Pcap)
             console.log(item)
           }
-          if (Pptn || Pnptn) { 
+          if (Pptn || Pnptn) {
             item = Pattern(item,Pptn,Pnptn)
             console.log(item)
           }
@@ -749,7 +749,7 @@ function Pattern(cnt,para,npara) {
   if (para != "" || npara != "") {
     cnt = cnt.split("tag=")[0] +"tag="+ PatternN(cnt.split("tag=")[1],para,npara)
   }
-  return cnt 
+  return cnt
 }
 
 
@@ -873,11 +873,11 @@ function ServerRelay(src,dst) {
   for (var i=0; i<src.length; i++) {
     serverA = src[i].indexOf("-host")==-1? src[i].split("=")[1].split(":")[0].trim() : src[i].split("-host")[1].split("=")[1].split(",")[0].trim()
     type = /^[a-z]/.test(serverA) || /[a-z]$/.test(serverA)? "host":"ip"
-    rst = type == "ip"? "ip-cidr,"+serverA+"/32,"+dst : "host-suffix,"+serverA+","+dst 
+    rst = type == "ip"? "ip-cidr,"+serverA+"/32,"+dst : "host-suffix,"+serverA+","+dst
     rsts.push(rst)
   }
   return rsts.join("\n")
-  
+
 }
 
 // 用于某些奇葩用户不使用 raw 链接的问题
@@ -929,7 +929,7 @@ function OBFS_Handle(cnt,pobfs) {
     pobfs="obfs="+"shadowsocks-http"
   } else if (pobfs == "vhttp") {
     pobfs="obfs="+"vmess-http"
-  } else { 
+  } else {
     pobfs="invalid"
   }
   if (/obfs\s*\=\s*http/.test(cnt) && pobfs!="invalid") { //只替换有 obfs=http 参数
@@ -946,7 +946,7 @@ function Session_Handle(cnt,psession) {
     cnt =cnt + st
   } else if (psession == 1) {
      cnt =cnt + sr
-  } else if (psession == 2){ 
+  } else if (psession == 2){
     cnt =cnt + st + sr
   }
   return cnt
@@ -981,7 +981,7 @@ function Mock2QXReject(row) {
     return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-200"
   } else if (/(png|jpg|gif)/.test(row)) {
     return row.replace(/ /g, "").split("data=")[0] + " url " + "reject-img"
-  } 
+  }
 }
 
 //url-regex 转换成 Quantumult X
@@ -997,7 +997,7 @@ function URX2QX(subs) {
         if (subs[i].slice(0, 9) == "URL-REGEX") {  // regex 类型
             rw = subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1] + " url " + "reject-200"
             nrw.push(rw)
-        } else if (/data=.*blank/.test(subs[i]) && subs.indexOf("[Map Local]") != -1) {
+        } else if (!/header=".*content-type/i.test(subs[i]) && subs[i].match(/data=.+\/(.+)\./)[1].indexOf("blank") != -1 && subs.indexOf("[Map Local]") != -1) {
             rw = Mock2QXReject(subs[i])
             nrw.push(rw)
         } else if (subs[i].indexOf("data=") != -1 && subs.indexOf("[Map Local]") != -1){ // Map Local 类型
@@ -1009,7 +1009,7 @@ function URX2QX(subs) {
               }
             }
             nrw.push(rw)
-        } 
+        }
     }
     }
     //$notify("URX","",nrw)
@@ -1097,7 +1097,7 @@ function SCP2QX(subs) {
             rw = ptn + " url " + type + js
             nrw.push(rw)
           }
-          
+
         }
       }
     } catch (err) {
@@ -1126,7 +1126,7 @@ function Rewrite_Filter(subs, Pin, Pout,Preg,Pregout) {
         var subii = subi.replace(/ /g, "")
         if (subi != "" && (subi.indexOf(" url ")!=-1 || /^hostname\=/.test(subii))) {
             const notecheck = (item) => subi.indexOf(item) == 0
-            if (noteK.some(notecheck)) { // 注释项跳过 
+            if (noteK.some(notecheck)) { // 注释项跳过
                 continue;
             } else if (hnc == 0 && subii.indexOf("hostname=") == 0) { //hostname 部分
                 hostname = (Phin0 || Phout0 || Preg || Pregout) ? HostNamecheck(subi, Phin0, Phout0) : subi;//hostname 部分
@@ -1152,12 +1152,12 @@ function Rewrite_Filter(subs, Pin, Pout,Preg,Pregout) {
             $notify("🤖 " + "重写引用  ➟ " + "⟦" + subtag + "⟧", "⛔️ 筛选参数: " + pfi + pfo, "☠️ 重写 rewrite 中已禁用以下" + nowrite + "个匹配项:" + "\n ⨷ " + dwrite.join("\n ⨷ "), rwrite_link)
         }
     }
-    if (Nlist.length == 0 ) { 
+    if (Nlist.length == 0 ) {
       if ((Pin0 || Pout0 || Phin0 || Phout0 || Pregout || Preg)) {
-        $notify("🤖 " + "重写引用  ➟ " + "⟦" + subtag + "⟧", "⛔️ 筛选参数: " + pfi + pfo, "⚠️ 筛选后剩余rewrite规则数为 0️⃣ 条, 请检查参数及原始链接", nan_link) 
+        $notify("🤖 " + "重写引用  ➟ " + "⟦" + subtag + "⟧", "⛔️ 筛选参数: " + pfi + pfo, "⚠️ 筛选后剩余rewrite规则数为 0️⃣ 条, 请检查参数及原始链接", nan_link)
       } else {
-        $notify("🤖 " + "重写引用  ➟ " + "⟦" + subtag + "⟧", "⛔️ 解析后 rewrite 规则数为 0️⃣ 条 " , "⚠️ 请检查参数及原始链接内容", nan_link) 
-      
+        $notify("🤖 " + "重写引用  ➟ " + "⟦" + subtag + "⟧", "⛔️ 解析后 rewrite 规则数为 0️⃣ 条 " , "⚠️ 请检查参数及原始链接内容", nan_link)
+
       }
     }
     if(Preg){ Nlist = Nlist.map(Regex).filter(Boolean) // regex to filter rewrites
@@ -1185,7 +1185,7 @@ function HostNamecheck(content, parain, paraout) {
                     } else {
                         dname.push(hname[i])
                     } //Pin 未命中🎯️的记录
-                } else { nname.push(hname[i]) } //无in 参数    
+                } else { nname.push(hname[i]) } //无in 参数
             } else { dname.push(hname[i]) } //out 参数命中
         } else if (parain && parain != "") { //不存在 out，但有 in 参数时
             if (parain.some(excludehn)) { //Pin 命中🎯️
@@ -1356,9 +1356,9 @@ function Rule_Policy(content) { //增加、替换 policy
     } else if (cnt.length == 1 && !RuleK.some(RuleCheck) && cnt[0]!="" && cnt[0].indexOf("payload:")==-1 && cnt[0].indexOf("=")==-1 && cnt[0].trim()!="https:") { // 纯域名/ip 列表
       //$notify("LIST-HANDLE")
       return rule_list_handle(cnt[0])
-    } else { 
+    } else {
       //$notify("Nothing")
-      return "" }//if RuleK1 check 
+      return "" }//if RuleK1 check
 }
 
 // 处理纯列表
@@ -1382,7 +1382,7 @@ function rule_list_handle(cnt) {
       cnt = cnt[0]=="." ? cnt.replace(".",""): cnt
       cnt = "host-suffix, " + cnt
       cnt = Ppolicy == "Shawn" ? cnt+", Shawn" : cnt+", "+Ppolicy
-    } 
+    }
       return cnt
   }
 }
@@ -1602,7 +1602,7 @@ function QX_TLS(cnt,Pcert0,PTls13) {
     }else{
       var cnt = cnt.replace(new RegExp("tag.*?\=", "gmi"), udp+"tag=")
     }
-  }   
+  }
   return cnt
 }
 
@@ -1629,7 +1629,7 @@ function SIP2QuanX (cnt) {
 //http=example.com:443, username=name, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, tls13=true, fast-open=false, udp-relay=false, tag=http-tls-02
 //HTTPS 类型 URI 转换成 QUANX 格式
 function HPS2QX(subs, Ptfo, Pcert0, PTls13) {
-    var type = subs.indexOf("https://")!=-1? "https" : "http" 
+    var type = subs.indexOf("https://")!=-1? "https" : "http"
     var server = subs.replace("https://", "").replace("http://", "").trim()//Base64.decode(subs.replace("https://", "")).trim().split("\u0000")[0];
     var nss = []
     if (server != "") {
@@ -1766,7 +1766,7 @@ function V2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
     ss = JSON.parse(server);
     ip = "vmess=" + ss.add + ":" + ss.port;
     pwd = "password=" + ss.id;
-    
+
     mtd = "method=aes-128-gcm"
     try {
       tag = "tag=" + decodeURIComponent(ss.ps);
@@ -1807,7 +1807,7 @@ function Fobfs(jsonl, Pcert0, PTls13) {
     host0 = jsonl.host && jsonl.host != "" ? "obfs-host=" + jsonl.host + ", " : "";
     obfsi.push(obfs0, host0 + uri0);
     return obfsi.join(", ")
-  } else if (jsonl.tls == "tls" && jsonl.net == "tcp") { // 过滤掉 h2/http 等类型 
+  } else if (jsonl.tls == "tls" && jsonl.net == "tcp") { // 过滤掉 h2/http 等类型
     obfs0 = "obfs=over-tls, " + tcert + ", " + tls13;
     uri0 = jsonl.path && jsonl.path != "" ? "obfs-uri=" + jsonl.path : "";
     uri0 = uri0.indexOf("uri=/")!=-1 ? uri0:uri0.replace("uri=","uri=/")
@@ -1970,8 +1970,8 @@ function TJ2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
     thost = cnt.indexOf("peer=") != -1? "tls-host="+cnt.split("peer=")[1].split(/&|#/)[0]:thost
     ptls13 = PTls13 == 1 ? "tls13=true" : "tls13=false"
     puri = ""
-    if (Pcert0 == 0) { 
-      pcert = "tls-verification=false" 
+    if (Pcert0 == 0) {
+      pcert = "tls-verification=false"
     } else if (Pcert0 == 1) {
       pcert = "tls-verification=true"
     }
@@ -1980,11 +1980,11 @@ function TJ2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
     //ptfo = cnt.indexOf("tfo=1") != -1? "fast-open=true" : ptfo
     tag = cnt.indexOf("#") != -1 ? "tag=" + decodeURIComponent(cnt.split("#").slice(-1)[0]) : "tag= [trojan]" + ip
     if (cnt.indexOf("&plugin=obfs-local")!=-1) {//小火箭内的websocket写法
-    obfs = cnt.indexOf("obfs=websocket") != -1? "obfs=wss" : obfs 
+    obfs = cnt.indexOf("obfs=websocket") != -1? "obfs=wss" : obfs
     thost=cnt.indexOf("obfs-host=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("obfs-host=")[1].split(";")[0].split("#")[0])
     puri = cnt.indexOf("obfs-uri=") == -1? puri : ", obfs-uri=" + decodeURIComponent(cnt.split("obfs-uri=")[1].split(";")[0].split("#")[0])
     } else if (cnt.indexOf("&type=ws")!=-1 || cnt.indexOf("?type=ws")!=-1) {//v2rayN uri
-      obfs = cnt.indexOf("security=tls") != -1? "obfs=wss" : obfs 
+      obfs = cnt.indexOf("security=tls") != -1? "obfs=wss" : obfs
       thost=cnt.indexOf("&host=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("&host=")[1].split("&")[0].split("#")[0])
       puri = cnt.indexOf("&path=") == -1? puri : ", obfs-uri=" + decodeURIComponent(cnt.split("&path=")[1].split("&")[0].split("#")[0])
     }
@@ -2020,7 +2020,7 @@ function SS2QX(subs, Pudp, Ptfo) {
       pwdmtd = cnt0.split("@")[0].split(":")
     }
     mtd = "method=" + pwdmtd[0];
-    pwdmtd.splice(0,1) 
+    pwdmtd.splice(0,1)
     pwd = "password=" + pwdmtd.reduce(joinx);
     if (cntt.indexOf("v2ray-plugin")==-1 && cntt.indexOf("plugin=v2ray")==-1) { //Shadowrocket style v2-plugin
       obfs = cnt.split("obfs%3D")[1] != null ? ", obfs=" + cnt.split("obfs%3D")[1].split("%3B")[0].split("#")[0] : "";
@@ -2141,7 +2141,7 @@ function isQuanXRewrite(content) {
   cnt = content
   cnt0=[]
   var RuleK = ["host,", "-suffix,", "domain,", "-keyword,", "ip-cidr,", "ip-cidr6,",  "geoip,", "user-agent,", "ip6-cidr,","force-http", "ip-asn"];
-  
+
   for (var i = 0; i< cnt.length; i++){
     if(cnt[i]){
       var cnti = cnt[i].trim()
@@ -2233,7 +2233,7 @@ function Sort_KWD (cnt,strs) {
         arr[j].push(cnt[i])
         flag = 1
         break
-      } 
+      }
     }
     if (flag != 1){
       arr[strlist.length].push(cnt[i]) } // 不匹配项
@@ -2324,14 +2324,14 @@ function RenameScript(servers, script) {
 
 }
 
-//删除 emoji 
+//删除 emoji
 function emoji_del(str) {
     return str.replace(/[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]/g, "").trim();//unescape(escape(str).replace(/\%uD.{3}/g, ''));
 }
 
 //为节点名添加 emoji
 function get_emoji(emojip, sname) {
-   var Lmoji = { 
+   var Lmoji = {
     "🏳️‍🌈": ["流量", "套餐", "剩余", "重置", "到期" , "时间", "应急", "过期", "Bandwidth", "expire", "Traffic", "traffic"],
     "🇴🇲": ["阿曼", " OM "],
     "🇦🇩": ["安道尔", "Andorra"],
@@ -2742,7 +2742,7 @@ function yamlcheck(cnt){
     for (var i=0;i<10;i++) {
       cnt = cnt.replace(new RegExp(patn[0][i], "gmi"),patn[4][i])
     }
-    
+
   }
   if (cnt.indexOf(":")!=-1) {
     return cnt
@@ -2840,7 +2840,7 @@ function CSSR2QX(cnt) {
   } else if (cnt["obfsparam"]) {
      ohost = "obfs-host=" + cnt["obfsparam"]
   }
- 
+
   node = "shadowsocks="+[ipt, pwd, mtd, udp, tfo, prot, ppara, obfs, ohost, tag].filter(Boolean).join(", ")
   //console.log(node)
   return node
@@ -2866,7 +2866,7 @@ function CV2QX(cnt) {
     obfs = "obfs=over-tls"
   }
   console.log(obfs)
-  const phost = getValue(()=>cnt["ws-opts"]["headers"]["Host"]) 
+  const phost = getValue(()=>cnt["ws-opts"]["headers"]["Host"])
   ohost = cnt["ws-headers"]? "obfs-host=" + cnt["ws-headers"]["Host"] : ""
   ohost = phost ? "obfs-host="+phost : ohost
   //ohost= cnt["ws-opts"]? "obfs-host=" + cnt["ws-opts"]["headers"]["Host"] : ohost
@@ -2984,7 +2984,7 @@ function UOT(cnt) {
   cnts=cnt.replace(/\s*/g,"")
   if(/^shadowsocks=/.test(cnts)) {
     cnt= cnts.indexOf("udp-over-tcp")!=-1? cnt.replace(/udp-over-tcp\s*\=\s*false/g,"udp-over-tcp=true") : cnt+", udp-over-tcp=true"
-    
+
   }
   return cnt
 }
@@ -3171,7 +3171,7 @@ function YAML() {
                         "trim" : new RegExp("^\\s+|\\s+$"),
                         "comment" : new RegExp("([^\\\'\\\"#]+([\\\'\\\"][^\\\'\\\"]*[\\\'\\\"])*)*(#.*)?")
                 };
- 
+
          /**
             * @class A block of lines of a given level.
             * @param {int} lvl The block's level.
@@ -3218,37 +3218,37 @@ function YAML() {
                 var lines = str.split("\n");
                 var m;
                 var level = 0, curLevel = 0;
-                
+
                 var blocks = [];
-                
+
                 var result = new Block(-1);
                 var currentBlock = new Block(0);
                 result.addChild(currentBlock);
                 var levels = [];
                 var line = "";
-                
+
                 blocks.push(currentBlock);
                 levels.push(level);
-                
+
                 for(var i = 0, len = lines.length; i < len; ++i) {
                         line = lines[i];
-                        
+
                         if(line.match(invalidLine)) {
                                 continue;
                         }
-                
+
                         if(m = regLevel.exec(line)) {
                                 level = m[1].length;
                         } else
                                 level = 0;
-                        
+
                         if(level > curLevel) {
                                 var oldBlock = currentBlock;
                                 currentBlock = new Block(level);
                                 oldBlock.addChild(currentBlock);
                                 blocks.push(currentBlock);
                                 levels.push(level);
-                        } else if(level < curLevel) {                
+                        } else if(level < curLevel) {
                                 var added = false;
 
                                 var k = levels.length - 1;
@@ -3263,20 +3263,20 @@ function YAML() {
                                                 break;
                                         }
                                 }
-                                
+
                                 if(!added) {
                                         errors.push("Error: Invalid indentation at line " + i + ": " + line);
                                         return;
                                 }
                         }
-                        
+
                         currentBlock.lines.push(line.replace(regex["trim"], ""));
                         curLevel = level;
                 }
-                
+
                 return result;
         }
-        
+
         function processValue(val) {
                 val = val.replace(regex["trim"], "");
                 var m = null;
@@ -3333,10 +3333,10 @@ function YAML() {
                                         content = "";
                                         continue;
                                 }
-                                
+
                                 content += c;
                         }
-                        
+
                         if(content.length > 0)
                                 res.push(processValue(content));
                         return res;
@@ -3366,25 +3366,25 @@ function YAML() {
                                         content = "";
                                         continue;
                                 }
-                                
+
                                 content += c;
                         }
-                        
+
                         if(content.length > 0)
                                 res.push(content);
-                                
+
                         var newRes = {};
                         for(var j = 0, lenJ = res.length; j < lenJ; ++j) {
                                 if(m = res[j].match(regex["key_value"])) {
                                         newRes[m[1]] = processValue(m[2]);
                                 }
                         }
-                        
+
                         return newRes;
-                } else 
+                } else
                         return val;
         }
-        
+
         function processFoldedBlock(block) {
                 var lines = block.lines;
                 var children = block.children;
@@ -3395,7 +3395,7 @@ function YAML() {
                 }
                 return chunks.join("\n");
         }
-        
+
         function processLiteralBlock(block) {
                 var lines = block.lines;
                 var children = block.children;
@@ -3405,51 +3405,51 @@ function YAML() {
                 }
                 return str;
         }
-        
+
         function processBlock(blocks) {
                 var m = null;
                 var res = {};
                 var lines = null;
                 var children = null;
                 var currentObj = null;
-                
+
                 var level = -1;
-                
+
                 var processedBlocks = [];
-                
+
                 var isMap = true;
-                
+
                 for(var j = 0, lenJ = blocks.length; j < lenJ; ++j) {
-                        
+
                         if(level != -1 && level != blocks[j].level)
                                 continue;
-                
+
                         processedBlocks.push(j);
-                
+
                         level = blocks[j].level;
                         lines = blocks[j].lines;
                         children = blocks[j].children;
                         currentObj = null;
-                
+
                         for(var i = 0, len = lines.length; i < len; ++i) {
                                 var line = lines[i];
 
                                 if(m = line.match(regex["key"])) {
                                         var key = m[1];
-                                        
+
                                         if(key[0] == '-') {
                                                 key = key.replace(regex["item"], "");
-                                                if (isMap) { 
+                                                if (isMap) {
                                                         isMap = false;
                                                         if (typeof(res.length) === "undefined") {
                                                                 res = [];
-                                                        } 
+                                                        }
                                                 }
                                                 if(currentObj != null) res.push(currentObj);
                                                 currentObj = {};
                                                 isMap = true;
                                         }
-                                        
+
                                         if(typeof m[2] != "undefined") {
                                                 var value = m[2].replace(regex["trim"], "");
                                                 if(value[0] == '&') {
@@ -3463,14 +3463,14 @@ function YAML() {
                                                 } else if(value[0] == '*') {
                                                         var v = value.substr(1);
                                                         var no = {};
-                                                        
+
                                                         if(typeof reference_blocks[v] == "undefined") {
                                                                 errors.push("Reference '" + v + "' not found!");
                                                         } else {
                                                                 for(var k in reference_blocks[v]) {
                                                                         no[k] = reference_blocks[v][k];
                                                                 }
-                                                                
+
                                                                 if(currentObj != null) currentObj[key] = no;
                                                                 else res[key] = no;
                                                         }
@@ -3483,71 +3483,71 @@ function YAML() {
                                                 }
                                         } else {
                                                 if(currentObj != null) currentObj[key] = processBlock(children);
-                                                else res[key] = processBlock(children);                        
+                                                else res[key] = processBlock(children);
                                         }
                                 } else if(line.match(/^-\s*$/)) {
-                                        if (isMap) { 
+                                        if (isMap) {
                                                 isMap = false;
                                                 if (typeof(res.length) === "undefined") {
                                                         res = [];
-                                                } 
+                                                }
                                         }
                                         if(currentObj != null) res.push(currentObj);
                                         currentObj = {};
                                         isMap = true;
                                         continue;
                                 } else if(m = line.match(/^-\s*(.*)/)) {
-                                        if(currentObj != null) 
+                                        if(currentObj != null)
                                                 currentObj.push(processValue(m[1]));
                                         else {
-                                                if (isMap) { 
+                                                if (isMap) {
                                                         isMap = false;
                                                         if (typeof(res.length) === "undefined") {
                                                                 res = [];
-                                                        } 
+                                                        }
                                                 }
                                                 res.push(processValue(m[1]));
                                         }
                                         continue;
                                 }
                         }
-                        
+
                         if(currentObj != null) {
-                                if (isMap) { 
+                                if (isMap) {
                                         isMap = false;
                                         if (typeof(res.length) === "undefined") {
                                                 res = [];
-                                        } 
+                                        }
                                 }
                                 res.push(currentObj);
                         }
                 }
-                
+
                 for(var j = processedBlocks.length - 1; j >= 0; --j) {
                         blocks.splice.call(blocks, processedBlocks[j], 1);
                 }
 
                 return res;
         }
-                
+
         function semanticAnalysis(blocks) {
                 var res = processBlock(blocks.children);
                 return res;
         }
-        
+
         function preProcess(src) {
                 var m;
                 var lines = src.split("\n");
-                
+
                 var r = regex["comment"];
-                
+
                 for(var i in lines) {
                         if(m = lines[i].match(r)) {
 /*                var cmt = "";
                                 if(typeof m[3] != "undefined")
                                         lines[i] = m[1];
                                 else if(typeof m[3] != "undefined")
-                                        lines[i] = m[3]; 
+                                        lines[i] = m[3];
                                 else
                                         lines[i] = "";
                                         */
@@ -3556,10 +3556,10 @@ function YAML() {
                                 }
                         }
                 }
-                
+
                 return lines.join("\n");
         }
-        
+
         this.parse = function eval0(str) {
                 errors = [];
                 reference_blocks = [];
@@ -3568,7 +3568,7 @@ function YAML() {
                 var doc = parser(pre);
                 var res = semanticAnalysis(doc);
                 processing_time = (new Date()).getTime() - processing_time;
-                
+
                 return res;
         }
 
