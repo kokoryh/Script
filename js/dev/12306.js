@@ -16,6 +16,7 @@ function removeAds() {
                 obj.materialsList[0].billId = arr[0];
                 obj.materialsList[0].billMaterialsId = arr[1];
                 obj.advertParam.skipTime = 1;
+                obj.advertParam.chacheTime = 10;
             } else {
                 if (obj.materialsList[0].title === "铁路e卡通" || obj.materialsList[0].title === "12306订餐") {
                     let train_12306 = obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
