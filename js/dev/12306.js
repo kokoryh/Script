@@ -1,7 +1,36 @@
 if (typeof $response !== 'undefined') {
-    removeAds();
+    removeAds2();
 } else {
     removeValue();
+}
+
+function removeAds2() {
+    let obj = JSON.parse($response.body);
+    if (obj.materialsList) {
+        if (obj.materialsList.length === 1) {
+            let train_12306 = $prefs.valueForKey("train_12306");
+            if (train_12306) {
+                console.log(obj.materialsList[0].title);
+                obj.materialsList[0].filePath = undefined;
+                obj.materialsList[0].billId = "1000000";
+                obj.materialsList[0].billMaterialsId = "2000000";
+                obj.advertParam.skipTime = 1;
+                obj.advertParam.chacheTime = 86400 * 365 * 10;
+            } else {
+                obj.materialsList[0].billId = "1000000";
+                obj.materialsList[0].billMaterialsId = "2000000";
+                obj.advertParam.skipTime = 1;
+                obj.advertParam.chacheTime = 86400 * 365 * 10;
+                let success = $prefs.setValueForKey("1", "train_12306");
+                if (success) {
+                    $notify("12306去广告", "", "修改参数成功，退后台重进即可干掉开屏广告");
+                }
+            }
+        } else if (obj.materialsList.length > 1) {
+            obj.materialsList = [{}];
+        }
+    }
+    $done({body: JSON.stringify(obj)});
 }
 
 function removeAds() {
