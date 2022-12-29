@@ -26,8 +26,8 @@ function removeAds() {
 
 function handleSplash(obj) {
     // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
-    let train_12306 = $prefs.valueForKey("train_12306");
     let timestamp = new Date().getTime();
+    let train_12306 = $prefs.valueForKey("train_12306");
     if (train_12306) {
         let arr = train_12306.split(",");
         if (timestamp - arr[0] > 86400 * 7 * 1000) {  // 缓存有效期，估计默认是7天，以实际为准

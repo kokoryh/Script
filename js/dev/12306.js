@@ -29,32 +29,25 @@ function handleSplash(obj) {
     let train_12306 = $prefs.valueForKey("train_12306");
     if (train_12306) {
         let arr = train_12306.split(",");
-        // let timestamp = new Date().getTime();  // 之后这段要用的话，let timestamp可以挪到外面去
-        // if (timestamp - arr[0] > 86400 * 7 * 1000) {  // 缓存有效期，估计默认是7天
-        //     handleNoTemp(obj, timestamp);  // 重新缓存一次
-        // } else {
-        //     // 执行下面的代码
-        // }
         obj.materialsList[0].filePath = undefined;
         obj.materialsList[0].billId = arr[1];
         obj.materialsList[0].billMaterialsId = arr[2];
         obj.advertParam.skipTime = 1;
     } else {
-        let timestamp = new Date().getTime();
-        handleNoTemp(obj, timestamp);
+        handleNoTemp(obj);
     }
 }
 
-function handleNoTemp(obj, timestamp) {
+function handleNoTemp(obj) {
+    let timestamp = new Date().getTime();
     obj.materialsList[0].billId = "1000001";
     obj.materialsList[0].billMaterialsId = "2000001";
     obj.advertParam.chacheTime = 86400 * 365 * 10;
-    // 如果用到方法二的话，上面3行注释不要
     obj.advertParam.skipTime = 1;
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
     let success = $prefs.setValueForKey(train_12306, "train_12306");
     if (success) {
-        console.log("12306去广告 - 获取参数成功，退后台重进即可干掉开屏广告");
+        $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
     }
 }
 
