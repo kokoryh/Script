@@ -8,7 +8,7 @@
 但是不将filePath置为undefined，仅修改skipTime的话会看到一闪而过的开屏广告
 经过测试可以将未缓存的广告的billId和billMaterialsId修改为已缓存的广告来跳过
 于是可以跳过开屏倒计时且不看到广告的有效期就跟这个缓存的有效时间挂钩，可以得到两种实现思路：
-1、修改缓存有效时间，即目前的方法，将chacheTime改成10年。然而这个数据是否生效需要时间的验证(准备在第8天和第15天测试一次)
+1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，准备先验证不修改时的有效期，在第8天和第15天各测试一次)
 2、当确认方法1无法修改缓存有效时间后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在12306_2.js)
 */
 
@@ -52,9 +52,9 @@ function handleNoTemp(obj) {
 }
 
 function setValue(obj) {
-    obj.materialsList[0].billId = "1000003";
-    obj.materialsList[0].billMaterialsId = "2000003";
-    obj.advertParam.chacheTime = 100;
+    obj.materialsList[0].billId = "1000005";
+    obj.materialsList[0].billMaterialsId = "2000005";
+    // obj.advertParam.chacheTime = 86400 * 365 * 10;
     obj.advertParam.skipTime = 1;
 }
 
