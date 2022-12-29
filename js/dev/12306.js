@@ -52,9 +52,9 @@ function handleNoTemp(obj) {
 }
 
 function setValue(obj) {
-    obj.materialsList[0].billId = "1000002";
-    obj.materialsList[0].billMaterialsId = "2000002";
-    obj.advertParam.chacheTime = 86400 * 365 * 10;
+    obj.materialsList[0].billId = "1000003";
+    obj.materialsList[0].billMaterialsId = "2000003";
+    obj.advertParam.chacheTime = 100;
     obj.advertParam.skipTime = 1;
 }
 
