@@ -10,13 +10,12 @@ function removeAds() {
         if (obj.materialsList.length === 1) {
             let train_12306 = $prefs.valueForKey("train_12306");
             if (train_12306) {
-                // console.log(obj.materialsList[0].title);
+                console.log(obj.materialsList[0].title);
                 let arr = train_12306.split(",");
                 obj.materialsList[0].filePath = undefined;
                 obj.materialsList[0].billId = arr[0];
                 obj.materialsList[0].billMaterialsId = arr[1];
                 obj.advertParam.skipTime = 1;
-                obj.advertParam.chacheTime = 10;
             } else {
                 if (obj.materialsList[0].title === "铁路e卡通" || obj.materialsList[0].title === "12306订餐") {
                     let train_12306 = obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
