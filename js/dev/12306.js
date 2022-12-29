@@ -25,7 +25,7 @@ function removeAds() {
                     }
                 } else {
                     let title = obj.materialsList[0].title;
-                    $notify("12306去广告", "", `获取广告参数失败，当前广告为${title}，请重复退后台重进的过程直到获取参数成功！`);
+                    $notify("12306去广告", "", `获取广告参数失败，当前广告为${title}，请重复退后台重进的过程直到获取参数成功`);
                 }
             }
         } else if (obj.materialsList.length > 1) {
@@ -38,7 +38,7 @@ function removeAds() {
 function removeValue() {
     let success = $prefs.removeValueForKey("train_12306");
     if (success) {
-        $notify("12306去广告", "", "参数已清空");
+        $notify("12306去广告", "", "广告参数已清空，可重新获取参数");
     }
     $done();
 }
