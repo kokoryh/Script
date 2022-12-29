@@ -34,11 +34,8 @@ function handleSplash(obj) {
     // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
     let train_12306 = $prefs.valueForKey("train_12306");
     if (train_12306) {
-        let arr = train_12306.split(",");
         obj.materialsList[0].filePath = undefined;
-        obj.materialsList[0].billId = arr[1];
-        obj.materialsList[0].billMaterialsId = arr[2];
-        obj.advertParam.skipTime = 1;
+        setValue(obj);
     } else {
         handleNoTemp(obj);
     }
@@ -46,15 +43,19 @@ function handleSplash(obj) {
 
 function handleNoTemp(obj) {
     let timestamp = new Date().getTime();
-    obj.materialsList[0].billId = "1000001";
-    obj.materialsList[0].billMaterialsId = "2000001";
-    obj.advertParam.chacheTime = 86400 * 365 * 10;
-    obj.advertParam.skipTime = 1;
+    setValue(obj);
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
     let success = $prefs.setValueForKey(train_12306, "train_12306");
     if (success) {
         $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
     }
+}
+
+function setValue(obj) {
+    obj.materialsList[0].billId = "1000002";
+    obj.materialsList[0].billMaterialsId = "2000002";
+    obj.advertParam.chacheTime = 86400 * 365 * 10;
+    obj.advertParam.skipTime = 1;
 }
 
 function removeValue() {

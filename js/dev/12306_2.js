@@ -36,13 +36,13 @@ function handleSplash(obj) {
     let train_12306 = $prefs.valueForKey("train_12306");
     if (train_12306) {
         let arr = train_12306.split(",");
-        if (timestamp - arr[0] > 86400 * 7 * 1000) {  // 缓存有效期，估计默认是7天，以实际为准
-            handleNoTemp(obj, timestamp);  // 重新缓存一次
-        } else {
+        if (timestamp - arr[0] < 86400 * 1000 * 7) {  // 缓存有效期，暂时设置为7天，以实际为准
             obj.materialsList[0].filePath = undefined;
             obj.materialsList[0].billId = arr[1];
             obj.materialsList[0].billMaterialsId = arr[2];
             obj.advertParam.skipTime = 1;
+        } else {
+            handleNoTemp(obj, timestamp);  // 重新进行缓存
         }
     } else {
         handleNoTemp(obj, timestamp);
