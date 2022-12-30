@@ -1,18 +1,15 @@
-/***********************************
-
+/***********************************************
  > 应用名称：墨鱼自用QX微博&微博国际版净化
  > 脚本作者：@Zmqcherish, @Cuttlefish
  > 微信账号：墨鱼手记
- > 更新时间：2022-12-25
+ > 更新时间：2022-12-30
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 原作者库：https://github.com/zmqcherish
  > 问题反馈：ddgksf2013@163.com
  > 特别提醒：如需转载请注明出处，谢谢合作！
- > 脚本声明：特别感谢Zmqcherish的付出，本脚本只是在他原创脚本的基础上优化QX自用
- > 原创地址：https://github.com/zmqcherish/proxy-script/raw/main/weibo.conf
-
- ***********************************/
+ > 脚本声明：本脚本是在Zmqcherish原创基础上优化自用
+ ***********************************************/
 
 
 
@@ -23,7 +20,7 @@
 
 
 
-const version = 'V2.0.65';
+const version = 'V2.0.75';
 
 const mainConfig = {
         isDebug: !1,
@@ -41,7 +38,7 @@ const mainConfig = {
         removePinedTrending: !0,
         removeInterestFriendInTopic: !1,
         removeInterestTopic: !1,
-        removeInterestUser: !1,
+        removeInterestUser: !0,
         removeLvZhou: !0,
         removeSearchWindow: !0,
         profileSkin1: null,
@@ -134,7 +131,7 @@ function squareHandler(e) {
 function removeMainTab(e) {
     if (e.loadedInfo && e.loadedInfo.headers && delete e.loadedInfo.headers, !e.items) return e;
     let t = [];
-    for (let o of e.items) isAd(o.data) || t.push(o);
+    for (let o of e.items) isAd(o.data) || "feed" != o.category || t.push(o);
     return e.items = t, log("removeMainTab success"), e
 }
 
@@ -168,9 +165,9 @@ function topicHandler(e) {
                 let a = i.card_group;
                 if (!a) continue;
                 if (["guess_like_title", "cats_top_title", "chaohua_home_readpost_samecity_title"].indexOf(a[0].itemid) > -1) n = !1; else if (a.length > 1) {
-                    let s = [];
-                    for (let d of a) -1 == ["chaohua_discovery_banner_1", "bottom_mix_activity"].indexOf(d.itemid) && s.push(d);
-                    i.card_group = s
+                    let d = [];
+                    for (let s of a) -1 == ["chaohua_discovery_banner_1", "bottom_mix_activity"].indexOf(s.itemid) && d.push(s);
+                    i.card_group = d
                 }
             }
         }
@@ -188,7 +185,7 @@ function removeSearchMain(e) {
 }
 
 function checkSearchWindow(e) {
-    return !!mainConfig.removeSearchWindow && "card" == e.category && (e.data?.itemid == "hot_search_push" || e.data?.itemid == "finder_window" || e.data?.itemid == "more_frame" || e.data?.card_type == 208 || e.data?.card_type == 19 || e.data?.mblog?.page_info?.actionlog?.source?.includes("ad"))
+    return !!mainConfig.removeSearchWindow && "card" == e.category && (e.data?.itemid == "finder_window" || e.data?.itemid == "more_frame" || e.data?.card_type == 208 || e.data?.card_type == 217 || e.data?.card_type == 19 || e.data?.mblog?.page_info?.actionlog?.source?.includes("ad"))
 }
 
 function removeSearch(e) {
@@ -253,7 +250,7 @@ function removeTimeLine(e) {
     for (let t of ["ad", "advertises", "trends", "headers"]) e[t] && delete e[t];
     if (!e.statuses) return;
     let o = [];
-    for (let i of e.statuses) isAd(i) || (lvZhouHandler(i), isBlock(i) || o.push(i));
+    for (let i of e.statuses) isAd(i) || (lvZhouHandler(i), "feed" == i.category && (i.common_struct && delete i.common_struct, o.push(i)));
     e.statuses = o
 }
 
@@ -351,7 +348,7 @@ function containerHandler(e) {
 }
 
 function userHandler(e) {
-    if (e = removeMain(e), !mainConfig.removeInterestUser || !e.items) return e;
+    if (e = removeMainTab(e), !mainConfig.removeInterestUser || !e.items) return e;
     let t = [];
     for (let o of e.items) {
         let i = !0;
@@ -359,7 +356,7 @@ function userHandler(e) {
             "可能感兴趣的人" == o.items[0].data.desc && (i = !1)
         } catch (n) {
         }
-        i && t.push(o)
+        i && (o.data?.common_struct && delete o.data.common_struct, t.push(o))
     }
     return e.items = t, log("removeMain sub success"), e
 }
