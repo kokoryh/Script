@@ -20,7 +20,7 @@
 
 
 
-const version = 'V2.0.75';
+const version = 'V2.0.77';
 
 const mainConfig = {
         isDebug: !1,
@@ -131,7 +131,7 @@ function squareHandler(e) {
 function removeMainTab(e) {
     if (e.loadedInfo && e.loadedInfo.headers && delete e.loadedInfo.headers, !e.items) return e;
     let t = [];
-    for (let o of e.items) isAd(o.data) || "feed" != o.category || t.push(o);
+    for (let o of e.items) isAd(o.data) || (o.category ? "group" != o.category && t.push(o) : t.push(o));
     return e.items = t, log("removeMainTab success"), e
 }
 
@@ -250,7 +250,7 @@ function removeTimeLine(e) {
     for (let t of ["ad", "advertises", "trends", "headers"]) e[t] && delete e[t];
     if (!e.statuses) return;
     let o = [];
-    for (let i of e.statuses) isAd(i) || (lvZhouHandler(i), "feed" == i.category && (i.common_struct && delete i.common_struct, o.push(i)));
+    for (let i of e.statuses) isAd(i) || (lvZhouHandler(i), i.common_struct && delete i.common_struct, i.category ? "group" != i.category && o.push(i) : o.push(i));
     e.statuses = o
 }
 
@@ -392,7 +392,7 @@ function removeLuaScreenAds(e) {
 
 function removePhpScreenAds(e) {
     if (!e.ads) return e;
-    for (let t of (e.show_push_splash_ad = !1, e.background_delay_display_time = 86400, e.lastAdShow_delay_display_time = 604800, e.realtime_ad_video_stall_time = 86400, e.realtime_ad_timeout_duration = 604800, e.ads)) t.displaytime = 0, t.displayintervel = 86400, t.allowdaydisplaynum = 0, t.displaynum = 0, t.begintime = "2029-12-30 00:00:00", t.endtime = "2029-12-30 23:59:59";
+    for (let t of (e.show_push_splash_ad = !1, e.background_delay_display_time = 86400, e.lastAdShow_delay_display_time = 604800, e.realtime_ad_video_stall_time = 86400, e.realtime_ad_timeout_duration = 604800, e.ads)) t.displaytime = 0, t.displayintervel = 86400, t.allowdaydisplaynum = 0, t.displaynum = 0, t.displaytime = 1, t.begintime = "2029-12-30 00:00:00", t.endtime = "2029-12-30 23:59:59";
     return e
 }
 

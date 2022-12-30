@@ -37,7 +37,7 @@ function modifiedUserCenter(data) {
     if (!data.data || data.data.length === 0) {
         return data;
     }
-    data.data.cards = Object.values(data.data.cards).filter(item => !(item.items[0].type === 'personal_vip'));
+    data.data.cards = Object.values(data.data.cards).filter(item => item.items[0].type !== 'personal_vip');
     return data;
 }
 
@@ -110,10 +110,11 @@ function removeTimeLine(data) {
     let newStatuses = [];
     for (const s of data.statuses) {
         if (!isAd(s)) {
+            newStatuses.push(s);
             //lvZhouHandler(s);
-            if (!isBlock(s)) {
-                newStatuses.push(s);
-            }
+            // if (!isBlock(s)) {
+            //     newStatuses.push(s);
+            // }
         }
     }
     data.statuses = newStatuses;

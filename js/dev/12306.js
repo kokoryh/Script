@@ -47,7 +47,8 @@ function handleNoTemp(obj) {
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
     let success = $prefs.setValueForKey(train_12306, "train_12306");
     if (success) {
-        $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
+        // $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
+        console.log("12306去广告 - 参数获取成功，退后台重进即可告别开屏广告");
     }
 }
 
