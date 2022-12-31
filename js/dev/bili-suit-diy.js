@@ -101,7 +101,7 @@ function kokoryh() {
         if (isQuanX) return $prefs.valueForKey(key);
         if (isSurge) return $persistentStore.read(key);
     }
-    const setValue = (key, val) => {
+    const setValue = (val, key) => {
         if (isQuanX) return $prefs.setValueForKey(val, key);
         if (isSurge) return $persistentStore.write(val, key);
     }
