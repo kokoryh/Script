@@ -1,6 +1,6 @@
 /*
 12306去广告
-脚本兼容: Quantumult X
+脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 说明：
 12306的开屏广告比较特殊，必须在返回的广告有本地缓存时才可修改skipTime跳过
@@ -11,6 +11,7 @@
 1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，准备先验证不修改时的有效期，在第8天和第15天各测试一次)
 2、当确认方法1无法修改缓存有效时间后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在12306_2.js)
 */
+let $ = kokoryh();
 
 if (typeof $response !== 'undefined') {
     removeAds();
@@ -32,7 +33,7 @@ function removeAds() {
 
 function handleSplash(obj) {
     // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
-    let train_12306 = $prefs.valueForKey("train_12306");
+    let train_12306 = $.getValue("train_12306");
     if (train_12306) {
         obj.materialsList[0].filePath = undefined;
         setValue(obj);
@@ -45,7 +46,7 @@ function handleNoTemp(obj) {
     let timestamp = new Date().getTime();
     setValue(obj);
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
-    let success = $prefs.setValueForKey(train_12306, "train_12306");
+    let success = $.setValue(train_12306, "train_12306");
     if (success) {
         // $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
         console.log("12306去广告 - 参数获取成功，退后台重进即可告别开屏广告");
@@ -60,9 +61,33 @@ function setValue(obj) {
 }
 
 function removeValue() {
-    let success = $prefs.removeValueForKey("train_12306");
+    let success = $.setValue("", "train_12306");
     if (success) {
         console.log("12306去广告 - 参数已清空，可重新获取参数");
     }
     $done();
+}
+
+function kokoryh() {
+    const isQuanX = 'undefined' !== typeof $task;
+    const isSurge = 'undefined' !== typeof $httpClient;
+    const notify = (title, subtitle, message) => {
+        if (isQuanX) $notify(title, subtitle, message);
+        if (isSurge) $notification.post(title, subtitle, message);
+    }
+    const getValue = (key) => {
+        if (isQuanX) return $prefs.valueForKey(key);
+        if (isSurge) return $persistentStore.read(key);
+    }
+    const setValue = (val, key) => {
+        if (isQuanX) return $prefs.setValueForKey(val, key);
+        if (isSurge) return $persistentStore.write(val, key);
+    }
+    return {
+        isQuanX,
+        isSurge,
+        notify,
+        getValue,
+        setValue
+    }
 }
