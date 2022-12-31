@@ -1,10 +1,9 @@
 /*
 B站装扮diy
-版本：1.8.3
-脚本兼容: Quantumult X
+版本：1.8.4
+脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 
-暂时不会适配Surge，等啥时候Surge的稳定性和速度能持平qx，自然会适配
 脚本仅供学习和自用，禁转载，禁公开分享
 任何分享或转载行为被发现后此脚本将从库中删除
 
@@ -22,7 +21,7 @@ B站装扮diy
 7、粉色B站和白色B站均可使用本脚本，并且可以分别进行配置
 8、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。需要有一定的编程基础，配置格式和各配置项含义请『自行体会』，作为挡住小白的门槛
 9、空间头图和头像框均可以替换，但由于我用不到，因此不会实现此功能。有需要请自行实现
-10、引用请自行去掉前面的#号，用解析器解析的都给我滚
+10、引用请自行去掉前面的#号，用解析器解析的都给我滚，Surge的配置自己写，都用Surge了还不会写配置？
 
 ----------------
 获取装扮信息(获取完即可关闭此重写)
@@ -44,9 +43,10 @@ hostname = app.bilibili.com
 0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮定时切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
 ----------------
 */
-let bili_skin_num = $prefs.valueForKey("bili_skin_num");
-let bili_load_num = $prefs.valueForKey("bili_load_num");
-let bili_suit = $prefs.valueForKey("bili_suit");
+let $ = kokoryh();
+let bili_skin_num = $.getValue("bili_skin_num");
+let bili_load_num = $.getValue("bili_load_num");
+let bili_suit = $.getValue("bili_suit");
 let loop_data = bili_suit ? JSON.parse(bili_suit).loop : {
     "pink_skin": "1",
     "pink_load": "1",
@@ -60,8 +60,8 @@ let white_load = handleData(loop_data.white_load.trim());
 let new_skin_num = handleNum(bili_skin_num, pink_skin, white_skin);
 let new_load_num = handleNum(bili_load_num, pink_load, white_load);
 getNext5Data(new_skin_num, new_load_num, pink_skin, pink_load, white_skin, white_load);
-$prefs.setValueForKey(new_skin_num, "bili_skin_num");
-$prefs.setValueForKey(new_load_num, "bili_load_num");
+$.setValue(new_skin_num, "bili_skin_num");
+$.setValue(new_load_num, "bili_load_num");
 $done();
 
 function getNext5Data(skin_num, load_num, pink_skin, pink_load, white_skin, white_load) {
@@ -99,7 +99,31 @@ function handleData(str) {
     if ((/^\d+([,，]\d+)*$/).test(str)) {
         return str.split(/,|，/);
     } else {
-        $notify("B站装扮DIY", "", "参数格式非法，请检查BoxJs设置");
+        $.notify("B站装扮DIY", "", "参数格式非法，请检查BoxJs设置");
         return ["1"];
+    }
+}
+
+function kokoryh() {
+    const isQuanX = 'undefined' !== typeof $task;
+    const isSurge = 'undefined' !== typeof $httpClient;
+    const notify = (title, subtitle, message) => {
+        if (isQuanX) $notify(title, subtitle, message);
+        if (isSurge) $notification.post(title, subtitle, message);
+    }
+    const getValue = (key) => {
+        if (isQuanX) return $prefs.valueForKey(key);
+        if (isSurge) return $persistentStore.read(key);
+    }
+    const setValue = (key, val) => {
+        if (isQuanX) return $prefs.setValueForKey(val, key);
+        if (isSurge) return $persistentStore.write(val, key);
+    }
+    return {
+        isQuanX,
+        isSurge,
+        notify,
+        getValue,
+        setValue
     }
 }
