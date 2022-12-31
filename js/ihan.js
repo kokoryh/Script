@@ -49,7 +49,7 @@ function checkin() {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/604.1 com.hanser.club/1.1.3'
         }
     };
-    $.get(url, async function(error, response, data) {
+    $.get(url, async function (error, response, data) {
         if (error && !data) {
             $.msgBody = `请求失败！\n${error}`;
         } else if (/成功/.test(data)) {
@@ -101,8 +101,8 @@ function getCookie() {
 }
 
 function uuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
 }

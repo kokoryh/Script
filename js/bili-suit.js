@@ -49,15 +49,15 @@ async function queryRemain() {
     const baseUrl = 'https://api.bilibili.com/x/garb/v2/mall/suit/detail?item_id=';
     const list = Object.values(suitList);
     var msg = '';
-    if(list.length !== 0) {
-        for(let suit of list) {
+    if (list.length !== 0) {
+        for (let suit of list) {
             url['url'] = baseUrl + suit[0];
             await new Promise((resolve) => {
-                $.get(url, async function(error, response, data) {
+                $.get(url, async function (error, response, data) {
                     try {
                         const info = JSON.parse(data).data;
                         const num = info.properties.sale_quantity - info.sale_surplus + 1;
-                        if(suit[1] != 0) {
+                        if (suit[1] != 0) {
                             let goal = suit[1] - num;
                             msg += '【' + info.name + '】现' + num + '号\n距离目标还剩' + goal + '套\n';
                         } else {
@@ -73,7 +73,7 @@ async function queryRemain() {
         }
         $.msg($.name, ``, msg);
         $.done();
-    }else {
+    } else {
         $.msg($.name, ``, '请先用重写添加需要监控的装扮‼️');
         $.done();
     }
@@ -81,9 +81,9 @@ async function queryRemain() {
 
 function getSuitInfo() {
     var body = $response.body;
-    if(body) {
+    if (body) {
         var data = JSON.parse(body).data;
-        if(data) {
+        if (data) {
             suitList[data.name] = [data.item_id, 0];
             var success = $.setdata(JSON.stringify(suitList), "bili_suit_list");
             if (!success) {
