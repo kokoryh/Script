@@ -1,0 +1,11 @@
+#!name=其他模块
+#!desc=有用的时候开启即可
+
+[Script]
+# 获取B站装扮信息
+http-response ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
+# Picsew解锁专业版
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/PicsewProCrack.js
+
+[MITM]
+hostname = %APPEND% ap?.bilibili.com
