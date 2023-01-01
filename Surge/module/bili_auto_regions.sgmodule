@@ -1,7 +1,7 @@
 #!name=Bilibili自动换区
 #!desc=点击港台番剧直接切换线路，或者在搜索框关键词后加空格中/港/台切换
 #!author=NobyDa
-#!system=ios, ipados
+#!system=ios
 
 [Script]
 # 自动换区
