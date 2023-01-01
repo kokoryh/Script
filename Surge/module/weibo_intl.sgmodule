@@ -1,0 +1,16 @@
+#!name=微博国际版去广告
+#!desc=kokoryh自用
+
+[Map Local]
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?ct=user&a=get_searching_info data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_searching_info.json" header="Content-Type: text/html"
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?ct=feed&a=search_topic data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_search_topic.json" header="Content-Type: text/html"
+
+[Script]
+http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/((unread_)?friends(/|_)timeline|unread_hot_timeline) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+
+[MITM]
+hostname = %APPEND% *api.weibo*, sdkapp.uve.weibo.com
