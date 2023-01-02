@@ -10,7 +10,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
 */
-console.log(`b站proto-2022.12.31-@kokoryh`);
+console.log(`b站proto-2023.1.2-@kokoryh`);
 const url = $request.url;
 const method = $request.method;
 let headers = $response.headers;
@@ -78,6 +78,7 @@ if (url.includes("Dynamic/DynAll")) {
         // 1903032-大毛冰啤，1950658-早稻叽，698029620-兰音Reine
         let upFilter = ["1903032", "1950658", "698029620"]
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
+            console.log(JSON.stringify(item));
             // 15: 广告card   18: 直播card
             if (item.cardType === 15 || item.cardType === 18 || (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor.author.mid))) {
                 adCount++;
