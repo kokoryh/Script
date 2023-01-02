@@ -75,11 +75,12 @@ if (url.includes("Dynamic/DynAll")) {
         let adRegex = /(拼多多.*补贴)/;
         let whiteRegex = /(互动抽奖)/;
         // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
-        // 1903032-大毛冰啤，1950658-早稻叽，698029620-兰音Reine
-        let upFilter = [1903032, "1950658", "698029620"]
+        let upFilter = [
+            1903032,      // 大毛冰啤
+            1950658,      // 早稻叽
+            698029620     // 兰音Reine
+        ];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
-            console.log(item.cardType);
-            console.log(item.modules[0].moduleAuthor.author.mid);
             // 15: 广告card    18: 直播card    2: 视频card
             if (item.cardType === 15 || item.cardType === 18 || (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor.author.mid))) {
                 adCount++;
