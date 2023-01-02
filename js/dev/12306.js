@@ -9,7 +9,7 @@
 经过测试可以将未缓存的广告的billId和billMaterialsId修改为已缓存的广告来跳过
 于是可以跳过开屏倒计时且不看到广告的有效期就跟这个缓存的有效时间挂钩，可以得到两种实现思路：
 1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，准备先验证不修改时的有效期，在第8天和第15天各测试一次)
-2、当确认方法1无法修改缓存有效时间后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在12306_2.js)
+2、当确认方法1无法修改缓存有效时间后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在handleSplash2())
 */
 let $ = kokoryh();
 
@@ -48,8 +48,8 @@ function handleNoTemp(obj) {
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
     let success = $.setValue(train_12306, "train_12306");
     if (success) {
-        // $notify("12306去广告", "", "修改缓存成功，退后台重进即可告别开屏广告");
-        console.log("12306去广告 - 参数获取成功，退后台重进即可告别开屏广告");
+        $.notify("12306去广告", "", "参数修改成功，退后台重进即可告别开屏广告");
+        // console.log("12306去广告 - 参数获取成功，退后台重进即可告别开屏广告");
     }
 }
 
@@ -58,6 +58,34 @@ function setValue(obj) {
     obj.materialsList[0].billMaterialsId = "2000005";
     // obj.advertParam.chacheTime = 86400 * 365 * 10;
     obj.advertParam.skipTime = 1;
+}
+
+function handleSplash2(obj) {
+    // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
+    let timestamp = new Date().getTime();
+    let train_12306 = $.getValue("train_12306");
+    if (train_12306) {
+        let arr = train_12306.split(",");
+        if (timestamp - arr[0] < 86400 * 1000 * 7) {  // 缓存有效期，暂时设置为7天，以实际为准
+            obj.materialsList[0].filePath = undefined;
+            obj.materialsList[0].billId = arr[1];
+            obj.materialsList[0].billMaterialsId = arr[2];
+            obj.advertParam.skipTime = 1;
+        } else {
+            handleNoTemp2(obj, timestamp);  // 重新进行缓存
+        }
+    } else {
+        handleNoTemp2(obj, timestamp);
+    }
+}
+
+function handleNoTemp2(obj, timestamp) {
+    obj.advertParam.skipTime = 1;
+    let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
+    let success = $.setValue(train_12306, "train_12306");
+    if (success) {
+        console.log("12306去广告 - 获取参数成功，在缓存有效期内你不会看到12306的开屏广告");
+    }
 }
 
 function removeValue() {
