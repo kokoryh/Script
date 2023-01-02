@@ -30,6 +30,14 @@
 # 拼多多 - api.yangkeduo.com,api.pinduoduo.com
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
+# 百度网盘广告屏蔽
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
+^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
+^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
+
+# 中国移动
+^https?:\/\/client.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
+
 # 中国电信
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ - reject
 
@@ -38,12 +46,6 @@
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 # JD
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
-# 百度网盘广告屏蔽
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
-^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
-# 中国移动
-^https?:\/\/client.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
 [Script]
 # 扫描全能王破解
