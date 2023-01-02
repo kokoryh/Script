@@ -8,4 +8,4 @@ http-response ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail req
 http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/PicsewProCrack.js
 
 [MITM]
-hostname = %APPEND% ap?.bilibili.com
+hostname = %APPEND% ap?.bilibili.com, buy.itunes.apple.com

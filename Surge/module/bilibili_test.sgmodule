@@ -1,5 +1,5 @@
 #!name=Bilibili模块测试
-#!desc=测试专用，非专业人士请勿使用
+#!desc=测试专用
 
 [URL Rewrite]
 # 屏蔽搜索框关键词

@@ -1,7 +1,7 @@
 /*
 B站装扮监控
 
-脚本兼容: Quantumult X
+脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 
 如果转载，请注明出处
