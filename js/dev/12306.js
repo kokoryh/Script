@@ -23,6 +23,7 @@ function removeAds() {
     let obj = JSON.parse($response.body);
     if (obj.materialsList) {
         if (obj.materialsList.length === 1) {
+            console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
             handleSplash(obj);
         } else if (obj.materialsList.length > 1) {
             obj.materialsList = [{}];
@@ -32,7 +33,6 @@ function removeAds() {
 }
 
 function handleSplash(obj) {
-    // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
     let train_12306 = $.getValue("train_12306");
     if (train_12306) {
         obj.materialsList[0].filePath = undefined;
@@ -49,7 +49,7 @@ function handleNoTemp(obj) {
     let success = $.setValue(train_12306, "train_12306");
     if (success) {
         $.notify("12306去广告", "", "参数修改成功，退后台重进即可告别开屏广告");
-        // console.log("12306去广告 - 参数获取成功，退后台重进即可告别开屏广告");
+        // console.log("12306去广告 - 参数修改成功，退后台重进即可告别开屏广告");
     }
 }
 
@@ -61,7 +61,6 @@ function setValue(obj) {
 }
 
 function handleSplash2(obj) {
-    // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
     let timestamp = new Date().getTime();
     let train_12306 = $.getValue("train_12306");
     if (train_12306) {
