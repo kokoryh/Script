@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.8.4
+版本：1.8.5
 脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 
@@ -21,26 +21,29 @@ B站装扮diy
 7、粉色B站和白色B站均可使用本脚本，并且可以分别进行配置
 8、diy请自行下载需要的装扮，将素材拼合为规范的zip包上传，然后自行编写规范的配置填入boxjs。需要有一定的编程基础，配置格式和各配置项含义请『自行体会』，作为挡住小白的门槛
 9、空间头图和头像框均可以替换，但由于我用不到，因此不会实现此功能。有需要请自行实现
-10、引用请自行去掉前面的#号，用解析器解析的都给我滚，Surge的配置自己写，都用Surge了还不会写配置？
+10、引用请自行去掉前面的#号，并添加hostname，用解析器解析的都给我滚
 
 ----------------
 获取装扮信息(获取完即可关闭此重写)
-[rewrite_local]
+Quantumult X：
 # ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 
-[mitm]
-hostname = api.bilibili.com
+Surge：
+# http-response ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 ----------------
 日常使用
-[rewrite_local]
+Quantumult X：
 # ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 
-[mitm]
-hostname = app.bilibili.com
+Surge：
+# bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 ----------------
 定时切换脚本(此处cron仅供参考，请自行设置切换的时间)
-[task_local]
+Quantumult X：
 0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮定时切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
+
+Surge：
+bili-skin-switch = type=cron,cronexp=0 8,20 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
 ----------------
 */
 const $ = new Env(`B站装扮信息提取`);
