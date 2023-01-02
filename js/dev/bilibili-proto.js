@@ -79,8 +79,8 @@ if (url.includes("Dynamic/DynAll")) {
         let upFilter = ["1903032", "1950658", "698029620"]
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             console.log(JSON.stringify(item));
-            // 15: 广告card   18: 直播card
-            if (item.cardType === 15 || item.cardType === 18 || (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor.author.mid))) {
+            // 15: 广告card    18: 直播card    2: 视频card
+            if (item.cardType === 15 || item.cardType === 18 || (item.cardType !== 'av' && upFilter.includes(item.modules[0].moduleAuthor.author.mid))) {
                 adCount++;
                 return false;
             }
