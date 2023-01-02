@@ -9,6 +9,7 @@ const biliJson = {"nested":{"bilibili":{"nested":{"ad":{"nested":{"v1":{"options
 ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方的广告
 手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
+      按照UP主移除其非视频动态(主要针对切片man，和某些VUP)
 */
 console.log(`b站proto-2023.1.2-@kokoryh`);
 const url = $request.url;
@@ -78,6 +79,7 @@ if (url.includes("Dynamic/DynAll")) {
         let upFilter = [
             1903032,      // 大毛冰啤
             1950658,      // 早稻叽
+            454880479,    // 郭思宇爱吃鱼
             698029620     // 兰音Reine
         ];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
