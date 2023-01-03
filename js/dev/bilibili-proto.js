@@ -12,6 +12,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
       按照UP主移除其非视频动态，但是仍保留其抽奖动态
       -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
       -和某些贼tm能发动态的VUP(一天五六条的，很劝退路人粉desu)
+      移除任何转发的抽奖动态
 */
 console.log(`b站proto-2023.1.3-@kokoryh`);
 const url = $request.url;
@@ -21,7 +22,6 @@ const isQuanX = typeof $task !== "undefined";
 const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.body;
 
 const requestHeader = $request.headers;
-// console.log(JSON.stringify(requestHeader));
 let isIpad = false;
 let ua = isQuanX ? "User-Agent" : "user-agent";
 if (/ipad/i.test(requestHeader[ua])) isIpad = true;
@@ -75,11 +75,10 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('动态列表list为空');
     } else {
         let adCount = 0;
-        let adRegex = /(拼多多.*补贴)/;    // 广告关键词
-        let noForwordWhiteRegex = /(互动抽奖)/;    // 白名单(非转发动态)
-        // let realWhiteRegex = /(hanser)/;    // 真-白名单
-        // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
-        let upFilter = [
+        let adRegex = /(拼多多.*补贴)/;  // 广告关键词
+        let noForwordWhiteRegex = /(互动抽奖)/;  // 白名单(非转发动态)
+        let realWhiteRegex = /(kokoryh)/;  // 真-白名单
+        let upFilter = [    // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
             198297,         // 冰糖IO
             1903032,        // 大毛冰啤
             1950658,        // 早稻叽
@@ -119,14 +118,13 @@ if (url.includes("Dynamic/DynAll")) {
             }
             let content = JSON.stringify(item.extend.origDesc);
             let noForwordWhite = noForwordWhiteRegex.test(content);
-            // let realWhite = realWhiteRegex.test(content);
-            if ((noForwordWhite && item.cardType !== 1)) {      // 始终保留含 noForwordWhiteRegex 关键词的 非转发 动态
+            if ((noForwordWhite && item.cardType !== 1) || realWhiteRegex.test(content)) {  // 始终保留真-白名单内的动态和含 noForwordWhiteRegex 关键词的非转发动态
                 return true;
             }
 
-            if (noForwordWhite ||    // 过滤含 noForwordWhiteRegex 关键词的 转发 动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话会被第二个判断条件过滤
-                (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) ||    // 过滤不属于稿件的动态
-                adRegex.test(content)    // 过滤广告关键词
+            if (noForwordWhite ||  // 过滤含 noForwordWhiteRegex 关键词的转发动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话可能会被第二个判断条件过滤
+                (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) ||  // 过滤不属于稿件的动态
+                adRegex.test(content)  // 过滤广告关键词
             ) {
                 adCount++;
                 return false;
