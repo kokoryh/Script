@@ -1,0 +1,1 @@
+let obj=JSON.parse($response.body);obj.msgs?(obj.msgs=void 0,$done({body:JSON.stringify(obj)})):$done();
