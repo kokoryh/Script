@@ -77,7 +77,7 @@ if (url.includes("Dynamic/DynAll")) {
         let adCount = 0;
         let adRegex = /(拼多多.*补贴)/;  // 广告关键词
         let noForwordWhiteRegex = /(互动抽奖)/;  // 白名单(非转发动态)
-        let realWhiteRegex = /(kokoryh)/;  // 真-白名单
+        let realWhiteRegex = /(kokoryh|hanser)/;  // 真-白名单
         let upFilter = [    // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
             198297,         // 冰糖IO
             1903032,        // 大毛冰啤
@@ -112,17 +112,14 @@ if (url.includes("Dynamic/DynAll")) {
             story = 22;
             topic_rcmd = 23;
             */
-            if (item.cardType === 15 || item.cardType === 18) {    // 过滤广告卡和直播卡
-                adCount++;
-                return false;
-            }
             let content = JSON.stringify(item.extend.origDesc);
             let noForwordWhite = noForwordWhiteRegex.test(content);
             if ((noForwordWhite && item.cardType !== 1) || realWhiteRegex.test(content)) {  // 始终保留真-白名单内的动态和含 noForwordWhiteRegex 关键词的非转发动态
                 return true;
             }
 
-            if (noForwordWhite ||  // 过滤含 noForwordWhiteRegex 关键词的转发动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话可能会被第二个判断条件过滤
+            if (item.cardType === 15 || item.cardType === 18 ||  // 过滤广告卡和直播卡
+                noForwordWhite ||  // 过滤含 noForwordWhiteRegex 关键词的转发动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话可能会被下一个判断条件过滤
                 (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) ||  // 过滤不属于稿件的动态
                 adRegex.test(content)  // 过滤广告关键词
             ) {
