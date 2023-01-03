@@ -14,6 +14,27 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
       -和某些贼tm能发动态的VUP(一天五六条的，很劝退路人粉desu)
       移除任何转发的抽奖动态
 */
+// 调试环境
+// const $request = {
+//     url: "Dynamic/DynAll",
+//     // url: "View/View",
+//     // url: "PlayURL/PlayView",
+//     method: "POST",
+//     headers: {
+//         "user-agent": "ipad"
+//         // "user-agent": "iphone"
+//     }
+// }
+// const $response = {
+//     body: undefined,
+//     headers: {
+//         "grpc-encoding": "identity"
+//         // "grpc-encoding": "gzip"
+//     }
+// }
+// const fs = require('fs');
+// $response.body = fs.readFileSync("response");
+
 console.log(`b站proto-2023.1.3-@kokoryh`);
 const url = $request.url;
 const method = $request.method;
