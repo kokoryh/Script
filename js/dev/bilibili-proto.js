@@ -86,13 +86,38 @@ if (url.includes("Dynamic/DynAll")) {
             698029620       // 兰音Reine
         ];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
-            // 15: 广告card    18: 直播card    2: 视频card
+            /*
+            dyn_none = 0;          // 占位
+            forward = 1;           // 转发
+            av = 2;                // 稿件: ugc、小视频、短视频、UGC转PGC
+            pgc = 3;               // pgc：番剧、PGC番剧、PGC电影、PGC电视剧、PGC国创、PGC纪录片
+            courses = 4;           // 付费更新批次
+            fold = 5;              // 折叠
+            word = 6;              // 纯文字
+            draw = 7;              // 图文
+            article = 8;           // 专栏 原仅phone端
+            music = 9;             // 音频 原仅phone端
+            common_square = 10;    // 通用卡 方形
+            common_vertical = 11;  // 通用卡 竖形
+            live = 12;             // 直播卡 只有转发态
+            medialist = 13;        // 播单 原仅phone端 只有转发态
+            courses_season = 14;   // 付费更新批次 只有转发态
+            ad = 15;               // 广告卡
+            applet = 16;           // 小程序卡
+            subscription = 17;     // 订阅卡
+            live_rcmd = 18;        // 直播推荐卡
+            banner = 19;           // 通栏
+            ugc_season = 20;       // 合集卡
+            subscription_new = 21; // 新订阅卡
+            story = 22;
+            topic_rcmd = 23;
+            */
             if (item.cardType === 15 || item.cardType === 18) {
                 adCount++;
                 return false;
             }
             let content = JSON.stringify(item.extend.origDesc);
-            if (whiteRegex.test(content)) {
+            if (item.cardType !== 1 && whiteRegex.test(content)) {
                 return true;
             }
             if ((item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) || adRegex.test(content)) {
