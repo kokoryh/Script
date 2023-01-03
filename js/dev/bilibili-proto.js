@@ -9,9 +9,11 @@ const biliJson = {"nested":{"bilibili":{"nested":{"ad":{"nested":{"v1":{"options
 ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方的广告
 手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
-      按照UP主移除其非视频动态(主要针对切片man，和某些VUP)
+      按照UP主移除其非视频动态，但是仍保留其抽奖动态
+      -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
+      -和某些贼tm能发动态的VUP(一天五六条的，很劝退路人粉desu)
 */
-console.log(`b站proto-2023.1.2-@kokoryh`);
+console.log(`b站proto-2023.1.3-@kokoryh`);
 const url = $request.url;
 const method = $request.method;
 let headers = $response.headers;
@@ -74,17 +76,18 @@ if (url.includes("Dynamic/DynAll")) {
     } else {
         let adCount = 0;
         let adRegex = /(拼多多.*补贴)/;
-        let whiteRegex = /(互动抽奖)/;
+        let whiteRegex = /(互动抽奖|预约有奖)/;
         // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
         let upFilter = [
-            1903032,      // 大毛冰啤
-            1950658,      // 早稻叽
-            454880479,    // 郭思宇爱吃鱼
-            698029620     // 兰音Reine
+            198297,         // 冰糖IO
+            1903032,        // 大毛冰啤
+            1950658,        // 早稻叽
+            454880479,      // 郭思宇爱吃鱼
+            698029620       // 兰音Reine
         ];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             // 15: 广告card    18: 直播card    2: 视频card
-            if (item.cardType === 15 || item.cardType === 18 || (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor.author.mid))) {
+            if (item.cardType === 15 || item.cardType === 18) {
                 adCount++;
                 return false;
             }
@@ -92,7 +95,7 @@ if (url.includes("Dynamic/DynAll")) {
             if (whiteRegex.test(content)) {
                 return true;
             }
-            if (adRegex.test(content)) {
+            if ((item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) || adRegex.test(content)) {
                 adCount++;
                 return false;
             }
