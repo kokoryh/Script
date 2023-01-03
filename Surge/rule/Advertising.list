@@ -18,8 +18,8 @@ DOMAIN-SUFFIX,unityads.unity3d.com
 # Alibaba(阿里巴巴)
 DOMAIN,tunion-api.m.taobao.com
 # AMap(高德地图)
-DOMAIN,optimus-ads.amap.com
-DOMAIN,optimus-ads.amap.com.w.alikunlun.com
+DOMAIN-SUFFIX,optimus-ads.amap.com
+DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
 # Autohome
 DOMAIN,adproxy.autohome.com.cn
 DOMAIN,rd.autohome.com.cn
