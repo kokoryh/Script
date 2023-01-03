@@ -1,67 +1,44 @@
-# 机场
-DOMAIN,rss.teacat001.xyz
-DOMAIN,dy.wangchen.xyz
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
-
-# Steam(ios端专用)
-DOMAIN,steammobile.akamaized.net
-DOMAIN,steamcommunity-a.akamaihd.net
-DOMAIN-SUFFIX,st.dl.eccdnx.com
-DOMAIN-SUFFIX,steampowered.com
-DOMAIN-SUFFIX,steamstatic.com
-DOMAIN-SUFFIX,steamcommunity.com
-DOMAIN-SUFFIX,steambroadcast.akamaized.net
-
-# Microsoft
-DOMAIN,login.live.com
-DOMAIN,storage.live.com
+DOMAIN,bbs.imoutolove.me
+DOMAIN,dy.wangchen.xyz
 DOMAIN,edge.activity.windows.com
-
-# scriptable
-DOMAIN,gallery.scriptable.app
-
-# adguard
 DOMAIN,filters.adtidy.org
+DOMAIN,gallery.scriptable.app
+DOMAIN,in.appcenter.ms
+DOMAIN,login.live.com
+DOMAIN,mozilla.cloudflare-dns.com
+DOMAIN,notability.com
+DOMAIN,receiptcheck.quantumult.app
+DOMAIN,rss.teacat001.xyz
+DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN,steammobile.akamaized.net
+DOMAIN,storage.live.com
+DOMAIN,www.summer-plus.net
 DOMAIN-SUFFIX,adguard.org
-
-# notion
+DOMAIN-SUFFIX,amazontrust.com
+DOMAIN-SUFFIX,asmr.one
+DOMAIN-SUFFIX,codeberg.org
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,goodnotes.email
+DOMAIN-SUFFIX,goodnotescloud.com
+DOMAIN-SUFFIX,goodnotesplatform.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,mixpanel.com
+DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.new
 DOMAIN-SUFFIX,notion.site
 DOMAIN-SUFFIX,notion.so
-
-# codeberg
-DOMAIN-SUFFIX,codeberg.org
-
-# 代理软件激活检测
-DOMAIN,receiptcheck.quantumult.app
-DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,nssurge.com
-DOMAIN-SUFFIX,stash-activation.com
-
-# goodnotes
-DOMAIN-SUFFIX,mixpanel.com
-DOMAIN-SUFFIX,goodnotes.email
-DOMAIN-SUFFIX,goodnotescloud.com
-DOMAIN-SUFFIX,goodnotesplatform.com
-
-# 南+
-DOMAIN,www.summer-plus.net
-DOMAIN,bbs.imoutolove.me
-
-# 自用的其他软件分流
-DOMAIN,notability.com
-DOMAIN-SUFFIX,asmr.one
-DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,peropero.net
-
-# 一些乱七八糟的不知道干嘛用的
-DOMAIN,in.appcenter.ms
-DOMAIN,mozilla.cloudflare-dns.com
-DOMAIN-SUFFIX,lencr.org
-DOMAIN-SUFFIX,usertrust.com
-DOMAIN-SUFFIX,amazontrust.com
-DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,smoot.apple.cn
-DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,stash-activation.com
+DOMAIN-SUFFIX,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,surge-activation.com
+DOMAIN-SUFFIX,usertrust.com
