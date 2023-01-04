@@ -4,8 +4,7 @@ const _requestBodyPath = "input/surge/request.dump"
 const _responseBodyPath = "input/surge/response.dump"
 const _outputPath = "input/surge/"
 const _isResponse = 1
-// 持久化数据
-const _persistentStore = {
+const _persistentStore = {  // 持久化数据
     "key": "value"
 }
 
@@ -22,11 +21,21 @@ function handleRequestHeader(requestHeader) {
     return result
 }
 
+function handleRequestBody(requestBody) {
+    let result = {}
+    let params = requestBody.split(/\r?\n/)
+    for (let i = 1; i < params.length - 2; i++) {
+        let arr = params[i].split(":")
+        result[arr[0].trim().replace(/"(.+)"/, "$1")] = arr[1].split(",")[0].trim().replace(/"(.+)"/, "$1")
+    }
+    return result
+}
+
 function handleResponseHeader(responseHeader) {
     let result = {}
     let headers = responseHeader.split(/\r?\n/)
-    let url = headers.shift()
-    let status = url.split(" ")[1]
+    let statuses = headers.shift()
+    let status = statuses.split(" ")[1]
     for (const header of headers) {
         if (header) {
             let arr = header.split(":")
@@ -37,8 +46,8 @@ function handleResponseHeader(responseHeader) {
 }
 
 function _writeFile(filename, content) {
-    let date = new Date().getTime()
-    _fs.writeFile(_outputPath + date + "-" + filename + ".json", content, function (err) {
+    let timestamp = new Date().getTime()
+    _fs.writeFile(_outputPath + timestamp + "-" + filename + ".json", content, function (err) {
         if (err) {
             return console.error(err);
         }
@@ -78,7 +87,7 @@ const $request = {
     method: _model.method,
     url: _model.URL,
     headers: handleRequestHeader(_model.requestHeader),
-    body: _model.streamHasRequestBody ? _requestBody : null
+    body: _model.streamHasRequestBody ? handleRequestBody(_requestBody) : null
 }
 
 const $response = {
@@ -90,7 +99,6 @@ const $response = {
 }
 
 function $done(result) {
-    console.log(result);
     if (result) {
         if (_isResponse) {
             if (result.body) {
