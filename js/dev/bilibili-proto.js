@@ -37,15 +37,14 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 
 console.log(`b站proto-2023.1.4-@kokoryh`);
 const url = $request.url;
-const method = $request.method;
+// const method = $request.method;
 let headers = $response.headers;
 const isQuanX = typeof $task !== "undefined";
 const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.body;
 
 const requestHeader = $request.headers;
-let isIpad = false;
-let ua = requestHeader["User-Agent"] || requestHeader["user-agent"];
-if (ua.includes("bili-hd")) isIpad = true;
+const ua = requestHeader["User-Agent"] || requestHeader["user-agent"];
+const isIpad = ua.includes("bili-hd");
 
 let gzipStrName = 'grpc-encoding';
 if (!headers[gzipStrName]) {
@@ -60,9 +59,9 @@ headers[gzipStrName] = 'identity';
 let body;
 const biliRoot = protobuf.Root.fromJSON(biliJson);
 let needProcessFlag = false;
-if (method !== "POST") {
-    $notification.post(notifyTitle, "method错误:", method);
-}
+// if (method !== "POST") {
+//     $notification.post(notifyTitle, "method错误:", method);
+// }
 
 if (url.includes("Dynamic/DynAll")) {
     console.log('动态DynAll');
@@ -152,7 +151,7 @@ if (url.includes("Dynamic/DynAll")) {
         if (adCount) {
             needProcessFlag = true;
         }
-        console.log(`动态列表广告数量:${adCount}`);
+        console.log(`动态列表过滤数量:${adCount}`);
     }
     if (needProcessFlag) {
         body = processNewBody(dynAllReplyType.encode(dynAllReplyObj).finish());
