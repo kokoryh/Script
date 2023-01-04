@@ -1,4 +1,4 @@
-const _fs = require('fs');
+const _fs = require('fs')
 const _modelPath = "input/surge/model.json"
 const _requestBodyPath = "input/surge/request.dump"
 const _responseBodyPath = "input/surge/response.dump"
@@ -42,7 +42,7 @@ function handleResponseHeader(responseHeader) {
             result[arr[0].trim()] = arr[1].trim()
         }
     }
-    return {status, result}
+    return {status, headers: result}
 }
 
 function _writeFile(filename, content) {
@@ -94,7 +94,7 @@ const $response = {
     status: _response.status,
     method: _model.method,
     url: _model.URL,
-    headers: _response.result,
+    headers: _response.headers,
     body: _model.streamHasResponseBody ? _responseBody : null
 }
 
