@@ -6,6 +6,7 @@ for (const filename of readDir) {
     }
 }
 
+// todo process类型 asn类型
 function format(filename) {
     try {
         const data = fs.readFileSync(filename, 'UTF-8');
@@ -44,25 +45,25 @@ function format(filename) {
                 }
             }
         });
-        for (const item of DOMAIN.sort()) {
+        for (const item of unique(DOMAIN).sort()) {
             RESULT += "DOMAIN," + item + "\r\n"
         }
-        for (const item of DOMAIN_SUFFIX.sort()) {
+        for (const item of unique(DOMAIN_SUFFIX).sort()) {
             RESULT += "DOMAIN-SUFFIX," + item + "\r\n"
         }
-        for (const item of DOMAIN_KEYWORD.sort()) {
+        for (const item of unique(DOMAIN_KEYWORD).sort()) {
             RESULT += "DOMAIN-KEYWORD," + item + "\r\n"
         }
-        for (const item of IP_CIDR.sort()) {
+        for (const item of unique(IP_CIDR).sort()) {
             RESULT += "IP-CIDR," + item + ",no-resolve\r\n"
         }
-        for (const item of IP_CIDR6.sort()) {
+        for (const item of unique(IP_CIDR6).sort()) {
             RESULT += "IP-CIDR6," + item + ",no-resolve\r\n"
         }
-        for (const item of GEOIP.sort()) {
+        for (const item of unique(GEOIP).sort()) {
             RESULT += "GEOIP," + item + "\r\n"
         }
-        for (const item of USER_AGENT.sort()) {
+        for (const item of unique(USER_AGENT).sort()) {
             RESULT += "USER-AGENT," + item + "\r\n"
         }
         fs.writeFile(`../${filename}`, RESULT, function (err) {
@@ -73,4 +74,8 @@ function format(filename) {
     } catch (err) {
         console.error(err);
     }
+}
+
+function unique(arr) {
+    return Array.from(new Set(arr))
 }

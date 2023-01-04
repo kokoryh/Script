@@ -1,9 +1,70 @@
-# Bilibili
-# DOMAIN,grpc.biliapi.net
-IP-CIDR,203.107.1.1/24,no-resolve
+# 高德地图 2023年1月4日
+DOMAIN-SUFFIX,amdc.m.taobao.com
+DOMAIN-SUFFIX,page.amap.com
+DOMAIN-SUFFIX,www.qchannel01.cn
+DOMAIN-SUFFIX,optimus-ads.amap.com
+DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
 
+# 阿里系
+DOMAIN,tunion-api.m.taobao.com
+# 阿里云
+# DOMAIN,zconfig.alibabausercontent.com
+# DOMAIN-SUFFIX,amdc.m.taobao.com
+# DOMAIN-SUFFIX,dorangesource.alicdn.com
+# DOMAIN-SUFFIX,h-adashx.ut.taobao.com
+# 钉钉
+# DOMAIN-SUFFIX,adash.man.aliyuncs.com
+# DOMAIN-SUFFIX,s-gm.mmstat.com
+# 支付宝
+# DOMAIN-SUFFIX,mmstat.com
+# DOMAIN-SUFFIX,amdc.alipay.com
+
+# 百度系
+DOMAIN,afd.baidu.com
+DOMAIN,als.baidu.com
+DOMAIN,duclick.baidu.com
+DOMAIN,mobads.baidu.com
+DOMAIN,mobads-logs.baidu.com
+DOMAIN,nadvideo2.baidu.com
+DOMAIN,nsclick.baidu.com
+DOMAIN-SUFFIX,cpro.baidu.com
+DOMAIN-SUFFIX,duapps.com
+DOMAIN-SUFFIX,pos.baidu.com
+# 百度网盘
+# DOMAIN,list.z.qingting.fm
+# DOMAIN,nj.t.bcsp2p.baidu.com
+# DOMAIN,sofire.baidu.com
+# DOMAIN,nsclick.baidu.com
+# DOMAIN,dlswbr.baidu.com
+# DOMAIN-SUFFIX,rp.hpplay.cn
+# DOMAIN-SUFFIX,dxp.baidu.com
+# DOMAIN-SUFFIX,hmma.baidu.com
+# DOMAIN-SUFFIX,ufosdk.baidu.com
 # 贴吧屏蔽域名dns查询
 IP-CIDR,180.76.76.200/32,no-resolve
+
+# 腾讯系(不改)
+
+# bilibili
+# DOMAIN,grpc.biliapi.net
+# DOMAIN-SUFFIX,cm.bilibili.com
+IP-CIDR,203.107.1.1/24,no-resolve
+
+# 通用(说实话下面这几条都是数据分析商的。。。)
+# DOMAIN-SUFFIX,bugly.qq.com
+# DOMAIN-SUFFIX,umeng.com
+# DOMAIN-SUFFIX,umengcloud.com
+# DOMAIN-KEYWORD,appsflyer
+
+# 中国工商银行
+# DOMAIN-SUFFIX,jic.talkingdata.com
+# DOMAIN-SUFFIX,hm.baidu.com
+
+# 杭州城市大脑
+# DOMAIN-SUFFIX,pingma.qq.com
+
+# 扫描全能王
+# DOMAIN-SUFFIX,uyunad.com
 
 # Advertising
 # General
