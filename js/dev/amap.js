@@ -21,8 +21,8 @@ if (url.includes("valueadded/alimama/splash_screen")) {
     obj.data.tipData = undefined
     if (obj.data?.cardList) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
-            return item.dataType === "MyOrderCard" || item.dataType === "GdRecommendCard" || item.dataType === "SceneVehicleCard_function"
-            // datakey和dataType看起来是一样的
+            return item.dataType === "MyOrderCard" || item.dataType === "GdRecommendCard"
+            // item.dataKey === "SceneVehicleCard_function"  // 我的车辆
             // item.dataKey === "AnnualBillCardV2" || // 年度报告
             // item.dataKey === "PopularActivitiesCard" // 热门活动
             // item.dataKey === "GameExcitation" || // 小德爱消除
