@@ -4,7 +4,7 @@ if ($.isQuanX) {
     $.removeValue("all");
 }
 
-if($.isSurge) {
+if ($.isSurge) {
     $.removeValue("bili_suit_push");
     $.removeValue("bili_no_load");
     $.removeValue("bili_suit_view");

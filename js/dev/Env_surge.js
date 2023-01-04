@@ -65,8 +65,7 @@ const $notification = {
 
 try {
     if (_fs.existsSync(_modelPath)) var _modelData = _fs.readFileSync(_modelPath, "UTF-8");
-    var _requestBody = null
-    // if (_fs.existsSync(_requestBodyPath)) var _requestBody = _fs.readFileSync(_requestBodyPath, "UTF-8");
+    if (_fs.existsSync(_requestBodyPath)) var _requestBody = _fs.readFileSync(_requestBodyPath, "UTF-8");
     if (_fs.existsSync(_responseBodyPath)) var _responseBody = _fs.readFileSync(_responseBodyPath, "UTF-8");
 } catch (err) {
     console.error(err);

@@ -97,7 +97,7 @@ if (url.includes("Dynamic/DynAll")) {
         let adCount = 0;
         let adRegex = /(拼多多.*补贴)/;  // 广告关键词
         let noForwordWhiteRegex = /(互动抽奖)/;  // 白名单(非转发动态)
-        let realWhiteRegex = /(kokoryh|hanser)/;  // 真-白名单
+        let realWhiteRegex = /(kokoryh)/;  // 真-白名单
         let upFilter = [    // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
             198297,         // 冰糖IO
             1903032,        // 大毛冰啤
