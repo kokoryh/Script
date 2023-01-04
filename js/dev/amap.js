@@ -8,7 +8,6 @@ if (url.includes("valueadded/alimama/splash_screen")) {
             item.creative[0].start_time = 2240150400
             item.creative[0].end_time = 2240150400
         }
-        console.log("valueadded/alimama/splash_screen")
         change = true
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {
@@ -16,7 +15,6 @@ if (url.includes("valueadded/alimama/splash_screen")) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
         }))
-        console.log("faas/amap-navigation/main-page")
         change = true
     }
 } else if (url.includes("dsp/profile/index/nodefaas")) {
@@ -25,22 +23,20 @@ if (url.includes("valueadded/alimama/splash_screen")) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
             return item.dataType === "MyOrderCard" || item.dataType === "GdRecommendCard"
         }))
-        console.log("dsp/profile/index/nodefaas")
         change = true
     }
 } else if (url.includes("search/new_hotword")) {
     if (obj.data?.header_hotword) {
         obj.data.header_hotword = []
-        console.log("search/new_hotword")
         change = true
     }
 } else if (url.includes("ws/msgbox/pull")) {
     if (obj.msgs) {
         obj.msgs = undefined
-        console.log("ws/msgbox/pull")
         change = true
     }
 }
+
 if (change) {
     $done({body: JSON.stringify(obj)})
 } else {
