@@ -11,6 +11,10 @@ if (url.includes("valueadded/alimama/splash_screen")) {
         change = true
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {
+    if (obj.data?.pull3?.msgs) {
+        obj.data.pull3.msgs = []
+        change = true
+    }
     if (obj.data?.cardList) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
