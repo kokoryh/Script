@@ -11,8 +11,8 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
       按照UP主移除其非视频动态，但是仍保留其抽奖动态
       -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
-      -和某些贼tm能发动态的VUP(一天五六条的，很劝退路人粉desu)
-      移除任何转发的抽奖动态
+      -和某些贼TM能发动态的UP(一天五六条，很劝退路人粉desu)
+      移除任何转发的抽奖动态，包括自己转发的，但保留自己中奖的(什么时候能中呢？)
 */
 // 调试环境
 // const $request = {
@@ -21,8 +21,8 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //     // url: "PlayURL/PlayView",
 //     method: "POST",
 //     headers: {
-//         "user-agent": "ipad"
-//         // "user-agent": "iphone"
+//         "user-agent": "bili-hd"  // ipad
+//         // "User-Agent": "bili-inter"  // 粉色b站
 //     }
 // }
 // const $response = {
@@ -35,7 +35,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // const fs = require('fs');
 // $response.body = fs.readFileSync("response");
 
-console.log(`b站proto-2023.1.3-@kokoryh`);
+console.log(`b站proto-2023.1.4-@kokoryh`);
 const url = $request.url;
 const method = $request.method;
 let headers = $response.headers;
@@ -44,8 +44,8 @@ const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.bod
 
 const requestHeader = $request.headers;
 let isIpad = false;
-let ua = isQuanX ? "User-Agent" : "user-agent";
-if (/ipad/i.test(requestHeader[ua])) isIpad = true;
+let ua = requestHeader["User-Agent"] || requestHeader["user-agent"];
+if (ua.includes("bili-hd")) isIpad = true;
 
 let gzipStrName = 'grpc-encoding';
 if (!headers[gzipStrName]) {
