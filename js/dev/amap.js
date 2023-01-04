@@ -1,7 +1,7 @@
 let url = $request.url
 let obj = JSON.parse($response.body)
 let change = false
-if (url.includes("ws/valueadded/alimama/splash_screen")) {
+if (url.includes("valueadded/alimama/splash_screen")) {
     if (obj.data?.ad) {
         for (const item of obj.data.ad) {
             item.set.setting.display_time = 0
@@ -11,7 +11,7 @@ if (url.includes("ws/valueadded/alimama/splash_screen")) {
         console.log("valueadded/alimama/splash_screen")
         change = true
     }
-} else if (url.includes("ws/faas/amap-navigation/main-page")) {
+} else if (url.includes("faas/amap-navigation/main-page")) {
     if (obj.data?.cardList) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
@@ -19,7 +19,7 @@ if (url.includes("ws/valueadded/alimama/splash_screen")) {
         console.log("faas/amap-navigation/main-page")
         change = true
     }
-} else if (url.includes("shield/dsp/profile/index/nodefaas")) {
+} else if (url.includes("dsp/profile/index/nodefaas")) {
     obj.data.tipData = undefined
     if (obj.data?.cardList) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
@@ -28,7 +28,7 @@ if (url.includes("ws/valueadded/alimama/splash_screen")) {
         console.log("dsp/profile/index/nodefaas")
         change = true
     }
-} else if (url.includes("shield/search/new_hotword")) {
+} else if (url.includes("search/new_hotword")) {
     if (obj.data?.header_hotword) {
         obj.data.header_hotword = []
         console.log("search/new_hotword")
