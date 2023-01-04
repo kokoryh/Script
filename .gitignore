@@ -2,6 +2,7 @@
 /Surge/参考配置
 /js/dev/test.js
 /js/dev/response*
+/js/dev/input
 
 .DS_Store
 node_modules
