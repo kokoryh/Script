@@ -3,6 +3,8 @@
 /js/dev/test.js
 /js/dev/response*
 /js/dev/input
+/js/dev/decode.js
+/js/dev/package-lock.json
 
 .DS_Store
 node_modules
