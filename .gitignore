@@ -3,6 +3,7 @@
 /js/dev/test.js
 /js/dev/response*
 /js/dev/input
+/js/dev/output
 /js/dev/decode.js
 /js/dev/package-lock.json
 

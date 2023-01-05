@@ -4,17 +4,17 @@
 
 const scriptName = "BiliBili";
 const storyAidKey = "bilibili_story_aid";
-const blackKey = "bilibili_feed_black";
 let magicJS = MagicJS(scriptName, "INFO");
 //Customize blacklist
-let blacklist = [];
-if (magicJS.read(blackKey)) {
-    blacklist = magicJS.read(blackKey).split(";");
-} else {
-    const defaultList = "";
-    magicJS.write(blackKey, defaultList);
-    blacklist = defaultList.split(";");
-}
+// const blackKey = "bilibili_feed_black";
+// let blacklist = [];
+// if (magicJS.read(blackKey)) {
+//     blacklist = magicJS.read(blackKey).split(";");
+// } else {
+//     const defaultList = "";
+//     magicJS.write(blackKey, defaultList);
+//     blacklist = defaultList.split(";");
+// }
 (() => {
     let body = null;
     if (magicJS.isResponse) {
