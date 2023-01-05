@@ -59,7 +59,7 @@ let magicJS = MagicJS(scriptName, "INFO");
                             // }
                         } else if (
                             !item.hasOwnProperty("ad_info") &&
-                            !blacklist.includes(item["args"]["up_name"]) &&
+                            // !blacklist.includes(item["args"]["up_name"]) &&
                             item.card_goto.indexOf("ad") === -1 &&
                             (item["card_type"] === "small_cover_v2" || item["card_type"] === "large_cover_v1" || item["card_type"] === "large_cover_single_v9")
                         ) {
