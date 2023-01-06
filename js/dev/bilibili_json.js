@@ -7,7 +7,7 @@ try {
     console.log(e + "\n错误URL：" + url)
     $done({})
 }
-if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
+if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     if (obj.data?.list) {
         for (let item of obj.data.list) {
             item.duration = 0  // 显示时间
@@ -16,7 +16,7 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         }
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/v2/feed/index?')) {  // 推荐去广告，最后问号不能去掉，以免匹配到story模式
+} else if (url.includes('app.bilibili.com/x/v2/feed/index?')) {  // 推荐去广告，最后问号不能去掉，以免匹配到story模式
     if (obj.data?.items) {
         let items = []
         for (let item of obj.data.items) {
@@ -32,7 +32,7 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         obj.data.items = items
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/v2/feed/index/story?')) {  // 匹配story模式，用于记录Story的aid
+} else if (url.includes('app.bilibili.com/x/v2/feed/index/story?')) {  // 匹配story模式，用于记录Story的aid
     if (obj.data?.items) {
         let items = []
         for (let item of obj.data.items) {
@@ -43,7 +43,7 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         obj.data.items = items
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
+} else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
     const tabList = new Set([39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556])
     const topList = new Set([176, 107])
     const bottomList = new Set([177, 178, 179, 181, 102, 104, 106, 486, 488, 489])
@@ -72,7 +72,7 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         })
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
+} else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
     if (obj.data?.sections_v2) {
         const itemList = new Set([396, 397, 398, 399, 402, 404, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501])
         obj.data.sections_v2.forEach((element, index) => {
@@ -114,7 +114,7 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         })
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/v2/account/myinfo?')) {  // 解锁会员画质
+} else if (url.includes('app.bilibili.com/x/v2/account/myinfo?')) {  // 解锁会员画质
     if (obj.data?.vip) {
         obj.data.vip.type = 2
         obj.data.vip.status = 1
@@ -122,14 +122,14 @@ if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广�
         obj.data.vip.due_date = 4669824160
         change = true
     }
-} else if (url.includes('https://app.bilibili.com/x/v2/search/square')) {  // 屏蔽热搜
+} else if (url.includes('app.bilibili.com/x/v2/search/square')) {  // 屏蔽热搜
     obj.data = {
         type: "history",
         title: "搜索历史",
         search_hotword_revision: 2
     }
     change = true
-} else if (url.includes('https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom')) {  // 直播去广告
+} else if (url.includes('api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom')) {  // 直播去广告
     if (obj.data) {
         obj.data.activity_banner_info = undefined
         change = true
