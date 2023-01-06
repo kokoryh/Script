@@ -35,10 +35,8 @@ function removeAds() {
 }
 
 function handleSplashNew(obj) {
-    obj.materialsList[0].filePath = "https://";
-    obj.materialsList[0].billId = undefined;
-    obj.materialsList[0].billMaterialsId = "1000";
-    obj.advertParam.skipTime = 1;
+    obj.materialsList[0].filePath = "h";
+    obj.advertParam.skipTime = 0;
 }
 
 function handleSplash(obj) {
@@ -99,7 +97,7 @@ function handleNoTemp2(obj, timestamp) {
 function removeValue() {
     let success = $.setValue("", "train_12306");
     if (success) {
-        console.log("12306去广告 - 参数已清空，可重新获取参数");
+        console.log("12306去广告 - 脚本已更新，无需手动运行");
     }
     $done();
 }
