@@ -1,6 +1,12 @@
-let url = $request.url
-let obj = JSON.parse($response.body)
-let change = false
+var url = $request.url
+var change = false
+var obj
+try {
+    obj = JSON.parse($response.body)
+} catch (e) {
+    console.log(e + "\n错误URL：" + url)
+    $done({})
+}
 if (url.includes("valueadded/alimama/splash_screen")) {
     if (obj.data?.ad) {
         for (const item of obj.data.ad) {

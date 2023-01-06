@@ -10,9 +10,9 @@ try {
 if (url.includes('https://app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     if (obj.data?.list) {
         for (let item of obj.data.list) {
-            item["duration"] = 0  // 显示时间
-            item["begin_time"] = 2240150400  // 2040 年
-            item["end_time"] = 2240150400
+            item.duration = 0  // 显示时间
+            item.begin_time = 2240150400  // 2040 年
+            item.end_time = 2240150400
         }
         change = true
     }
