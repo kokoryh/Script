@@ -1,0 +1,1 @@
+let obj=JSON.parse($response.body);obj.materialsList&&(1===obj.materialsList.length?(obj.materialsList[0].filePath="https://api.dujin.org/bing/m.php",obj.materialsList[0].billId=void 0,obj.materialsList[0].billMaterialsId="1000000",obj.advertParam.skipTime=1):obj.materialsList.length>1&&(obj.materialsList=[{}])),$done({body:JSON.stringify(obj)});

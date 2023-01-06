@@ -50,7 +50,7 @@ cam_scanner = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/p
 # 美团开屏
 splash_meituan = type=http-response,pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?,requires-body=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
 # 12306开屏
-splash_12306 = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
+splash_12306 = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/moyu_12306.js
 
 [MITM]
 hostname = %APPEND% www.google.cn, exhentai.org, ap*.intsig.net, interface*.music.163.com, mp.weixin.qq.com, wmapi.meituan.com, www.meituan.com, gw.alicdn.com, heic.alicdn.com, api.m.jd.com, api.yangkeduo.com, api.pinduoduo.com, pan.baidu.com, client.app.coc.10086.cn, cloud.189.cn, ad.12306.cn
