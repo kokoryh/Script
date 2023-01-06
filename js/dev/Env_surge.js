@@ -1,16 +1,42 @@
 const _fs = require('fs')
+const _request = require('request')
 const _compressing = require('compressing')
 var _model
 const _timestamp = new Date().getTime()
+const _isTask = 0
+const _isRequest = 0
+const _isResponse = 1
 const _modelPath = "input/surge/model.json"
 const _requestBodyPath = "input/surge/request.dump"
 const _responseBodyPath = "input/surge/response.dump"
 const _outputPath = "output/"
-const _isResponse = 1
 const _persistentStore = {  // 持久化数据
     "key": "value",
 }
-const $httpClient = 1  // Surge环境
+const $httpClient = {
+    get: function (options, callback = () => {
+    }) {
+        _request.get(options, (err, resp, body) => {
+            if (!err && resp) {
+                resp.body = body
+                resp.statusCode = resp.status ? resp.status : resp.statusCode
+                resp.status = resp.statusCode
+            }
+            callback(err, resp, body)
+        })
+    },
+    post: function (options, callback = () => {
+    }) {
+        _request.post(options, (err, resp, body) => {
+            if (!err && resp) {
+                resp.body = body
+                resp.statusCode = resp.status ? resp.status : resp.statusCode
+                resp.status = resp.statusCode
+            }
+            callback(err, resp, body)
+        })
+    }
+}
 const $persistentStore = {
     write: (val, key) => {
         return _persistentStore[key] = val
@@ -24,15 +50,18 @@ const $notification = {
         console.log(`notify----------\ntitle: ${title}\nsubtitle: ${subtitle}\nbody: ${body}`)
     }
 }
-const $request = {}   // method, url, headers, body
-const $response = {}  // status, method, url, headers, body
-
+var $request   // method, url, headers, body
+var $response  // status, method, url, headers, body
 !(async () => {
-    await _handleModel()
-    await _handleRequestHeader()
-    await _handleRequestBody()
-    await _handleResponseHeader()
-    await _handleResponseBody()
+    if (_isRequest || _isResponse) {
+        $request = {}
+        $response = {}
+        await _handleModel()
+        await _handleRequestHeader()
+        await _handleRequestBody()
+        await _handleResponseHeader()
+        await _handleResponseBody()
+    }
 })().catch((e) => {
     console.log(e)
 }).finally(() => {
@@ -44,33 +73,47 @@ const $response = {}  // status, method, url, headers, body
 })
 
 function $done(result) {
-    if (result) {
+    if (!result) {
+        console.log('----------finish with $done()----------')
+    } else if (!Object.keys(result).length) {
+        console.log('----------finish with $done({})----------')
+    } else {
         if (_isResponse) {
-            console.log("done response")
+            console.log("----------do response----------")
             if (result.body) {
-                console.log("done body")
+                console.log("body changed")
                 _writeFile(_outputPath + _timestamp + "-body-2.json", result.body)
             }
             if (result.headers) {
-                console.log("done header")
-                _writeFile(_outputPath + _timestamp + "-header-1.json", $response.headers)
-                _writeFile(_outputPath + _timestamp + "-header-2.json", result.headers)
+                console.log("header changed")
+                console.log("origin headers:\n" + $request.headers)
+                console.log("origin headers:\n" + result.headers)
             }
+            if (result.status) {
+                console.log("status changed")
+                console.log("origin status:\n" + $request.status)
+                console.log("changed status:\n" + result.status)
+            }
+            console.log("----------done response----------")
         } else {
-            console.log("done request")
+            console.log("----------do request----------")
             if (result.body) {
-                console.log("done body")
+                console.log("body changed")
                 _writeFile(_outputPath + _timestamp + "-body-1.json", $request.body)
                 _writeFile(_outputPath + _timestamp + "-body-2.json", result.body)
             }
             if (result.headers) {
-                console.log("done header")
-                _writeFile(_outputPath + _timestamp + "-header-1.json", $request.headers)
-                _writeFile(_outputPath + _timestamp + "-header-2.json", result.headers)
+                console.log("header changed")
+                console.log("origin headers:\n" + $request.headers)
+                console.log("origin headers:\n" + result.headers)
             }
+            if (result.url) {
+                console.log("url changed")
+                console.log("origin url:\n" + $request.url)
+                console.log("changed url:\n" + result.url)
+            }
+            console.log("----------done request----------")
         }
-    } else {
-        console.log('done null')
     }
 }
 
