@@ -10,6 +10,8 @@
 于是可以跳过开屏倒计时且不看到广告的有效期就跟这个缓存的有效时间挂钩，可以得到两种实现思路：
 1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，7天过去了缓存依旧生效，等待第15天验证)
 2、当确认方法1缓存始终会失效后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在handleSplash2()，可随时切换planB)
+
+已有更好的屏蔽方式，此脚本仅留作日后参考用
 */
 let $ = kokoryh();
 
@@ -24,12 +26,19 @@ function removeAds() {
     if (obj.materialsList) {
         if (obj.materialsList.length === 1) {
             // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
-            handleSplash(obj);
+            handleSplashNew(obj);
         } else if (obj.materialsList.length > 1) {
             obj.materialsList = [{}];
         }
     }
     $done({body: JSON.stringify(obj)});
+}
+
+function handleSplashNew(obj) {
+    obj.materialsList[0].filePath = "https://";
+    obj.materialsList[0].billId = undefined;
+    obj.materialsList[0].billMaterialsId = "1000";
+    obj.advertParam.skipTime = 1;
 }
 
 function handleSplash(obj) {
@@ -48,8 +57,8 @@ function handleNoTemp(obj) {
     let train_12306 = timestamp + "," + obj.materialsList[0].billId + "," + obj.materialsList[0].billMaterialsId;
     let success = $.setValue(train_12306, "train_12306");
     if (success) {
-        $.notify("12306去广告", "", "参数修改成功，退后台重进即可告别开屏广告");
-        // console.log("12306去广告 - 参数修改成功，退后台重进即可告别开屏广告");
+        // $.notify("12306去广告", "", "参数修改成功，退后台重进即可告别开屏广告");
+        console.log("12306去广告 - 参数修改成功，退后台重进即可告别开屏广告");
     }
 }
 
