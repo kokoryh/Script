@@ -50,5 +50,5 @@ if (url.includes("valueadded/alimama/splash_screen")) {
 if (change) {
     $done({body: JSON.stringify(obj)})
 } else {
-    $done()
+    $done({})
 }

@@ -59,7 +59,7 @@ if (body) {
     setEquip(load_equip, load_num, type, "load_equip");
     $done({body: JSON.stringify(obj)});
 } else {
-    $done();
+    $done({});
 }
 
 function setEquip(equip, equip_num, type, param) {

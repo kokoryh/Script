@@ -1,1 +1,1 @@
-var obj=JSON.parse($response.body);obj.data&&obj.data.operate?(obj.data.operate=null,$done({body:JSON.stringify(obj)})):$done();
+let obj=JSON.parse($response.body);obj.data&&obj.data.operate?(obj.data.operate=null,$done({body:JSON.stringify(obj)})):$done({});
