@@ -8,8 +8,8 @@
 但是不将filePath置为undefined，仅修改skipTime的话会看到一闪而过的开屏广告
 经过测试可以将未缓存的广告的billId和billMaterialsId修改为已缓存的广告来跳过
 于是可以跳过开屏倒计时且不看到广告的有效期就跟这个缓存的有效时间挂钩，可以得到两种实现思路：
-1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，准备先验证不修改时的有效期，在第8天和第15天各测试一次)
-2、当确认方法1无法修改缓存有效时间后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在handleSplash2())
+1、修改缓存有效时间，即目前的方法，修改chacheTime。然而这个数据是否生效需要时间的验证(已知改为100不生效，7天过去了缓存依旧生效，等待第15天验证)
+2、当确认方法1缓存始终会失效后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在handleSplash2()，可随时切换planB)
 */
 let $ = kokoryh();
 
@@ -23,7 +23,7 @@ function removeAds() {
     let obj = JSON.parse($response.body);
     if (obj.materialsList) {
         if (obj.materialsList.length === 1) {
-            console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
+            // console.log(obj.materialsList[0].title + ", billId: " + obj.materialsList[0].billId + ", billMaterialsId: " + obj.materialsList[0].billMaterialsId);
             handleSplash(obj);
         } else if (obj.materialsList.length > 1) {
             obj.materialsList = [{}];
