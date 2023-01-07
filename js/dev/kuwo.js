@@ -4,12 +4,20 @@ if (url.includes('/a.p')) {  // audio字头的
     if (!$response.body.startsWith("{")) $done({})
     try {
         let obj = JSON.parse($response.body)
-        obj.packs = {
-            "end": 32495443200,
-            "bought_vip": 1,
-            "type": 1,
-            "period": 31,
-            "bought_vip_end": 32495443200
+        if (obj.packs) {
+            obj.packs = {
+                "end": 32495443200,
+                "bought_vip": 1,
+                "type": 1,
+                "period": 31,
+                "bought_vip_end": 32495443200
+            }
+        }
+        if (obj.songs) {
+            Object.keys(obj.songs).forEach(key => {
+                obj.songs[key].info.policy = 5
+                obj.songs[key].info.policytype = 3
+            })
         }
         body = JSON.stringify(obj)
     } catch (e) {
