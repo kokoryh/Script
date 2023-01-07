@@ -15,7 +15,42 @@ if (url.includes('/a.p?')) {  // audio字头的
         console.log('url出现异常：\n' + url)
     }
 } else if (url.includes('/music.pay')) {
-    console.log("处理方法待补充：\n" + url)
+    try {
+        let obj = JSON.parse($response.body)
+        if (obj.songs && obj.songs[0].audio) {
+            obj.songs[0].audio.forEach(item => {
+                item.st = 0
+            })
+            obj.user[0] = {
+                "pid": "229317194",
+                "type": "vip",
+                "name": "vip_1",
+                "categray": "vip_1",
+                "id": 228908,
+                "order": 375787919,
+                "final": [],
+                "buy": 1657425321,
+                "begin": 1657425321,
+                "end": 4180305321,
+                "CurEnd": 0,
+                "playCnt": 0,
+                "playUpper": 300,
+                "downCnt": 0,
+                "downUpper": 300,
+                "playVideoCnt": 0,
+                "playVideoUpper": 3000,
+                "downVideoCnt": 0,
+                "downVideoUpper": 3000,
+                "price": 0,
+                "period": 1000,
+                "feetype": 0,
+                "info": obj.songs[0]
+            }
+            body = JSON.stringify(obj)
+        }
+    } catch (e) {
+        console.log('url出现异常：\n' + url)
+    }
 } else if (url.includes('/vip/v2/user/vip')) {
     if (!$response.body.startsWith("{")) $done({})
     try {
