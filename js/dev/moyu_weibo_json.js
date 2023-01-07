@@ -2,7 +2,7 @@
  > 应用名称：墨鱼自用QX微博&微博国际版净化
  > 脚本作者：@Zmqcherish, @Cuttlefish
  > 微信账号：墨鱼手记
- > 更新时间：2022-12-30
+ > 更新时间：2022-01-06
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 原作者库：https://github.com/zmqcherish
@@ -20,7 +20,8 @@
 
 
 
-const version = 'V2.0.77';
+const version = 'V2.0.81';
+
 
 const mainConfig = {
         isDebug: !1,
@@ -98,7 +99,8 @@ const mainConfig = {
         "interface/sdk/sdkad.php": "removePhpScreenAds",
         "ct=feed&a=trends": "removeTopics",
         user_center: "modifiedUserCenter",
-        "a=get_coopen_ads": "removeIntlOpenAds"
+        "a=get_coopen_ads": "removeIntlOpenAds",
+        "php?a=search_topic": "removeSearchTopic"
     };
 
 function getModifyMethod(e) {
@@ -110,6 +112,10 @@ function getModifyMethod(e) {
 
 function removeIntlOpenAds(e) {
     return e.data && 0 !== e.data.length && (e.data.ad_list = [], e.data.gdt_video_ad_ios = [], e.data.display_ad = 0, e.data.ad_ios_id = null, e.data.app_ad_ios_id = null, e.data.reserve_ad_ios_id = "", e.data.reserve_app_ad_ios_id = "", e.data.ad_duration = 604800, e.data.ad_cd_interval = 604800, e.data.pic_ad = []), e
+}
+
+function removeSearchTopic(e) {
+    return e.data && 0 !== e.data.length && (e.data = Object.values(e.data).filter(e => "searchtop" != e.type)), e
 }
 
 function modifiedUserCenter(e) {
@@ -131,7 +137,7 @@ function squareHandler(e) {
 function removeMainTab(e) {
     if (e.loadedInfo && e.loadedInfo.headers && delete e.loadedInfo.headers, !e.items) return e;
     let t = [];
-    for (let o of e.items) isAd(o.data) || (o.category ? "group" != o.category && t.push(o) : t.push(o));
+    for (let o of e.items) isAd(o.data) || (o.data?.common_struct && delete o.data.common_struct, o.category ? "group" != o.category && t.push(o) : t.push(o));
     return e.items = t, log("removeMainTab success"), e
 }
 
@@ -157,16 +163,16 @@ function topicHandler(e) {
     for (let i of t) {
         let n = !0;
         if (i.mblog) {
-            let r = i.mblog.buttons;
-            mainConfig.removeUnfollowTopic && r && "follow" == r[0].type && (n = !1)
+            let a = i.mblog.buttons;
+            mainConfig.removeUnfollowTopic && a && "follow" == a[0].type && (n = !1)
         } else {
             if (!mainConfig.removeUnusedPart) continue;
             if ("bottom_mix_activity" == i.itemid) n = !1; else if (i?.top?.title == "正在活跃") n = !1; else if (200 == i.card_type && i.group) n = !1; else {
-                let a = i.card_group;
-                if (!a) continue;
-                if (["guess_like_title", "cats_top_title", "chaohua_home_readpost_samecity_title"].indexOf(a[0].itemid) > -1) n = !1; else if (a.length > 1) {
+                let r = i.card_group;
+                if (!r) continue;
+                if (["guess_like_title", "cats_top_title", "chaohua_home_readpost_samecity_title"].indexOf(r[0].itemid) > -1) n = !1; else if (r.length > 1) {
                     let d = [];
-                    for (let s of a) -1 == ["chaohua_discovery_banner_1", "bottom_mix_activity"].indexOf(s.itemid) && d.push(s);
+                    for (let s of r) -1 == ["chaohua_discovery_banner_1", "bottom_mix_activity"].indexOf(s.itemid) && d.push(s);
                     i.card_group = d
                 }
             }
@@ -216,12 +222,12 @@ function removeCards(e) {
         let i = o.card_group;
         if (i && i.length > 0) {
             let n = [];
-            for (let r of i) 118 != r.card_type && n.push(r);
+            for (let a of i) 118 != a.card_type && n.push(a);
             o.card_group = n, t.push(o)
         } else {
-            let a = o.card_type;
-            if ([9, 165].indexOf(a) > -1) isAd(o.mblog) || t.push(o); else {
-                if ([1007, 180].indexOf(a) > -1) continue;
+            let r = o.card_type;
+            if ([9, 165].indexOf(r) > -1) isAd(o.mblog) || t.push(o); else {
+                if ([1007, 180].indexOf(r) > -1) continue;
                 t.push(o)
             }
         }
@@ -275,8 +281,8 @@ function itemExtendHandler(e) {
     if (mainConfig.modifyMenus && e.custom_action_list) {
         let i = [];
         for (let n of e.custom_action_list) {
-            let r = n.type, a = itemMenusConfig[r];
-            void 0 === a ? i.push(n) : "mblog_menus_copy_url" === r ? i.unshift(n) : a && i.push(n)
+            let a = n.type, r = itemMenusConfig[a];
+            void 0 === r ? i.push(n) : "mblog_menus_copy_url" === a ? i.unshift(n) : r && i.push(n)
         }
         e.custom_action_list = i
     }
@@ -301,10 +307,10 @@ function updateProfileSkin(e, t) {
         let i = 0;
         for (let n of e.items) if (n.image) try {
             dm = n.image.style.darkMode, "alpha" != dm && (n.image.style.darkMode = "alpha"), n.image.iconUrl = o[i++], n.dot && (n.dot = [])
-        } catch (r) {
+        } catch (a) {
         }
         log("updateProfileSkin success")
-    } catch (a) {
+    } catch (r) {
         console.log("updateProfileSkin fail")
     }
 }
@@ -314,7 +320,7 @@ function removeHome(e) {
     let t = [];
     for (let o of e.items) {
         let i = o.itemId;
-        if ("profileme_mine" == i) mainConfig.removeHomeVip && (o = removeHomeVip(o)), updateFollowOrder(o), t.push(o); else if ("100505_-_top8" == i) updateProfileSkin(o, "profileSkin1"), t.push(o); else if ("100505_-_newcreator" == i) "grid" == o.type ? (updateProfileSkin(o, "profileSkin2"), t.push(o)) : mainConfig.removeHomeCreatorTask || t.push(o); else {
+        if ("profileme_mine" == i) mainConfig.removeHomeVip && (o = removeHomeVip(o)), o.header?.vipIcon && delete o.header.vipIcon, updateFollowOrder(o), t.push(o); else if ("100505_-_top8" == i) updateProfileSkin(o, "profileSkin1"), t.push(o); else if ("100505_-_newcreator" == i) "grid" == o.type ? (updateProfileSkin(o, "profileSkin2"), t.push(o)) : mainConfig.removeHomeCreatorTask || t.push(o); else {
             if (["mine_attent_title", "100505_-_meattent_pic", "100505_-_newusertask", "100505_-_vipkaitong", "100505_-_hongbao2022", "100505_-_adphoto", "100505_-_advideo"].indexOf(i) > -1 || i.match(/100505_-_meattent_-_\d+/)) continue;
             t.push(o)
         }
@@ -337,8 +343,8 @@ function removeComments(e) {
     if (0 === o.length) return;
     let i = [];
     for (let n of o) {
-        let r = n.adType || "";
-        -1 == t.indexOf(r) && 6 != n.type && i.push(n)
+        let a = n.adType || "";
+        -1 == t.indexOf(a) && 6 != n.type && i.push(n)
     }
     log("remove 评论区相关和推荐内容"), e.datas = i
 }
