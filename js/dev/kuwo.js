@@ -17,8 +17,8 @@ if (url.includes('/a.p')) {
 } else if (url.includes('/music.pay')) {
     console.log("处理方法待补充：\n" + url)
 } else if (url.includes('/vip/v2/user/vip')) {
-    if (!$response.body.startsWith("{")) $done({})
     try {
+        if (!$response.body.startsWith("{")) $done({})
         let obj = JSON.parse($response.body)
         if (obj.data?.hasOwnProperty('vipTag')) {
             obj.data = {
