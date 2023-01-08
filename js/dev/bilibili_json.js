@@ -46,10 +46,11 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
     if (obj.data?.tab.length < 4) {
         obj.data.tab.push({
-            "id": 545,
+            "id": 1411,
             "tab_id": "bangumi",
             "name": "动画",
-            "uri": "bilibili://pgc/home",
+            // "uri": "bilibili://pgc/home",
+            "uri": "bilibili://following/home_activity_tab/6544",
             "pos": 4
         })
         change = true
