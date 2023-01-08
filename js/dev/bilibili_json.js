@@ -44,33 +44,44 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         change = true
     }
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
-    const tabList = new Set([39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556])
-    const topList = new Set([176, 107])
-    const bottomList = new Set([177, 178, 179, 181, 102, 104, 106, 486, 488, 489])
-    if (obj.data?.tab) {
-        obj.data.tab = obj.data.tab.filter((e) => {
-            return tabList.has(e.id)
+    if (obj.data?.tab.length < 4) {
+        obj.data.tab.push({
+            "id": 545,
+            "tab_id": "bangumi",
+            "name": "动画",
+            "uri": "bilibili://pgc/home",
+            "pos": 4
         })
         change = true
-    }
-    let storyAid = "246834163" // 将 id（222 & 107）调整为Story功能按钮
-    if (obj.data?.top) {
-        obj.data.top = obj.data.top.filter((e) => {
-            if (e.id === 222 || e.id === 107) {
-                e.uri = `bilibili://story/${storyAid}`
-                e.icon = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_icon.png"
-                e.tab_id = "Story_Top"
-                e.name = "Story"
-            }
-            return topList.has(e.id)
-        })
-        change = true
-    }
-    if (obj.data?.bottom) {
-        obj.data.bottom = obj.data.bottom.filter((e) => {
-            return bottomList.has(e.id)
-        })
-        change = true
+    } else {
+        const tabList = new Set([39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556])
+        const topList = new Set([176, 107])
+        const bottomList = new Set([177, 178, 179, 181, 102, 104, 106, 486, 488, 489])
+        if (obj.data?.tab) {
+            obj.data.tab = obj.data.tab.filter((e) => {
+                return tabList.has(e.id)
+            })
+            change = true
+        }
+        let storyAid = "246834163" // 将 id（222 & 107）调整为Story功能按钮
+        if (obj.data?.top) {
+            obj.data.top = obj.data.top.filter((e) => {
+                if (e.id === 222 || e.id === 107) {
+                    e.uri = `bilibili://story/${storyAid}`
+                    e.icon = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_icon.png"
+                    e.tab_id = "Story_Top"
+                    e.name = "Story"
+                }
+                return topList.has(e.id)
+            })
+            change = true
+        }
+        if (obj.data?.bottom) {
+            obj.data.bottom = obj.data.bottom.filter((e) => {
+                return bottomList.has(e.id)
+            })
+            change = true
+        }
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
     if (obj.data?.sections_v2) {
