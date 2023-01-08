@@ -1,5 +1,5 @@
-#!name=自用模块
-#!desc=kokoryh
+#!name=0-自用主模块
+#!desc=iphone专用
 
 [URL Rewrite]
 # Redirect Google Search Service

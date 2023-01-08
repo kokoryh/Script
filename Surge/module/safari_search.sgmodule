@@ -1,5 +1,5 @@
-#!name=Safari全能搜索
-#!desc=关键词+空格+命令，使用前把搜索引擎设置为 duckduckgo
+#!name=2-Safari全能搜索
+#!desc=关键词+空格+命令，需把搜索引擎设置为 duckduckgo
 
 [URL Rewrite]
 #>>>>>>>>>>>>>>>>>>>>>>>翻译
