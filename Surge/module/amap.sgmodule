@@ -1,8 +1,10 @@
 #!name=去广告-高德地图
 #!desc=需卸载重装
-# 搭配分流使用
-# domain,amdc.m.taobao.com,reject
-# 讲个笑话，这模块surge不生效，只能qx用
+
+[Rule]
+DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
+# 由于surge需特殊方法匹配域名下ip,因此用如下规则
+URL-REGEX,\/amdc\/mobileDispatch,REJECT
 
 [URL Rewrite]
 ^https?:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution - reject
