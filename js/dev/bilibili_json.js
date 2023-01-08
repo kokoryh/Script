@@ -44,7 +44,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         change = true
     }
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
-    if (obj.data?.tab.length < 4) {
+    if (obj.data?.tab?.length < 4) {
         obj.data.tab.push({
             "id": 1411,
             "tab_id": "bangumi",
