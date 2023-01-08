@@ -49,7 +49,6 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             "id": 1411,
             "tab_id": "bangumi",
             "name": "动画",
-            // "uri": "bilibili://pgc/home",
             "uri": "bilibili://following/home_activity_tab/6544",
             "pos": 4
         })
