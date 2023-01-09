@@ -117,11 +117,11 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             if (obj.data.hasOwnProperty("answer")) {
                 obj.data.answer = {}
             }
-            obj.data.vip_type = 2
-            obj.data.vip.type = 2
-            obj.data.vip.status = 1
-            obj.data.vip.vip_pay_type = 1
-            obj.data.vip.due_date = 4669824160
+            // obj.data.vip_type = 2
+            // obj.data.vip.type = 2
+            // obj.data.vip.status = 1
+            // obj.data.vip.vip_pay_type = 1
+            // obj.data.vip.due_date = 4669824160
         })
         change = true
     }
