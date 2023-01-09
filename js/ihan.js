@@ -52,7 +52,7 @@ function checkin() {
     $.get(url, async function (error, response, data) {
         if (error && !data) {
             $.msgBody = `请求失败！\n${error}`;
-        } else if (/成功/.test(data)) {
+        } else if (/(成功|恭喜)/.test(data)) {
             $.msgBody = "签到成功 🎉";
         } else if (/重复/.test(data)) {
             $.msgBody = "今日已签过 ⚠️";
