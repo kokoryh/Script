@@ -10,7 +10,7 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 ^https?:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution - reject
 
 [Map Local]
-^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https?:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [Script]
 http-response pattern=^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/new_hotword|dsp\/profile\/index\/nodefaas) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
