@@ -1,6 +1,6 @@
 // 修改自@ddgksf2013的微博去广告脚本: https://raw.githubusercontent.com/ddgksf2013/Scripts/master/weibo_json.js
 
-const mainConfig = {};
+// const mainConfig = {};
 const modifyStatusesUrls = ['statuses/friends/timeline', 'statuses/friends_timeline', 'statuses/unread_friends_timeline', 'statuses/unread_hot_timeline'];
 const modifyOtherUrls = {
     'ct=feed&a=trends': 'removeTopics',
@@ -9,6 +9,26 @@ const modifyOtherUrls = {
     'a=get_coopen_ads': 'removeIntlOpenAds'
 }
 
+var body = $response.body;
+var url = $request.url;
+let method = getModifyMethod(url);
+if (method) {
+    var func = eval(method);
+    if (method === 'removePhpScreenAds') {
+        let data = JSON.parse(body.substring(0, body.length - 2));
+        new func(data);
+        body = JSON.stringify(data) + "OK";
+    } else {
+        let data = JSON.parse(body);
+        new func(data);
+        body = JSON.stringify(data);
+    }
+    $done({body});
+} else {
+    $done({})
+}
+
+// 返回调用的函数名
 function getModifyMethod(url) {
     for (const s of modifyStatusesUrls) {
         if (url.indexOf(s) > -1) {
@@ -23,6 +43,7 @@ function getModifyMethod(url) {
     return null;
 }
 
+// 趋势页
 function removeTopics(data) {
     if (!data.data || data.data.length === 0) {
         return data;
@@ -33,6 +54,7 @@ function removeTopics(data) {
     return data;
 }
 
+// 我的页面
 function modifiedUserCenter(data) {
     if (!data.data || data.data.length === 0) {
         return data;
@@ -41,6 +63,7 @@ function modifiedUserCenter(data) {
     return data;
 }
 
+// 开屏
 function removePhpScreenAds(data) {
     if (!data.ads || data.ads.length === 0) {
         return data;
@@ -51,6 +74,7 @@ function removePhpScreenAds(data) {
     return data;
 }
 
+// 开屏
 function removeIntlOpenAds(data) {
     if (!data.data || data.data.length === 0) {
         return data;
@@ -98,6 +122,7 @@ function isBlock(data) {
     return false;
 }
 
+// 瀑布流内广告
 function removeTimeLine(data) {
     for (const s of ["ad", "advertises", "trends"]) {
         if (data[s]) {
@@ -119,20 +144,3 @@ function removeTimeLine(data) {
     }
     data.statuses = newStatuses;
 }
-
-var body = $response.body;
-var url = $request.url;
-let method = getModifyMethod(url);
-if (method) {
-    var func = eval(method);
-    if (method === 'removePhpScreenAds') {
-        let data = JSON.parse(body.substring(0, body.length - 2));
-        new func(data);
-        body = JSON.stringify(data) + "OK";
-    } else {
-        let data = JSON.parse(body);
-        new func(data);
-        body = JSON.stringify(data);
-    }
-}
-$done({body});

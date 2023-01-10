@@ -5,6 +5,9 @@
 /js/dev/input
 /js/dev/output
 /js/dev/decode.js
+/js/dev/kuwo-org.js
+/js/dev/bili-delete.js
+/js/dev/Env*
 /js/dev/package-lock.json
 
 .DS_Store

@@ -163,7 +163,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         change = true
     }
 } else {
-    console.log('触发意外的请求，请确认脚本或复写配置是否正常')
+    console.log('触发意外的请求，请确认脚本或复写配置是否正常\n错误URL：' + url)
 }
 
 if (change) {
