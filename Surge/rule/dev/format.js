@@ -13,6 +13,7 @@ function format(filename) {
         const lines = data.split(/\r?\n/);
 
         let RESULT = ""
+        let CLASH_RESULT = "payload:\n"
         const DOMAIN = []
         const DOMAIN_SUFFIX = []
         const DOMAIN_KEYWORD = []
@@ -47,26 +48,39 @@ function format(filename) {
         });
         for (const item of unique(DOMAIN).sort()) {
             RESULT += "DOMAIN," + item + "\r\n"
+            CLASH_RESULT += "  - DOMAIN," + item + "\r\n"
         }
         for (const item of unique(DOMAIN_SUFFIX).sort()) {
             RESULT += "DOMAIN-SUFFIX," + item + "\r\n"
+            CLASH_RESULT += "  - DOMAIN-SUFFIX," + item + "\r\n"
         }
         for (const item of unique(DOMAIN_KEYWORD).sort()) {
             RESULT += "DOMAIN-KEYWORD," + item + "\r\n"
+            CLASH_RESULT += "  - DOMAIN-KEYWORD," + item + "\r\n"
         }
         for (const item of unique(IP_CIDR).sort()) {
             RESULT += "IP-CIDR," + item + ",no-resolve\r\n"
+            CLASH_RESULT += "  - IP-CIDR," + item + ",no-resolve\r\n"
         }
         for (const item of unique(IP_CIDR6).sort()) {
             RESULT += "IP-CIDR6," + item + ",no-resolve\r\n"
+            CLASH_RESULT += "  - IP-CIDR6," + item + ",no-resolve\r\n"
         }
         for (const item of unique(GEOIP).sort()) {
             RESULT += "GEOIP," + item + "\r\n"
+            CLASH_RESULT += "  - GEOIP," + item + "\r\n"
         }
         for (const item of unique(USER_AGENT).sort()) {
             RESULT += "USER-AGENT," + item + "\r\n"
+            CLASH_RESULT += "  - USER-AGENT," + item + "\r\n"
         }
         fs.writeFile(`../${filename}`, RESULT, function (err) {
+            if (err) {
+                return console.error(err);
+            }
+        })
+        let clash_filename = filename.match(/(.+)\./)[1] + ".yaml"
+        fs.writeFile(`../../../Clash/rule/${clash_filename}`, CLASH_RESULT, function (err) {
             if (err) {
                 return console.error(err);
             }
