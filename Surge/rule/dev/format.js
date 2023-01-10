@@ -31,6 +31,10 @@ function format(filename) {
             exportRule(outputPath.surge, `${fn}_Domain.list`, result.surge_domain_set)
             exportRule(outputPath.clash, `${fn}_Domain.yaml`, result.clash_domain_set)
         }
+        if (result.surge_others) {
+            exportRule(outputPath.surge, `${fn}_Others.list`, result.surge_others)
+            exportRule(outputPath.clash, `${fn}_Others.yaml`, result.clash_others)
+        }
     } catch (err) {
         console.error(err);
     }
@@ -49,17 +53,19 @@ function exportRule(outputPath, filename, content) {
 function handleRuleDict(ruleDict) {
     let surge = ''
     let surge_domain_set = ''
+    let surge_others = ''
     let clash = 'payload:\r\n'
     let clash_domain_set = 'payload:\r\n'
-    let keys = Object.keys(ruleDict)
+    let clash_others = 'payload:\r\n'
 
-    let count = {}
-    let sum = 0
+    let keys = Object.keys(ruleDict)
+    let domain_keys = ['DOMAIN', 'DOMAIN-SUFFIX']
+    let other_keys = keys.filter(key => {
+        return !domain_keys.includes(key)
+    })
+
     for (const key of keys) {
-        let rules = unique(ruleDict[key]).sort()
-        count[key] = rules.length
-        sum += rules.length
-        for (const item of rules) {
+        for (const item of unique(ruleDict[key]).sort()) {  // 这里有待优化
             if (/IP-CIDR/i.test(key)) {
                 surge += `${key},${item},no-resolve\r\n`
                 clash += `  - ${key},${item},no-resolve\r\n`
@@ -70,17 +76,27 @@ function handleRuleDict(ruleDict) {
         }
     }
     // 处理DOMAIN-SET情况
-    if (count['DOMAIN'] + count['DOMAIN-SUFFIX'] === sum) {
-        for (const item of unique(ruleDict['DOMAIN']).sort()) {
-            surge_domain_set += `${item}\r\n`
-            clash_domain_set += `  - '${item}'\r\n`
-        }
-        for (const item of unique(ruleDict['DOMAIN-SUFFIX']).sort()) {
-            surge_domain_set += `.${item}\r\n`
-            clash_domain_set += `  - '+.${item}'\r\n`
+    for (const item of unique(ruleDict['DOMAIN']).sort()) {
+        surge_domain_set += `${item}\r\n`
+        clash_domain_set += `  - '${item}'\r\n`
+    }
+    for (const item of unique(ruleDict['DOMAIN-SUFFIX']).sort()) {
+        surge_domain_set += `.${item}\r\n`
+        clash_domain_set += `  - '+.${item}'\r\n`
+    }
+    // others
+    for (const key of other_keys) {
+        for (const item of unique(ruleDict[key]).sort()) {
+            if (/IP-CIDR/i.test(key)) {
+                surge_others += `${key},${item},no-resolve\r\n`
+                clash_others += `  - ${key},${item},no-resolve\r\n`
+            } else {
+                surge_others += `${key},${item}\r\n`
+                clash_others += `  - ${key},${item}\r\n`
+            }
         }
     }
-    return {surge, clash, surge_domain_set, clash_domain_set}
+    return {surge, surge_domain_set, surge_others, clash, clash_domain_set, clash_others}
 }
 
 // 合并规则 todo
