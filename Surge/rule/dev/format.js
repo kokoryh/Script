@@ -1,95 +1,99 @@
+/*
+功能：
+1、规则排序：将规则按照DOMAIN，DOMAIN-SUFFIX，DOMAIN-KEYWORD，IP-CIDR，IP-CIDR6，IP-ASN，GEOIP，USER-AGENT排序，IP类规则会添加no-resolve
+2、移除重复规则
+3、合并规则：DOMAIN与DOMAIN-SUFFIX合并，DOMAIN-SUFFIX之间合并，IP-CIDR(6)合并 todo
+4、导出规则：将规则导出为Surge和Clash格式，对纯DOMAIN规则的，导出为DOMAIN-SET格式，否则导出为classical todo
+*/
+
 const fs = require('fs');
-var readDir = fs.readdirSync("./");
+var readDir = fs.readdirSync('./');
+var outputPath = {
+    surge: '../',
+    clash: '../../../Clash/rule/'
+}
 for (const filename of readDir) {
     if (/.+\.list/.test(filename)) {
         format(filename)
     }
 }
 
-// todo process类型 asn类型
 function format(filename) {
     try {
-        const data = fs.readFileSync(filename, 'UTF-8');
-        const lines = data.split(/\r?\n/);
-
-        let RESULT = ""
-        let CLASH_RESULT = "payload:\n"
-        const DOMAIN = []
-        const DOMAIN_SUFFIX = []
-        const DOMAIN_KEYWORD = []
-        const IP_CIDR = []
-        const IP_CIDR6 = []
-        const GEOIP = []
-        const USER_AGENT = []
-        lines.forEach((line) => {
-            let l = line.trim()
-            if (l.startsWith("#") || !l) {
-
-            } else {
-                let rule = l.split(",")
-                rule[0] = rule[0].trim()
-                rule[1] = rule[1].split("//")[0].trim()
-                if (/^DOMAIN$/i.test(rule[0])) {
-                    DOMAIN.push(rule[1])
-                } else if (/^DOMAIN-SUFFIX$/i.test(rule[0])) {
-                    DOMAIN_SUFFIX.push(rule[1])
-                } else if (/^DOMAIN-KEYWORD$/i.test(rule[0])) {
-                    DOMAIN_KEYWORD.push(rule[1])
-                } else if (/^IP-CIDR$/i.test(rule[0])) {
-                    IP_CIDR.push(rule[1])
-                } else if (/^IP-CIDR6$/i.test(rule[0])) {
-                    IP_CIDR6.push(rule[1])
-                } else if (/^GEOIP$/i.test(rule[0])) {
-                    GEOIP.push(rule[1])
-                } else if (/^USER-AGENT$/i.test(rule[0])) {
-                    USER_AGENT.push(rule[1])
-                }
-            }
-        });
-        for (const item of unique(DOMAIN).sort()) {
-            RESULT += "DOMAIN," + item + "\r\n"
-            CLASH_RESULT += "  - DOMAIN," + item + "\r\n"
-        }
-        for (const item of unique(DOMAIN_SUFFIX).sort()) {
-            RESULT += "DOMAIN-SUFFIX," + item + "\r\n"
-            CLASH_RESULT += "  - DOMAIN-SUFFIX," + item + "\r\n"
-        }
-        for (const item of unique(DOMAIN_KEYWORD).sort()) {
-            RESULT += "DOMAIN-KEYWORD," + item + "\r\n"
-            CLASH_RESULT += "  - DOMAIN-KEYWORD," + item + "\r\n"
-        }
-        for (const item of unique(IP_CIDR).sort()) {
-            RESULT += "IP-CIDR," + item + ",no-resolve\r\n"
-            CLASH_RESULT += "  - IP-CIDR," + item + ",no-resolve\r\n"
-        }
-        for (const item of unique(IP_CIDR6).sort()) {
-            RESULT += "IP-CIDR6," + item + ",no-resolve\r\n"
-            CLASH_RESULT += "  - IP-CIDR6," + item + ",no-resolve\r\n"
-        }
-        for (const item of unique(GEOIP).sort()) {
-            RESULT += "GEOIP," + item + "\r\n"
-            CLASH_RESULT += "  - GEOIP," + item + "\r\n"
-        }
-        for (const item of unique(USER_AGENT).sort()) {
-            RESULT += "USER-AGENT," + item + "\r\n"
-            CLASH_RESULT += "  - USER-AGENT," + item + "\r\n"
-        }
-        fs.writeFile(`../${filename}`, RESULT, function (err) {
-            if (err) {
-                return console.error(err);
-            }
-        })
-        let clash_filename = filename.match(/(.+)\./)[1] + ".yaml"
-        fs.writeFile(`../../../Clash/rule/${clash_filename}`, CLASH_RESULT, function (err) {
-            if (err) {
-                return console.error(err);
-            }
-        })
+        const content = fs.readFileSync(filename, 'UTF-8');
+        const lines = content.split(/\r?\n/);
+        let ruleDict = classifyRules(lines)
+        let result = handleRuleDict(ruleDict)
+        let fn = filename.match(/(.+)\./)[1]
+        exportRule(outputPath.surge, `${fn}.list`, result.surge)
+        exportRule(outputPath.clash, `${fn}.yaml`, result.clash)
     } catch (err) {
         console.error(err);
     }
 }
 
+// 导出规则
+function exportRule(outputPath, filename, content) {
+    fs.writeFile(`${outputPath}${filename}`, content, function (err) {
+        if (err) {
+            return console.error(err);
+        }
+    })
+}
+
+// 拼接规则
+function handleRuleDict(ruleDict) {
+    let surge = ''
+    let clash = 'payload:\r\n'
+    let keys = Object.keys(ruleDict)
+    for (const key of keys) {
+        for (const item of unique(ruleDict[key]).sort()) {
+            if (/IP-CIDR/i.test(key)) {
+                surge += `${key},${item},no-resolve\r\n`
+                clash += `  - ${key},${item},no-resolve\r\n`
+            } else {
+                surge += `${key},${item}\r\n`
+                clash += `  - ${key},${item}\r\n`
+            }
+        }
+    }
+    return {surge, clash}
+}
+
+// 合并规则 todo
+
+// 移除重复规则
 function unique(arr) {
     return Array.from(new Set(arr))
+}
+
+// 分类规则
+function classifyRules(arr) {
+    let result = {
+        'DOMAIN': [],
+        'DOMAIN-SUFFIX': [],
+        'DOMAIN-KEYWORD': [],
+        'IP-CIDR': [],
+        'IP-CIDR6': [],
+        'IP-ASN': [],
+        'GEOIP': [],
+        'USER-AGENT': []
+    }
+    let keys = Object.keys(result)
+    arr.forEach(line => {
+        let l = line.trim()
+        if (l && !/^(#|;|\/\/)/.test(l)) {
+            let rule = l.split(',')
+            rule[0] = rule[0].trim()
+            rule[1] = rule[1].split("//")[0].trim()
+            for (const key of keys) {
+                let regex = new RegExp(`^${key}$`, "i")
+                if (regex.test(rule[0])) {
+                    result[key].push(rule[1])
+                    break
+                }
+            }
+        }
+    })
+    return result
 }
