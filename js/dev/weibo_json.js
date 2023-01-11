@@ -6,7 +6,8 @@ const modifyOtherUrls = {
     'ct=feed&a=trends': 'removeTopics',
     'user_center': 'modifiedUserCenter',
     'interface/sdk/sdkad.php': 'removePhpScreenAds',
-    'a=get_coopen_ads': 'removeIntlOpenAds'
+    'a=get_coopen_ads': 'removeIntlOpenAds',
+    'php?a=search_topic': 'removeSearchTop'
 }
 
 var body = $response.body;
@@ -41,6 +42,17 @@ function getModifyMethod(url) {
         }
     }
     return null;
+}
+
+// 热搜置顶
+function removeSearchTop(data) {
+    if (!data.data || data.data.length === 0) {
+        return data;
+    }
+    if (data.data[0].type === 'searchtop') {
+        data.data.shift();
+    }
+    return data
 }
 
 // 趋势页

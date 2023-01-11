@@ -8,7 +8,7 @@
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?ct=feed&a=search_topic data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_search_topic.json" header="Content-Type: text/html"
 
 [Script]
-http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center|search_topic)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/((unread_)?friends(/|_)timeline|unread_hot_timeline) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 
