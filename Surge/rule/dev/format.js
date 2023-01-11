@@ -27,14 +27,14 @@ function format(filename) {
         let fn = filename.match(/(.+)\./)[1]
         exportRule(outputPath.surge, `${fn}.list`, result.surge)
         exportRule(outputPath.clash, `${fn}.yaml`, result.clash)
-        if (result.surge_domain_set) {
-            exportRule(outputPath.surge, `${fn}_Domain.list`, result.surge_domain_set)
-            exportRule(outputPath.clash, `${fn}_Domain.yaml`, result.clash_domain_set)
-        }
-        if (result.surge_others) {
-            exportRule(outputPath.surge, `${fn}_Others.list`, result.surge_others)
-            exportRule(outputPath.clash, `${fn}_Others.yaml`, result.clash_others)
-        }
+        // if (result.surge_domain_set) {
+        //     exportRule(outputPath.surge, `${fn}_Domain.list`, result.surge_domain_set)
+        //     exportRule(outputPath.clash, `${fn}_Domain.yaml`, result.clash_domain_set)
+        // }
+        // if (result.surge_others) {
+        //     exportRule(outputPath.surge, `${fn}_Others.list`, result.surge_others)
+        //     exportRule(outputPath.clash, `${fn}_Others.yaml`, result.clash_others)
+        // }
     } catch (err) {
         console.error(err);
     }
@@ -66,7 +66,7 @@ function handleRuleDict(ruleDict) {
 
     for (const key of keys) {
         for (const item of unique(ruleDict[key]).sort()) {  // 这里有待优化
-            if (/IP-CIDR/i.test(key)) {
+            if (/IP-/i.test(key)) {
                 surge += `${key},${item},no-resolve\r\n`
                 clash += `  - ${key},${item},no-resolve\r\n`
             } else {
