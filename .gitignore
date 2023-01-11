@@ -1,4 +1,5 @@
 装扮定制
+package-lock.json
 /Surge/参考配置
 /js/dev/test.js
 /js/dev/response*
@@ -8,7 +9,6 @@
 /js/dev/kuwo-org.js
 /js/dev/bili-delete.js
 /js/dev/Env*
-/js/dev/package-lock.json
 
 .DS_Store
 node_modules
