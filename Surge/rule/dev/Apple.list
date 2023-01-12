@@ -1,3 +1,7 @@
+# @kokoryh 自行维护
+DOMAIN-SUFFIX,safebrowsing.apple
+
+# 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,akadns.net
 DOMAIN-SUFFIX,apple.co
@@ -16,4 +20,3 @@ DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,mzstatic.com
-DOMAIN-SUFFIX,safebrowsing.apple

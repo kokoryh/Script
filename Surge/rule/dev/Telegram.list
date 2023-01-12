@@ -1,3 +1,4 @@
+# 数据源：https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.Telegram.list
 # 🌐 ASN for Telegram Messenger Inc
 PROCESS-NAME,org.telegram.messenger
 DOMAIN-SUFFIX,comments.app // @CommentsBot

@@ -1,4 +1,5 @@
-# DMM
+# 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Region/JP.list
+# DMM 仅为访问DMM用，以下规则足矣
 DOMAIN-SUFFIX,dmm.co.jp
 DOMAIN-SUFFIX,dmm.com
 DOMAIN-SUFFIX,dmm-extension.com

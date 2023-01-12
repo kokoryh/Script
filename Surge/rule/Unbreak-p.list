@@ -10,8 +10,6 @@ DOMAIN,mozilla.cloudflare-dns.com
 DOMAIN,notability.com
 DOMAIN,receiptcheck.quantumult.app
 DOMAIN,rss.teacat001.xyz
-DOMAIN,steamcommunity-a.akamaihd.net
-DOMAIN,steammobile.akamaized.net
 DOMAIN,storage.live.com
 DOMAIN,www.summer-plus.net
 DOMAIN-SUFFIX,adguard.org
@@ -34,11 +32,6 @@ DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,peropero.net
 DOMAIN-SUFFIX,smoot.apple.cn
-DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,stash-activation.com
-DOMAIN-SUFFIX,steambroadcast.akamaized.net
-DOMAIN-SUFFIX,steamcommunity.com
-DOMAIN-SUFFIX,steampowered.com
-DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,usertrust.com

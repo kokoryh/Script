@@ -67,10 +67,7 @@ function contactRule(ruleDict) {
     })
     for (const key of keys) {
         for (const item of ruleDict[key]) {
-            if (/IP-/i.test(key)) {
-                surge += `${key},${item},no-resolve\r\n`
-                clash += `  - ${key},${item},no-resolve\r\n`
-            } else if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
+            if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
                 surge += `${key},${item}\r\n`
             } else {
                 surge += `${key},${item}\r\n`
@@ -91,10 +88,7 @@ function contactRule(ruleDict) {
         // Others
         for (const key of other_keys) {
             for (const item of ruleDict[key]) {
-                if (/IP-/i.test(key)) {
-                    surge_others += `${key},${item},no-resolve\r\n`
-                    clash_others += `  - ${key},${item},no-resolve\r\n`
-                } else if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
+                if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
                     surge_others += `${key},${item}\r\n`
                 } else {
                     surge_others += `${key},${item}\r\n`
@@ -209,6 +203,7 @@ function classifyRules(arr) {
             let rule = l.split(',')
             rule[0] = rule[0].trim()
             rule[1] = rule[1].split('//')[0].trim()
+            if (l.includes('no-resolve')) rule[1] += ',no-resolve'
             for (const key of keys) {
                 let regex = new RegExp(`^${key}$`, 'i')
                 if (regex.test(rule[0])) {

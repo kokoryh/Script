@@ -3,15 +3,6 @@ DOMAIN,rss.teacat001.xyz
 DOMAIN,dy.wangchen.xyz
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 
-# Steam(ios端专用)
-DOMAIN,steammobile.akamaized.net
-DOMAIN,steamcommunity-a.akamaihd.net
-DOMAIN-SUFFIX,st.dl.eccdnx.com
-DOMAIN-SUFFIX,steampowered.com
-DOMAIN-SUFFIX,steamstatic.com
-DOMAIN-SUFFIX,steamcommunity.com
-DOMAIN-SUFFIX,steambroadcast.akamaized.net
-
 # Microsoft
 DOMAIN,login.live.com
 DOMAIN,storage.live.com
