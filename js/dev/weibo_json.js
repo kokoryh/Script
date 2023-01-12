@@ -63,6 +63,9 @@ function removeTopics(data) {
     if (data.data.order) {
         data.data.order = ["search_topic"]
     }
+    if (data.data.search_topic) {
+        data.data.search_topic.cards.splice(1, 0, {})
+    }
     return data;
 }
 
