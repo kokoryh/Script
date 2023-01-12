@@ -46,6 +46,7 @@ Surge：
 bili-skin-switch = type=cron,cronexp=0 8,20 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
 ----------------
 */
+
 let $ = kokoryh();
 let bili_skin_num = $.getValue("bili_skin_num");
 let bili_load_num = $.getValue("bili_load_num");

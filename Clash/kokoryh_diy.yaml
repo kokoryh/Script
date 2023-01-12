@@ -114,7 +114,7 @@ cfw-bypass:
 proxy-providers:
   ProxyList:
     type: http
-    url: "请输入节点列表"
+    url: "请输入订阅URL，必须是NodeList"
     interval: 86400
     path: ./Proxy/ProxyList.yaml
     health-check:
@@ -261,11 +261,11 @@ proxy-groups:
       - US
 
 rule-providers:
-  Unbreak:
+  Unbreak-d:
     type: http
     behavior: classical
-    path: ./RuleSet/Unbreak.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
+    path: ./RuleSet/Unbreak-d.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-d.yaml
     interval: 172800
 
   Steam:
@@ -293,7 +293,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Streaming.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Streaming.yaml
     interval: 172800
 
   Global:
@@ -325,7 +325,7 @@ rule-providers:
     interval: 172800
 
 rules:
-  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,Unbreak-d,DIRECT
   - RULE-SET,Steam,Steam
   - RULE-SET,OneDrive,OneDrive
   - RULE-SET,StreamingJP,🇯🇵 日本节点

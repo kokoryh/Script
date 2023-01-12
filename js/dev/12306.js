@@ -13,6 +13,7 @@
 
 已有更好的屏蔽方式，此脚本仅留作日后参考用
 */
+
 let $ = kokoryh();
 
 if (typeof $response !== 'undefined') {

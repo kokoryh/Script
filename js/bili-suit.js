@@ -31,7 +31,6 @@ hostname = api.bilibili.com
 // 装扮总数      data.data.properties.sale_quantity
 */
 
-
 const $ = new Env(`B站装扮监控`);
 
 const suitList = JSON.parse($.getdata("bili_suit_list") || '{}');

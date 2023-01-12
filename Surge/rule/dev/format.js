@@ -70,6 +70,8 @@ function contactRule(ruleDict) {
             if (/IP-/i.test(key)) {
                 surge += `${key},${item},no-resolve\r\n`
                 clash += `  - ${key},${item},no-resolve\r\n`
+            } else if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
+                surge += `${key},${item}\r\n`
             } else {
                 surge += `${key},${item}\r\n`
                 clash += `  - ${key},${item}\r\n`
@@ -92,6 +94,8 @@ function contactRule(ruleDict) {
                 if (/IP-/i.test(key)) {
                     surge_others += `${key},${item},no-resolve\r\n`
                     clash_others += `  - ${key},${item},no-resolve\r\n`
+                } else if (/USER-AGENT/i.test(key)) {  // clash没有UA规则
+                    surge_others += `${key},${item}\r\n`
                 } else {
                     surge_others += `${key},${item}\r\n`
                     clash_others += `  - ${key},${item}\r\n`

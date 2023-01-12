@@ -1,5 +1,5 @@
-#!name=3-youtube去广告
-#!desc=未测试是否生效
+#!name=3-Youtube去广告
+#!desc=@Maasea  不能与其他Youtube去广告规则混用
 # 删除 瀑布流、视频、搜索中出现的广告和Shorts
 # 删除 Shorts 内的视频广告
 # 删除 底部 上传 按钮
