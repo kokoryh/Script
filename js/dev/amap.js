@@ -27,6 +27,10 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         }))
         change = true
     }
+    if (obj.data?.mapBizList) {
+        obj.data.mapBizList = []
+        change = true
+    }
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
     obj.data.tipData = undefined
     if (obj.data?.cardList) {
@@ -48,7 +52,32 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
 } else if (url.includes("ws/msgbox/pull")) {  // 首页顶部横幅
     if (obj.msgs) {
-        obj.msgs = undefined
+        obj.msgs = []
+        change = true
+    }
+    if (obj.pull3?.msgs) {
+        obj.pull3.msgs = []
+        change = true
+    }
+} else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
+    if (obj.data) {
+        obj.data.icon = []
+        obj.data.banner = []
+        obj.data.tips = []
+        obj.data.popup = []
+        change = true
+    }
+} else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
+    if (obj.data) {
+        obj.data.coupon = undefined
+        obj.data.scene = undefined
+        obj.data.activity = undefined
+        obj.data.commodity_rec = undefined
+        if (obj.data.modules) {
+            obj.data.modules.filter(item => {
+                return item !== "activity" && item !== "coupon" && item !== "scene" && item !== "commodity_rec"
+            })
+        }
         change = true
     }
 }
