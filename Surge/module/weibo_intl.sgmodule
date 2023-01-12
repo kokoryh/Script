@@ -2,14 +2,21 @@
 #!desc=请勿与其他微博去广告混用
 
 [Map Local]
+# 热门视频 | 热推荐
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 不知道对应的是啥
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 屏蔽searching_info，把搜索框关键词改为“搜索微博”，有效期改为1天避免大量重复请求
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?ct=user&a=get_searching_info data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_searching_info.json" header="Content-Type: text/html"
+# 屏蔽search_topic，对应点击搜索栏，下方出现的热搜 html类型 对象数据。直接替换响应体，直接reject会使用缓存数据
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?ct=feed&a=search_topic data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_search_topic.json" header="Content-Type: text/html"
 
 [Script]
+# 对应趋势-顶部card & 热搜 & 热门话题 & 热门视频                                                开屏广告        用户中心     热搜置顶
 http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center|search_topic)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+# 瀑布流去广告
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/((unread_)?friends(/|_)timeline|unread_hot_timeline) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+# sdkad
 http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 
 [MITM]
