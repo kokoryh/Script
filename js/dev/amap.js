@@ -60,26 +60,50 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
-    if (obj.data) {
-        obj.data.icon = []
-        obj.data.banner = []
-        obj.data.tips = []
-        obj.data.popup = []
+    if (obj.data?.icon?.icon_list) {
+        obj.data.icon.icon_list = undefined
+        change = true
+    }
+    if (obj.data?.tips?.tips_list) {
+        obj.data.tips.tips_list = undefined
+        change = true
+    }
+    if (obj.data?.popup?.popup_list) {
+        obj.data.popup.popup_list = undefined
+        change = true
+    }
+    if (obj.data?.banner) {
+        obj.data.banner = undefined
         change = true
     }
 } else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
-    if (obj.data) {
-        obj.data.coupon = undefined
-        obj.data.scene = undefined
-        obj.data.activity = undefined
-        obj.data.commodity_rec = undefined
-        if (obj.data.modules) {
-            obj.data.modules.filter(item => {
-                return item !== "activity" && item !== "coupon" && item !== "scene" && item !== "commodity_rec"
-            })
-        }
+    // if (obj.data?.coupon) {
+    //     obj.data.coupon = undefined
+    //     change = true
+    // }
+    // if (obj.data?.scene) {
+    //     obj.data.scene = undefined
+    //     change = true
+    // }
+    // if (obj.data?.activity) {
+    //     obj.data.activity = undefined
+    //     change = true
+    // }
+    // if (obj.data?.commodity_rec) {
+    //     obj.data.commodity_rec = undefined
+    //     change = true
+    // }
+    if (obj.data?.modules) {
+        obj.data.modules.filter(item => {
+            return item !== "coupon" &&        // coupon 右下角广告
+                // item !== "scene" &&            // 不知道对应啥
+                // item !== "activity" &&         // 不知道对应啥
+                item !== "commodity_rec"       // commodity_rec 超值套餐
+        })
         change = true
     }
+} else {
+    console.log('触发意外的请求，请确认脚本或复写配置是否正常\n错误URL：' + url)
 }
 
 if (change) {
