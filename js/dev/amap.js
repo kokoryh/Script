@@ -17,14 +17,14 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {  // 首页底栏
-    if (obj.data?.pull3?.msgs) {
-        obj.data.pull3.msgs = []
-        change = true
-    }
     if (obj.data?.cardList) {
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
         }))
+        change = true
+    }
+    if (obj.data?.pull3?.msgs) {
+        obj.data.pull3.msgs = []
         change = true
     }
     if (obj.data?.mapBizList) {
@@ -60,16 +60,16 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
-    if (obj.data?.icon?.icon_list) {
-        obj.data.icon.icon_list = undefined
+    if (obj.data?.icon) {
+        obj.data.icon = undefined
         change = true
     }
-    if (obj.data?.tips?.tips_list) {
-        obj.data.tips.tips_list = undefined
+    if (obj.data?.tips) {
+        obj.data.tips = undefined
         change = true
     }
-    if (obj.data?.popup?.popup_list) {
-        obj.data.popup.popup_list = undefined
+    if (obj.data?.popup) {
+        obj.data.popup = undefined
         change = true
     }
     if (obj.data?.banner) {
@@ -77,10 +77,10 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
-    // if (obj.data?.coupon) {
-    //     obj.data.coupon = undefined
-    //     change = true
-    // }
+    if (obj.data?.coupon) {
+        obj.data.coupon = undefined
+        change = true
+    }
     // if (obj.data?.scene) {
     //     obj.data.scene = undefined
     //     change = true
@@ -89,10 +89,10 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     //     obj.data.activity = undefined
     //     change = true
     // }
-    // if (obj.data?.commodity_rec) {
-    //     obj.data.commodity_rec = undefined
-    //     change = true
-    // }
+    if (obj.data?.commodity_rec) {
+        obj.data.commodity_rec = undefined
+        change = true
+    }
     if (obj.data?.modules) {
         obj.data.modules.filter(item => {
             return item !== "coupon" &&        // coupon 右下角广告
