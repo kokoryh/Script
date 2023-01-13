@@ -76,11 +76,17 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.banner = undefined
         change = true
     }
-} else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
-    if (obj.data?.coupon) {
-        obj.data.coupon = undefined
+    if (obj.data?.bubble) {
+        Object.keys(obj.data.bubble).forEach(key => {
+            obj.data.bubble[key] = []
+        })
         change = true
     }
+} else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
+    // if (obj.data?.coupon) {
+    //     obj.data.coupon = undefined
+    //     change = true
+    // }
     // if (obj.data?.scene) {
     //     obj.data.scene = undefined
     //     change = true
@@ -89,12 +95,12 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     //     obj.data.activity = undefined
     //     change = true
     // }
-    if (obj.data?.commodity_rec) {
-        obj.data.commodity_rec = undefined
-        change = true
-    }
+    // if (obj.data?.commodity_rec) {
+    //     obj.data.commodity_rec = undefined
+    //     change = true
+    // }
     if (obj.data?.modules) {
-        obj.data.modules.filter(item => {
+        obj.data.modules = obj.data.modules.filter(item => {
             return item !== "coupon" &&        // coupon 右下角广告
                 // item !== "scene" &&            // 不知道对应啥
                 // item !== "activity" &&         // 不知道对应啥
