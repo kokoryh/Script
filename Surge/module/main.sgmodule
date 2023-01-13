@@ -8,49 +8,49 @@
 # Redirect exhentai to e-hentai
 ^https?:\/\/exhentai\.org\/ https://e-hentai.org/ 302
 
-# 网易云音乐 - interface*.music.163.com
-^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
+# 网易云音乐开屏
+^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
 
-# 微信公众号广告 - mp.weixin.qq.com
+# 微信公众号广告
 ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
 
 # 美团外卖
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
 
-# Taobao - gw.alicdn.com,heic.alicdn.com
+# 淘宝
 ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ - reject
 
-# JD - api.m.jd.com
+# 京东
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject
 
-# 拼多多 - api.yangkeduo.com,api.pinduoduo.com
+# 拼多多
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
-# 百度网盘广告屏蔽
+# 百度网盘广告
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
 
-# 中国移动
+# 中国移动开屏
 ^https?:\/\/client.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
 
-# 中国电信
+# 中国电信开屏
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ - reject
 
 [Map Local]
 # 美团外卖
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
-# JD
+# 京东
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
 
 [Script]
 # 扫描全能王破解
 http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/cam_scanner.js
-# 美团开屏
+# 美团外卖
 http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? requires-body=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
 # 12306开屏
 http-response ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 
 [MITM]
-hostname = %APPEND% www.google.cn, exhentai.org, ap*.intsig.net, interface*.music.163.com, mp.weixin.qq.com, wmapi.meituan.com, www.meituan.com, gw.alicdn.com, heic.alicdn.com, api.m.jd.com, api.yangkeduo.com, api.pinduoduo.com, pan.baidu.com, client.app.coc.10086.cn, cloud.189.cn, ad.12306.cn
+hostname = %APPEND% www.google.cn, exhentai.org, ap*.intsig.net, interface3.music.163.com, mp.weixin.qq.com, wmapi.meituan.com, www.meituan.com, gw.alicdn.com, heic.alicdn.com, api.m.jd.com, api.yangkeduo.com, api.pinduoduo.com, pan.baidu.com, client.app.coc.10086.cn, cloud.189.cn, ad.12306.cn
