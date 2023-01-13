@@ -5,4 +5,4 @@
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/jd_price.js
 
 [MITM]
-hostname = %APPEND% api.m.jd.com
+hostname = %INSERT% api.m.jd.com

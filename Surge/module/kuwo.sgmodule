@@ -8,5 +8,5 @@ http-response ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay requires-body=1,script-
 # http-response ^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).* requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/kuwo.js
 
 [MITM]
-hostname = %APPEND% vip1.kuwo.cn, audiobookpay.kuwo.cn, musicpay.kuwo.cn
-# hostname = %APPEND% *.kuwo.cn, *.lrts.me
+hostname = %INSERT% vip1.kuwo.cn, audiobookpay.kuwo.cn, musicpay.kuwo.cn
+# hostname = %INSERT% *.kuwo.cn, *.lrts.me

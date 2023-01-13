@@ -16,4 +16,4 @@
 [Map Local]
 
 [MITM]
-hostname = %APPEND% www.google.cn, exhentai.org, pan.baidu.com
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com

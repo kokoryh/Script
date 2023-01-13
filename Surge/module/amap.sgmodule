@@ -34,4 +34,4 @@ http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires
 http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 
 [MITM]
-hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com
+hostname = %INSERT% m5.amap.com, m5-zb.amap.com, sns.amap.com

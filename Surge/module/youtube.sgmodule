@@ -12,4 +12,4 @@ youtube_ad = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/yo
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
+hostname = %INSERT% *.googlevideo.com, youtubei.googleapis.com

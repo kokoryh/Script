@@ -18,4 +18,4 @@ bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/vi
 bili-manga = type=http-response,pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/AppInit,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-manga.js
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, manga.bilibili.com
+hostname = %INSERT% grpc.biliapi.net, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, manga.bilibili.com
