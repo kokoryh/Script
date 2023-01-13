@@ -1,5 +1,6 @@
 #!name=3-高德地图去广告
 #!desc=需全新应用
+
 # 修改自@ddgksf2013 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
 # 重要提醒：qx使用请务必开启解析器并out掉amdc这条，然后手动在分流中加入

@@ -15,7 +15,7 @@
 # 屏蔽直播间广告浮窗
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # B漫开屏
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab\?) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # B漫装扮
 # ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
