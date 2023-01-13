@@ -103,7 +103,7 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.modules = obj.data.modules.filter(item => {
             return item !== "coupon" &&        // coupon 右下角广告
                 // item !== "scene" &&            // 不知道对应啥
-                // item !== "activity" &&         // 不知道对应啥
+                item !== "activity" &&         // 热词底下的活动推荐，如指南，0元领水果之类的
                 item !== "commodity_rec"       // commodity_rec 超值套餐
         })
         change = true
