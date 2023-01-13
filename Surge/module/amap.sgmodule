@@ -11,8 +11,8 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 ^https?:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution - reject
 
 [Map Local]
-# 搜索框
-^https?:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 搜索框 | 左下天气
+^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # Tip请求，如招聘代驾的广告等
 ^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
