@@ -1,9 +1,14 @@
 const fs = require('fs')
-const content = fs.readFileSync('./advertising.conf', 'UTF-8')
-const lines = content.split(/\r?\n/)
-let result = handleLines(lines)
-writeFile('./advertising.md', result.result)
-writeFile('./advertising.txt', result.tg_result)
+const config = {
+    inputFile: ['resource']
+}
+for (const filename of config.inputFile) {
+    const content = fs.readFileSync(`./${filename}.conf`, 'UTF-8')
+    const lines = content.split(/\r?\n/)
+    let result = handleLines(lines)
+    writeFile(`./${filename}.md`, result.result)
+    writeFile(`./${filename}.txt`, result.simple_result)
+}
 
 function writeFile(outputPath, content) {
     fs.writeFile(outputPath, content, function (err) {
@@ -15,19 +20,31 @@ function writeFile(outputPath, content) {
 
 function handleLines(lines) {
     let result = ''
-    let tg_result = ''
+    let simple_result = ''
     let tagStack = []
     lines.forEach(line => {
         let l = line.trim()
         if (l) {
             if (l.startsWith('#')) {
-                if (l.startsWith('# 去广告分流和重写收集')) result += '# 去广告分流和重写收集(一键安装需qx版本≥1.0.30)\n'
-                else if (l.startsWith('# 分流')) result += '## 分流(去广告规则应放在规则修正下面)\n'
-                else if (l.startsWith('# 重写')) result += '## 重写\n'
-                else if (l.startsWith('# @') || l.startsWith('# *')) {
-                    let tmp = l.split(/#\s?/)
-                    result += `### ${tmp[1].trim()}\n`
-                    tg_result += `${tmp[1].trim()}\n`
+                if (/#.*收集/.test(l)) {
+                    result += '# QX去广告和功能性资源收集(一键安装需qx版本≥1.0.30)\n'
+                    simple_result += 'QX去广告和功能性资源收集\n'
+                } else if (l.startsWith('# 分流')) {
+                    result += '## 分流(去广告规则应放在规则修正下面)\n'
+                    simple_result += '\n分流'
+                } else if (l.startsWith('# 重写')) {
+                    result += '## 重写\n'
+                    simple_result += '\n重写'
+                } else if (l.startsWith('# @')) {
+                    let tmp = l.split(/\s+/)
+                    let author = tmp[1]
+                    let repo = tmp[2]
+                    result += `### [${author}](${repo})\n`
+                    simple_result += `\n${author}\n`
+                } else if (l.startsWith('# *')) {
+                    let tmp = l.split(/#\s\*/)
+                    result += `### ${tmp[1]}\n`
+                    simple_result += `\n${tmp[1]}\n`
                 } else {
                     let tmp = l.split('#')
                     let tmp2 = tmp[1].split(/[,，(（]/)
@@ -48,14 +65,14 @@ function handleLines(lines) {
                     let part1 = tagStack.shift()
                     let part2 = tagStack.shift()
                     result += `#### [${part1}](${eURL}) ${part2}\n`
-                    tg_result += `${part1}${part2}\n${eURL}\n`
+                    simple_result += `${part1}${part2}\n${eURL}\n`
                 } else {
                     let part1 = tagStack.shift()
                     result += `#### [${part1}](${eURL})\n`
-                    tg_result += `${part1}\n${eURL}\n`
+                    simple_result += `${part1}\n${eURL}\n`
                 }
             }
         }
     })
-    return {result, tg_result}
+    return {result, simple_result}
 }
