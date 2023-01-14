@@ -1,5 +1,5 @@
 # 去广告分流和重写收集(一键安装需开启BoxJs重写)
-## 分流(请把去广告规则放在规则修正下面)
+## 分流(去广告规则应放在规则修正下面)
 ### @DivineEngine https://github.com/DivineEngine/Profiles/tree/master
 #### [广告拦截](https://api.boxjs.app/quanx/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FDivineEngine%2FProfiles%2Fmaster%2FSurge%2FRuleset%2FGuard%2FAdvertising.list%2C%20tag%3D%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [隐私保护](https://api.boxjs.app/quanx/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FDivineEngine%2FProfiles%2Fmaster%2FSurge%2FRuleset%2FGuard%2FPrivacy.list%2C%20tag%3D%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
