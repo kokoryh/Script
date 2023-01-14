@@ -34,7 +34,7 @@ function handleLines(lines) {
                     tagStack.push(tmp2[0].trim())
                     if (tmp2.length > 1) tagStack.push(l.match(/[^,，(（]*(.+)/)[1].trim())
                 }
-            } else if (l.startsWith('[')) {
+            } else if (l.startsWith('[') || l.startsWith(';')) {
 
             } else {
                 let url_encoded_json = {}
