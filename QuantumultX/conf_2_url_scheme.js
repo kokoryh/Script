@@ -15,7 +15,7 @@ function handleLines(lines) {
         if (l) {
             if (l.startsWith('#')) {
                 if (l === '# 去广告分流和重写收集') result += '# 去广告分流和重写收集(一键安装需开启BoxJs重写)\n'
-                else if (l === '# 分流') result += '## 分流\n'
+                else if (l === '# 分流') result += '## 分流(请把去广告规则放在规则修正下面)\n'
                 else if (l === '# 重写') result += '## 重写\n'
                 else if (l.startsWith('# @') || l.startsWith('# *')) {
                     let tmp = l.split(/#\s/)
