@@ -30,15 +30,14 @@ function handleLines(lines) {
 
             } else {
                 let url_encoded_json = {}
-                let eURL = encodeURIComponent(l)
                 if (l.includes('force-policy')) {
-                    url_encoded_json['filter_remote'] = eURL
+                    url_encoded_json['filter_remote'] = l
                 } else {
-                    url_encoded_json['rewrite_remote'] = eURL
+                    url_encoded_json['rewrite_remote'] = l
                 }
-                let fURL = 'https://api.boxjs.app/quanx/add-resource?remote-resource=' + JSON.stringify(url_encoded_json)
-                if (tagStack.length > 1) result += `#### [${tagStack.shift()}](${fURL}) ${tagStack.shift()}\n`
-                else result += `#### [${tagStack.shift()}](${fURL})\n`
+                let eURL = 'https://api.boxjs.app/quanx/add-resource?remote-resource=' + encodeURIComponent(JSON.stringify(url_encoded_json))
+                if (tagStack.length > 1) result += `#### [${tagStack.shift()}](${eURL}) ${tagStack.shift()}\n`
+                else result += `#### [${tagStack.shift()}](${eURL})\n`
             }
         }
     })
