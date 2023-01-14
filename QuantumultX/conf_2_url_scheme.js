@@ -1,14 +1,21 @@
 const fs = require('fs')
 const content = fs.readFileSync('./advertising.conf', 'UTF-8')
 const lines = content.split(/\r?\n/)
-fs.writeFile('./advertising.md', handleLines(lines), function (err) {
-    if (err) {
-        return console.error(err);
-    }
-})
+let result = handleLines(lines)
+writeFile('./advertising.md', result.result)
+writeFile('./advertising.txt', result.tg_result)
+
+function writeFile(outputPath, content) {
+    fs.writeFile(outputPath, content, function (err) {
+        if (err) {
+            return console.error(err);
+        }
+    })
+}
 
 function handleLines(lines) {
     let result = ''
+    let tg_result = ''
     let tagStack = []
     lines.forEach(line => {
         let l = line.trim()
@@ -20,6 +27,7 @@ function handleLines(lines) {
                 else if (l.startsWith('# @') || l.startsWith('# *')) {
                     let tmp = l.split(/#\s?/)
                     result += `### ${tmp[1].trim()}\n`
+                    tg_result += `${tmp[1].trim()}\n`
                 } else {
                     let tmp = l.split('#')
                     let tmp2 = tmp[1].split(/[,，(（]/)
@@ -36,10 +44,18 @@ function handleLines(lines) {
                     url_encoded_json['rewrite_remote'] = [l]
                 }
                 let eURL = 'https://quantumult.app/x/open-app/add-resource?remote-resource=' + encodeURIComponent(JSON.stringify(url_encoded_json))
-                if (tagStack.length > 1) result += `#### [${tagStack.shift()}](${eURL}) ${tagStack.shift()}\n`
-                else result += `#### [${tagStack.shift()}](${eURL})\n`
+                if (tagStack.length > 1) {
+                    let part1 = tagStack.shift()
+                    let part2 = tagStack.shift()
+                    result += `#### [${part1}](${eURL}) ${part2}\n`
+                    tg_result += `${part1}${part2}\n${eURL}\n`
+                } else {
+                    let part1 = tagStack.shift()
+                    result += `#### [${part1}](${eURL})\n`
+                    tg_result += `${part1}\n${eURL}\n`
+                }
             }
         }
     })
-    return result
+    return {result, tg_result}
 }
