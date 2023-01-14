@@ -31,9 +31,9 @@ function handleLines(lines) {
             } else {
                 let url_encoded_json = {}
                 if (l.includes('force-policy')) {
-                    url_encoded_json['filter_remote'] = l
+                    url_encoded_json['filter_remote'] = [l]
                 } else {
-                    url_encoded_json['rewrite_remote'] = l
+                    url_encoded_json['rewrite_remote'] = [l]
                 }
                 let eURL = 'https://api.boxjs.app/quanx/add-resource?remote-resource=' + encodeURIComponent(JSON.stringify(url_encoded_json))
                 if (tagStack.length > 1) result += `#### [${tagStack.shift()}](${eURL}) ${tagStack.shift()}\n`
