@@ -1,18 +1,18 @@
 # QX去广告和功能性资源收集(一键安装需qx版本≥1.0.30)
-## 分流(去广告规则应放在规则修正下面)
+## 去广告分流
 ## [@DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
 #### [广告拦截](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FDivineEngine%2FProfiles%2Fmaster%2FSurge%2FRuleset%2FGuard%2FAdvertising.list%2C%20tag%3D%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [隐私保护](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FDivineEngine%2FProfiles%2Fmaster%2FSurge%2FRuleset%2FGuard%2FPrivacy.list%2C%20tag%3D%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [运营劫持](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FDivineEngine%2FProfiles%2Fmaster%2FSurge%2FRuleset%2FGuard%2FHijacking.list%2C%20tag%3D%E8%BF%90%E8%90%A5%E5%8A%AB%E6%8C%81%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
-### 以下几条包含大量分流，请自行判断是否添加。分流去广告的能力十分有限
+#### 以下几条包含大量分流，请自行判断是否添加。分流去广告的能力十分有限
 #### [张军去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffmz200%2Fwool_scripts%2Fmain%2FQuantumultX%2Ffilter%2Ffenliu.list%2C%20tag%3D%E5%BC%A0%E5%86%9B%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) (1W条)
 #### [野比去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FNobyDa%2FScript%2Fmaster%2FSurge%2FAdRule.list%2C%20tag%3D%E9%87%8E%E6%AF%94%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D) (4W条)
 #### [BM7去广告精简版](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fblackmatrix7%2Fios_rule_script%2Fmaster%2Frule%2FQuantumultX%2FAdvertisingLite%2FAdvertisingLite.list%2C%20tag%3DBM7%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%B2%BE%E7%AE%80%E7%89%88%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) (4W条)
 #### [BM7去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fblackmatrix7%2Fios_rule_script%2Fmaster%2Frule%2FQuantumultX%2FAdvertising%2FAdvertising.list%2C%20tag%3DBM7%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) (9W条)
-### 功能性分流
+## 功能性分流
 #### [屏蔽ios更新](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Frule%2FBlockIOSUpdate.list%2C%20tag%3D%E5%B1%8F%E8%94%BDios%E6%9B%B4%E6%96%B0%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
-## 重写
-### 对于张军去广告和墨鱼的去开屏广告，个人建议只取自己需要的，自己建一个片段往里加就行了，否则会增加大量的重写和主机名
+## 去广告重写
+#### 对于张军去广告和墨鱼的去开屏广告，个人建议只取自己需要的，自己建一个片段往里加就行了，否则会增加大量的重写和主机名
 #### [张军去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffmz200%2Fwool_scripts%2Fmain%2FQuantumultX%2Frewrite%2Fchongxie.txt%2C%20tag%3D%E5%BC%A0%E5%86%9B%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) ，可能杀得比较狠，慎用
 ## [@ddgksf2013](https://github.com/ddgksf2013/Rewrite)
 #### [墨鱼去开屏广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fddgksf2013%2FRewrite%2Fmaster%2FAdBlock%2FStartUp.conf%2C%20tag%3D%E5%8E%BB%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)
@@ -42,7 +42,7 @@
 #### [BiliHD增强](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Fmodule%2Fbilibili_hd.sgmodule%23ntf%3D0%26out%3Dregion%2C%20tag%3DBiliHD%E5%A2%9E%E5%BC%BA%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [高德地图去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Fmodule%2Famap.sgmodule%23ntf%3D0%26out%3Damdc%2C%20tag%3D%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [微博国际版去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Fmodule%2Fweibo_intl.sgmodule%2C%20tag%3D%E5%BE%AE%E5%8D%9A%E5%9B%BD%E9%99%85%E7%89%88%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
-### 功能性重写
+## 功能性重写
 #### [京东比价](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Fmodule%2Fjd_price.sgmodule%2C%20tag%3D%E4%BA%AC%E4%B8%9C%E6%AF%94%E4%BB%B7%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D) (点击商品名查看)
 #### [Bilibili自动换区](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Fmodule%2Fbili_auto_regions.sgmodule%2C%20tag%3DBilibili%E8%87%AA%E5%8A%A8%E6%8D%A2%E5%8C%BA%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)
 #### [Sub-Store](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FPeng-YM%2FSub-Store%2Fmaster%2Fconfig%2FQX.snippet%2C%20tag%3DSubStore%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) , 访问 sub.store

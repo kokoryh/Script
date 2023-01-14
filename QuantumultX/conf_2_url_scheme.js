@@ -29,12 +29,10 @@ function handleLines(lines) {
                 if (/#.*收集/.test(l)) {
                     result += '# QX去广告和功能性资源收集(一键安装需qx版本≥1.0.30)\n'
                     simple_result += 'QX去广告和功能性资源收集\n'
-                } else if (l.startsWith('# 分流')) {
-                    result += '## 分流(去广告规则应放在规则修正下面)\n'
-                    simple_result += '\n分流'
-                } else if (l.startsWith('# 重写')) {
-                    result += '## 重写\n'
-                    simple_result += '\n重写'
+                } else if (/#.*(分流|重写)$/.test(l)) {
+                    let content = l.split('#')[1].trim()
+                    result += `## ${content}\n`
+                    simple_result += `\n${content}\n`
                 } else if (l.startsWith('# @')) {
                     let tmp = l.split(/\s+/)
                     let author = tmp[1]
@@ -43,7 +41,7 @@ function handleLines(lines) {
                     simple_result += `\n${author}\n`
                 } else if (l.startsWith('# *')) {
                     let tmp = l.split(/#\s\*/)
-                    result += `### ${tmp[1]}\n`
+                    result += `#### ${tmp[1]}\n`
                     simple_result += `\n${tmp[1]}\n`
                 } else {
                     let tmp = l.split('#')
