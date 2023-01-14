@@ -14,7 +14,7 @@ function handleLines(lines) {
         let l = line.trim()
         if (l) {
             if (l.startsWith('#')) {
-                if (l.startsWith('# 去广告分流和重写收集')) result += '# 去广告分流和重写收集(一键安装需开启BoxJs重写)\n'
+                if (l.startsWith('# 去广告分流和重写收集')) result += '# 去广告分流和重写收集(一键安装需qx版本≥1.0.30)\n'
                 else if (l.startsWith('# 分流')) result += '## 分流(去广告规则应放在规则修正下面)\n'
                 else if (l.startsWith('# 重写')) result += '## 重写\n'
                 else if (l.startsWith('# @') || l.startsWith('# *')) {
@@ -35,7 +35,7 @@ function handleLines(lines) {
                 } else {
                     url_encoded_json['rewrite_remote'] = [l]
                 }
-                let eURL = 'https://api.boxjs.app/quanx/add-resource?remote-resource=' + encodeURIComponent(JSON.stringify(url_encoded_json))
+                let eURL = 'https://quantumult.app/x/open-app/add-resource?remote-resource=' + encodeURIComponent(JSON.stringify(url_encoded_json))
                 if (tagStack.length > 1) result += `#### [${tagStack.shift()}](${eURL}) ${tagStack.shift()}\n`
                 else result += `#### [${tagStack.shift()}](${eURL})\n`
             }
