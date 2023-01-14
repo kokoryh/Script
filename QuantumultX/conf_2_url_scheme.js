@@ -39,7 +39,7 @@ function handleLines(lines) {
                     let tmp = l.split(/\s+/)
                     let author = tmp[1]
                     let repo = tmp[2]
-                    result += `### [${author}](${repo})\n`
+                    result += `## [${author}](${repo})\n`
                     simple_result += `\n${author}\n`
                 } else if (l.startsWith('# *')) {
                     let tmp = l.split(/#\s\*/)
