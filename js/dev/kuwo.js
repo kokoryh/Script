@@ -4,8 +4,6 @@ var body = null
 if (url.includes('/a.p')) {  // audio字头的
     if (method == 'POST') {
         body = $response.body.replace(/"playright":\d+/g, '"playright":1').replace(/"downright":\d+/g, '"downright":1').replace(/"policytype":\d+/g, '"policytype":3').replace(/"policy":\d+/g, '"policy":5');
-    } else if (url.includes('/mgxhtj.kuwo.cn')) {
-        body = $response.body.replace(/<ad[^>]*\/>/g, '').replace(/(<userinfolabel\scontent="\[)[^"]*/g, '$1]')
     } else if (url.includes('getvip')) {
         let obj = JSON.parse($response.body)
         obj.packs = {
@@ -17,6 +15,8 @@ if (url.includes('/a.p')) {  // audio字头的
         }
         body = JSON.stringify(obj)
     }
+} else if (url.includes('mgxhtj.kuwo.cn')) {
+    body = $response.body.replace(/<ad[^>]*\/>/g, '').replace(/(<userinfolabel\scontent="\[)[^"]*/g, '$1]')
 } else if (url.includes('/music.pay')) {
     if (method == 'POST' && $response.body.includes('audio')) {
         let obj = JSON.parse($response.body)
