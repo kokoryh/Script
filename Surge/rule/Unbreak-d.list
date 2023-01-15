@@ -30,4 +30,3 @@ DOMAIN,www.colamanhua.com
 DOMAIN-SUFFIX,blog.google
 DOMAIN-SUFFIX,feijisu20.com
 DOMAIN-SUFFIX,googletraveladservices.com
-IP-CIDR,103.151.150.0/23,no-resolve

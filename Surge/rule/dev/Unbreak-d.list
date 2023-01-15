@@ -1,7 +1,7 @@
 # @kokoryh 自行维护
 # b站视频流
 # DOMAIN,upos-hz-mirrorakam.akamaized.net
-IP-CIDR,103.151.150.0/23,no-resolve
+# IP-CIDR,103.151.150.0/23,no-resolve
 
 # cdn
 DOMAIN,cdn.jsdelivr.net
