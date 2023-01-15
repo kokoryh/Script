@@ -17,6 +17,8 @@ if (url.includes('/a.p')) {  // audio字头的
     }
 } else if (url.includes('mgxhtj.kuwo.cn')) {
     body = $response.body.replace(/<ad[^>]*>/g, '').replace(/(<userinfolabel\scontent="\[)[^"]*/g, '$1]')
+} else if (url.includes('searchrecterm.kuwo.cn')) {
+    body = '{"content":[{"query_word":"搜索歌曲","desc":""}]}'
 } else if (url.includes('/music.pay')) {
     if (method == 'POST' && $response.body.includes('audio')) {
         let obj = JSON.parse($response.body)
