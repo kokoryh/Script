@@ -16,7 +16,7 @@ if (url.includes('/a.p')) {  // audio字头的
         body = JSON.stringify(obj)
     }
 } else if (url.includes('mgxhtj.kuwo.cn')) {
-    body = $response.body.replace(/<ad[^>]*\/>/g, '').replace(/(<userinfolabel\scontent="\[)[^"]*/g, '$1]')
+    body = $response.body.replace(/<ad[^>]*>/g, '').replace(/(<userinfolabel\scontent="\[)[^"]*/g, '$1]')
 } else if (url.includes('/music.pay')) {
     if (method == 'POST' && $response.body.includes('audio')) {
         let obj = JSON.parse($response.body)
