@@ -15,6 +15,8 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
       移除任何转发的抽奖动态，包括自己转发的，但保留自己中奖的(什么时候能中呢？)
 */
 // 调试环境
+// const fs = require('fs');
+// const pako = require('pako');
 // function $done(param) {}
 // const $request = {
 //     // url: "Dynamic/DynAll",
@@ -33,8 +35,6 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //         "grpc-encoding": "gzip"
 //     }
 // }
-// const fs = require('fs');
-// const pako = require('pako');
 // $response.body = fs.readFileSync("D:\\Downloads\\423723D0-A392-4CC2-964C-AA423F863BD4");
 
 console.log(`b站proto-2023.1.16-@kokoryh`);
