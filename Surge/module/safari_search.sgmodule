@@ -1,6 +1,13 @@
 #!name=2-Safari全能搜索
 #!desc=关键词+空格+命令，需把搜索引擎设置为 duckduckgo
 
+# xxx gd  (Google 搜索 Google Drive 资源)
+# ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gd.+ https://www.google.com/search?q=%22Google+Drive%22+$1 302
+# xxx tgd (t.me/gdurl 搜索 Google Drive 资源)
+# ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+tgd.+ https://t.me/s/gdurl?q=$1 302
+
+# ^https:\/\/duckduckgo.com\/\?q=cn&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc= 302
+
 [URL Rewrite]
 #>>>>>>>>>>>>>>>>>>>>>>>翻译
 # xxx trc (Google 译至中)
@@ -15,7 +22,7 @@
 #>>>>>>>>>>>>>>>>>>>>>>>社区
 # xxx gh  (GitHub)
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gh.+ https://github.com/search?q=$1 302
-# xxx gu  (GitHub)
+# xxx gu  (GitHub User)
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gu.+ https://github.com/search?type=users&q=$1 302
 # xxx so  (Stack Overflow)
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+so.+ https://stackoverflow.com/search?q=$1 302
@@ -41,16 +48,11 @@
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+bli.+ https://m.bilibili.com/search?keyword=$1 302
 # xxx yt  (YouTube)
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+yt.+ https://www.youtube.com/results?search_query=$1 302
-# xxx gd  (Google 搜索 Google Drive 资源)
-# ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gd.+ https://www.google.com/search?q=%22Google+Drive%22+$1 302
-# xxx tgd (t.me/gdurl 搜索 Google Drive 资源)
-# ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+tgd.+ https://t.me/s/gdurl?q=$1 302
 
 #>>>>>>>>>>>>>>>>>>>>>>>苹果商店切换
 # 源链接爬虫于: https://www.liangjianghu.com/searchads-appstore-switch
 # 使用方法：输入区号，搜索即可
-# cn 或 zg  (切换至中国区)
-^https:\/\/duckduckgo.com\/\?q=cn&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc= 302
+# zg  (切换至中国区)
 ^https:\/\/duckduckgo.com\/\?q=zg&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc= 302
 # hk  (切换至香港区)
 ^https:\/\/duckduckgo.com\/\?q=hk&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143463&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=hk&urlDesc= 302
