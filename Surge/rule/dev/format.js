@@ -9,9 +9,9 @@
 const fs = require('fs')
 const _ = require('lodash')
 const config = {
-    inputPath: './',
-    surgeOutputPath: '../',
-    clashOutputPath: '../../../Clash/rule/'
+    inputPath: 'D:\\Workspace\\Script\\Surge\\rule\\dev\\',
+    surgeOutputPath: 'D:\\Workspace\\Script\\Surge\\rule\\',
+    clashOutputPath: 'D:\\Workspace\\Script\\Clash\\rule\\'
 }
 var readDir = fs.readdirSync(config.inputPath)
 for (const filename of readDir) {
