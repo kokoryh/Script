@@ -15,9 +15,10 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
       移除任何转发的抽奖动态，包括自己转发的，但保留自己中奖的(什么时候能中呢？)
 */
 // 调试环境
+// function $done(param) {}
 // const $request = {
-//     url: "Dynamic/DynAll",
-//     // url: "View/View",
+//     // url: "Dynamic/DynAll",
+//     url: "View/View",
 //     // url: "PlayURL/PlayView",
 //     method: "POST",
 //     headers: {
@@ -28,14 +29,15 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // const $response = {
 //     body: undefined,
 //     headers: {
-//         "grpc-encoding": "identity"
-//         // "grpc-encoding": "gzip"
+//         // "grpc-encoding": "identity"
+//         "grpc-encoding": "gzip"
 //     }
 // }
 // const fs = require('fs');
-// $response.body = fs.readFileSync("response");
+// const pako = require('pako');
+// $response.body = fs.readFileSync("D:\\Downloads\\423723D0-A392-4CC2-964C-AA423F863BD4");
 
-console.log(`b站proto-2023.1.4-@kokoryh`);
+console.log(`b站proto-2023.1.16-@kokoryh`);
 const url = $request.url;
 // const method = $request.method;
 let headers = $response.headers;
@@ -67,6 +69,8 @@ if (url.includes("Dynamic/DynAll")) {
     console.log('动态DynAll');
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
     let dynAllReplyObj = dynAllReplyType.decode(unGzipBody);
+    // fs.writeFileSync('./output/bili-dynamic.json', JSON.stringify(dynAllReplyObj))
+
     if (!dynAllReplyObj.topicList) {
         console.log('topicList为空');
     } else {
@@ -162,6 +166,7 @@ if (url.includes("Dynamic/DynAll")) {
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
+    // fs.writeFileSync('./output/bili-view.json', JSON.stringify(viewReplyObj))
 
     if (isIpad) {
         if (!viewReplyObj.cmIpad || !Object.keys(viewReplyObj.cmIpad).length) {
