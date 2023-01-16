@@ -46,6 +46,7 @@ Surge：
 bili-skin-switch = type=cron,cronexp=0 8,20 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
 ----------------
 */
+
 const $ = new Env(`B站装扮信息提取`);
 if (typeof $response !== 'undefined') {
     let getSuitList = $.getdata("bili_get_list") === "true";

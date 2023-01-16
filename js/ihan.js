@@ -46,7 +46,7 @@ function checkin() {
             Host: '2550505.com',
             'Accept-Encoding': 'gzip',
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/604.1 com.hanser.club/1.1.5'
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/604.1 com.hanser.club/1.1.6'
         }
     };
     $.get(url, async function (error, response, data) {

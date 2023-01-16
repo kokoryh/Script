@@ -114,7 +114,7 @@ cfw-bypass:
 proxy-providers:
   ProxyList:
     type: http
-    url: "请输入订阅URL，必须是NodeList"
+    url: "输入订阅URL，必须是Clash格式的NodeList"
     interval: 86400
     path: ./Proxy/ProxyList.yaml
     health-check:
@@ -178,17 +178,17 @@ proxy-groups:
     type: select
     proxies:
       - PROXY
-      - 🇺🇸 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
+      - 🇺🇸 美国节点
 
   - name: "Bilibili"
     type: select
     proxies:
       - DIRECT
       - PROXY
-      - 🇹🇼 台湾节点
       - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
 
   - name: "Steam"
     type: select
@@ -275,20 +275,6 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-p.yaml
     interval: 172800
 
-  Steam:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Steam.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Steam.yaml
-    interval: 172800
-
-  OneDrive:
-    type: http
-    behavior: classical
-    path: ./RuleSet/OneDrive.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/OneDrive.yaml
-    interval: 172800
-
   StreamingJP:
     type: http
     behavior: classical
@@ -301,6 +287,20 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Streaming.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Streaming.yaml
+    interval: 172800
+
+  Steam:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Steam.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Steam.yaml
+    interval: 172800
+
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./RuleSet/OneDrive.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/OneDrive.yaml
     interval: 172800
 
   Global:
@@ -334,10 +334,10 @@ rule-providers:
 rules:
   - RULE-SET,Unbreak-d,DIRECT
   - RULE-SET,Unbreak-p,全球加速
-  - RULE-SET,Steam,Steam
-  - RULE-SET,OneDrive,OneDrive
   - RULE-SET,StreamingJP,🇯🇵 日本节点
   - RULE-SET,Streaming,国际媒体
+  - RULE-SET,Steam,Steam
+  - RULE-SET,OneDrive,OneDrive
   - RULE-SET,Global,全球加速
   - RULE-SET,Bilibili,Bilibili
   - RULE-SET,China,DIRECT

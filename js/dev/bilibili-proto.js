@@ -140,10 +140,10 @@ if (url.includes("Dynamic/DynAll")) {
                 return true;
             }
 
-            if (item.cardType === 15 || item.cardType === 18 ||  // 过滤广告卡和直播卡
-                noForwordWhite ||  // 过滤含 noForwordWhiteRegex 关键词的转发动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话可能会被下一个判断条件过滤
-                (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid)) ||  // 过滤不属于稿件的动态
-                adRegex.test(content)  // 过滤广告关键词
+            if (item.cardType === 15 || item.cardType === 18  // 过滤广告卡和直播卡
+                || noForwordWhite   // 过滤含 noForwordWhiteRegex 关键词的转发动态，这里难以理解的点是这玩意既要保留又要过滤，不保留的话可能会被下一个判断条件过滤
+                || (item.cardType !== 2 && upFilter.includes(item.modules[0].moduleAuthor?.author?.mid))  // 过滤不属于稿件的动态
+                || adRegex.test(content)  // 过滤广告关键词
             ) {
                 adCount++;
                 return false;

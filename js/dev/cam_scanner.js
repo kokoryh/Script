@@ -18,5 +18,7 @@ http-response https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\
 hostname = ap*.intsig.net
 ---------------------------
 */
-let obj = {"data": {"psnl_vip_property": {"expiry": "3287462400"}}};
-$done({body: JSON.stringify(obj)});
+// let obj = {"data": {"psnl_vip_property": {"expiry": "3287462400"}}};
+// $done({body: JSON.stringify(obj)});
+let body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
+$done({body})

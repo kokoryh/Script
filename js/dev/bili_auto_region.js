@@ -26,12 +26,12 @@ function EnvInfo() {
 }
 
 async function SwitchRegion(play) {
-    const Group = $.read('BiliArea_Policy') || 'Bilibili'; //Your blibli policy group name.
-    const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
-    const TW = $.read('BiliArea_TW') || '台湾节点'; //Your Taiwan sub-policy name.
-    const HK = $.read('BiliArea_HK') || '香港节点'; //Your HongKong sub-policy name.
-    const DF = $.read('BiliArea_DF') || 'FALLBACK'; //Sub-policy name used after region is blocked(e.g. url 404)
-    const off = $.read('BiliArea_disabled') || ''; //WiFi blacklist(disable region change), separated by commas.
+    const Group = $.read('BiliArea_Policy') || 'Bilibili';  // B站策略组名
+    const CN = $.read('BiliArea_CN') || 'DIRECT';           // 直连子策略名
+    const TW = $.read('BiliArea_TW') || '台湾节点';          // 台湾子策略名
+    const HK = $.read('BiliArea_HK') || '香港节点';          // 香港子策略名
+    const DF = $.read('BiliArea_DF') || 'FALLBACK';         // 备用子策略名
+    const off = $.read('BiliArea_disabled') || '';          // WiFi 黑名单
     const current = await $.getPolicy(Group);
     const area = (() => {
         let select;
@@ -46,7 +46,7 @@ async function SwitchRegion(play) {
             select = CN;
         }
         if ($.isQuanX && current === 'direct' && select === 'DIRECT') {
-            select = null; //avoid loops in some cases
+            select = null; // avoid loops in some cases  // qx 的 direct 和 proxy 策略应填小写
         }
         return select;
     })()

@@ -25,10 +25,10 @@ hostname = api.bilibili.com
 
 ----------------
 
-// 装扮名称     data.data.name
-// 装扮id       data.data.item_id
-// 装扮剩余数量  data.data.sale_surplus
-// 装扮总数      data.data.properties.sale_quantity
+data.data.name  装扮名称
+data.data.item_id  装扮id
+data.data.sale_surplus  装扮剩余数量
+data.data.properties.sale_quantity  装扮总数
 */
 
 const $ = new Env(`B站装扮监控`);

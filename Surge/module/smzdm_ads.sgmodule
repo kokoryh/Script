@@ -1,5 +1,6 @@
 #!name=3-什么值得买去广告
-#!desc=@blackmatrix7
+#!desc=去除开屏和各页面瀑布流广告，banner广告
+#!author=blackmatrix7
 
 [URL Rewrite]
 # 什么值得买_好价详情页去广告

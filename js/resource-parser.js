@@ -1,5 +1,5 @@
 /**
- ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2022-12-27 17:30⟧
+ ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2023-01-11 19:00⟧
  ----------------------------------------------------------
  🛠 发现 𝐁𝐔𝐆 请反馈: https://t.me/Shawn_Parser_Bot
  ⛳️ 关注 🆃🅶 相关频道: https://t.me/QuanX_API
@@ -348,7 +348,7 @@ if (typeof($resource)!=="undefined" && PProfile == 0) {
         $notify("❌ 解析出现错误", "⚠️ 请点击通知，发送订阅链接进行反馈", err, bug_link);
     }
     openlink = {"open-url": ADDres}
-    $notify("⚠️请忽略报错提示, 点击此通知跳转", "添加配置中的有效远程资源👇 ["+ PProfile+"]", ADDres, openlink)
+    $notify("⚠️请忽略报错提示, 点击此通知跳转", "添加配置中的有效远程资源👇 ["+ PProfile+"]", ADDres,openlink)
     total = ProfileInfo[typeQ]
     $done({content:total})
 }
@@ -418,6 +418,14 @@ function ResourceParse() {
     } else if (content0.trim() == "") {
         $notify("‼️ 引用" + "⟦" + subtag + "⟧" + " 返回內容为空", "⁉️ 点通知跳转以确认链接是否失效", para.split("#")[0], nan_link);
         flag = 0;
+    } else if (type0 == "sub-http") {
+        let url = VCheck(String(Base64.decode(content0.split("sub://")[1].split("#")[0])+", opt-parser=true, tag="+(new Date()).getTime()))
+        RLink = RLink.replace("sremoteposition",url).replace("fremoteposition","").replace("rremoteposition","")
+        let ADDres0 = ADDres.replace("url-encoded-json",encodeURIComponent(RLink))
+        openlink = {"open-url": ADDres0}
+        $notify("⚠️ 该链接为节点订阅, 请点击此通知跳转添加", url, ADDres0,openlink)
+        flag = -1
+        total = ""
     } else if (type0 == "unknown") {
         ParseUnknown(content0)
         flag = -1;
@@ -555,8 +563,8 @@ function Type_Check(subs) {
     var SurgeK = ["=ss,", "=vmess,", "=trojan,", "=http,", "=custom,", "=https,", "=shadowsocks", "=shadowsocksr", "=sock5", "=sock5-tls"];
     var ClashK = ["proxies:"]
     var SubK = ["dm1lc3M", "c3NyOi8v", "CnNzOi8", "dHJvamFu", "c3M6Ly", "c3NkOi8v", "c2hhZG93", "aHR0cDovLw", "aHR0cHM6L", "CnRyb2phbjo", "aHR0cD0", "aHR0cCA","U1RBVFVT"];
-    var RewriteK = [" url 302", " url 307", " url reject", " url script", " url req", " url res", " url echo"] // quantumult X 类型 rewrite
-    var SubK2 = ["ss://", "vmess://", "ssr://", "trojan://", "ssd://", "https://", "http://","socks://","ssocks://"];
+    var RewriteK = [" url 302", " url 307", " url reject", " url script", " url req", " url res", " url echo", " url-and-header 302", " url-and-header 307", " url-and-header reject", " url-and-header script", " url-and-header req", " url-and-header res", " url-and-header echo"] // quantumult X 类型 rewrite
+    var SubK2 = ["ss://", "vmess://", "ssr://", "trojan://", "ssd://", "\nhttps://", "\nhttp://","socks://","ssocks://"];
     var ModuleK = ["[Script]", "[Rule]", "[URL Rewrite]", "[Map Local]", "\nhttp-r", "script-path"]
     var QXProfile = ["[filter_local]","[filter_remote]","[server_local]","[server_remote]"]
     var html = "DOCTYPE html"
@@ -601,17 +609,17 @@ function Type_Check(subs) {
         typec = "Clash-Provider"
         type = (typeQ == "unsupported" || typeQ =="filter")? "Rule":"wrong-field";
     } else if (subsn.length >= 1 && SubK2.some(NodeCheck2) && !/\[(Proxy|filter_local)\]/.test(subs)) { //未b64加密的多行URI 组合订阅
-        typec = "server"
+        typec = "server-uri"
         type= (typeQ == "unsupported" || typeQ =="server" || typeQ =="uri") ? "Subs":"wrong-field"
     } else if ((subi.indexOf("tag=") != -1 && QuanXK.some(NodeCheck) && !/\[(Proxy|filter_local)\]/.test(subs)) || typeU =="list") {
-        typec = "server"
+        typec = "server-quanx"
         type = (typeQ == "unsupported" || typeQ =="server" || typeQ =="uri")? "Subs":"wrong-field" // QuanX list
     } else if (subs.indexOf("[Proxy]") != -1) {
-        typec= "server"
+        typec= "server-surge"
         type = (typeQ == "unsupported" || typeQ =="server" || typeQ =="uri")? "Surge":"wrong-field"; // Surge Profiles
         content0 = Surge2QX(content0).join("\n");
     } else if ((SurgeK.some(NodeCheck)  && !/\[(Proxy|filter_local)\]/.test(subs)) || typeU == "list") {
-        typec="server"
+        typec="server-surge"
         type = (typeQ == "unsupported" || typeQ =="server" || typeQ =="uri")? "Subs":"wrong-field" // Surge proxy list
     } else if (subs.indexOf("[server_local]") != -1 && QuanXK.some(NodeCheck)) {
         //type = "QuanX"  // QuanX Profile
@@ -619,11 +627,11 @@ function Type_Check(subs) {
         type = (typeQ == "unsupported" || typeQ =="server"|| typeQ =="uri")? "Subs":"wrong-field"
     } else if (content0.indexOf("server") !=-1 && content0.indexOf("server_port") !=-1) { //SIP008
         //type = "QuanX"
-        typec= "server"
+        typec= "server-sip008"
         type = (typeQ == "unsupported" || typeQ =="server")? "Subs":"wrong-field"
         content0 = SIP2QuanX(content0)
     } else if (SubK.some(NodeCheck1)) {  //b64加密的订阅类型
-        typec="server"
+        typec="server-b64"
         type = (typeQ == "unsupported" || typeQ =="server")? "Subs-B64Encode":"wrong-field"
         if (content0.split("\n").length >= 2) { //  local snippet and first line remarks
             let tmp = content0.split("\n")[1]
@@ -634,6 +642,11 @@ function Type_Check(subs) {
     } else if (QXProfile.every(ProfileCheck)) {
         typec = "profile"
         type = "profile"  //默认配置类型
+    } else if (subi.indexOf("sub://") == 0) { // sub:// 类型
+        typec = "sub-http"
+        type = "sub-http"
+    } else if (/\.js/.test(link0)) { // xjb添加js脚本的行为
+        $notify("⚠️ 你导入的链接内容为 JS 脚本","🚥 脚本内未有重写注释，无法解析使用", link0)
     } //else if (typeQ == "URI")
     // 用于通知判断类型，debug
     if(typeU == "X"){
@@ -986,7 +999,7 @@ function Mock2QXReject(row, filename) {
     }
 }
 
-//url-regex 转换成 Quantumult X
+//url-regex 转换成 Quantumult X 重写
 function URX2QX(subs) {
     var nrw = []
     var rw = ""
@@ -997,8 +1010,12 @@ function URX2QX(subs) {
         const notecheck = (item) => subs[i].indexOf(item) == 0
         if (!NoteK.some(notecheck)) {
             if (subs[i].slice(0, 9) == "URL-REGEX") {  // regex 类型
-                rw = subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1] + " url " + "reject-200"
-                nrw.push(rw)
+                if (subs[i].indexOf("REJECT") != -1 || subs[i].split(",").length == 2 ) { // 仅处理 reject 类型，或者无指定策略类型
+                    if (subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1].slice(0,1) != "*") { // 部分 * 开头的不支持 url-regex形式
+                        rw = subs[i].replace(/ /g, "").split(",REJECT")[0].split("GEX,")[1] + " url " + "reject-200"
+                        nrw.push(rw)
+                    }
+                }
             } else if (subs[i].indexOf("data=") != -1 && subs.indexOf("[Map Local]") != -1){ // Map Local 类型
                 // 取subs[i]的文件名
                 let fn = subs[i].match(/data=.+\/(.+)"/) ? subs[i].match(/data=.+\/(.+)"/)[1] : null
@@ -1129,7 +1146,7 @@ function Rewrite_Filter(subs, Pin, Pout,Preg,Pregout) {
     for (var i = 0; i < subs.length; i++) {
         subi = subs[i].trim();
         var subii = subi.replace(/ /g, "")
-        if (subi != "" && (subi.indexOf(" url ")!=-1 || /^hostname\=/.test(subii))) {
+        if (subi != "" && (subi.indexOf(" url ")!=-1 || subi.indexOf(" url-and-header ")!=-1 || /^hostname\=/.test(subii))) {
             const notecheck = (item) => subi.indexOf(item) == 0
             if (noteK.some(notecheck)) { // 注释项跳过
                 continue;
@@ -1139,7 +1156,7 @@ function Rewrite_Filter(subs, Pin, Pout,Preg,Pregout) {
                 var inflag = Rcheck(subi, Pin);
                 var outflag = Rcheck(subi, Pout);
                 if (outflag == 1 || inflag == 0) {
-                    dwrite.push(subi.replace(" url "," - ")); //out 命中
+                    dwrite.push(subi.replace(" url "," - ").replace(" url-and-header "," - ")); //out 命中
                 } else if (outflag == 0 && inflag != 0) { //out 未命中 && in 未排除
                     Nlist.push(subi);
                 } else if (outflag == 2 && inflag != 0) { //无 out 参数 && in 未排除
@@ -1987,13 +2004,13 @@ function TJ2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
     if (cnt.indexOf("&plugin=obfs-local")!=-1) {//小火箭内的websocket写法
         obfs = cnt.indexOf("obfs=websocket") != -1? "obfs=wss" : obfs
         thost=cnt.indexOf("obfs-host=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("obfs-host=")[1].split(";")[0].split("#")[0])
-        puri = cnt.indexOf("obfs-uri=") == -1? puri : ", obfs-uri=" + decodeURIComponent(cnt.split("obfs-uri=")[1].split(";")[0].split("#")[0])
+        puri = cnt.indexOf("obfs-uri=") == -1? puri : "obfs-uri=" + decodeURIComponent(cnt.split("obfs-uri=")[1].split(";")[0].split("#")[0])
     } else if (cnt.indexOf("&type=ws")!=-1 || cnt.indexOf("?type=ws")!=-1) {//v2rayN uri
         obfs = cnt.indexOf("security=tls") != -1? "obfs=wss" : obfs
         thost=cnt.indexOf("&host=") == -1? thost : "obfs-host=" + decodeURIComponent(cnt.split("&host=")[1].split("&")[0].split("#")[0])
-        puri = cnt.indexOf("&path=") == -1? puri : ", obfs-uri=" + decodeURIComponent(cnt.split("&path=")[1].split("&")[0].split("#")[0])
+        puri = cnt.indexOf("&path=") == -1? puri : "obfs-uri=" + decodeURIComponent(cnt.split("&path=")[1].split("&")[0].split("#")[0])
     }
-    ntrojan.push(type + ip, pwd, obfs, pcert, thost+puri, pudp, ptfo, tag)
+    ntrojan.push(type + ip, pwd, obfs, pcert, thost, puri, pudp, ptfo, tag)
     QX = ntrojan.filter(Boolean).join(", ");
     //$notify("title","subtitle",QX)
     return QX;
@@ -2141,7 +2158,7 @@ function isQuanX(content) {
     return nlist
 }
 
-//surge script/rewrite - > quanx
+//surge script/quanx-rewrite - > quanx
 function isQuanXRewrite(content) {
     cnt = content
     cnt0=[]
@@ -2163,6 +2180,8 @@ function isQuanXRewrite(content) {
                 cnti=cnti.replace(/ /g, "").split("data=")[0] + " url " + "reject-dict"
             } else if (cnti.indexOf(" url ")!=-1 ){
                 cnti= cnti.split(" ")[1] == "url" ? cnti : ""
+            } else if (cnti.indexOf(" url-and-header ")!=-1 ){ // url-and-header : ^https:xxx.com header-content url-and-header type-rule content
+                cnti= cnti //cnti.split(" ")[2] == "url-and-header" ? cnti : ""
             } else {
                 cnti=""
             }

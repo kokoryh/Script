@@ -6,7 +6,7 @@
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
 # Redirect exhentai to e-hentai
-^https?:\/\/exhentai\.org\/ https://e-hentai.org/ 302
+^https?:\/\/exhentai\.org https://e-hentai.org 302
 
 # 百度网盘广告屏蔽
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject

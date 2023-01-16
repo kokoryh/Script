@@ -84,17 +84,18 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         }
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
-    /* 哔哩哔哩-我的页面
-    // 标准版：
-    // 396离线缓存 397历史记录 398我的收藏 399稍后再看 171个性装扮 172我的钱包 407联系客服 410设置
-    // 港澳台：
-    // 534离线缓存 8历史记录 4我的收藏 428稍后再看
-    // 352离线缓存 1历史记录 405我的收藏 402个性装扮 404我的钱包 544创作中心
-    // 概念版：
-    // 425离线缓存 426历史记录 427我的收藏 428稍后再看 171创作中心 430我的钱包 431联系客服 432设置
-    // 国际版：
-    // 494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
-    // 622为会员购中心 425开始为概念版id
+    /*
+    哔哩哔哩-我的页面
+    标准版：
+    396离线缓存 397历史记录 398我的收藏 399稍后再看 171个性装扮 172我的钱包 407联系客服 410设置
+    港澳台：
+    534离线缓存 8历史记录 4我的收藏 428稍后再看
+    352离线缓存 1历史记录 405我的收藏 402个性装扮 404我的钱包 544创作中心
+    概念版：
+    425离线缓存 426历史记录 427我的收藏 428稍后再看 171创作中心 430我的钱包 431联系客服 432设置
+    国际版：
+    494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
+    622为会员购中心 425开始为概念版id
     */
     if (obj.data?.sections_v2) {
         const itemList = new Set([396, 397, 398, 399, 402, 404, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501])
@@ -112,7 +113,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             obj.data.sections_v2[index].be_up_title = undefined
             obj.data.sections_v2[index].tip_icon = undefined
             obj.data.sections_v2[index].tip_title = undefined
-            //2022-02-16 add by ddgksf2013
+
             for (let ii = 0; ii < obj.data.sections_v2.length; ii++) {
                 if (obj.data.sections_v2[ii].title == "创作中心" || obj.data.sections_v2[ii].title == "創作中心") {
                     obj.data.sections_v2[ii].title = undefined
@@ -122,7 +123,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             obj.data.vip_section_v2 = undefined
             obj.data.vip_section = undefined
             obj.data.sections_v2[index].items = items
-            //2022-03-05 add by ddgksf2013
+
             if (obj.data.hasOwnProperty("live_tip")) {
                 obj.data.live_tip = {}
             }
