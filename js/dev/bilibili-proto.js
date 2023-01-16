@@ -4,20 +4,21 @@ const biliJson = {"nested":{"bilibili":{"nested":{"ad":{"nested":{"v1":{"options
 
 
 /*
-仅适配 Quantumult X 和 Surge
+脚本原作者：@app2smile https://github.com/app2smile/rules
 优化内容：
 ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方的广告
 手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
       按照UP主移除其非视频动态，但是仍保留其抽奖动态
-      -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
-      -和某些贼TM能发动态的UP(一天五六条，很劝退路人粉desu)
+       -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
+       -和某些贼TM能发动态的UP(一天五六条，很劝退路人粉desu)
       移除任何转发的抽奖动态，包括自己转发的，但保留自己中奖的(什么时候能中呢？)
 */
+
 // 调试环境
 // const fs = require('fs');
 // const pako = require('pako');
-// function $done(param) {}
+// function $done(param) {console.log('done')}
 // const $request = {
 //     // url: "Dynamic/DynAll",
 //     url: "View/View",
@@ -29,13 +30,12 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //     }
 // }
 // const $response = {
-//     body: undefined,
 //     headers: {
 //         // "grpc-encoding": "identity"
 //         "grpc-encoding": "gzip"
 //     }
 // }
-// $response.body = fs.readFileSync("D:\\Downloads\\423723D0-A392-4CC2-964C-AA423F863BD4");
+// $response.body = fs.readFileSync("D:\\Downloads\\26B160B1-35D4-4629-B9E7-19030B68F527");
 
 console.log(`b站proto-2023.1.16-@kokoryh`);
 const url = $request.url;
@@ -169,11 +169,11 @@ if (url.includes("Dynamic/DynAll")) {
     // fs.writeFileSync('./output/bili-view.json', JSON.stringify(viewReplyObj))
 
     if (isIpad) {
-        if (!viewReplyObj.cmIpad || !Object.keys(viewReplyObj.cmIpad).length) {
-            console.log('cmIpad为空');
+        if (!viewReplyObj.cmIpad) {
+            console.log('无cmIpad');
         } else {
             needProcessFlag = true;
-            viewReplyObj.cmIpad = {};
+            viewReplyObj.cmIpad = undefined;
             console.log(`去除相关推荐上方广告`);
         }
     } else {
