@@ -1,6 +1,11 @@
 #!name=2-Bilibili模块测试
 #!desc=测试专用
 
+# 屏蔽青少年弹窗(测试中)
+# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
+# B漫装扮
+# ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
+
 [URL Rewrite]
 # 屏蔽搜索框关键词
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
@@ -10,14 +15,10 @@
 [Map Local]
 # 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
-# 屏蔽青少年弹窗(测试中)
-# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
 # 屏蔽直播间广告浮窗
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # B漫开屏
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# B漫装扮
-# ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
 [Script]
 # 装扮DIY
