@@ -1,14 +1,16 @@
 const fs = require('fs')
 const config = {
+    inputPath: 'D:\\Workspace\\Script\\QuantumultX\\',
+    outputPath: 'D:\\Workspace\\Script\\QuantumultX\\',
     inputFile: ['resource'],
     header: 'https://quantumult.app/x/open-app/add-resource?remote-resource='
 }
 for (const filename of config.inputFile) {
-    const content = fs.readFileSync(`./${filename}.conf`, 'UTF-8')
+    const content = fs.readFileSync(`${config.inputPath}${filename}.conf`, 'UTF-8')
     const lines = content.split(/\r?\n/)
     let result = handleLines(lines)
-    writeFile(`./${filename}.md`, result.result_md)
-    writeFile(`./${filename}.txt`, result.result_txt)
+    writeFile(`${config.outputPath}${filename}.md`, result.result_md)
+    writeFile(`${config.outputPath}${filename}.txt`, result.result_txt)
 }
 
 function writeFile(outputPath, content) {

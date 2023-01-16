@@ -22,7 +22,7 @@
 [iRingo for Location Services](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FVirgilClyne%2FiRingo%2Fmain%2Fqxrewrite%2FLocation.qxrewrite%2C%20tag%3DiRingo%20for%20Location%20Services%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)  
 [iRingo for Apple News](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FVirgilClyne%2FiRingo%2Fmain%2Fqxrewrite%2FNews.qxrewrite%2C%20tag%3DiRingo%20for%20Apple%20News%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)  
 ## 去广告重写
-#### 对于张军去广告和墨鱼的去开屏广告，个人建议只取自己需要的，自己建一个片段往里加就行了，否则会增加大量的重写和主机名
+#### 对于张军去广告和墨鱼的去开屏广告，建议取自己需要的，建一个片段往里添加，否则会增加大量的重写和主机名
 [张军去广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffmz200%2Fwool_scripts%2Fmain%2FQuantumultX%2Frewrite%2Fchongxie.txt%2C%20tag%3D%E5%BC%A0%E5%86%9B%E5%8E%BB%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)  
 ### [@ddgksf2013](https://github.com/ddgksf2013/Rewrite)
 [墨鱼去开屏广告](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fddgksf2013%2FRewrite%2Fmaster%2FAdBlock%2FStartUp.conf%2C%20tag%3D%E5%8E%BB%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A%2C%20update-interval%3D172800%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)  

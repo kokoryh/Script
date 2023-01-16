@@ -22,7 +22,7 @@ for (const filename of readDir) {
 
 function format(filename) {
     try {
-        const content = fs.readFileSync(filename, 'UTF-8')
+        const content = fs.readFileSync(config.inputPath + filename, 'UTF-8')
         const lines = content.split(/\r?\n/)
         let ruleDict = classifyRules(lines)
         let result = contactRule(handleRuleDict(ruleDict))
