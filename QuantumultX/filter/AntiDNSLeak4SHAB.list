@@ -17,10 +17,12 @@ HOST-SUFFIX,browserleaks.org,PROXY
 HOST-SUFFIX,vpnunlimited.com,PROXY
 HOST-SUFFIX,whoer.net,PROXY
 HOST-SUFFIX,whrq.net,PROXY
+
 # astrill
 HOST-SUFFIX,astrill.com,PROXY
 HOST-SUFFIX,astrill.org,PROXY
 HOST-SUFFIX,dnsleak.asn247.net,PROXY
+
 # surfshark
 HOST-SUFFIX,surfshark.com,PROXY
 HOST-SUFFIX,surfsharkdns.com,PROXY

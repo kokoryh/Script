@@ -114,7 +114,7 @@ cfw-bypass:
 proxy-providers:
   ProxyList:
     type: http
-    url: "输入订阅URL，必须是Clash格式的NodeList"
+    url: "订阅URL，必须是Clash格式的NodeList"
     interval: 86400
     path: ./Proxy/ProxyList.yaml
     health-check:
