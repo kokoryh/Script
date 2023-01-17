@@ -1,0 +1,17 @@
+#!name=2-Bilibili重定向CDN
+#!desc=加载流畅的哔哩哔哩更值得干杯
+# 本模块处于测试阶段
+
+# 禁用b站垃圾cdn
+# OR,((AND,((OR,((DOMAIN-KEYWORD,cn-), (DOMAIN-KEYWORD,mcdn))), (DOMAIN-KEYWORD,bilivideo.c))), (DOMAIN-SUFFIX,szbdyd.com), (DEST-PORT,4480)),REJECT-NO-DROP
+
+[General]
+force-http-engine-hosts = %INSERT% upos-*.bilivideo.com:80, *:4480, *:9102
+
+[Rule]
+
+[URL Rewrite]
+https?:\/\/(.*):4480\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
+https?:\/\/(.*):9102\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
+https?:\/\/upos-.*-.*oss\d*\.bilivideo\.com\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
+https?:\/\/upos-sz-mirror(?!cos\.).*bilivideo\.com\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
