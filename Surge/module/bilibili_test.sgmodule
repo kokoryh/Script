@@ -6,10 +6,6 @@
 # B漫装扮
 # ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
-[Rule]
-# 屏蔽垃圾CDN
-DEST-PORT,4480,REJECT
-
 [URL Rewrite]
 # 屏蔽搜索框关键词
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
