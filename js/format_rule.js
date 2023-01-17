@@ -30,12 +30,12 @@ function format(filename) {
         exportRule(config.surgeOutputPath, `${fn}.list`, result.surge)
         exportRule(config.clashOutputPath, `${fn}.yaml`, result.clash)
         if (result.surge_domain_set) {
-            exportRule(outputPath.surge, `${fn}_Domain.list`, result.surge_domain_set)
-            exportRule(outputPath.clash, `${fn}_Domain.yaml`, result.clash_domain_set)
+            exportRule(config.surgeOutputPath, `${fn}_Domain.list`, result.surge_domain_set)
+            exportRule(config.clashOutputPath, `${fn}_Domain.yaml`, result.clash_domain_set)
         }
         if (result.surge_others) {
-            exportRule(outputPath.surge, `${fn}_Others.list`, result.surge_others)
-            exportRule(outputPath.clash, `${fn}_Others.yaml`, result.clash_others)
+            exportRule(config.surgeOutputPath, `${fn}_Others.list`, result.surge_others)
+            exportRule(config.clashOutputPath, `${fn}_Others.yaml`, result.clash_others)
         }
     } catch (err) {
         console.error(err);

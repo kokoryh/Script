@@ -8,6 +8,9 @@
 # qx配置示例如下，请手动去掉 # 号
 # https://raw.githubusercontent.com/kokoryh/Script/master/Surge/module/amap.sgmodule#ntf=0&out=amdc, tag=高德地图去广告, update-interval=172800, opt-parser=true, enabled=true
 
+# 可能为更新弹窗
+# ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+
 [Rule]
 DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
 # 由于surge需特殊方法匹配域名下ip，因此用如下规则
