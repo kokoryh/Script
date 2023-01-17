@@ -1,6 +1,9 @@
 #!name=2-Bilibili增强(HD)
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 
+[Rule]
+DEST-PORT,4480,REJECT
+
 [URL Rewrite]
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
