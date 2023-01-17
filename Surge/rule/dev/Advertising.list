@@ -6,6 +6,9 @@ DOMAIN-SUFFIX,www.qchannel01.cn
 DOMAIN-SUFFIX,optimus-ads.amap.com
 DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
 
+# B站垃圾CDN 2023年1月17日
+DOMAIN-SUFFIX,szbdyd.com
+
 # 阿里系
 DOMAIN,tunion-api.m.taobao.com
 # 阿里云

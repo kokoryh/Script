@@ -254,6 +254,7 @@ payload:
   - DOMAIN-SUFFIX,pos.baidu.com
   - DOMAIN-SUFFIX,pv.sohu.com
   - DOMAIN-SUFFIX,rads.msn.com
+  - DOMAIN-SUFFIX,szbdyd.com
   - DOMAIN-SUFFIX,union.youdao.com
   - DOMAIN-SUFFIX,unityads.unity3d.com
   - DOMAIN-SUFFIX,v2.hunantv.com
