@@ -1,5 +1,5 @@
-#!name=1-Block
-#!desc=屏蔽特定端口，协议等
+#!name=1-Block Port & Protocol
+#!desc=屏蔽特定端口 & 协议
 
 # 其他B站垃圾CDN，等出现了再加
 # DEST-PORT,4483,REJECT
