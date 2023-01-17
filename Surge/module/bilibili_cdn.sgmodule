@@ -5,13 +5,15 @@
 # 禁用b站垃圾cdn
 # OR,((AND,((OR,((DOMAIN-KEYWORD,cn-), (DOMAIN-KEYWORD,mcdn))), (DOMAIN-KEYWORD,bilivideo.c))), (DOMAIN-SUFFIX,szbdyd.com), (DEST-PORT,4480)),REJECT-NO-DROP
 
+# 这条不能用，mirrorcos这个域名也有4480端口，会死循环
+# https?:\/\/(.*):4480\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
+
 [General]
 force-http-engine-hosts = %INSERT% upos-*.bilivideo.com:80, *:4480, *:9102
 
 [Rule]
 
 [URL Rewrite]
-https?:\/\/(.*):4480\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
 https?:\/\/(.*):9102\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
 https?:\/\/upos-.*-.*oss\d*\.bilivideo\.com\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
 https?:\/\/upos-sz-mirror(?!cos\.).*bilivideo\.com\/upgcxcode http://upos-sz-mirrorcos.bilivideo.com/upgcxcode 302
