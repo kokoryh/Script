@@ -31,7 +31,7 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.mapBizList = []
         change = true
     }
-} else if (url.includes("ws/shield/frogserver/aocs")) {
+} else if (url.includes("ws/shield/frogserver/aocs")) {  // 首页右中
     if (obj.data?.home_business_position_config) {
         obj.data.home_business_position_config = {
             "status": 1,
@@ -110,7 +110,7 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     //     change = true
     // }
     if (obj.data?.modules) {
-        let module = ["coupon", "scene", "activity", "commodity_rec"];
+        let module = ["coupon", "scene", "activity", "commodity_rec"]
         obj.data.modules = obj.data.modules.filter(item => {
             return !module.includes(item)
             // return item !== "coupon"           // 右下角广告
