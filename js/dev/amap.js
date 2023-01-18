@@ -31,6 +31,11 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.mapBizList = []
         change = true
     }
+} else if (url.includes("ws/shield/frogserver/aocs")) {
+    if (obj.data?.home_business_position_config) {
+        obj.data.home_business_position_config.status = 1
+        change = true
+    }
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
     obj.data.tipData = undefined
     if (obj.data?.cardList) {
@@ -101,11 +106,13 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     //     change = true
     // }
     if (obj.data?.modules) {
+        let module = ["coupon", "scene", "activity", "commodity_rec"];
         obj.data.modules = obj.data.modules.filter(item => {
-            return item !== "coupon"           // 右下角广告
-                && item !== "scene"            // 热词底下的广告横幅
-                && item !== "activity"         // 热词底下的活动推荐，如指南，0元领水果之类的
-                && item !== "commodity_rec"    // 超值套餐
+            return !module.includes(item)
+            // return item !== "coupon"           // 右下角广告
+            //     && item !== "scene"            // 热词底下的广告横幅
+            //     && item !== "activity"         // 热词底下的活动推荐，如指南，0元领水果之类的
+            //     && item !== "commodity_rec"    // 超值套餐
         })
         change = true
     }
