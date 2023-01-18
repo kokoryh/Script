@@ -30,7 +30,7 @@ function handleLines(lines) {
         if (l) { // 非空行的情况
             if (l.startsWith('#')) {
                 if (/#.*收集/.test(l)) {  // 标题
-                    result_md += '# QuantumultX 资源收集(一键安装需qx版本≥1.0.30)\n'
+                    result_md += '# QuantumultX 资源收集\n'
                     result_txt += 'QuantumultX 资源收集\n'
                 } else if (/#\s(功能性|去广告)(分流|重写)$/.test(l)) {
                     let content = l.split('#')[1].trim()

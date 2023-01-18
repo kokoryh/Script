@@ -1,4 +1,9 @@
-# QuantumultX 资源收集(一键安装需qx版本≥1.0.30)
+# QuantumultX 资源收集
+#### 一键安装需 QuantumultX 版本 ≥ 1.0.30
+#### 所有资源均来自互联网，感谢开源项目作者的辛勤付出
+#### 本项目不对任何内容负责。使用本项目所造成的一切后果，由使用的个人或组织完全承担
+#### [图文教程](https://www.notion.so/kopshawn/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917)
+#### [教程频道](https://t.me/xiaoxiaoyunxi)
 ## 功能性分流
 [屏蔽ios更新](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Frule%2FBlockIOSUpdate.list%2C%20tag%3D%E5%B1%8F%E8%94%BDios%E6%9B%B4%E6%96%B0%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)  
 ## 去广告分流
