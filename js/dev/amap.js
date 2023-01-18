@@ -33,7 +33,11 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
 } else if (url.includes("ws/shield/frogserver/aocs")) {
     if (obj.data?.home_business_position_config) {
-        obj.data.home_business_position_config.status = 1
+        obj.data.home_business_position_config = {
+            "status": 1,
+            "version": "",
+            "value": ""
+        }
         change = true
     }
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
