@@ -1,14 +1,15 @@
 /***********************************************
- > 应用名称：墨鱼自用QX微博&微博国际版净化
+ > 应用名称：墨鱼自用微博&微博国际版净化脚本
  > 脚本作者：@Zmqcherish, @Cuttlefish
  > 微信账号：墨鱼手记
- > 更新时间：2022-01-09
+ > 更新时间：2022-01-15
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 原作者库：https://github.com/zmqcherish
  > 问题反馈：ddgksf2013@163.com
  > 特别提醒：如需转载请注明出处，谢谢合作！
  > 脚本声明：本脚本是在Zmqcherish原创基础上优化自用
+ > 脚本声明：若有侵犯原作者权利，请邮箱联系删除
  ***********************************************/
 
 
@@ -20,7 +21,7 @@
 
 
 
-const version = 'V2.0.84';
+const version = 'V2.0.88';
 
 
 const mainConfig = {
@@ -127,7 +128,7 @@ function removeTopics(e) {
 }
 
 function isAd(e) {
-    return !!e && !!("广告" == e.mblogtypename || "热推" == e.mblogtypename || "廣告" == e.mblogtypename || "熱推" == e.mblogtypename || e.promotion && "ad" == e.promotion.type || e.common_struct && e.common_struct[0]?.actionlog?.source?.includes("ad"))
+    return !!e && !!("广告" == e.mblogtypename || "热推" == e.mblogtypename || e.promotion && "ad" == e.promotion.type || e.common_struct && e.common_struct[0]?.actionlog?.source?.includes("ad"))
 }
 
 function squareHandler(e) {
@@ -212,7 +213,7 @@ function removeMsgAd(e) {
 }
 
 function removePage(e) {
-    return removeCards(e), mainConfig.removePinedTrending && e.cards && e.cards.length > 0 && e.cards[0].card_group && (e.cards[0].card_group = e.cards[0].card_group.filter(e => !(e?.actionlog?.ext?.includes("ads_wor") || e?.itemid?.includes("t:51") || e?.itemid?.includes("ads_wor")))), e
+    return removeCards(e), mainConfig.removePinedTrending && e.cards && e.cards.length > 0 && e.cards[0].card_group && (e.cards[0].card_group = e.cards[0].card_group.filter(e => !(e?.actionlog?.ext?.includes("ads_word") || e?.itemid?.includes("t:51") || e?.itemid?.includes("ads_word")))), e
 }
 
 function removeCards(e) {
@@ -338,7 +339,7 @@ function removeMediaHomelist(e) {
 
 function removeComments(e) {
     let t = ["广告", "廣告"];
-    mainConfig.removeRelateItem && t.push(...["相关内容", "相關內容"]), mainConfig.removeRecommendItem && t.push(...["推荐", "热推", "推薦", "熱推"]);
+    mainConfig.removeRelateItem && t.push(...["相关内容"]), mainConfig.removeRecommendItem && t.push(...["推荐", "热推"]);
     let o = e.datas || [];
     if (0 === o.length) return;
     let i = [];
@@ -370,7 +371,7 @@ function userHandler(e) {
 function nextVideoHandler(e) {
     if (!e.statuses) return e;
     let t = [];
-    for (let o of e.statuses) isAd(o) || t.push(o);
+    for (let o of e.statuses) isAd(o) || (o.video_info?.forward_redpacket_info && delete o.video_info.forward_redpacket_info, o.video_info?.shopping && delete o.video_info.shopping, o.video_info?.float_info && delete o.video_info.float_info, o.video_info?.tags && delete o.video_info.tags, t.push(o));
     return e.statuses = t, log("removeMainTab Success"), e
 }
 
