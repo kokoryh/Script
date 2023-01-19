@@ -13,9 +13,6 @@
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
-[Rule]
-URL-REGEX,^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s,REJECT-DROP
-
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
@@ -25,6 +22,7 @@ URL-REGEX,^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s,REJECT-DROP
 
 # 网易云音乐开屏
 ^https?:\/\/interface3\.music\.163\.com\/eapi\/ad\/ - reject
+^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s - reject
 
 # 百度网盘广告
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
