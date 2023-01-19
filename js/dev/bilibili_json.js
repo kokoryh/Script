@@ -121,7 +121,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     */
     if (obj.data?.sections_v2) {
         const itemList = new Set([396, 397, 398, 399, 402, 404, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501])
-        obj.data.sections_v2.forEach((element, index) => {
+        obj.data.sections_v2.forEach(element => {
             // element.items.forEach((e) => {
             //     if (e.id === 622) {
             //         e.title = "会员购"
@@ -146,14 +146,14 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             //     }
             // }
         })
-        obj.data.vip_section = undefined
-        obj.data.vip_section_v2 = undefined
         if (obj.data?.live_tip) {
             obj.data.live_tip = {}
         }
         if (obj.data?.answer) {
             obj.data.answer = {}
         }
+        obj.data.vip_section = undefined
+        obj.data.vip_section_v2 = undefined
         obj.data.vip_type = 2
         obj.data.vip.type = 2
         obj.data.vip.status = 1
@@ -170,11 +170,10 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         change = true
     }
 } else if (url.includes('app.bilibili.com/x/v2/search/square')) {  // 屏蔽热搜
-    obj.data = {
+    obj.data = [{
         type: "history",
-        title: "搜索历史",
-        search_hotword_revision: 2
-    }
+        title: "搜索历史"
+    }]
     change = true
 } else if (url.includes('api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom')) {  // 直播去广告
     if (obj.data) {
