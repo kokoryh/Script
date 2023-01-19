@@ -188,11 +188,9 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             if (module.style.startsWith("banner")) {
                 //i.source_content && i.source_content.ad_content
                 module.items = module.items.filter(i => i.link.includes("play"))
-            }
-            if (module.style.startsWith("function")) {
+            } else if (module.style.startsWith("function")) {
                 module.items = module.items.filter(i => !i.blink.includes("www.bilibili.com"))
-            }
-            if (module.style.startsWith("tip")) {
+            } else if (module.style.startsWith("tip")) {
                 module.items = []
             }
         })
