@@ -3,6 +3,8 @@
 
 # 重定向香港CDN为腾讯云
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
+# 禁用B站垃圾CDN
+# OR,((AND,((OR,((DOMAIN-KEYWORD,cn-), (DOMAIN-KEYWORD,mcdn))), (DOMAIN-KEYWORD,bilivideo.c))), (DEST-PORT,4480)),REJECT-NO-DROP
 # 屏蔽青少年弹窗(测试中)
 # ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
 # B漫装扮

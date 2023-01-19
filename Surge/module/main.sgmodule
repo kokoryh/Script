@@ -3,16 +3,13 @@
 
 # 中国电信开屏
 # ^https?:\/\/cloud\.189\.cn\/include\/splash\/ - reject
-
 # 淘宝
 # ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ - reject
-
 # 京东
 # ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
 # ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject
 # 京东
 # ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
-
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
