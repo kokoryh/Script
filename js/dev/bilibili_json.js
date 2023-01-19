@@ -8,18 +8,14 @@ try {
     $done({})
 }
 if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
-    if (obj.data?.show) {
-        obj.data.show = undefined
+    if (obj.data?.list) {
+        for (let item of obj.data.list) {
+            item.duration = 0  // 显示时间
+            item.begin_time = 2240150400  // 2040 年
+            item.end_time = 2240150400
+        }
         change = true
     }
-    // if (obj.data?.list) {
-    //     for (let item of obj.data.list) {
-    //         item.duration = 0  // 显示时间
-    //         item.begin_time = 2240150400  // 2040 年
-    //         item.end_time = 2240150400
-    //     }
-    //     change = true
-    // }
 } else if (url.includes('app.bilibili.com/x/v2/feed/index?')) {  // 推荐去广告，最后问号不能去掉，以免匹配到story模式
     if (obj.data?.items) {
         obj.data.items = obj.data.items.filter(item => {
@@ -135,15 +131,14 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             if (["创作中心", "創作中心"].includes(element.title)) {
                 element.title = undefined
                 element.type = undefined
-            } else {
-                element.items = element.items.filter(e => {
-                    return itemList.has(e.id)
-                })
-                element.button = {}
-                element.be_up_title = undefined
-                element.tip_icon = undefined
-                element.tip_title = undefined
             }
+            element.items = element.items.filter(e => {
+                return itemList.has(e.id)
+            })
+            element.button = {}
+            element.be_up_title = undefined
+            element.tip_icon = undefined
+            element.tip_title = undefined
             // for (let ii = 0; ii < obj.data.sections_v2.length; ii++) {
             //     if (obj.data.sections_v2[ii].title == "创作中心" || obj.data.sections_v2[ii].title == "創作中心") {
             //         obj.data.sections_v2[ii].title = undefined
@@ -159,11 +154,11 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         if (obj.data?.answer) {
             obj.data.answer = {}
         }
-        // obj.data.vip_type = 2
-        // obj.data.vip.type = 2
-        // obj.data.vip.status = 1
-        // obj.data.vip.vip_pay_type = 1
-        // obj.data.vip.due_date = 4669824160
+        obj.data.vip_type = 2
+        obj.data.vip.type = 2
+        obj.data.vip.status = 1
+        obj.data.vip.vip_pay_type = 1
+        obj.data.vip.due_date = 4669824160
         change = true
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/myinfo?')) {  // 解锁会员画质
@@ -198,8 +193,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
                 module.items = module.items.filter(i => !i.blink.includes("www.bilibili.com"))
             }
             if (module.style.startsWith("tip")) {
-                // module.items = []
-                module.size = 0
+                module.items = []
             }
         })
         change = true
