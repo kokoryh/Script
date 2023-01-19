@@ -1,7 +1,7 @@
-let obj = JSON.parse($response.body);
+let obj = JSON.parse($response.body)
 if (obj.data?.operate) {
-    obj.data.operate = null;
-    $done({body: JSON.stringify(obj)});
+    obj.data.operate = null
+    $done({body: JSON.stringify(obj)})
 } else {
-    $done({});
+    $done({})
 }

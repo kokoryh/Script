@@ -18,9 +18,9 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {  // 首页底栏
     if (obj.data?.cardList) {
-        obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
+        obj.data.cardList = obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
-        }))
+        })
         change = true
     }
     if (obj.data?.pull3?.msgs) {
@@ -41,11 +41,16 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
-    obj.data.tipData = undefined
+    if (obj.data?.tipData) {
+        obj.data.tipData = undefined
+        change = true
+    }
     if (obj.data?.cardList) {
+        let reserve = ["MyOrderCard", "GdRecommendCard"]
         obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
-            return item.dataType === "MyOrderCard"
-                || item.dataType === "GdRecommendCard"           // 高德推荐
+            return reserve.includes(item.dataType)
+            // return item.dataType === "MyOrderCard"
+            // || item.dataType === "GdRecommendCard"           // 高德推荐
             // || item.dataKey === "SceneVehicleCard_function"  // 我的车辆
             // || item.dataKey === "AnnualBillCardV2"           // 年度报告
             // || item.dataKey === "PopularActivitiesCard"      // 热门活动

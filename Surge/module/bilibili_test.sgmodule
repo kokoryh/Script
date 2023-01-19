@@ -7,6 +7,8 @@
 # ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
 [URL Rewrite]
+# 重定向香港CDN为腾讯云
+^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
 # 屏蔽搜索框关键词
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 # 屏蔽IP请求
