@@ -12,7 +12,7 @@
 # ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
-
+# 网易云音乐开屏
 # ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s - reject
 
 [Rule]

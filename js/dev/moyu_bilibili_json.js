@@ -2,7 +2,7 @@
  > 应用名称：墨鱼自用B站去广告脚本
  > 脚本作者：@ddgksf2013
  > 微信账号：墨鱼手记
- > 更新时间：2023-01-17
+ > 更新时间：2023-01-19
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 问题反馈：ddgksf2013@163.com
@@ -12,7 +12,7 @@
 
 
 
-const version = 'V2.0.103';
+const version = 'V2.0.104';
 
 let body = $response.body;
 if (body) {
@@ -137,7 +137,7 @@ if (body) {
             try {
                 let O = JSON.parse(body);
                 O.result.modules.forEach(t => {
-                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))), t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("www.bilibili.com")), [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])), t.style.startsWith("tip") && (t.items = [])
+                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))), t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")), [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])), t.style.startsWith("tip") && (t.items = [])
                 }), body = JSON.stringify(O)
             } catch (P) {
                 console.log("bilibili fanju:" + P)
