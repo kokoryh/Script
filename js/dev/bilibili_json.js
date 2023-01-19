@@ -21,7 +21,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         obj.data.items = obj.data.items.filter(item => {
             return !item.banner_item
                 && !item.ad_info
-                && !item.card_goto.includes("ad")
+                && item.card_goto?.indexOf("ad") === -1
                 && ["small_cover_v2", "large_cover_v1", "large_cover_single_v9"].includes(item.card_type)
         })
         change = true
@@ -44,7 +44,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     if (obj.data?.items) {
         obj.data.items = obj.data.items.filter(item => {
             return !item.ad_info
-                && !item.card_goto.includes("ad")
+                && item.card_goto?.indexOf("ad") === -1
         })
         change = true
         // let items = []
