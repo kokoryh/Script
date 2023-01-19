@@ -13,7 +13,7 @@
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
-^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s - reject
+# ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/s - reject
 
 [Rule]
 DOMAIN,httpdns.n.netease.com,REJECT-DROP
