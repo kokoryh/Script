@@ -16,19 +16,15 @@
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
-# 网易云音乐开屏
-# ^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
-
-[Rule]
-# 网易云音乐开屏
-URL-REGEX,\/eapi\/ad,REJECT
-
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
 # Redirect exhentai to e-hentai
 ^https?:\/\/exhentai\.org https://e-hentai.org 302
+
+# 网易云音乐开屏
+^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
 
 # 百度网盘广告
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
@@ -56,4 +52,4 @@ http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? requires-bod
 http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/cam_scanner.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, interface3.music.163.com, 112.13.112.4, pan.baidu.com, client.app.coc.10086.cn, mp.weixin.qq.com, ad.12306.cn, wmapi.meituan.com, www.meituan.com, ap*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, interface3.music.163.com, pan.baidu.com, client.app.coc.10086.cn, mp.weixin.qq.com, ad.12306.cn, wmapi.meituan.com, www.meituan.com, ap*.intsig.net
