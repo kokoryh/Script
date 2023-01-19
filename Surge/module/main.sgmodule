@@ -17,7 +17,7 @@
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
 # 网易云音乐开屏
-^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
+# ^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
 
 [Rule]
 # 网易云音乐开屏
