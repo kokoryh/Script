@@ -3,7 +3,7 @@
 #!author=kokoryh
 
 [General]
-force-http-engine-hosts = %INSERT% 59.111.36.*:0, 59.111.209.*:0, 59.111.210.*:0
+force-http-engine-hosts = %INSERT% 59.111.*:0
 
 [URL Rewrite]
 \/eapi\/ad - reject
@@ -13,4 +13,4 @@ iadmusicmat(video)?\.music\.126\.net - reject
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3\.music\.163\.com requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
 
 [MITM]
-hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 59.111.19.*, 59.111.160.*, 59.111.179.*, 59.111.239.*
+hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 59.111.*
