@@ -10,4 +10,4 @@ iadmusicmat(video)?\.music\.126\.net - reject
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3\.music\.163\.com requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
 
 [MITM]
-hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 112.13.119.*, 112.13.122.*, 59.111.19.*, 59.111.160.*
+hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 112.13.119.*, 112.13.122.*, 39.105.175.*, 39.105.63.*
