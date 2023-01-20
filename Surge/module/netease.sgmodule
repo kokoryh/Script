@@ -1,0 +1,13 @@
+#!name=3-网易云音乐去广告
+#!desc=仅去除开屏广告
+#!author=kokoryh
+
+[URL Rewrite]
+\/eapi\/ad - reject
+iadmusicmat(video)?\.music\.126\.net - reject
+
+[Script]
+http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3\.music\.163\.com requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
+
+[MITM]
+hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 112.13.119.*, 112.13.122.*, 59.111.19.*, 59.111.160.*
