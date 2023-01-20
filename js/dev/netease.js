@@ -6,7 +6,12 @@ if (obj.data?.["interface3.music.163.com"]) {
             || item.startsWith("59.111.19")
             || item.startsWith("59.111.160")
     })
-    $done({body: JSON.stringify(obj)})
+    if (obj.data["interface3.music.163.com"].ip.length) {
+        $done({body: JSON.stringify(obj)})
+    } else {
+        $notification.post("未匹配到指定IP", "", `返回的IP：\n${obj.data["interface3.music.163.com"].ip.toString()}`)
+        $done({})
+    }
 } else {
     $done({})
 }
