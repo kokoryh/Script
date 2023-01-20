@@ -1,0 +1,5 @@
+#!name=1-TUN Mode
+#!desc=开启TUN模式
+
+[General]
+compatibility-mode = 3
