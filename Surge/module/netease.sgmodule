@@ -10,7 +10,7 @@ force-http-engine-hosts = %INSERT% 59.111.*:0
 iadmusicmat(video)?\.music\.126\.net - reject
 
 [Script]
-http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3\.music\.163\.com requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
+http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
 
 [MITM]
 hostname = %INSERT% interface*.music.163.com:0, httpdns.n.netease.com, 59.111.*
