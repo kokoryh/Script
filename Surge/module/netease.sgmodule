@@ -3,7 +3,7 @@
 #!author=kokoryh
 
 [General]
-force-http-engine-hosts = %INSERT% 59.111.209.*:0, 59.111.210.*:0
+force-http-engine-hosts = %INSERT% 59.111.36.*:0, 59.111.209.*:0, 59.111.210.*:0
 
 [URL Rewrite]
 \/eapi\/ad - reject
