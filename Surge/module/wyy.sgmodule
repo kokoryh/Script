@@ -1,0 +1,19 @@
+#!name=3-网易云音乐去广告
+#!desc=去除开屏广告，测试中
+#!author=Keywos
+
+# \/eapi\/ocpc\/ad - reject
+
+[General]
+# 后两个域名在某些时候会走80端口，而surge mitm默认只解密443端口所以加上才可以识别为http而后才能使用重写等功能，因此导致很多人surge某些时候去不掉广告，还有ip地址需要完善
+force-http-engine-hosts = %APPEND% 101.71.154.*, 103.126.92.*, 112.13.119.*, 115.236.118.*, 117.147.199.*, 183.136.182.*, 45.254.48.*, 59.111.160.*, 59.111.19.*, 59.111.209.210:8080, interface*.music.163.com, interface*.music.163.com.163jiasu.com
+
+[Rule]
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,ipv6.music.163.com,REJECT
+
+[URL Rewrite]
+\/eapi\/ad - reject
+
+[MITM]
+hostname = %APPEND% interface*.music.163.com, interface*.music.163.com.163jiasu.com
