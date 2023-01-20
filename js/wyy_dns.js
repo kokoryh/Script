@@ -1,0 +1,1 @@
+let obj=JSON.parse($response.body);obj.data?.["interface3.music.163.com"]?(obj.data["interface3.music.163.com"].ip=obj.data["interface3.music.163.com"].ip.filter((t=>t.startsWith("112.13.119")||t.startsWith("112.13.122")||t.startsWith("59.111.19")||t.startsWith("59.111.160"))),$done({body:JSON.stringify(obj)})):$done({});

@@ -2,22 +2,28 @@
 #!desc=去除开屏广告，测试中
 #!author=Keywos
 
+# 后两个域名可能会走80端口，而Surge默认只解密443端口，所以需将其视为HTTP从而才能使用重写等功能。IP地址待完善
+# force-http-engine-hosts = %INSERT% 101.71.154.*, 103.126.92.*, 112.13.119.*, 112.13.122.*, 115.236.118.*, 117.147.199.*, 183.136.182.*, 45.254.48.*, 59.111.160.*, 59.111.179.*, 59.111.19.*, 59.111.209.*:0, 59.111.210.*:0, 59.111.239.*, interface*.music.163.com, interface*.music.163.com.163jiasu.com
+# force-http-engine-hosts = %INSERT% 112.13.119.18, 112.13.122.4, 112.15.45.25, 36.156.46.143, 59.111.19.33, 59.111.160.195, 118.24.63.156, 39.105.63.80, 39.105.175.128, 47.100.127.239, 182.92.170.253
+
+# DOMAIN,httpdns.n.netease.com,REJECT
+# DOMAIN,ipv6.music.163.com,REJECT
+
 # \/eapi\/ocpc\/ad - reject
 # ^https?:\/\/ossgw\.alicdn\.com\/creatives-assets\/prod\/feupload\/user\/.*\.jpg$ - reject
 # ^https?:\/\/images\.pinduoduo\.com\/marketing_api\/202\d-\d\d\-\d\d\/.*\.jpeg - reject
 # ^https?:\/\/img2\.360buyimg\.com\/tgx\/jfs\.*\.jpg$ - reject
 
 [General]
-# 后两个域名可能会走80端口，而Surge默认只解密443端口，所以需将其视为HTTP从而才能使用重写等功能。IP地址待完善
-force-http-engine-hosts = %INSERT% 101.71.154.*, 103.126.92.*, 112.13.119.*, 112.13.122.*, 115.236.118.*, 117.147.199.*, 183.136.182.*, 45.254.48.*, 59.111.160.*, 59.111.179.*, 59.111.19.*, 59.111.209.*:0, 59.111.210.*:0, 59.111.239.*, interface*.music.163.com, interface*.music.163.com.163jiasu.com
 
 [Rule]
-DOMAIN,httpdns.n.netease.com,REJECT
-DOMAIN,ipv6.music.163.com,REJECT
 
 [URL Rewrite]
 \/eapi\/ad - reject
 iadmusicmat(video)?\.music\.126\.net - reject
 
+[Script]
+http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3\.music\.163\.com requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/wyy_dns.js
+
 [MITM]
-hostname = %INSERT% interface*.music.163.com, interface*.music.163.com.163jiasu.com
+hostname = %INSERT% interface3.music.163.com, interface*.music.163.com.163jiasu.com, httpdns.n.netease.com, 112.13.119.*, 112.13.122.*, 59.111.19.*, 59.111.160.*

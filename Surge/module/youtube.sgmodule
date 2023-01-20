@@ -6,11 +6,11 @@
 # 删除 底部 上传 按钮
 # 广告信息会有遗漏，可能偶现广告
 
-[Script]
-youtube_ad = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide),requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
-
 [Map Local]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
+
+[Script]
+youtube_ad = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide),requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
 
 [MITM]
 hostname = %INSERT% *.googlevideo.com, youtubei.googleapis.com
