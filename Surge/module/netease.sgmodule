@@ -2,6 +2,9 @@
 #!desc=去除开屏广告
 #!author=kokoryh
 
+[General]
+force-http-engine-hosts = %INSERT% 59.111.209.*:0
+
 [URL Rewrite]
 \/eapi\/ad - reject
 iadmusicmat(video)?\.music\.126\.net - reject
