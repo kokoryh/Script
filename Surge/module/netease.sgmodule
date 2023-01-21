@@ -1,9 +1,9 @@
 #!name=3-网易云音乐去广告
-#!desc=去除开屏广告(有极小概率会出现广告)
+#!desc=去除开屏广告
 #!author=kokoryh
 
 [General]
-force-http-engine-hosts = %INSERT% 59.111.*:0, 112.13.*:0
+force-http-engine-hosts = %INSERT% 59.111.*:0
 
 [URL Rewrite]
 \/eapi\/ad - reject
@@ -13,4 +13,4 @@ iadmusicmat(video)?\.music\.126\.net - reject
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/netease.js
 
 [MITM]
-hostname = %INSERT% interface*.music.163.com:0, httpdns.n.netease.com, 59.111.*
+hostname = %INSERT% interface*.music.163.com:0, httpdns.n.netease.com, 59.111.*, 112.13.*
