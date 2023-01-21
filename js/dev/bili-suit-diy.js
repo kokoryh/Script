@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.8.5
+版本：1.8.6
 脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 
@@ -43,7 +43,7 @@ Quantumult X：
 0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮定时切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
 
 Surge：
-bili-skin-switch = type=cron,cronexp=0 8,20 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
+bili-skin-switch = type=cron,cronexp="0 8,20 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
 ----------------
 */
 
