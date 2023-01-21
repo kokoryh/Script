@@ -7,4 +7,4 @@ Sub-Store Core=type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api
 Sub-Store Simple=type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
 
 [MITM]
-hostname=%INSERT% sub.store
+hostname = %INSERT% sub.store

@@ -1,6 +1,5 @@
 // 修改自@ddgksf2013的微博去广告脚本: https://raw.githubusercontent.com/ddgksf2013/Scripts/master/weibo_json.js
 
-// const mainConfig = {};
 const modifyStatusesUrls = ['statuses/friends/timeline', 'statuses/friends_timeline', 'statuses/unread_friends_timeline', 'statuses/unread_hot_timeline'];
 const modifyOtherUrls = {
     'ct=feed&a=trends': 'removeTopics',
