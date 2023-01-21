@@ -2,6 +2,8 @@
 #!desc=去除开屏广告
 #!author=kokoryh
 
+# 112.13这个IP段无法MITM，一定要屏蔽掉，否则可能无法去除开屏广告
+
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
 

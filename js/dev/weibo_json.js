@@ -104,36 +104,6 @@ function removeIntlOpenAds(data) {
     return data;
 }
 
-function isAd(data) {
-    if (!data) {
-        return false;
-    }
-    if (data.mblogtypename === '广告' || data.mblogtypename === '热推') {
-        return true
-    }
-    if (data.mblogtypename === '廣告' || data.mblogtypename === '熱推') {
-        return true
-    }
-    if (data.promotion && data.promotion.type === 'ad') {
-        return true
-    }
-    return false;
-}
-
-function isBlock(data) {
-    let blockIds = mainConfig.blockIds || [];
-    if (blockIds.length === 0) {
-        return false;
-    }
-    let uid = data.user.id;
-    for (const blockId of blockIds) {
-        if (blockId == uid) {
-            return true;
-        }
-    }
-    return false;
-}
-
 // 瀑布流内广告
 function removeTimeLine(data) {
     for (const s of ["ad", "advertises", "trends"]) {
@@ -148,11 +118,23 @@ function removeTimeLine(data) {
     for (const s of data.statuses) {
         if (!isAd(s)) {
             newStatuses.push(s);
-            //lvZhouHandler(s);
-            // if (!isBlock(s)) {
-            //     newStatuses.push(s);
-            // }
         }
     }
     data.statuses = newStatuses;
+}
+
+function isAd(data) {
+    if (!data) {
+        return false;
+    }
+    if (data.mblogtypename === '广告' || data.mblogtypename === '热推') {
+        return true
+    }
+    if (data.mblogtypename === '廣告' || data.mblogtypename === '熱推') {
+        return true
+    }
+    if (data.promotion && data.promotion.type === 'ad') {
+        return true
+    }
+    return false;
 }

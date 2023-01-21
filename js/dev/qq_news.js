@@ -1,3 +1,5 @@
+// https://github.com/app2smile/rules/blob/master/js/qq-news.js
+
 let url = $request.url;
 // let method = $request.method;
 if (!$response.body) {

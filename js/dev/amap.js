@@ -47,17 +47,9 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
     if (obj.data?.cardList) {
         let reserve = ["MyOrderCard", "GdRecommendCard"]
-        obj.data.cardList = Object.values(obj.data.cardList.filter(item => {
+        obj.data.cardList = obj.data.cardList.filter(item => {
             return reserve.includes(item.dataType)
-            // return item.dataType === "MyOrderCard"
-            // || item.dataType === "GdRecommendCard"           // 高德推荐
-            // || item.dataKey === "SceneVehicleCard_function"  // 我的车辆
-            // || item.dataKey === "AnnualBillCardV2"           // 年度报告
-            // || item.dataKey === "PopularActivitiesCard"      // 热门活动
-            // || item.dataKey === "GameExcitation"             // 小德爱消除
-            // || item.dataKey === "GoodsShelvesCard"           // 精选服务
-            // || item.dataKey === "DiyMap_function"            // DIY 地图
-        }))
+        })
         change = true
     }
 } else if (url.includes("search/new_hotword")) {  // 热词
@@ -98,30 +90,15 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         change = true
     }
 } else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
-    // if (obj.data?.coupon) {
-    //     obj.data.coupon = undefined
-    //     change = true
-    // }
-    // if (obj.data?.scene) {
-    //     obj.data.scene = undefined
-    //     change = true
-    // }
-    // if (obj.data?.activity) {
-    //     obj.data.activity = undefined
-    //     change = true
-    // }
-    // if (obj.data?.commodity_rec) {
-    //     obj.data.commodity_rec = undefined
-    //     change = true
-    // }
     if (obj.data?.modules) {
-        let module = ["coupon", "scene", "activity", "commodity_rec"]
+        let module = [
+            "coupon",           // 右下角广告
+            "scene",            // 热词底下的广告横幅
+            "activity",         // 热词底下的活动推荐，如指南，0元领水果之类的
+            "commodity_rec"     // 超值套餐
+        ]
         obj.data.modules = obj.data.modules.filter(item => {
             return !module.includes(item)
-            // return item !== "coupon"           // 右下角广告
-            //     && item !== "scene"            // 热词底下的广告横幅
-            //     && item !== "activity"         // 热词底下的活动推荐，如指南，0元领水果之类的
-            //     && item !== "commodity_rec"    // 超值套餐
         })
         change = true
     }
