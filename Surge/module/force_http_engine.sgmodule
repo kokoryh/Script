@@ -1,0 +1,5 @@
+#!name=1.1-Force Http Engine
+#!desc=强制 HTTP 引擎处理通往所有主机的所有端口请求
+
+[General]
+force-http-engine-hosts = %INSERT% *:0
