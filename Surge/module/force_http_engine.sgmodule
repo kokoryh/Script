@@ -1,4 +1,4 @@
-#!name=1.1-Force Http Engine
+#!name=0.1-Force HTTP Engine
 #!desc=强制 HTTP 引擎处理通往所有主机的所有端口请求
 
 [General]

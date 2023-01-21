@@ -1,4 +1,4 @@
-#!name=1.1-MITM ALL
+#!name=0.1-MITM ALL
 #!desc=解密所有 HTTPS 流量
 
 [MITM]
