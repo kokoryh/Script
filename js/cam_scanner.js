@@ -1,1 +1,0 @@
-let body='{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}';$done({body:body});

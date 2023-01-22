@@ -1,22 +1,18 @@
-var url = $request.url
-var change = false
-var obj
-try {
-    obj = JSON.parse($response.body)
-} catch (e) {
-    console.log(e + "\n错误URL：" + url)
-    $done({})
-}
+let url = $request.url
+let body = null
+
 if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
+    let obj = JSON.parse($response.body)
     if (obj.data?.list) {
         for (let item of obj.data.list) {
             item.duration = 0  // 显示时间
             item.begin_time = 2240150400  // 2040 年
             item.end_time = 2240150400
         }
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/feed/index?')) {  // 推荐去广告，最后问号不能去掉，以免匹配到story模式
+    let obj = JSON.parse($response.body)
     if (obj.data?.items) {
         obj.data.items = obj.data.items.filter(item => {
             return !item.banner_item
@@ -24,17 +20,19 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
                 && item.card_goto?.indexOf("ad") === -1
                 && ["small_cover_v2", "large_cover_v1", "large_cover_single_v9"].includes(item.card_type)
         })
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/feed/index/story?')) {  // 匹配story模式，用于记录Story的aid
+    let obj = JSON.parse($response.body)
     if (obj.data?.items) {
         obj.data.items = obj.data.items.filter(item => {
             return !item.ad_info
                 && item.card_goto?.indexOf("ad") === -1
         })
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
+    let obj = JSON.parse($response.body)
     if (obj.data?.tab?.length < 4) {
         obj.data.tab.push({
             "id": 1411,
@@ -43,8 +41,9 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             "uri": "bilibili://following/home_activity_tab/6544",
             "pos": 4
         })
-        change = true
+        body = JSON.stringify(obj)
     } else {
+        let change = false
         const tabList = [39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556]
         const bottomList = [177, 178, 179, 181, 102, 104, 106, 486, 488, 489]
         if (obj.data?.tab) {
@@ -70,6 +69,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
             })
             change = true
         }
+        if (change) body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
     /*
@@ -85,6 +85,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
     622为会员购中心 425开始为概念版id
     */
+    let obj = JSON.parse($response.body)
     if (obj.data?.sections_v2) {
         const itemList = [396, 397, 398, 399, 402, 404, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501]
         obj.data.sections_v2.forEach(element => {
@@ -113,28 +114,33 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         obj.data.vip.status = 1
         obj.data.vip.vip_pay_type = 1
         obj.data.vip.due_date = 4669824160000
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/myinfo?')) {  // 解锁会员画质
+    let obj = JSON.parse($response.body)
     if (obj.data?.vip) {
         obj.data.vip.type = 2
         obj.data.vip.status = 1
         obj.data.vip.vip_pay_type = 1
         obj.data.vip.due_date = 4669824160000
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/search/square')) {  // 屏蔽热搜
+    let obj = JSON.parse($response.body)
     obj.data = [{
         type: "history",
         title: "搜索历史"
     }]
-    change = true
+    body = JSON.stringify(obj)
+
 } else if (url.includes('api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom')) {  // 直播去广告
+    let obj = JSON.parse($response.body)
     if (obj.data) {
         obj.data.activity_banner_info = undefined
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('pgc/page/bangumi') || url.includes('pgc/page/cinema/tab?')) {  // 追番去广告 && 观影页去广告
+    let obj = JSON.parse($response.body)
     if (obj.result?.modules) {
         obj.result.modules.forEach(module => {
             if (module.style.startsWith("banner")) {
@@ -145,14 +151,14 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
                 module.items = []
             }
         })
-        change = true
+        body = JSON.stringify(obj)
     }
 } else {
-    console.log('触发意外的请求，请确认脚本或复写配置是否正常\n错误URL：' + url)
+    console.log("匹配到其他url：\n" + url)
 }
 
-if (change) {
-    $done({body: JSON.stringify(obj)})
+if (body) {
+    $done({body})
 } else {
     $done({})
 }

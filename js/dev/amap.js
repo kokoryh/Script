@@ -1,22 +1,19 @@
-var url = $request.url
-var change = false
-var obj
-try {
-    obj = JSON.parse($response.body)
-} catch (e) {
-    console.log(e + "\n错误URL：" + url)
-    $done({})
-}
+let url = $request.url
+let body = null
+
 if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
+    let obj = JSON.parse($response.body)
     if (obj.data?.ad) {
         for (const item of obj.data.ad) {
             item.set.setting.display_time = 0
             item.creative[0].start_time = 2240150400
             item.creative[0].end_time = 2240150400
         }
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {  // 首页底栏
+    let change = false
+    let obj = JSON.parse($response.body)
     if (obj.data?.cardList) {
         obj.data.cardList = obj.data.cardList.filter(item => {
             return item.dataType === "LoginCard"
@@ -31,16 +28,21 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.mapBizList = []
         change = true
     }
-} else if (url.includes("ws/shield/frogserver/aocs")) {  // 首页右中
-    if (obj.data?.home_business_position_config) {
+    if (change) body = JSON.stringify(obj)
+
+} else if (url.includes("ws/shield/frogserver/aocs")) {  // 首页图层
+    let obj = JSON.parse($response.body)
+    if (obj.data?.home_business_position_config) {  // 首页右中
         obj.data.home_business_position_config = {
             "status": 1,
             "version": "",
             "value": ""
         }
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
+    let change = false
+    let obj = JSON.parse($response.body)
     if (obj.data?.tipData) {
         obj.data.tipData = undefined
         change = true
@@ -52,12 +54,17 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         })
         change = true
     }
+    if (change) body = JSON.stringify(obj)
+
 } else if (url.includes("search/new_hotword")) {  // 热词
+    let obj = JSON.parse($response.body)
     if (obj.data?.header_hotword) {
         obj.data.header_hotword = []
-        change = true
+        body = JSON.stringify(obj)
     }
 } else if (url.includes("ws/msgbox/pull")) {  // 首页顶部横幅
+    let change = false
+    let obj = JSON.parse($response.body)
     if (obj.msgs) {
         obj.msgs = []
         change = true
@@ -66,7 +73,11 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.pull3.msgs = []
         change = true
     }
+    if (change) body = JSON.stringify(obj)
+
 } else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
+    let change = false
+    let obj = JSON.parse($response.body)
     if (obj.data?.icon) {
         obj.data.icon = undefined
         change = true
@@ -89,7 +100,10 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         })
         change = true
     }
+    if (change) body = JSON.stringify(obj)
+
 } else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
+    let obj = JSON.parse($response.body)
     if (obj.data?.modules) {
         let module = [
             "coupon",           // 右下角广告
@@ -100,14 +114,14 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
         obj.data.modules = obj.data.modules.filter(item => {
             return !module.includes(item)
         })
-        change = true
+        body = JSON.stringify(obj)
     }
 } else {
-    console.log('触发意外的请求，请确认脚本或复写配置是否正常\n错误URL：' + url)
+    console.log("匹配到其他url：\n" + url)
 }
 
-if (change) {
-    $done({body: JSON.stringify(obj)})
+if (body) {
+    $done({body})
 } else {
     $done({})
 }

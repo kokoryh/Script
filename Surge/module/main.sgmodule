@@ -12,6 +12,9 @@
 # ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+# 美团外卖
+# ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
+# ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
 
 [URL Rewrite]
 # Redirect Google Search Service
@@ -31,19 +34,15 @@
 # 微信公众号广告
 ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
 
-# 美团外卖
-^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
-^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
-
 [Map Local]
 
 [Script]
 # 12306开屏
 http-response ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 # 美团外卖
-http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? requires-body=1,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
+http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 # 扫描全能王破解
-http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/cam_scanner.js
+http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, mp.weixin.qq.com, ad.12306.cn, wmapi.meituan.com, www.meituan.com, ap*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, mp.weixin.qq.com, ad.12306.cn, wmapi.meituan.com, ap*.intsig.net
