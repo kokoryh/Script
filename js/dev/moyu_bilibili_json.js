@@ -2,7 +2,7 @@
  > 应用名称：墨鱼自用B站去广告脚本
  > 脚本作者：@ddgksf2013
  > 微信账号：墨鱼手记
- > 更新时间：2023-01-19
+ > 更新时间：2023-01-21
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 问题反馈：ddgksf2013@163.com
@@ -12,7 +12,7 @@
 
 
 
-const version = 'V2.0.104';
+const version = 'V2.0.107';
 
 let body = $response.body;
 if (body) {
@@ -31,10 +31,10 @@ if (body) {
         case/^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story\?/.test($request.url):
             try {
                 let s = JSON.parse(body), l = [];
-                for (let d of s.data.items) d.hasOwnProperty("ad_info") || -1 !== d.card_goto.indexOf("ad") || l.push(d);
+                for (let o of s.data.items) o.hasOwnProperty("ad_info") || -1 !== o.card_goto.indexOf("ad") || l.push(o);
                 s.data.items = l, body = JSON.stringify(s)
-            } catch (o) {
-                console.log("bilibili Story:" + o)
+            } catch (d) {
+                console.log("bilibili Story:" + d)
             }
             break;
         case/^https?:\/\/app\.bilibili\.com\/x\/v\d\/account\/teenagers\/status\?/.test($request.url):
@@ -104,60 +104,74 @@ if (body) {
         case/^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom/.test($request.url):
             try {
                 let m = JSON.parse(body);
-                m.data.activity_banner_info = null, body = JSON.stringify(m)
-            } catch (v) {
-                console.log("bilibili live broadcast:" + v)
+                m.data.activity_banner_info = null, m.data?.shopping_info && (m.data.shopping_info = {is_show: 0}), m.data?.new_tab_info?.outer_list && m.data.new_tab_info.outer_list.length && (m.data.new_tab_info.outer_list = m.data.new_tab_info.outer_list.filter(t => 33 != t.biz_id)), body = JSON.stringify(m)
+            } catch (g) {
+                console.log("bilibili live broadcast:" + g)
             }
             break;
         case/^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity/.test($request.url):
             try {
-                let g = JSON.parse(body);
-                g.data && (g.data.hash = "ddgksf2013", g.data.online.icon = ""), body = JSON.stringify(g)
+                let v = JSON.parse(body);
+                v.data && (v.data.hash = "ddgksf2013", v.data.online.icon = ""), body = JSON.stringify(v)
             } catch (_) {
                 console.log("bilibili right corner:" + _)
             }
             break;
-        case/^https?:\/\/app\.bilibili\.com\/x\/v2\/search\/square/.test($request.url):
+        case/ecommerce-user\/get_shopping_info\?/.test($request.url):
             try {
                 let $ = JSON.parse(body);
-                $.data = {type: "history", title: "搜索历史", search_hotword_revision: 2}, body = JSON.stringify($)
+                $.data && ($.data = {
+                    shopping_card_detail: {},
+                    bubbles_detail: {},
+                    recommend_card_detail: {},
+                    selected_goods: {},
+                    h5jump_popup: []
+                }), body = JSON.stringify($)
             } catch (x) {
-                console.log("bilibili hot search:" + x)
+                console.log("bilibili shopping info:" + x)
+            }
+            break;
+        case/^https?:\/\/app\.bilibili\.com\/x\/v2\/search\/square/.test($request.url):
+            try {
+                let k = JSON.parse(body);
+                k.data = {type: "history", title: "搜索历史", search_hotword_revision: 2}, body = JSON.stringify(k)
+            } catch (w) {
+                console.log("bilibili hot search:" + w)
             }
             break;
         case/https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?/.test($request.url):
             try {
-                let k = JSON.parse(body);
-                k.data.vip.type = 2, k.data.vip.status = 1, k.data.vip.vip_pay_type = 1, k.data.vip.due_date = 4669824160, body = JSON.stringify(k)
-            } catch (w) {
-                console.log("bilibili 1080p:" + w)
+                let O = JSON.parse(body);
+                O.data.vip.type = 2, O.data.vip.status = 1, O.data.vip.vip_pay_type = 1, O.data.vip.due_date = 4669824160, body = JSON.stringify(O)
+            } catch (P) {
+                console.log("bilibili 1080p:" + P)
             }
             break;
         case/pgc\/page\/(bangumi|cinema\/tab\?)/.test($request.url):
             try {
-                let O = JSON.parse(body);
-                O.result.modules.forEach(t => {
+                let W = JSON.parse(body);
+                W.result.modules.forEach(t => {
                     t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))), t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")), [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])), t.style.startsWith("tip") && (t.items = [])
-                }), body = JSON.stringify(O)
-            } catch (P) {
-                console.log("bilibili fanju:" + P)
+                }), body = JSON.stringify(W)
+            } catch (j) {
+                console.log("bilibili fanju:" + j)
             }
             break;
         case/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test($request.url):
             try {
-                let W = JSON.parse(body);
-                if (W.data && W.data.list) for (let E of W.data.list) E.duration = 0, E.begin_time = 2240150400, E.end_time = 2240150400;
-                body = JSON.stringify(W)
-            } catch (j) {
-                console.log("bilibili openad:" + j)
+                let E = JSON.parse(body);
+                if (E.data && E.data.list) for (let q of E.data.list) q.duration = 0, q.begin_time = 2240150400, q.end_time = 2240150400;
+                body = JSON.stringify(E)
+            } catch (z) {
+                console.log("bilibili openad:" + z)
             }
             break;
         case/^https:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed/.test($request.url):
             try {
-                let q = JSON.parse(body);
-                q.data && q.data.card_list && (q.data.card_list = q.data.card_list.filter(t => "banner_v1" != t.card_type)), body = JSON.stringify(q)
-            } catch (B) {
-                console.log("bilibili xlive:" + B)
+                let B = JSON.parse(body);
+                B.data && B.data.card_list && (B.data.card_list = B.data.card_list.filter(t => "banner_v1" != t.card_type)), body = JSON.stringify(B)
+            } catch (I) {
+                console.log("bilibili xlive:" + I)
             }
             break;
         default:

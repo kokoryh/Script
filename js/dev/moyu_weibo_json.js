@@ -1,8 +1,8 @@
 /***********************************************
  > 应用名称：墨鱼自用微博&微博国际版净化脚本
- > 脚本作者：@Zmqcherish, @Cuttlefish
+ > 脚本作者：@Zmqcherish, @ddgksf2013
  > 微信账号：墨鱼手记
- > 更新时间：2022-01-15
+ > 更新时间：2022-01-22
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 原作者库：https://github.com/zmqcherish
@@ -21,11 +21,12 @@
 
 
 
-const version = 'V2.0.88';
+const version = 'V2.0.91';
 
 
 const mainConfig = {
         isDebug: !1,
+        author: "ddgksf2013",
         removeHomeVip: !0,
         removeHomeCreatorTask: !0,
         removeRelate: !0,
@@ -128,7 +129,7 @@ function removeTopics(e) {
 }
 
 function isAd(e) {
-    return !!e && !!("广告" == e.mblogtypename || "热推" == e.mblogtypename || e.promotion && "ad" == e.promotion.type || e.common_struct && e.common_struct[0]?.actionlog?.source?.includes("ad"))
+    return !!e && !!("广告" == e.mblogtypename || "热推" == e.mblogtypename || e.promotion?.type == "ad" || e.page_info?.actionlog?.source == "ad" || e.content_auth_info?.content_auth_title == "广告" || e.common_struct && e.common_struct[0]?.actionlog?.source?.includes("ad"))
 }
 
 function squareHandler(e) {
@@ -223,7 +224,7 @@ function removeCards(e) {
         let i = o.card_group;
         if (i && i.length > 0) {
             let n = [];
-            for (let a of i) 118 != a.card_type && n.push(a);
+            for (let a of i) 118 == a.card_type || isAd(a.mblog) || -1 != JSON.stringify(a).indexOf("res_from:ads") || n.push(a);
             o.card_group = n, t.push(o)
         } else {
             let r = o.card_type;
@@ -371,7 +372,11 @@ function userHandler(e) {
 function nextVideoHandler(e) {
     if (!e.statuses) return e;
     let t = [];
-    for (let o of e.statuses) isAd(o) || (o.video_info?.forward_redpacket_info && delete o.video_info.forward_redpacket_info, o.video_info?.shopping && delete o.video_info.shopping, o.video_info?.float_info && delete o.video_info.float_info, o.video_info?.tags && delete o.video_info.tags, t.push(o));
+    for (let o of e.statuses) if (!isAd(o)) {
+        let i = ["forward_redpacket_info", "shopping", "float_info", "tags"];
+        for (let n of i) o.video_info?.[n] && delete o.video_info[n];
+        t.push(o)
+    }
     return e.statuses = t, log("removeMainTab Success"), e
 }
 

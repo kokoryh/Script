@@ -20,13 +20,13 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // const pako = require('pako');
 // function $done(param) {console.log('done')}
 // const $request = {
-//     // url: "Dynamic/DynAll",
-//     url: "View/View",
+//     url: "Dynamic/DynAll",
+//     // url: "View/View",
 //     // url: "PlayURL/PlayView",
 //     method: "POST",
 //     headers: {
-//         "user-agent": "bili-hd"  // ipad
-//         // "User-Agent": "bili-inter"  // 粉色b站
+//         // "user-agent": "bili-hd"  // ipad
+//         "User-Agent": "bili-inter"  // 粉色b站
 //     }
 // }
 // const $response = {
@@ -35,7 +35,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //         "grpc-encoding": "gzip"
 //     }
 // }
-// $response.body = fs.readFileSync("D:\\Downloads\\26B160B1-35D4-4629-B9E7-19030B68F527");
+// $response.body = fs.readFileSync("D:\\Downloads\\B9A0341B-5E8C-4978-8C09-BCE72DA9524B");
 
 console.log(`b站proto-2023.1.16-@kokoryh`);
 const url = $request.url;
