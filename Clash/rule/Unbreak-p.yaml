@@ -12,6 +12,7 @@ payload:
   - DOMAIN,receiptcheck.quantumult.app
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,storage.live.com
+  - DOMAIN,www.colamanhua.com
   - DOMAIN,www.summer-plus.net
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,amazontrust.com

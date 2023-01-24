@@ -3,9 +3,6 @@
 DOMAIN,cdn.jsdelivr.net
 DOMAIN,fastly.jsdelivr.net
 
-# cocomanga
-DOMAIN,www.colamanhua.com
-
 # 飞极速在线
 DOMAIN-SUFFIX,feijisu20.com
 
