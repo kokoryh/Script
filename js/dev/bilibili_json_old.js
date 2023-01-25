@@ -1,6 +1,4 @@
-/*
-修改自@ddgksf2013的B站去广告脚本
-*/
+// 修改自@ddgksf2013的B站去广告脚本
 
 const scriptName = "BiliBili";
 const storyAidKey = "bilibili_story_aid";

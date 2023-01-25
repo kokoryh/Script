@@ -29,7 +29,7 @@
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
 
 # 中国移动开屏
-^https?:\/\/client.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
 
 # 微信公众号广告
 ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject

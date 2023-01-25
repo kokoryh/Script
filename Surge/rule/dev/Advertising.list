@@ -1,5 +1,5 @@
 # @kokoryh 自行维护
-# 高德地图 2023年1月4日
+# 高德地图 2023年1月25日
 DOMAIN-SUFFIX,amdc.m.taobao.com
 DOMAIN-SUFFIX,optimus-ads.amap.com
 DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
@@ -46,8 +46,6 @@ DOMAIN-SUFFIX,pos.baidu.com
 # DOMAIN-SUFFIX,ufosdk.baidu.com
 # 贴吧屏蔽域名dns查询
 IP-CIDR,180.76.76.200/32,no-resolve
-
-# 腾讯系(不改)
 
 # bilibili
 # DOMAIN,grpc.biliapi.net
