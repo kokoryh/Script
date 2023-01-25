@@ -6,6 +6,7 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     if (obj.data?.ad) {
         for (const item of obj.data.ad) {
             item.set.setting.display_time = 0
+            item.creative[0].media.display_time = "0"
             item.creative[0].start_time = 2240150400
             item.creative[0].end_time = 2240150400
         }
