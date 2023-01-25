@@ -3,12 +3,13 @@
 #!author=kokoryh
 
 # 112.13这个IP段无法MITM，一定要屏蔽掉，否则无法完全去除开屏广告
+# \/eapi\/ad - reject
 
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
 
 [URL Rewrite]
-\/eapi\/ad - reject
+^https?:\/\/interface3.music.163.com\/eapi\/ad\/ - reject
 iadmusicmat(video)?\.music\.126\.net - reject
 
 [Script]

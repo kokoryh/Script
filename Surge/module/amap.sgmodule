@@ -3,7 +3,7 @@
 
 # 修改自@ddgksf2013 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
-# 重要提醒：qx使用请务必开启解析器并out掉amdc这条，然后手动在分流中加入
+# 重要提醒：qx使用请务必开启解析器并out掉amdc这条，然后手动在分流中加入(不out也行，但建议在分流reject掉)
 # HOST-SUFFIX,amdc.m.taobao.com,REJECT
 # qx配置示例如下，请手动去掉 # 号
 # https://raw.githubusercontent.com/kokoryh/Script/master/Surge/module/amap.sgmodule#ntf=0&out=amdc, tag=高德地图去广告, update-interval=172800, opt-parser=true, enabled=true
@@ -11,12 +11,8 @@
 # 可能为更新弹窗
 # ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
-[Rule]
-DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
-# 由于surge需特殊方法匹配域名下ip，因此用如下规则
-URL-REGEX,\/amdc\/mobileDispatch,REJECT
-
 [URL Rewrite]
+amdc\.m\.taobao\.com - reject
 # 通用广告请求
 ^https?:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution - reject
 

@@ -248,7 +248,6 @@ payload:
   - DOMAIN-SUFFIX,log.hunantv.com
   - DOMAIN-SUFFIX,optimus-ads.amap.com
   - DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
-  - DOMAIN-SUFFIX,page.amap.com
   - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
   - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
   - DOMAIN-SUFFIX,pos.baidu.com
@@ -259,7 +258,6 @@ payload:
   - DOMAIN-SUFFIX,unityads.unity3d.com
   - DOMAIN-SUFFIX,v2.hunantv.com
   - DOMAIN-SUFFIX,webp2p.letv.com
-  - DOMAIN-SUFFIX,www.qchannel01.cn
   - DOMAIN-KEYWORD,adservice
   - DOMAIN-KEYWORD,stsdk.vivo.com.cn
   - DOMAIN-KEYWORD,stsdk.vivoglobal.com
