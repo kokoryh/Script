@@ -7,11 +7,10 @@ DOMAIN,gallery.scriptable.app
 DOMAIN,in.appcenter.ms
 DOMAIN,login.live.com
 DOMAIN,mozilla.cloudflare-dns.com
-DOMAIN,notability.com
-DOMAIN,receiptcheck.quantumult.app
 DOMAIN,rss.teacat001.xyz
 DOMAIN,storage.live.com
 DOMAIN,www.colamanhua.com
+DOMAIN,www.efcloud.cc
 DOMAIN,www.summer-plus.net
 DOMAIN-SUFFIX,adguard.org
 DOMAIN-SUFFIX,amazontrust.com
@@ -25,6 +24,7 @@ DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,nhentai.net
+DOMAIN-SUFFIX,notability.com
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.new
@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,notion.site
 DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,peropero.net
+DOMAIN-SUFFIX,quantumult.app
 DOMAIN-SUFFIX,smoot.apple.cn
 DOMAIN-SUFFIX,stash-activation.com
 DOMAIN-SUFFIX,surge-activation.com
