@@ -24,7 +24,7 @@
 
 
 
-const version = 'V1.0.22';
+const version = 'V1.0.24';
 
 
 var obj = JSON.parse($response.body);
@@ -35,7 +35,7 @@ if (-1 != $request.url.indexOf("valueadded/alimama/splash_screen")) {
     let o = ["icon", "banner", "tips", "popup", "bubble"];
     for (let e of o) obj.data?.[e] && (obj.data[e] = []);
     $done({body: JSON.stringify(obj)})
-} else if (-1 != $request.url.indexOf("ws/msgbox/pull")) obj.msgs && (obj.msgs = []), obj.pull3?.msgs && (obj.pull3.msgs = []), $done({body: JSON.stringify(obj)}); else if (-1 != $request.url.indexOf("ws/shield/frogserver/aocs")) obj.data?.gd_notch_logo && (obj.data.gd_notch_logo = {
+} else if (-1 != $request.url.indexOf("ws/msgbox/pull")) obj.msgs && (obj.msgs = []), obj.pull3?.msgs && (obj.pull3.msgs = []), $done({body: JSON.stringify(obj)}); else if (-1 != $request.url.indexOf("ws/shield/frogserver/aocs")) obj.data?.operation_layer && (obj.data.operation_layer = {
     status: 1,
     version: "",
     value: ""

@@ -33,15 +33,26 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     if (change) body = JSON.stringify(obj)
 
 } else if (url.includes("ws/shield/frogserver/aocs")) {  // 首页图层
+    let change = false
     let obj = JSON.parse($response.body)
+    if (obj.data?.operation_layer) {  // 图层
+        obj.data.operation_layer = {
+            status: 1,
+            version: "",
+            value: ""
+        }
+        change = true
+    }
     if (obj.data?.home_business_position_config) {  // 首页右中
         obj.data.home_business_position_config = {
             "status": 1,
             "version": "",
             "value": ""
         }
-        body = JSON.stringify(obj)
+        change = true
     }
+    if (change) body = JSON.stringify(obj)
+
 } else if (url.includes("dsp/profile/index/nodefaas")) {  // 我的页面
     let change = false
     let obj = JSON.parse($response.body)
