@@ -8,6 +8,7 @@
 # 广告信息会有遗漏，可能偶现广告
 
 [Map Local]
+# 此处修改仅是为了让qx解析器解析为reject-img
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
 
 [Script]
