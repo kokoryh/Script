@@ -4,12 +4,13 @@ let body = null
 if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     let obj = JSON.parse($response.body)
     if (obj.data?.ad) {
-        for (const item of obj.data.ad) {
-            item.set.setting.display_time = 0
-            item.creative[0].media.display_time = "0"
-            item.creative[0].start_time = 2240150400
-            item.creative[0].end_time = 2240150400
-        }
+        obj.data.ad = undefined
+        // for (const item of obj.data.ad) {
+        //     item.set.setting.display_time = 0
+        //     item.creative[0].media.display_time = "0"
+        //     item.creative[0].start_time = 2240150400
+        //     item.creative[0].end_time = 2240150400
+        // }
         body = JSON.stringify(obj)
     }
 } else if (url.includes("faas/amap-navigation/main-page")) {  // 首页底栏
