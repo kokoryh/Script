@@ -7,6 +7,9 @@
 # 增加 画中画(PIP)
 # 广告信息会有遗漏，可能偶现广告
 
+[Rule]
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
+
 [Map Local]
 # 此处修改仅是为了让qx解析器解析为reject-img
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
