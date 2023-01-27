@@ -6,9 +6,7 @@
 # 删除 底部 上传 按钮
 # 增加 画中画(PIP)
 # 广告信息会有遗漏，可能偶现广告
-
-[Rule]
-AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
+# qx使用需在[general]下添加udp_drop_list=443，surge使用最好也把UDP 443端口屏蔽掉
 
 [Map Local]
 # 此处修改仅是为了让qx解析器解析为reject-img
