@@ -3,12 +3,24 @@
   "description": "",
   "icons": [
     {
+      "name": "Apple.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Apple.png"
+    },
+    {
       "name": "appstore.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/appstore.png"
     },
     {
       "name": "available.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/available.png"
+    },
+    {
+      "name": "Bili.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Bili.png"
+    },
+    {
+      "name": "bilibili.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/bilibili.png"
     },
     {
       "name": "dest_hash.png",
@@ -19,6 +31,10 @@
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/dest_hash2.png"
     },
     {
+      "name": "Disney+.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Disney+.png"
+    },
+    {
       "name": "eleina.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/eleina.png"
     },
@@ -27,16 +43,52 @@
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/elem.png"
     },
     {
+      "name": "Final.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Final.png"
+    },
+    {
+      "name": "Global.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Global.png"
+    },
+    {
       "name": "hanser.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/hanser.png"
+    },
+    {
+      "name": "HK.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/HK.png"
     },
     {
       "name": "IN.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/IN.png"
     },
     {
+      "name": "JP.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/JP.png"
+    },
+    {
+      "name": "manga.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/manga.png"
+    },
+    {
       "name": "mgclub.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"
+    },
+    {
+      "name": "neteasemusic.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/neteasemusic.png"
+    },
+    {
+      "name": "Netflix_Letter.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Netflix_Letter.png"
+    },
+    {
+      "name": "Proxy.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Proxy.png"
+    },
+    {
+      "name": "SG.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/SG.png"
     },
     {
       "name": "SHIRO.png",
@@ -53,6 +105,30 @@
     {
       "name": "smzdm.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/smzdm.png"
+    },
+    {
+      "name": "Streaming.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Streaming.png"
+    },
+    {
+      "name": "Sub-Store.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Sub-Store.png"
+    },
+    {
+      "name": "tieba.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/tieba.png"
+    },
+    {
+      "name": "TW.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/TW.png"
+    },
+    {
+      "name": "US.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/US.png"
+    },
+    {
+      "name": "YouTube.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/YouTube.png"
     }
   ]
 }

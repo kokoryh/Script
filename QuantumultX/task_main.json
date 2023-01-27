@@ -2,17 +2,17 @@
   "name": "kokoryh 自用脚本",
   "task": [
     "55 2 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png, enabled=true",
-    "0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮自动切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true",
-    "0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js, tag=B站装扮监控, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true",
-    "0 1 * * * https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js, tag=B站每日等级任务, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true",
-    "5 0 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag=贴吧签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/tieba.png, enabled=true",
-    "6 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js, tag=网易云音乐, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/neteasemusic.png, enabled=true",
-    "7 0 * * * https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, tag=Sub-Store自动同步, img-url=https://raw.githubusercontent.com/58xinian/icon/master/Sub-Store1.png, enabled=true",
-    "8 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, tag=Bili漫画签到, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/manga.png, enabled=true",
-    "0,10,20 0 12 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/ExchangePoints.js, tag=哔哩哔哩漫画抢券, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/manga.png, enabled=true",
+    "0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮自动切换, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/bilibili.png, enabled=true",
+    "0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js, tag=B站装扮监控, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/bilibili.png, enabled=true",
+    "0 1 * * * https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js, tag=B站每日等级任务, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/bilibili.png, enabled=true",
+    "5 0 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag=贴吧签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/tieba.png, enabled=true",
+    "6 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js, tag=网易云音乐, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/neteasemusic.png, enabled=true",
+    "7 0 * * * https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, tag=Sub-Store自动同步, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/Sub-Store.png, enabled=true",
+    "8 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, tag=Bili漫画签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/manga.png, enabled=true",
+    "0,10,20 0 12 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/ExchangePoints.js, tag=哔哩哔哩漫画抢券, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/manga.png, enabled=true",
     "20 1 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, tag=什么值得买签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/smzdm.png, enabled=true",
-    "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁查询, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png, enabled=true",
-    "0 */2 * * * https://raw.githubusercontent.com/Hyseen/Scripts/master/QuantumultX/NetflixPolicySwitcher/netflix_checker.js, tag=Netflix 解锁检测, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png, enabled=false",
-    "30 */2 * * * https://raw.githubusercontent.com/Hyseen/Scripts/master/QuantumultX/DisneyPlusPolicySwitcher/disney_checker.js, tag=Disney+ 解锁检测, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney+.png, enabled=false"
+    "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁查询, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/Streaming.png, enabled=true",
+    "0 */2 * * * https://raw.githubusercontent.com/Hyseen/Scripts/master/QuantumultX/NetflixPolicySwitcher/netflix_checker.js, tag=Netflix 解锁检测, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/Netflix_Letter.png, enabled=false",
+    "30 */2 * * * https://raw.githubusercontent.com/Hyseen/Scripts/master/QuantumultX/DisneyPlusPolicySwitcher/disney_checker.js, tag=Disney+ 解锁检测, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/Disney+.png, enabled=false"
   ]
 }
