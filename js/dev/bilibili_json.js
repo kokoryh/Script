@@ -137,6 +137,9 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     let obj = JSON.parse($response.body)
     if (obj.data) {
         obj.data.activity_banner_info = undefined
+        obj.data.shopping_info = {
+            "is_show": 0
+        }
         body = JSON.stringify(obj)
     }
 } else if (url.includes('pgc/page/bangumi') || url.includes('pgc/page/cinema/tab?')) {  // 追番去广告 && 观影页去广告

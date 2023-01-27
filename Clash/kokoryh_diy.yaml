@@ -123,7 +123,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   HK:
-    filter: 香港|HK|(?i)Hong
+    filter: 香港|HK|🇭🇰|(?i)Hong
     type: file
     path: ./Proxy/ProxyList.yaml
     health-check:
@@ -132,7 +132,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   TW:
-    filter: 台|TW|(?i)Taiwan
+    filter: 台|TW|🇹🇼|(?i)Taiwan
     type: file
     path: ./Proxy/ProxyList.yaml
     health-check:
@@ -141,7 +141,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   JP:
-    filter: 日|JP|(?i)Japan
+    filter: 日|JP|🇯🇵|(?i)Japan
     type: file
     path: ./Proxy/ProxyList.yaml
     health-check:
@@ -150,7 +150,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   US:
-    filter: 美|US|(?i)States|American
+    filter: 美|US|🇺🇸|(?i)States|(?i)American
     type: file
     path: ./Proxy/ProxyList.yaml
     health-check:

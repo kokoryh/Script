@@ -7,7 +7,7 @@
   "description": "该订阅兼容BoxJs以及QX Gallery",
   "apps": [
     {
-      "name": "毛怪俱乐部",
+      "name": "MGClub",
       "id": "MGClub",
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
