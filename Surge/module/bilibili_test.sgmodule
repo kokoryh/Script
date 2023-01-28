@@ -5,7 +5,7 @@
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
 # 禁用B站垃圾CDN
 # OR,((AND,((OR,((DOMAIN-KEYWORD,cn-), (DOMAIN-KEYWORD,mcdn))), (DOMAIN-KEYWORD,bilivideo.c))), (DEST-PORT,4480)),REJECT-NO-DROP
-# 屏蔽青少年弹窗(测试中)
+# 屏蔽青少年弹窗(无法屏蔽，直接读取的系统时间)
 # ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
 # B漫装扮
 # ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
@@ -17,8 +17,6 @@
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 
 [Map Local]
-# 屏蔽青少年弹窗(测试中)
-^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show2.json" header="Content-Type: application/json"
 # 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
 # 屏蔽直播间广告浮窗
