@@ -2,9 +2,6 @@ let url = $request.url
 let body = null
 
 if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
-    console.log($request)
-    console.log(JSON.stringify($request))
-    console.log($request.path)
     let obj = JSON.parse($response.body)
     if (obj.data?.operate) {
         obj.data.operate = null
@@ -29,6 +26,9 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
         body = JSON.stringify(obj)
     }
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
+    console.log($request)
+    console.log(JSON.stringify($request))
+    console.log($request.path)
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
 } else {
     console.log("匹配到其他url：\n" + url)
