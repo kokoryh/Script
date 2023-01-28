@@ -18,7 +18,7 @@
 
 [Map Local]
 # 屏蔽青少年弹窗(测试中)
-# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show.json" header="Content-Type: application/json"
+# ^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/show\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_splash_show2.json" header="Content-Type: application/json"
 # 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
 # 屏蔽直播间广告浮窗
