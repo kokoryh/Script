@@ -18,12 +18,13 @@
 
 [Map Local]
 # 屏蔽青少年弹窗(测试中)
-^https?:\/\/.*\.bilibili\.com\/x\/passport-login\/timestamp\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_click_now.json" header="Content-Type: application/json"
+^https?:\/\/passport\.bilibili\.com\/x\/passport-login\/timestamp\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_timestamp.json" header="Content-Type: application/json"
+^https?:\/\/api\.bilibili\.com\/x\/report\/click\/now\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_click_now.json" header="Content-Type: application/json"
 # 屏蔽首页右上活动
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
 # 屏蔽直播间广告浮窗
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# B漫开屏
+# B漫开屏 | 底栏
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [Script]
@@ -43,4 +44,4 @@ bili-region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(co
 bili-search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili_auto_region.js
 
 [MITM]
-hostname = %INSERT% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net, api.live.bilibili.com
+hostname = %INSERT% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net, api.live.bilibili.com, passport.bilibili.com
