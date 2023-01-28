@@ -2,6 +2,9 @@ let url = $request.url
 let body = null
 
 if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
+    console.log($request)
+    console.log(JSON.stringify($request))
+    console.log($request.path)
     let obj = JSON.parse($response.body)
     if (obj.data?.operate) {
         obj.data.operate = null
