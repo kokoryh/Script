@@ -15,11 +15,11 @@ iadmusicmat(video)?\.music\.126\.net - reject
 
 [Map Local]
 # 开屏广告 | 评论区广告
-^https?:\/\/interface3\.music\.163.com\/eapi\/(ad|link|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https?:\/\/interface3\.music\.163.com\/eapi\/(ad|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索页热搜卡片
 ^https?:\/\/interface3\.music\.163.com\/eapi\/search\/(chart|default|rcmd\/keyword|specialkeyword) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 搜索页猜你喜欢,如果去不掉需要重装或者退出登录再重新登录
-^https?:\/\/interface3\.music\.163\.com\/api\/search\/rcmd\/keyword\/get data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 搜索页猜你喜欢
+^https?:\/\/interface3\.music\.163\.com\/api\/search\/rcmd\/keyword\/get data="https://raw.githubusercontent.com/kokoryh/Script/master/data/wyy_rcmd.json"
 
 [Script]
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3 requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
