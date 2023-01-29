@@ -19,6 +19,14 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
             $notification.post("未匹配到指定IP", "", `返回的IP：\n${obj.data["interface3.music.163.com"].ip.toString()}`)
         }
     }
+} else if (url.includes("interface3.music.163.com/api/search/rcmd/keyword")) {
+    let obj = JSON.parse($response.body)
+    if (obj.data) {
+        obj.data.operateWords = undefined
+        obj.data.algWords.forEach(item => {
+            item.keyword = ""
+        })
+    }
 } else if (url.includes("wmapi.meituan.com")) {  // 美团外卖
     let obj = JSON.parse($response.body)
     if (obj.data?.startpicture) {
