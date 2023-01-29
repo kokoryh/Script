@@ -1,1 +1,1 @@
-{"code":200,"message":null,"data":{"algWords":[{"keyword":"Test","alg":"rq_0_1049178_T2_R21_be4f29c3520765b0bf835c423c178c27_#","bizQueryInfo":"{\"showQuery\":\"Hanser\",\"source\":\"rec_query\",\"intentStrategy\":null,\"bizIntentList\":[{\"searchQuery\":\"Hanser\",\"queryTemplateType\":\"UNKNOWN\",\"itemID\":\"1049179\",\"itemType\":\"artist\",\"level\":1,\"dist\":null,\"bestMatch\":true}],\"songRecIntent\":false,\"mixRecIntent\":null}","logInfo":null}]}}
+{"code":200,"message":null,"data":{"algWords":[]}}
