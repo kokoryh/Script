@@ -9,7 +9,7 @@
 force-http-engine-hosts = %INSERT% 59.111.*:0
 
 [URL Rewrite]
-interface3\.music\.163\.com\/eapi\/ad\/ - reject
+interface3\.music\.163\.com\/eapi\/ad - reject
 iadmusicmat(video)?\.music\.126\.net - reject
 
 [Script]

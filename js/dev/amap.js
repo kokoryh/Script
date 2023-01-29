@@ -45,9 +45,9 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
     if (obj.data?.home_business_position_config) {  // 首页右中
         obj.data.home_business_position_config = {
-            "status": 1,
-            "version": "",
-            "value": ""
+            status: 1,
+            version: "",
+            value: ""
         }
         change = true
     }
