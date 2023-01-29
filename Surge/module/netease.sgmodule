@@ -17,7 +17,7 @@ iadmusicmat(video)?\.music\.126\.net - reject
 # 搜索页热搜卡片 | 屏蔽猜你喜欢的eapi接口
 ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/(chart|default|specialkeyword|rcmd\/keyword) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 # 搜索页猜你喜欢
-^https?:\/\/interface3\.music\.163\.com\/api\/search\/rcmd\/keyword\/get data="https://raw.githubusercontent.com/kokoryh/Script/master/data/wyy_rcmd.json"
+# ^https?:\/\/interface3\.music\.163\.com\/api\/search\/rcmd\/keyword\/get data="https://raw.githubusercontent.com/kokoryh/Script/master/data/wyy_rcmd.json"
 
 [Script]
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3 requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
