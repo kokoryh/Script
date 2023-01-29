@@ -26,6 +26,7 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
         obj.data.algWords.forEach(item => {
             item.keyword = ""
         })
+        body = JSON.stringify(obj)
     }
 } else if (url.includes("wmapi.meituan.com")) {  // 美团外卖
     let obj = JSON.parse($response.body)
