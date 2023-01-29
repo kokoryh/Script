@@ -12,8 +12,8 @@ force-http-engine-hosts = %INSERT% 59.111.*:0
 iadmusicmat(video)?\.music\.126\.net - reject
 
 [Map Local]
-# 开屏广告 | 评论区广告 | 搜索页热搜卡片 | 搜索框推荐词
-^https?:\/\/interface3\.music\.163\.com\/eapi\/(ad|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner|search\/(chart|default)) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 开屏广告 | 搜索页热搜卡片 | 搜索框推荐词 | 评论区广告 | 评论区回复里的广告
+^https?:\/\/interface3\.music\.163\.com\/eapi\/(ad|search\/(chart|default)|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索页猜你喜欢(需卸载重装)
 ^https?:\/\/interface3\.music\.163\.com\/e?api\/search\/rcmd\/keyword data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
