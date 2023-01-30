@@ -7,6 +7,8 @@
 
 # 搜索框推荐词(仅对新版有效，旧版搜索框有原始缓存)
 ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 右上角免字
+^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
@@ -24,4 +26,4 @@ iadmusicmat(video)?\.music\.126\.net - reject
 http-response ^https?:\/\/httpdns\.n\.netease\.com\/httpdns\/v2\/d\?domain=interface3 requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% interface3.music.163.com:0, interface3.music.163.com.163jiasu.com:0, httpdns.n.netease.com, 59.111.*, 112.13.*
+hostname = %INSERT% interface3.music.163.com:0, httpdns.n.netease.com, 59.111.*, 112.13.*
