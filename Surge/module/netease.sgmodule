@@ -5,6 +5,9 @@
 # 112.13这个IP段无法MITM，需要屏蔽掉，否则无法完全去除开屏广告
 # 不同地区的CDN可能不同，请根据实际情况修改IP
 
+# 搜索框推荐词(仅对新版有效，旧版搜索框有原始缓存)
+^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
 
@@ -12,8 +15,8 @@ force-http-engine-hosts = %INSERT% 59.111.*:0
 iadmusicmat(video)?\.music\.126\.net - reject
 
 [Map Local]
-# 开屏广告 | 搜索页热搜卡片 | 搜索框推荐词 | 评论区广告 | 评论区回复里的广告
-^https?:\/\/interface3\.music\.163\.com\/eapi\/(ad|search\/(chart|default)|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 开屏广告 | 搜索页热搜卡片 | 评论区广告 | 评论区回复里的广告
+^https?:\/\/interface3\.music\.163\.com\/eapi\/(ad|search\/chart|comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索页猜你喜欢(需卸载重装)
 ^https?:\/\/interface3\.music\.163\.com\/e?api\/search\/rcmd\/keyword data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
