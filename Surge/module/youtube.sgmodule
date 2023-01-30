@@ -4,16 +4,15 @@
 # 删除 瀑布流、视频、搜索中出现的广告和Shorts
 # 删除 Shorts 内的视频广告
 # 删除 底部 上传 按钮
-# 增加 画中画(PIP)
+# 增加 画中画(PIP), 后台播放
 # 广告信息会有遗漏，可能偶现广告
 # qx使用需在[general]下添加udp_drop_list=443，surge使用最好也把UDP 443端口屏蔽掉
 
 [Map Local]
-# 此处修改仅是为了让qx解析器解析为reject-img
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.gif"
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt" header="Content-Type: application/vnd.yt-ump"
 
 [Script]
-youtube_ad = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
+youtube_ad = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
 
 [MITM]
 hostname = %INSERT% *.googlevideo.com, youtubei.googleapis.com
