@@ -6,9 +6,9 @@
 # 不同地区的CDN可能不同，请根据实际情况修改IP
 
 # 搜索框推荐词(仅对新版有效，旧版搜索框有原始缓存)
-^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 右上角免字
-^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
