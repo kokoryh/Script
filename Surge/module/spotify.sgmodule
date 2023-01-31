@@ -1,0 +1,12 @@
+#!name=4-Spotify解锁
+#!desc=需重新登录,音质不能设置为超高
+
+# 仓库地址 https://github.com/app2smile/rules
+# 搜索界面 歌单/歌曲可以随意切换完全播放
+# 音乐库已点赞歌曲随意切换完全播放
+
+[Script]
+spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/spotify-proto.js,script-update-interval=0
+
+[MITM]
+hostname = %INSETRT% spclient.wg.spotify.com
