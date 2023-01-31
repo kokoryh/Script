@@ -9,4 +9,4 @@
 spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/spotify-proto.js,script-update-interval=0
 
 [MITM]
-hostname = %INSETRT% spclient.wg.spotify.com
+hostname = %INSERT% spclient.wg.spotify.com
