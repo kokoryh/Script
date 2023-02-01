@@ -5,11 +5,12 @@
 # 而在互联网上，你只会认为自己是对的
 # 该说是可笑呢？还是可悲呢？
 
+# DNS Leak from Shadowrocket Default
 HOST-SUFFIX,dnsleaktest.com,PROXY
 HOST-SUFFIX,dnsleak.com,PROXY
 HOST-SUFFIX,expressvpn.com,PROXY
 HOST-SUFFIX,nordvpn.com,PROXY
-HOST-SUFFIX,nordcdn.com,PROXY
+HOST-SUFFIX,surfshark.com,PROXY
 HOST-SUFFIX,ipleak.net,PROXY
 HOST-SUFFIX,perfect-privacy.com,PROXY
 HOST-SUFFIX,browserleaks.com,PROXY
