@@ -11,6 +11,9 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
@@ -105,58 +108,48 @@ dns:
     - '*.finalfantasyxiv.com'
     - '*.ffxiv.com'
     - '*.mcdn.bilivideo.cn'
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
 cfw-bypass:
   - localhost.ptlogin2.qq.com
 
+proxy-provider-template: &proxy-provider-template
+  type: http
+  interval: 86400
+  health-check:
+    enable: true
+    interval: 3600
+    url: http://www.gstatic.com/generate_204
+
+url-test-template: &url-test-template
+  type: url-test
+  interval: 3600
+  url: 'http://www.gstatic.com/generate_204'
+  lazy: true
+
+rule-provider-template: &rule-provider-template
+  type: http
+  interval: 172800
+  behavior: classical
+
 proxy-providers:
-  ProxyList:
-    type: http
+  ProxyList: &ProxyList
+    <<: *proxy-provider-template
     url: "订阅URL，必须是Clash格式的NodeList"
-    interval: 86400
-    path: ./Proxy/ProxyList.yaml
-    health-check:
-      enable: true
-      interval: 3600
-      url: http://www.gstatic.com/generate_204
 
   HK:
-    filter: 香港|HK|🇭🇰|(?i)Hong
-    type: file
-    path: ./Proxy/ProxyList.yaml
-    health-check:
-      enable: true
-      interval: 3600
-      url: http://www.gstatic.com/generate_204
+    filter: 港|HK|🇭🇰|(?i)Hong
+    <<: *ProxyList
 
   TW:
     filter: 台|TW|🇹🇼|(?i)Taiwan
-    type: file
-    path: ./Proxy/ProxyList.yaml
-    health-check:
-      enable: true
-      interval: 3600
-      url: http://www.gstatic.com/generate_204
+    <<: *ProxyList
 
   JP:
     filter: 日|JP|🇯🇵|(?i)Japan
-    type: file
-    path: ./Proxy/ProxyList.yaml
-    health-check:
-      enable: true
-      interval: 3600
-      url: http://www.gstatic.com/generate_204
+    <<: *ProxyList
 
   US:
-    filter: 美|US|🇺🇸|(?i)States|(?i)American
-    type: file
-    path: ./Proxy/ProxyList.yaml
-    health-check:
-      enable: true
-      interval: 3600
-      url: http://www.gstatic.com/generate_204
+    filter: 美|US|🇺🇸|(?i)States|American
+    <<: *ProxyList
 
 proxy-groups:
   - name: "PROXY"
@@ -225,111 +218,69 @@ proxy-groups:
       - ProxyList
 
   - name: "🇭🇰 香港节点"
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 3600
+    <<: *url-test-template
     tolerance: 50
-    lazy: true
     use:
       - HK
 
   - name: "🇹🇼 台湾节点"
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 3600
+    <<: *url-test-template
     tolerance: 50
-    lazy: true
     use:
       - TW
 
   - name: "🇯🇵 日本节点"
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 3600
+    <<: *url-test-template
     tolerance: 100
-    lazy: true
     use:
       - JP
 
   - name: "🇺🇸 美国节点"
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 3600
+    <<: *url-test-template
     tolerance: 100
-    lazy: true
     use:
       - US
 
 rule-providers:
   Unbreak-d:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Unbreak-d.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-d.yaml
-    interval: 172800
 
   Unbreak-p:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Unbreak-p.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-p.yaml
-    interval: 172800
 
   StreamingJP:
-    type: http
-    behavior: classical
-    path: ./RuleSet/StreamingJP.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/StreamingJP.yaml
-    interval: 172800
 
   Streaming:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Streaming.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Streaming.yaml
-    interval: 172800
 
   Steam:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Steam.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Steam.yaml
-    interval: 172800
 
   OneDrive:
-    type: http
-    behavior: classical
-    path: ./RuleSet/OneDrive.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/OneDrive.yaml
-    interval: 172800
 
   Global:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Global.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Global.yaml
-    interval: 172800
 
   Bilibili:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Bilibili.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Bilibili.yaml
-    interval: 172800
 
   China:
-    type: http
-    behavior: classical
-    path: ./RuleSet/China.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/China.yaml
-    interval: 172800
 
   Lan:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Lan.yaml
+    <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Lan.yaml
-    interval: 172800
 
 rules:
   - RULE-SET,Unbreak-d,DIRECT
