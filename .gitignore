@@ -5,9 +5,9 @@ test.js
 /QuantumultX/resource.txt
 /QuantumultX/resource.conf
 /rule/config*
-/js/conf_2_url_scheme.js
-/js/format_rule.js
-/js/generate_icon_json.js
+/js/dev/conf_2_url_scheme.js
+/js/dev/format_rule.js
+/js/dev/generate_icon_json.js
 /js/dev/input
 /js/dev/output
 /js/dev/decode.js
