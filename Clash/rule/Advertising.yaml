@@ -91,6 +91,7 @@ payload:
   - DOMAIN,afd.baidu.com
   - DOMAIN,al.autohome.com.cn
   - DOMAIN,als.baidu.com
+  - DOMAIN,amdc.m.taobao.com
   - DOMAIN,api.newad.ifeng.com
   - DOMAIN,app-ad.variflight.com
   - DOMAIN,appcloud2.in.zhihu.com
@@ -212,7 +213,6 @@ payload:
   - DOMAIN-SUFFIX,adspecs.yahoo.com
   - DOMAIN-SUFFIX,advertising.yahoo.com
   - DOMAIN-SUFFIX,alitui.weibo.com
-  - DOMAIN-SUFFIX,amdc.m.taobao.com
   - DOMAIN-SUFFIX,atm.youku.com
   - DOMAIN-SUFFIX,aty.sohu.com
   - DOMAIN-SUFFIX,beacon.sina.com.cn
@@ -246,6 +246,7 @@ payload:
   - DOMAIN-SUFFIX,iadsdk.apple.com
   - DOMAIN-SUFFIX,l.qq.com
   - DOMAIN-SUFFIX,log.hunantv.com
+  - DOMAIN-SUFFIX,music.163.com.163jiasu.com
   - DOMAIN-SUFFIX,optimus-ads.amap.com
   - DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
   - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com

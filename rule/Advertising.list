@@ -1,10 +1,13 @@
 # @kokoryh 自行维护
 # 高德地图 2023年1月25日
-DOMAIN-SUFFIX,amdc.m.taobao.com
+DOMAIN,amdc.m.taobao.com
 DOMAIN-SUFFIX,optimus-ads.amap.com
 DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
 # DOMAIN-SUFFIX,page.amap.com
 # DOMAIN-SUFFIX,www.qchannel01.cn
+
+# 网易云音乐
+DOMAIN-SUFFIX,music.163.com.163jiasu.com
 
 # B站垃圾CDN 2023年1月17日
 DOMAIN-SUFFIX,szbdyd.com
