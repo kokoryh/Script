@@ -9,8 +9,6 @@
 # ^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索框推荐词(仅对新版有效，旧版搜索框有缓存)
 # ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 播放页歌名下方的乐迷团 ｜ 关注
-# ^https?:\/\/interface3\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [General]
 force-http-engine-hosts = %INSERT% 59.111.*:0
@@ -21,6 +19,8 @@ iadmusicmat(video)?\.music\.126\.net - reject
 [Map Local]
 # 开屏广告
 ^https?:\/\/interface3\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 播放页歌名下方的乐迷团 ｜ 关注
+^https?:\/\/interface3\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 评论区广告
 ^https?:\/\/interface3\.music\.163\.com\/eapi\/comment\/feed\/inserted data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 评论区右上角星评馆
