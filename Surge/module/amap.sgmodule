@@ -13,8 +13,8 @@ amdc\.m\.taobao\.com - reject
 ^https?:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution - reject
 
 [Map Local]
-# 搜索框 | 左下天气
-^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 搜索框 | 底栏角标 | 左下天气
+^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|message\/notice\/list|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # Tip请求，如招聘代驾的广告等
 ^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
