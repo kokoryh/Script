@@ -1,4 +1,4 @@
-// https://github.com/NobyDa/Script/blob/master/Surge/JS/Bili_Auto_Regions.js
+// 作者：@NobyDa https://github.com/NobyDa/Script/blob/master/Surge/JS/Bili_Auto_Regions.js
 
 let $ = nobyda();
 let run = EnvInfo();
