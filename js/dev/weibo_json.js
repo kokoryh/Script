@@ -61,17 +61,8 @@ if (body) {
 }
 
 function isAd(data) {
-    if (!data) {
-        return false
-    }
-    if (data.mblogtypename === '广告' || data.mblogtypename === '热推') {
-        return true
-    }
-    if (data.mblogtypename === '廣告' || data.mblogtypename === '熱推') {
-        return true
-    }
-    if (data.promotion && data.promotion.type === 'ad') {
-        return true
-    }
+    if (!data) return false
+    if (['广告', '廣告', '热推', '熱推'].includes(data.mblogtypename)) return true
+    if (data.promotion && data.promotion.type === 'ad') return true
     return false
 }
