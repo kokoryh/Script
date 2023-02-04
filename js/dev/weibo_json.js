@@ -1,15 +1,20 @@
 let url = $request.url
 let body = null
 
-if (url.includes("statuses") && url.includes("timeline")) {  // 瀑布流
+if (url.includes("/statuses/")) {  // 瀑布流
+    let change = false
     let obj = JSON.parse($response.body)
     for (const s of ["ad", "advertises", "trends"]) {
-        obj[s] = undefined
+        if (obj[s]) {
+            obj[s] = undefined
+            change = true
+        }
     }
     if (obj.statuses) {
         obj.statuses = obj.statuses.filter(item => !isAd(item))
+        change = true
     }
-    body = JSON.stringify(obj)
+    if (change) body = JSON.stringify(obj)
 
 } else if (url.includes("ct=feed&a=trends")) {  // 趋势页
     let obj = JSON.parse($response.body)
@@ -61,7 +66,6 @@ if (body) {
 }
 
 function isAd(data) {
-    if (!data) return false
     if (['广告', '廣告', '热推', '熱推'].includes(data.mblogtypename)) return true
     if (data.promotion && data.promotion.type === 'ad') return true
     return false

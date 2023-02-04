@@ -91,21 +91,11 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
 } else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
     let change = false
     let obj = JSON.parse($response.body)
-    if (obj.data?.icon) {
-        obj.data.icon = undefined
-        change = true
-    }
-    if (obj.data?.tips) {
-        obj.data.tips = undefined
-        change = true
-    }
-    if (obj.data?.popup) {
-        obj.data.popup = undefined
-        change = true
-    }
-    if (obj.data?.banner) {
-        obj.data.banner = undefined
-        change = true
+    for (const i of ["icon", "tips", "popup", "banner"]) {
+        if (obj.data?.[i]) {
+            obj.data[i] = undefined
+            change = true
+        }
     }
     if (obj.data?.bubble) {
         Object.keys(obj.data.bubble).forEach(key => {
