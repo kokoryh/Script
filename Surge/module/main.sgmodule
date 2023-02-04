@@ -26,8 +26,7 @@
 ^https?:\/\/exhentai\.org https://e-hentai.org 302
 
 # 百度网盘广告
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
+^https?:\/\/pan\.baidu\.com\/act\/(api\/activityentry|v2\/(bchannel|welfare)\/list) - reject
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
 
 # 中国移动开屏
