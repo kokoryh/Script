@@ -1,16 +1,20 @@
-# @kokoryh 自行维护
-# 高德地图 2023年1月25日
+# 高德地图
 DOMAIN,amdc.m.taobao.com
 DOMAIN-SUFFIX,optimus-ads.amap.com
 DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
-# DOMAIN-SUFFIX,page.amap.com
-# DOMAIN-SUFFIX,www.qchannel01.cn
 
 # 网易云音乐
+DOMAIN,iadmusicmat.music.126.net
+DOMAIN,iadmusicmatvideo.music.126.net
 DOMAIN-SUFFIX,music.163.com.163jiasu.com
 
-# B站垃圾CDN 2023年1月17日
+# Bilibili
+# 垃圾CDN
 DOMAIN-SUFFIX,szbdyd.com
+IP-CIDR,203.107.1.1/24,no-resolve
+
+# 百度贴吧
+IP-CIDR,180.76.76.200/32,no-resolve
 
 # 阿里系
 DOMAIN,tunion-api.m.taobao.com
@@ -48,12 +52,6 @@ DOMAIN-SUFFIX,pos.baidu.com
 # DOMAIN-SUFFIX,hmma.baidu.com
 # DOMAIN-SUFFIX,ufosdk.baidu.com
 # 贴吧屏蔽域名dns查询
-IP-CIDR,180.76.76.200/32,no-resolve
-
-# bilibili
-# DOMAIN,grpc.biliapi.net
-# DOMAIN-SUFFIX,cm.bilibili.com
-IP-CIDR,203.107.1.1/24,no-resolve
 
 # 通用(说实话下面这几条都是数据分析商的。。。)
 # DOMAIN-SUFFIX,bugly.qq.com
