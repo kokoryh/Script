@@ -13,7 +13,5 @@
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
 
-[Map Local]
-
 [MITM]
 hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com
