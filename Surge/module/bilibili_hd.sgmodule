@@ -1,6 +1,8 @@
 #!name=2-Bilibili增强(HD)
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 
+# 最新版B站有图文类动态不显示文字的问题，请注释掉proto这行或使用旧版本B站
+
 [URL Rewrite]
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
