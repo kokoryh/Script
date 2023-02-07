@@ -37,7 +37,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // }
 // $response.body = fs.readFileSync("D:\\Downloads\\B9A0341B-5E8C-4978-8C09-BCE72DA9524B");
 
-console.log(`b站proto-2023.1.16-@kokoryh`);
+console.log(`b站proto-2023.2.7-@kokoryh`);
 const url = $request.url;
 // const method = $request.method;
 let headers = $response.headers;
@@ -107,6 +107,7 @@ if (url.includes("Dynamic/DynAll")) {
             1903032,        // 大毛冰啤
             1950658,        // 早稻叽
             2689967,        // 醋醋cucu
+            33261052,       // 咸鱼暗天70
             316381099,      // 鹿乃ちゃん
             454880479,      // 郭思宇爱吃鱼
             698029620       // 兰音Reine
