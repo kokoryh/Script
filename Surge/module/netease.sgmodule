@@ -7,10 +7,26 @@
 # 112.13这个IP段无法MITM，需要屏蔽掉，否则无法完全去除开屏广告
 # 不同地区的CDN可能不同，请根据实际情况修改IP
 
-# 右上角免字(仅新版存在)
-# ^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# iadmusicmat(video)?\.music\.126\.net - reject
+# 开屏广告 & 搜索页下方横幅广告
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 搜索页热搜卡片
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/chart data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 评论区广告
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/comment\/feed\/inserted data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 评论区右上角星评馆
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/comment\/hotcomment\/collect data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 评论区回复里的广告
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/v1\/content\/exposure\/comment\/banner data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 播放页歌名下方乐迷团
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/community\/friends\/fans-group\/artist\/group\/get data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 播放页歌名下方关注
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/user\/sub\/artist data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 歌单上方推广
 # ^https?:\/\/interface3\.music\.163\.com\/eapi\/resource-exposure\/config data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+
+# 右上角免字(仅新版存在)
+# ^https?:\/\/interface3\.music\.163\.com\/eapi\/link\/scene\/show\/resource data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索框推荐词(仅对新版有效，旧版搜索框有缓存)
 # ^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/default data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 处理httpdns
@@ -23,21 +39,10 @@ force-http-engine-hosts = %INSERT% 59.111.*:0
 DOMAIN,httpdns.n.netease.com,REJECT
 
 [URL Rewrite]
-iadmusicmat(video)?\.music\.126\.net - reject
 
 [Map Local]
-# 开屏广告 & 搜索页下方横幅广告
-^https?:\/\/interface3\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 播放页歌名下方乐迷团 | 关注
-^https?:\/\/interface3\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 评论区广告
-^https?:\/\/interface3\.music\.163\.com\/eapi\/comment\/feed\/inserted data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 评论区右上角星评馆
-^https?:\/\/interface3\.music\.163\.com\/eapi\/comment\/hotcomment\/collect data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 评论区回复里的广告
-^https?:\/\/interface3\.music\.163\.com\/eapi\/v1\/content\/exposure\/comment\/banner data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# 搜索页热搜卡片
-^https?:\/\/interface3\.music\.163\.com\/eapi\/search\/chart data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 开屏广告 & 搜索页下方横幅广告 | 搜索页热搜卡片 | 评论区广告 | 评论区右上角星评馆 | 评论区回复里的广告 | 播放页歌名下方的乐迷团 ｜ 播放页歌名下方关注 | 歌单上方推广
+^https?:\/\/interface3\.music\.163\.com\/eapi\/(ad|search\/chart|comment\/(feed\/inserted|hotcomment\/collect)|v1\/content\/exposure\/comment\/banner|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|resource-exposure\/config) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 搜索页猜你喜欢(需卸载重装)
 ^https?:\/\/interface3\.music\.163\.com\/e?api\/search\/rcmd\/keyword data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 

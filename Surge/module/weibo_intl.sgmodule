@@ -15,7 +15,7 @@
 # 趋势页 | 开屏广告 | 用户中心 | 热搜置顶
 http-response ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center|search_topic)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 # 瀑布流去广告
-http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/((unread_)?friends(/|_)timeline|unread_hot_timeline) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
+http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 # sdkad
 http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 

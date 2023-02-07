@@ -9,8 +9,7 @@
 ^https?:\/\/exhentai\.org https://e-hentai.org 302
 
 # 百度网盘广告屏蔽
-^https?:\/\/pan\.baidu\.com\/act\/(api\/activityentry|v2\/(bchannel|welfare)\/list) - reject
-^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
+^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 
 [MITM]
 hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com
