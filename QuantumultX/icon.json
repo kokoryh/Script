@@ -3,6 +3,10 @@
   "description": "",
   "icons": [
     {
+      "name": "aliyundrive.png",
+      "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/aliyundrive.png"
+    },
+    {
       "name": "Apple.png",
       "url": "https://raw.githubusercontent.com/kokoryh/Script/master/images/Apple.png"
     },
