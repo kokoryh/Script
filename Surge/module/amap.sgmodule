@@ -3,9 +3,6 @@
 
 # 修改自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
-# 可能为更新弹窗
-# ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-
 [URL Rewrite]
 # 这条必须屏蔽，否则模块无效
 amdc\.m\.taobao\.com - reject
