@@ -14,6 +14,7 @@ test.js
 /js/dev/kuwo-org.js
 /js/dev/bili-delete.js
 /js/dev/Env*
+/js/dev/*.json
 
 .DS_Store
 node_modules
