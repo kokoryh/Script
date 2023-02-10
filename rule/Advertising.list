@@ -16,6 +16,15 @@ IP-CIDR,203.107.1.1/24,no-resolve
 # 百度贴吧
 IP-CIDR,180.76.76.200/32,no-resolve
 
+# 知乎
+USER-AGENT,AVOS*
+DOMAIN,appcloud2.in.zhihu.com
+DOMAIN,mqtt.zhihu.com
+DOMAIN,sugar.zhihu.com
+DOMAIN,118.89.204.198
+IP-CIDR,118.89.204.198/32,no-resolve
+IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,no-resolve
+
 # 阿里系
 DOMAIN,tunion-api.m.taobao.com
 # 阿里云
