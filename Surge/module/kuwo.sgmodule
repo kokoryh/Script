@@ -1,11 +1,11 @@
 #!name=4-酷我音乐解锁
 #!desc=解锁vip + 去广告
 
-# http-response ^https?:\/\/vip1\.kuwo\.cn\/vip\/(v2|enc)\/(theme|user\/vip) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/kuwo.js
-# http-response ^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/kuwo.js
-# http-response ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/kuwo.js
-# http-response ^https?:\/\/mgxhtj\.kuwo\.cn\/mgxh requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/kuwo.js
-# http-response ^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).* requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/kuwo.js
+# http-response ^https?:\/\/vip1\.kuwo\.cn\/vip\/(v2|enc)\/(theme|user\/vip) requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/kuwo.js
+# http-response ^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/kuwo.js
+# http-response ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/kuwo.js
+# http-response ^https?:\/\/mgxhtj\.kuwo\.cn\/mgxh requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/kuwo.js
+# http-response ^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).* requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/dev/kuwo.js
 # hostname = %INSERT% *.kuwo.cn, *.lrts.me
 # hostname = %INSERT% vip1.kuwo.cn, audiobookpay.kuwo.cn, musicpay.kuwo.cn
 
@@ -13,7 +13,7 @@
 force-http-engine-hosts = %INSERT% mgxhtj.kuwo.cn
 
 [Script]
-http-response ^https?:\/\/.*\.kuwo\.cn\/(mgxh|recterm|a\.p|music\.pay\?newver|vip\/(v2|enc)\/(theme\?op=gd|user\/vip\?op=ui)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/kuwo.js
+http-response ^https?:\/\/.*\.kuwo\.cn\/(mgxh|recterm|a\.p|music\.pay\?newver|vip\/(v2|enc)\/(theme\?op=gd|user\/vip\?op=ui)) requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/kuwo.js
 
 [MITM]
 hostname = %INSERT% *.kuwo.cn
