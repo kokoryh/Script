@@ -26,24 +26,24 @@ B站装扮diy
 ----------------
 获取装扮信息(获取完即可关闭此重写)
 Quantumult X：
-# ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-detail.js
+# ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 
 Surge：
-# http-response ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-detail.js
+# http-response ^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js
 ----------------
 日常使用
 Quantumult X：
-# ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-diy.js
+# ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 
 Surge：
-# bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-diy.js
+# bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 ----------------
 定时切换脚本(此处Cron仅供参考，请自行设置切换的时间)
 Quantumult X：
-0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-change.js, tag=装扮定时切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
+0 8,20 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js, tag=装扮定时切换, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
 
 Surge：
-bili-skin-switch = type=cron,cronexp="0 8,20 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-change.js
+bili-skin-switch = type=cron,cronexp="0 8,20 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-change.js
 ----------------
 */
 

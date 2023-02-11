@@ -12,13 +12,13 @@
       "author": "@kokoryh",
       "repo": "https://github.com/kokoryh/Script/blob/master/js/ihan.js",
       "icons": [
-        "https://raw.githubusercontent.com/kokoryh/Script2/master/images/mgclub.png",
-        "https://raw.githubusercontent.com/kokoryh/Script2/master/images/mgclub.png"
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png",
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png"
       ],
       "descs_html": [
-        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/kokoryh/Script2/master/js/ihan.js\">脚本注释</a></h4>"
+        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js\">脚本注释</a></h4>"
       ],
-      "script": "https://raw.githubusercontent.com/kokoryh/Script2/master/js/ihan.js",
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js",
       "keys": [
         "Cookie_MGClub"
       ]
@@ -32,7 +32,7 @@
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
       ],
-      "script": "https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit.js",
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js",
       "keys": [
         "bili_get_list",
         "bili_suit_list"
@@ -65,7 +65,7 @@
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
       ],
-      "script": "https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-detail.js",
+      "script": "https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-detail.js",
       "keys": [
         "bili_suit_push",
         "bili_no_load",

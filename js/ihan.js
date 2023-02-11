@@ -15,11 +15,11 @@
 Quantumult X:
 
 [task_local]
-55 2 * * * https://raw.githubusercontent.com/kokoryh/Script2/master/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script2/master/images/mgclub.png, enabled=true
+55 2 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js, tag=毛怪俱乐部签到, img-url=https://raw.githubusercontent.com/kokoryh/Script/master/images/mgclub.png, enabled=true
 
 [rewrite_local]
 # 获取毛怪俱乐部Cookie
-^https:\/\/2550505\.com\/sign\/card url script-request-header https://raw.githubusercontent.com/kokoryh/Script2/master/js/ihan.js
+^https:\/\/2550505\.com\/sign\/card url script-request-header https://raw.githubusercontent.com/kokoryh/Script/master/js/ihan.js
 
 [mitm]
 hostname = 2550505.com

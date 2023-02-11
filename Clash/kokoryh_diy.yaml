@@ -244,43 +244,43 @@ proxy-groups:
 rule-providers:
   Unbreak-d:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Unbreak-d.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-d.yaml
 
   Unbreak-p:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Unbreak-p.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-p.yaml
 
   StreamingJP:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/StreamingJP.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/StreamingJP.yaml
 
   Streaming:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Streaming.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Streaming.yaml
 
   Steam:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Steam.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Steam.yaml
 
   OneDrive:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/OneDrive.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/OneDrive.yaml
 
   Global:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Global.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Global.yaml
 
   Bilibili:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Bilibili.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Bilibili.yaml
 
   China:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/China.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/China.yaml
 
   Lan:
     <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script2/master/Clash/rule/Lan.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Lan.yaml
 
 rules:
   - RULE-SET,Unbreak-d,DIRECT

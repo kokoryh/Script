@@ -6,16 +6,16 @@
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 
 [Map Local]
-^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/bili_activity.json" header="Content-Type: application/json"
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/blank_dict.json"
+^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 
 [Script]
-bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit-diy.js
-bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/list|feed\/index|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab\/v2),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bilibili_json.js
-bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$,requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bilibili-proto.js
-bili-live = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bilibili_json.js
-bili-bangumi = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bilibili_json.js
-bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili_auto_region.js
+bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
+bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/list|feed\/index|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab\/v2),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json.js
+bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$,requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili-proto.js
+bili-live = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json.js
+bili-bangumi = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili_json.js
+bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili_auto_region.js
 
 [MITM]
 hostname = %INSERT% grpc.biliapi.net, ap?.bilibili.com, api.live.bilibili.com

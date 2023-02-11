@@ -3,21 +3,21 @@
 
 [Map Local]
 # 热门视频 | 热推荐
-^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/blank_dict.json"
+^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 不知道对应的是啥
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/blank_dict.json"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # 屏蔽searching_info，把搜索框关键词改为『搜索微博』，有效期改为1天避免重复请求
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=user&a=get_searching_info data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/weibo_searching_info.json" header="Content-Type: text/html"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=user&a=get_searching_info data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_searching_info.json" header="Content-Type: text/html"
 # 屏蔽search_topic，对应点击搜索栏，下方出现的热搜。替换响应体，直接reject会使用缓存数据
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic data="https://raw.githubusercontent.com/kokoryh/Script2/master/data/weibo_search_topic.json" header="Content-Type: text/html"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic data="https://raw.githubusercontent.com/kokoryh/Script/master/data/weibo_search_topic.json" header="Content-Type: text/html"
 
 [Script]
 # 趋势页 | 开屏广告 | 用户中心 | 热搜置顶
-http-response ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center|search_topic)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/weibo_json.js
+http-response ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=feed&a=trends|a=(get_coopen_ads|user_center|search_topic)) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 # 瀑布流去广告
-http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/weibo_json.js
+http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 # sdkad
-http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script2/master/js/weibo_json.js
+http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/weibo_json.js
 
 [MITM]
 hostname = %INSERT% *api.weibo.cn, sdkapp.uve.weibo.com
