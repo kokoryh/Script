@@ -117,6 +117,13 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
                 "pos": 4
             }
         ]
+        obj.data.top_more.push({
+            "id": 922,
+            "icon": "http://i0.hdslb.com/bfs/feed-admin/38beac42189ad4d838d20259a5b2cdfd302fef40.png",
+            "name": "搜索",
+            "uri": "bilibili://search",
+            "pos": 2
+        })
         body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
