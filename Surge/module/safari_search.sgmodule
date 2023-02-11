@@ -1,6 +1,8 @@
 #!name=2-Safari全能搜索
 #!desc=关键词+空格+命令，需把搜索引擎设置为 duckduckgo
 
+# 修改自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Q-Search.conf
+
 # xxx gd  (Google 搜索 Google Drive 资源)
 # ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gd.+ https://www.google.com/search?q=%22Google+Drive%22+$1 302
 # xxx tgd (t.me/gdurl 搜索 Google Drive 资源)
