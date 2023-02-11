@@ -18,9 +18,6 @@
 # ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
 
 [URL Rewrite]
-# Redirect Github to Gitlab
-^https:\/\/raw\.githubusercontent\.com\/kokoryh\/Script\/ https://gitlab.com/kokoryh/script/-/raw/ 302
-
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
@@ -47,4 +44,4 @@ http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/loadInfo\? requires-body
 http-response ^https:\/\/api(-cs)?\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% raw.githubusercontent.com, www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, api*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, api*.intsig.net

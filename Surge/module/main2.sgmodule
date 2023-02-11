@@ -2,9 +2,6 @@
 #!desc=ipad专用
 
 [URL Rewrite]
-# Redirect Github to Gitlab
-^https:\/\/raw\.githubusercontent\.com\/kokoryh\/Script\/ https://gitlab.com/kokoryh/script/-/raw/ 302
-
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
@@ -15,4 +12,4 @@
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 
 [MITM]
-hostname = %INSERT% raw.githubusercontent.com, www.google.cn, exhentai.org, pan.baidu.com
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com

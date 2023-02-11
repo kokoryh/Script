@@ -1,0 +1,9 @@
+#!name=0-Redirect
+#!desc=重定向模块
+
+[URL Rewrite]
+# Redirect Github to Gitlab
+^https:\/\/raw\.githubusercontent\.com\/kokoryh\/Script\/ https://gitlab.com/kokoryh/script/-/raw/ 302
+
+[MITM]
+hostname = %INSERT% raw.githubusercontent.com
