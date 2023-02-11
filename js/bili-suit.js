@@ -15,10 +15,10 @@ B站装扮监控
 Quantumult X:
 
 [task_local]
-0 0 * * * https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js, tag=B站装扮监控, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
+0 0 * * * https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit.js, tag=B站装扮监控, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png, enabled=true
 
 [rewrite_local]
-^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit.js
+^https:\/\/api\.bilibili\.com\/x\/garb\/v2\/mall\/suit\/detail url script-response-body https://raw.githubusercontent.com/kokoryh/Script2/master/js/bili-suit.js
 
 [mitm]
 hostname = api.bilibili.com
