@@ -33,43 +33,98 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     }
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
     let obj = JSON.parse($response.body)
-    if (obj.data?.tab?.length < 4) {
-        obj.data.tab.push({
-            "id": 1411,
-            "tab_id": "bangumi",
-            "name": "动画",
-            "uri": "bilibili://following/home_activity_tab/6544",
-            "pos": 4
+    if (obj.data?.tab?.length > 5) {
+        const bottomList = [177, 179, 181, 102, 104, 106, 486, 488, 489]
+        obj.data.tab = [
+            {
+                "id": 39,
+                "name": "直播",
+                "uri": "bilibili://live/home",
+                "tab_id": "直播tab",
+                "pos": 1
+            },
+            {
+                "id": 40,
+                "name": "推荐",
+                "uri": "bilibili://pegasus/promo",
+                "tab_id": "推荐tab",
+                "pos": 2,
+                "default_selected": 1
+            },
+            {
+                "id": 41,
+                "name": "热门",
+                "uri": "bilibili://pegasus/hottopic",
+                "tab_id": "hottopic",
+                "pos": 3
+            },
+            {
+                "id": 545,
+                "name": "动画",
+                "uri": "bilibili://pgc/home",
+                "tab_id": "bangumi",
+                "pos": 4
+            },
+            {
+                "id": 151,
+                "name": "影视",
+                "uri": "bilibili://pgc/cinema-tab",
+                "tab_id": "film",
+                "pos": 5
+            }
+        ]
+        obj.data.top = [{
+            "id": 176,
+            "icon": "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
+            "tab_id": "消息Top",
+            "name": "消息",
+            "uri": "bilibili://link/im_home",
+            "pos": 1
+        }]
+        obj.data.bottom = obj.data.bottom.filter(e => {
+            return bottomList.includes(e.id)
         })
         body = JSON.stringify(obj)
     } else {
-        let change = false
-        const tabList = [39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556]
-        const bottomList = [177, 178, 179, 181, 102, 104, 106, 486, 488, 489]
-        if (obj.data?.tab) {
-            obj.data.tab = obj.data.tab.filter((e) => {
-                return tabList.includes(e.id)
-            })
-            change = true
-        }
-        if (obj.data?.top) {
-            obj.data.top = [{
-                id: 176,
-                icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
-                tab_id: "消息Top",
-                name: "消息",
-                uri: "bilibili://link/im_home",
-                pos: 1
-            }]
-            change = true
-        }
-        if (obj.data?.bottom) {
-            obj.data.bottom = obj.data.bottom.filter((e) => {
-                return bottomList.includes(e.id)
-            })
-            change = true
-        }
-        if (change) body = JSON.stringify(obj)
+        obj.data.tab = [
+            {
+                "id": 731,
+                "name": "直播",
+                "uri": "bilibili://live/home",
+                "tab_id": "直播tab",
+                "pos": 1
+            },
+            {
+                "id": 477,
+                "name": "推荐",
+                "uri": "bilibili://pegasus/promo",
+                "tab_id": "推荐tab",
+                "pos": 2,
+                "default_selected": 1
+            },
+            {
+                "id": 478,
+                "name": "热门",
+                "uri": "bilibili://pegasus/hottopic",
+                "tab_id": "热门tab",
+                "pos": 3
+            },
+            {
+                "id": 1411,
+                "tab_id": "bangumi",
+                "name": "动画",
+                "uri": "bilibili://following/home_activity_tab/6544",
+                "pos": 4
+            }
+        ]
+        obj.data.top_more.push({
+            "id": 922,
+            "icon": "http://i0.hdslb.com/bfs/feed-admin/38beac42189ad4d838d20259a5b2cdfd302fef40.png",
+            "name": "搜索",
+            "uri": "bilibili://search",
+            "pos": 2
+        })
+        body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
     /*
