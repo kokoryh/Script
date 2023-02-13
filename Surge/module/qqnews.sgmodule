@@ -3,7 +3,7 @@
 #!author=app2smile
 
 [Script]
-腾讯新闻json = type=http-response,pattern=^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list)),requires-body=1,max-size=0,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/qq_news.js
+腾讯新闻json = type=http-response,pattern=^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/qq_news.js
 
 [MITM]
 hostname = %INSERT% news.ssp.qq.com, r.inews.qq.com

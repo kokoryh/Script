@@ -3,7 +3,7 @@
 
 [URL Rewrite]
 # Redirect Github to Gitlab
-^https:\/\/raw\.githubusercontent\.com\/kokoryh\/Script\/ https://gitlab.com/kokoryh/script/-/raw/ 302
+^https:\/\/raw\.githubusercontent\.com\/kokoryh\/Script\/ https://raw.githubusercontent.com/kokoryh/Script/ 302
 
 [MITM]
 hostname = %INSERT% raw.githubusercontent.com

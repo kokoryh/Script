@@ -11,19 +11,19 @@ amdc\.m\.taobao\.com - reject
 
 [Map Local]
 # 搜索框 | 底栏角标 | 左下天气
-^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|message\/notice\/list|valueadded\/weather) data="https://gitlab.com/kokoryh/script/-/raw/master/data/blank_dict.json"
+^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|message\/notice\/list|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # Tip请求，如招聘代驾的广告等
-^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://gitlab.com/kokoryh/script/-/raw/master/data/blank.txt"
+^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
 [Script]
 # 搜索框热词 | 附近页面 | 我的页面 | 首页右中
-http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/amap.js
+http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 开屏广告 | 首页底部
-http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page) requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/amap.js
+http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 打车页面
-http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/amap.js
+http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 首页顶部横幅
-http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/amap.js
+http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 
 [MITM]
 hostname = %INSERT% m5*.amap.com, sns.amap.com
