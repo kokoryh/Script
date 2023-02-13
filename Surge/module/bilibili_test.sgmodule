@@ -34,9 +34,7 @@ bili-live = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xliv
 # 番剧页 & 观影页广告
 bili-bangumi = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/bilibili_json.js
 # 自动换区
-bili-region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/dev/bili_auto_region.js
-# 搜索换区
-bili-search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/dev/bili_auto_region.js
+bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/bili_auto_region.js
 
 [MITM]
-hostname = %INSERT% grpc.biliapi.net, ap?.bili*i.com, ap?.bili*i.net, api.live.bilibili.com, passport.bilibili.com
+hostname = %INSERT% grpc.biliapi.net, ap*.bilibili.com, manga.bilibili.com

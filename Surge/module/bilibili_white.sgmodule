@@ -13,4 +13,4 @@ bili-live = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xliv
 bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://gitlab.com/kokoryh/script/-/raw/master/js/bili_auto_region.js
 
 [MITM]
-hostname = %INSERT% grpc.biliapi.net, ap?.bilibili.com, api.live.bilibili.com
+hostname = %INSERT% grpc.biliapi.net, ap*.bilibili.com
