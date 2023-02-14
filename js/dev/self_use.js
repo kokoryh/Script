@@ -25,6 +25,14 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
         obj.data.startpicture = []
         body = JSON.stringify(obj)
     }
+} else if (url.includes("networkbench.com/initMobileApp")) {  // 中国电信测试
+    let obj = JSON.parse($response.body)
+    if (obj.result?.cfg) {
+        obj.result.cfg.slowStartThreshold = 0
+        obj.result.cfg.slowFirstPaintThreshold = 0
+        obj.result.cfg.slowFirstScreenThreshold = 0
+        body = JSON.stringify(obj)
+    }
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
 } else {
