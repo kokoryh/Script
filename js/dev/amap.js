@@ -88,6 +88,12 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
     }
     if (change) body = JSON.stringify(obj)
 
+} else if (url.includes("ws/message/notice/list")) {  // 底部角标
+    let obj = JSON.parse($response.body)
+    if (obj.data?.noticeList) {
+        obj.data.noticeList = []
+        body = JSON.stringify(obj)
+    }
 } else if (url.includes("ws/promotion-web/resource")) {  // 打车页面
     let change = false
     let obj = JSON.parse($response.body)
