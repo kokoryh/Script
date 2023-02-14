@@ -1,8 +1,6 @@
 #!name=0-自用主模块
 #!desc=iphone专用
 
-# 中国电信开屏
-# ^https?:\/\/cloud\.189\.cn\/include\/splash\/ - reject
 # 淘宝
 # ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ - reject
 # 京东
@@ -11,9 +9,6 @@
 # ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/
 # 拼多多
 # ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
-# 美团外卖
-# ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
-# ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
 # 微信公众号广告
 # ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
 
