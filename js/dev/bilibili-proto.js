@@ -20,8 +20,8 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // const pako = require('pako');
 // function $done(param) {console.log('done')}
 // const $request = {
-//     url: "Dynamic/DynAll",
-//     // url: "View/View",
+//     // url: "Dynamic/DynAll",
+//     url: "View/View",
 //     // url: "PlayURL/PlayView",
 //     method: "POST",
 //     headers: {
@@ -35,7 +35,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //         "grpc-encoding": "gzip"
 //     }
 // }
-// $response.body = fs.readFileSync("D:\\Downloads\\EC83510A-31A5-4B4F-B551-F43D35CDE44D");
+// $response.body = fs.readFileSync("D:\\Downloads\\656FE8EC-3590-4C24-9F06-22DB26D0B49A");
 
 console.log(`b站proto-2023.2.8-@kokoryh-2`);
 const url = $request.url;
@@ -167,7 +167,6 @@ if (url.includes("Dynamic/DynAll")) {
     console.log('视频播放页View/View');
     const viewReplyType = biliRoot.lookupType("bilibili.app.view.ViewReply");
     let viewReplyObj = viewReplyType.decode(unGzipBody);
-    // fs.writeFileSync('./output/bili-view.json', JSON.stringify(viewReplyObj))
 
     if (isIpad) {
         if (!viewReplyObj.cmIpad) {
@@ -200,6 +199,14 @@ if (url.includes("Dynamic/DynAll")) {
             }
         }
 
+        if (!viewReplyObj.specialCellNew?.length) {
+            console.log('specialCell为空')
+        } else {
+            needProcessFlag = true;
+            viewReplyObj.specialCellNew = undefined;
+            console.log(`去除specialCell`);
+        }
+
         if (!viewReplyObj.relates?.length) {
             console.log('relates相关推荐为空');
         } else {
@@ -228,6 +235,7 @@ if (url.includes("Dynamic/DynAll")) {
         }
     }
 
+    // needProcessFlag = true
     if (needProcessFlag) {
         let tIconMap = viewReplyObj.tIcon;
         for (const i in tIconMap) {
@@ -237,6 +245,7 @@ if (url.includes("Dynamic/DynAll")) {
                 delete tIconMap[i];
             }
         }
+        // fs.writeFileSync('./output/bili-view.json', JSON.stringify(viewReplyObj))
 
         body = processNewBody(viewReplyType.encode(viewReplyObj).finish());
     }
