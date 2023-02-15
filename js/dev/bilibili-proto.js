@@ -35,9 +35,9 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 //         "grpc-encoding": "gzip"
 //     }
 // }
-// $response.body = fs.readFileSync("D:\\Downloads\\656FE8EC-3590-4C24-9F06-22DB26D0B49A");
+// $response.body = fs.readFileSync("D:\\Downloads\\C4420A6F-F042-4953-9774-9E1740ED41C4");
 
-console.log(`b站proto-2023.2.8-@kokoryh-2`);
+console.log(`b站proto-2023.2.15-@kokoryh`);
 const url = $request.url;
 // const method = $request.method;
 let headers = $response.headers;
