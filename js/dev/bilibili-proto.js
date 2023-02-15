@@ -7,7 +7,7 @@ const biliJson = {"nested":{"bilibili":{"nested":{"ad":{"nested":{"v1":{"options
 脚本原作者：@app2smile https://github.com/app2smile/rules
 优化内容：
 ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方的广告
-手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card
+手机端-仅在关注列表内有直播时显示最常访问，移除动态中的直播card，移除播放页的为TA充电和活动tag
 通用：按照关键词移除动态中的UP主恰饭广告(已移除拼多多，其他广告待后续增加)
       按照UP主移除其非视频动态，但是仍保留其抽奖动态
        -主要针对切片man(切片man就老老实实做切片不就好了，谁要看你的动态==)
@@ -37,7 +37,7 @@ ipad端-保留动态页的最常访问，移除视频播放页相关推荐上方
 // }
 // $response.body = fs.readFileSync("D:\\Downloads\\C4420A6F-F042-4953-9774-9E1740ED41C4");
 
-console.log(`b站proto-2023.2.15-@kokoryh`);
+console.log(`b站proto-2023.2.15-@kokoryh-2`);
 const url = $request.url;
 // const method = $request.method;
 let headers = $response.headers;
@@ -177,34 +177,28 @@ if (url.includes("Dynamic/DynAll")) {
             console.log(`去除相关推荐上方广告`);
         }
     } else {
-        if (!viewReplyObj.cms?.length) {
-            console.log('cms为空');
-        } else {
-            let adCount = 0;
-            const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
-            for (let i = 0; i < viewReplyObj.cms.length; i++) {
-                let item = viewReplyObj.cms[i];
-                if (item.sourceContent?.value) {
-                    // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
-                    const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
-                    if (sourceContentDtoObj.adContent) {
-                        adCount++;
-                    }
-                }
+        let needDeleteItem = [
+            'cms',
+            'materialLeft',
+            'specialCellNew',
+            'reqUser'
+        ]
+        needDeleteItem.forEach(item => {
+            if (!viewReplyObj[item]) {
+                console.log(`${item}为空`)
+            } else {
+                needProcessFlag = true
+                viewReplyObj[item] = null
+                console.log(`去除${item}`)
             }
-            viewReplyObj.cms = [];
-            console.log(`up主推荐广告:${adCount}`);
-            if (adCount) {
-                needProcessFlag = true;
-            }
-        }
+        })
 
-        if (!viewReplyObj.specialCellNew?.length) {
-            console.log('specialCell为空')
+        if (!viewReplyObj.cmConfig?.adsControl?.value) {
+            console.log('cmConfig无内容')
         } else {
-            needProcessFlag = true;
-            viewReplyObj.specialCellNew = undefined;
-            console.log(`去除specialCell`);
+            needProcessFlag = true
+            viewReplyObj.cmConfig = null
+            console.log('去除cmConfig')
         }
 
         if (!viewReplyObj.relates?.length) {
@@ -223,16 +217,39 @@ if (url.includes("Dynamic/DynAll")) {
                 needProcessFlag = true;
             }
         }
-        const adsControlValue = viewReplyObj.cmConfig?.adsControl?.value;
-        if (adsControlValue) {
-            const adsControlDtoType = biliRoot.lookupType("bilibili.ad.v1.AdsControlDto");
-            const adsControlDtoObj = adsControlDtoType.decode(adsControlValue);
-            if (adsControlDtoObj?.hasDanmu === 1 || adsControlDtoObj?.cids?.length > 0) {
-                console.log(`up主推荐广告-弹幕. ${adsControlDtoObj?.hasDanmu}, ${adsControlDtoObj?.cids}`);
-                viewReplyObj.cmConfig = null;
-                needProcessFlag = true;
-            }
-        }
+
+        // if (!viewReplyObj.cms?.length) {
+        //     console.log('cms为空');
+        // } else {
+        //     let adCount = 0;
+        //     const sourceContentDtoType = biliRoot.lookupType("bilibili.ad.v1.SourceContentDto");
+        //     for (let i = 0; i < viewReplyObj.cms.length; i++) {
+        //         let item = viewReplyObj.cms[i];
+        //         if (item.sourceContent?.value) {
+        //             // 注意这里虽然proto没有属性value  但是viewReplyMessage解析的有
+        //             const sourceContentDtoObj = sourceContentDtoType.decode(item.sourceContent.value);
+        //             if (sourceContentDtoObj.adContent) {
+        //                 adCount++;
+        //             }
+        //         }
+        //     }
+        //     viewReplyObj.cms = [];
+        //     console.log(`up主推荐广告:${adCount}`);
+        //     if (adCount) {
+        //         needProcessFlag = true;
+        //     }
+        // }
+
+        // const adsControlValue = viewReplyObj.cmConfig?.adsControl?.value;
+        // if (adsControlValue) {
+        //     const adsControlDtoType = biliRoot.lookupType("bilibili.ad.v1.AdsControlDto");
+        //     const adsControlDtoObj = adsControlDtoType.decode(adsControlValue);
+        //     if (adsControlDtoObj?.hasDanmu === 1 || adsControlDtoObj?.cids?.length > 0) {
+        //         console.log(`up主推荐广告-弹幕. ${adsControlDtoObj?.hasDanmu}, ${adsControlDtoObj?.cids}`);
+        //         viewReplyObj.cmConfig = null;
+        //         needProcessFlag = true;
+        //     }
+        // }
     }
 
     // needProcessFlag = true
