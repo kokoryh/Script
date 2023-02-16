@@ -1,0 +1,5 @@
+#!name=1-External Controller
+#!desc=远程控制器
+
+[General]
+external-controller-access = kokoryh@0.0.0.0:25505
