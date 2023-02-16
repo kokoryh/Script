@@ -193,6 +193,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     }
 } else if (url.includes('pgc/page/bangumi') || url.includes('pgc/page/cinema/tab?')) {  // 追番去广告 && 观影页去广告
     let obj = JSON.parse($response.body)
+    console.log("pgc");
     if (obj.result?.modules) {
         obj.result.modules.forEach(module => {
             console.log(module.module_id);
