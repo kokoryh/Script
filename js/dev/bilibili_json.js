@@ -33,46 +33,46 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     }
 } else if (url.includes('app.bilibili.com/x/resource/show/tab')) {  // 标签页处理，如去除会员购等等
     let obj = JSON.parse($response.body)
-    if (obj.data?.tab?.length > 5) {
+    obj.data.tab = [
+        {
+            "id": 731,
+            "name": "直播",
+            "uri": "bilibili://live/home",
+            "tab_id": "直播tab",
+            "pos": 1
+        },
+        {
+            "id": 477,
+            "name": "推荐",
+            "uri": "bilibili://pegasus/promo",
+            "tab_id": "推荐tab",
+            "pos": 2,
+            "default_selected": 1
+        },
+        {
+            "id": 478,
+            "name": "热门",
+            "uri": "bilibili://pegasus/hottopic",
+            "tab_id": "热门tab",
+            "pos": 3
+        },
+        {
+            "id": 545,
+            "name": "动画",
+            "uri": "bilibili://pgc/home",
+            "tab_id": "bangumi",
+            "pos": 4
+        },
+        {
+            "id": 151,
+            "name": "影视",
+            "uri": "bilibili://pgc/cinema-tab",
+            "tab_id": "film",
+            "pos": 5
+        }
+    ]
+    if (obj.data?.bottom?.length > 3) {
         const bottomList = [177, 179, 181]
-        obj.data.tab = [
-            {
-                "id": 39,
-                "name": "直播",
-                "uri": "bilibili://live/home",
-                "tab_id": "直播tab",
-                "pos": 1
-            },
-            {
-                "id": 40,
-                "name": "推荐",
-                "uri": "bilibili://pegasus/promo",
-                "tab_id": "推荐tab",
-                "pos": 2,
-                "default_selected": 1
-            },
-            {
-                "id": 41,
-                "name": "热门",
-                "uri": "bilibili://pegasus/hottopic",
-                "tab_id": "hottopic",
-                "pos": 3
-            },
-            {
-                "id": 545,
-                "name": "动画",
-                "uri": "bilibili://pgc/home",
-                "tab_id": "bangumi",
-                "pos": 4
-            },
-            {
-                "id": 151,
-                "name": "影视",
-                "uri": "bilibili://pgc/cinema-tab",
-                "tab_id": "film",
-                "pos": 5
-            }
-        ]
         obj.data.top = [{
             "id": 176,
             "icon": "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
@@ -84,48 +84,9 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         obj.data.bottom = obj.data.bottom.filter(e => {
             return bottomList.includes(e.id)
         })
-        body = JSON.stringify(obj)
-    } else {
-        obj.data.tab = [
-            {
-                "id": 731,
-                "name": "直播",
-                "uri": "bilibili://live/home",
-                "tab_id": "直播tab",
-                "pos": 1
-            },
-            {
-                "id": 477,
-                "name": "推荐",
-                "uri": "bilibili://pegasus/promo",
-                "tab_id": "推荐tab",
-                "pos": 2,
-                "default_selected": 1
-            },
-            {
-                "id": 478,
-                "name": "热门",
-                "uri": "bilibili://pegasus/hottopic",
-                "tab_id": "热门tab",
-                "pos": 3
-            },
-            {
-                "id": 545,
-                "name": "动画",
-                "uri": "bilibili://pgc/home",
-                "tab_id": "bangumi",
-                "pos": 4
-            },
-            {
-                "id": 151,
-                "name": "影视",
-                "uri": "bilibili://pgc/cinema-tab",
-                "tab_id": "film",
-                "pos": 5
-            }
-        ]
-        body = JSON.stringify(obj)
     }
+    body = JSON.stringify(obj)
+
 } else if (url.includes('app.bilibili.com/x/v2/account/mine')) {  // 我的页面处理，去除一些推广按钮
     /*
     哔哩哔哩-我的页面
@@ -193,10 +154,8 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     }
 } else if (url.includes('pgc/page/bangumi') || url.includes('pgc/page/cinema/tab?')) {  // 追番去广告 && 观影页去广告
     let obj = JSON.parse($response.body)
-    console.log("pgc");
     if (obj.result?.modules) {
         obj.result.modules.forEach(module => {
-            console.log(module.module_id);
             if (module.style.startsWith("tip") || [1283, 241, 1441, 1284].includes(module.module_id)) {
                 module.items = []
             } else if (module.style.startsWith("banner")) {
