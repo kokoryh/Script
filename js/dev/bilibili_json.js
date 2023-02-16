@@ -195,6 +195,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     let obj = JSON.parse($response.body)
     if (obj.result?.modules) {
         obj.result.modules.forEach(module => {
+            console.log(module.module_id);
             if (module.style.startsWith("tip") || [1283, 241, 1441, 1284].includes(module.module_id)) {
                 module.items = []
             } else if (module.style.startsWith("banner")) {
