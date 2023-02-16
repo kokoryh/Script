@@ -110,10 +110,10 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
                 "pos": 3
             },
             {
-                "id": 1411,
-                "tab_id": "bangumi",
+                "id": 545,
                 "name": "动画",
-                "uri": "bilibili://following/home_activity_tab/6544",
+                "uri": "bilibili://pgc/home",
+                "tab_id": "bangumi",
                 "pos": 4
             },
             {
@@ -195,12 +195,12 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     let obj = JSON.parse($response.body)
     if (obj.result?.modules) {
         obj.result.modules.forEach(module => {
-            if (module.style.startsWith("banner")) {
+            if (module.style.startsWith("tip") || [1283, 241, 1441, 1284].includes(module.module_id)) {
+                module.items = []
+            } else if (module.style.startsWith("banner")) {
                 module.items = module.items.filter(i => i.link.includes("play"))
             } else if (module.style.startsWith("function")) {
                 module.items = module.items.filter(i => i.blink.startsWith("bilibili"))
-            } else if (module.style.startsWith("tip")) {
-                module.items = []
             }
         })
         body = JSON.stringify(obj)

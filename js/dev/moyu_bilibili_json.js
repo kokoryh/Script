@@ -151,7 +151,10 @@ if (body) {
             try {
                 let W = JSON.parse(body);
                 W.result.modules.forEach(t => {
-                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))), t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")), [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])), t.style.startsWith("tip") && (t.items = [])
+                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))),
+                    t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")),
+                    [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])),
+                    t.style.startsWith("tip") && (t.items = [])
                 }), body = JSON.stringify(W)
             } catch (j) {
                 console.log("bilibili fanju:" + j)
