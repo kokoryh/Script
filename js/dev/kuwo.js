@@ -2,7 +2,7 @@ let url = $request.url
 let method = $request.method
 let body = null
 
-if (url.includes('mgxhtj.kuwo.cn')) {  // 首页banner
+if (url.includes('mgxhtj.kuwo.cn')) {  // 首页Banner
     body = $response.body.replace(/<ad (pub|foc)[^>]*>/g, '').replace(/(<userinfolabel\scontent=")[^"]*/g, '$1[]')
 
 } else if (url.includes('searchrecterm.kuwo.cn')) {  // 搜索框推荐词
@@ -10,7 +10,11 @@ if (url.includes('mgxhtj.kuwo.cn')) {  // 首页banner
 
 } else if (url.includes('/a.p')) {  // 听书权限接口
     if (method == 'POST') {
-        body = $response.body.replace(/"playright":\d+/g, '"playright":1').replace(/"downright":\d+/g, '"downright":1').replace(/"policytype":\d+/g, '"policytype":3').replace(/"policy":\d+/g, '"policy":5');
+        body = $response.body
+            .replace(/"playright":\d+/g, '"playright":1')
+            .replace(/"downright":\d+/g, '"downright":1')
+            .replace(/"policytype":\d+/g, '"policytype":3')
+            .replace(/"policy":\d+/g, '"policy":5');
     } else if (url.includes('getvip')) {
         let obj = JSON.parse($response.body)
         obj.packs = {
@@ -28,13 +32,15 @@ if (url.includes('mgxhtj.kuwo.cn')) {  // 首页banner
         obj.songs[0].audio.forEach(item => {
             item.st = 0
         })
-        let tmp = obj.songs[0].audio[0].policy
+        let audio = obj.songs[0].audio[0]
         obj.user[0] = {
-            "pid": obj.songs[0].audio[0].pid,
-            "type": tmp,
-            "name": tmp + "_1",
-            "categray": tmp + "_1",
+            "info": obj.songs[0],
             "id": obj.songs[0].id,
+            "pid": audio.pid,
+            "price": audio.price,
+            "type": audio.policy,
+            "name": `${audio.policy}_1`,
+            "categray": `${audio.policy}_1`,
             "order": 375787919,
             "final": [],
             "buy": 1657425321,
@@ -49,10 +55,8 @@ if (url.includes('mgxhtj.kuwo.cn')) {  // 首页banner
             "playVideoUpper": 3000,
             "downVideoCnt": 0,
             "downVideoUpper": 3000,
-            "price": obj.songs[0].audio[0].price,
             "period": 1000,
-            "feetype": 0,
-            "info": obj.songs[0]
+            "feetype": 0
         }
         body = JSON.stringify(obj)
     }
