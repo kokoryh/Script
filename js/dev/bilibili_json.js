@@ -119,16 +119,18 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         }
         obj.data.vip_section = undefined
         obj.data.vip_section_v2 = undefined
-        obj.data.vip_type = 2
-        obj.data.vip.type = 2
-        obj.data.vip.status = 1
-        obj.data.vip.vip_pay_type = 1
-        obj.data.vip.due_date = 4669824160000
+        if (!obj.data.vip_type) {
+            obj.data.vip_type = 2
+            obj.data.vip.type = 2
+            obj.data.vip.status = 1
+            obj.data.vip.vip_pay_type = 1
+            obj.data.vip.due_date = 4669824160000
+        }
         body = JSON.stringify(obj)
     }
 } else if (url.includes('app.bilibili.com/x/v2/account/myinfo?')) {  // 解锁会员画质
     let obj = JSON.parse($response.body)
-    if (obj.data?.vip) {
+    if (obj.data?.vip && !obj.data.vip.status) {
         obj.data.vip.type = 2
         obj.data.vip.status = 1
         obj.data.vip.vip_pay_type = 1
