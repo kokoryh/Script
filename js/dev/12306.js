@@ -30,9 +30,26 @@ function removeAds() {
             handleSplashNew(obj);
         } else if (obj.materialsList.length > 1) {
             obj.materialsList = [{}];
+        } else {
+            obj = fakeData()
         }
     }
     $done({body: JSON.stringify(obj)});
+}
+
+function fakeData() {
+    return {
+        "code": "00",
+        "materialsList": [{
+            "title": "傻逼12306",
+            "billId": "250",
+            "billMaterialsId": "114514",
+            "filePath": "h"
+        }],
+        "advertParam": {
+            "skipTime": 0
+        }
+    }
 }
 
 function handleSplashNew(obj) {
