@@ -21,9 +21,14 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     }
 } else if (url.includes("wmapi.meituan.com")) {  // 美团外卖
     let obj = JSON.parse($response.body)
-    if (obj.data?.startpicture) {
+    if (url.includes("loadInfo") && obj.data?.startpicture) {
         obj.data.startpicture = []
         body = JSON.stringify(obj)
+    } else if (url.includes("startpicture")) {
+        obj.data = {"start_picture": "{\"ad\":[],\"mk\":[]}"}
+        body = JSON.stringify(obj)
+    } else if (url.includes("openscreen")) {
+        body = '{"data":{"start_picture":"","setStart_picture":true},"code":0,"msg":null,"setMsg":false,"setCode":true,"setData":true}'
     }
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
