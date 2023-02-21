@@ -2,7 +2,7 @@
  > 应用名称：墨鱼自用B站去广告脚本
  > 脚本作者：@ddgksf2013
  > 微信账号：墨鱼手记
- > 更新时间：2023-01-21
+ > 更新时间：2023-02-21
  > 通知频道：https://t.me/ddgksf2021
  > 贡献投稿：https://t.me/ddgksf2013_bot
  > 问题反馈：ddgksf2013@163.com
@@ -12,7 +12,7 @@
 
 
 
-const version = 'V2.0.107';
+const version = 'V2.0.108';
 
 let body = $response.body;
 if (body) {
@@ -96,7 +96,7 @@ if (body) {
                 u.data.sections_v2.forEach((t, i) => {
                     let a = t.items.filter(t => f.has(t.id));
                     u.data.sections_v2[i].items = a, u.data.sections_v2[i].button = {}, delete u.data.sections_v2[i].be_up_title, delete u.data.sections_v2[i].tip_icon, delete u.data.sections_v2[i].tip_title, "创作中心" == u.data.sections_v2[i].title && (delete u.data.sections_v2[i].title, delete u.data.sections_v2[i].type)
-                }), delete u.data.vip_section_v2, delete u.data.vip_section, u.data.hasOwnProperty("live_tip") && (u.data.live_tip = {}), u.data.hasOwnProperty("answer") && (u.data.answer = {}), u.data.vip_type = 2, u.data.vip.type = 2, u.data.vip.status = 1, u.data.vip.vip_pay_type = 1, u.data.vip.due_date = 4669824160, body = JSON.stringify(u)
+                }), delete u.data.vip_section_v2, delete u.data.vip_section, u.data.hasOwnProperty("live_tip") && (u.data.live_tip = {}), u.data.hasOwnProperty("answer") && (u.data.answer = {}), u.data.vip.status || (u.data.vip_type = 2, u.data.vip.type = 2, u.data.vip.status = 1, u.data.vip.vip_pay_type = 1, u.data.vip.due_date = 466982416e4), body = JSON.stringify(u)
             } catch (h) {
                 console.log("bilibili mypage:" + h)
             }
@@ -113,20 +113,20 @@ if (body) {
             try {
                 let v = JSON.parse(body);
                 v.data && (v.data.hash = "ddgksf2013", v.data.online.icon = ""), body = JSON.stringify(v)
-            } catch (_) {
-                console.log("bilibili right corner:" + _)
+            } catch ($) {
+                console.log("bilibili right corner:" + $)
             }
             break;
         case/ecommerce-user\/get_shopping_info\?/.test($request.url):
             try {
-                let $ = JSON.parse(body);
-                $.data && ($.data = {
+                let _ = JSON.parse(body);
+                _.data && (_.data = {
                     shopping_card_detail: {},
                     bubbles_detail: {},
                     recommend_card_detail: {},
                     selected_goods: {},
                     h5jump_popup: []
-                }), body = JSON.stringify($)
+                }), body = JSON.stringify(_)
             } catch (x) {
                 console.log("bilibili shopping info:" + x)
             }
@@ -142,7 +142,7 @@ if (body) {
         case/https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?/.test($request.url):
             try {
                 let O = JSON.parse(body);
-                O.data.vip.type = 2, O.data.vip.status = 1, O.data.vip.vip_pay_type = 1, O.data.vip.due_date = 4669824160, body = JSON.stringify(O)
+                O.data.vip.status || (O.data.vip.type = 2, O.data.vip.status = 1, O.data.vip.vip_pay_type = 1, O.data.vip.due_date = 466982416e4), body = JSON.stringify(O)
             } catch (P) {
                 console.log("bilibili 1080p:" + P)
             }
@@ -151,10 +151,7 @@ if (body) {
             try {
                 let W = JSON.parse(body);
                 W.result.modules.forEach(t => {
-                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))),
-                    t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")),
-                    [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])),
-                    t.style.startsWith("tip") && (t.items = [])
+                    t.style.startsWith("banner") && (t.items = t.items.filter(t => -1 != t.link.indexOf("play"))), t.style.startsWith("function") && (t.items = t.items.filter(t => -1 == t.blink.indexOf("bilibili.com")), [1283, 241, 1441, 1284].includes(t.module_id) && (t.items = [])), t.style.startsWith("tip") && (t.items = [])
                 }), body = JSON.stringify(W)
             } catch (j) {
                 console.log("bilibili fanju:" + j)

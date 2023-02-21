@@ -119,7 +119,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         }
         obj.data.vip_section = undefined
         obj.data.vip_section_v2 = undefined
-        if (!obj.data.vip_type) {
+        if (!obj.data.vip.status) {
             obj.data.vip_type = 2
             obj.data.vip.type = 2
             obj.data.vip.status = 1
