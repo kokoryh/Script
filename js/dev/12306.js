@@ -12,15 +12,18 @@
 2、当确认方法1缓存始终会失效后，就只能在每次缓存失效后重新获取一次缓存，然后在缓存有效期内可以做到一直无开屏广告。缺点：每次缓存失效后会看到一次一闪而过的开屏广告(已实现在handleSplash2()，可随时切换planB)
 
 已有更好的屏蔽方式，此脚本仅留作日后参考用。thx @ddgksf2013
+2023年2月21日更新：真没想到这傻逼APP在没开屏广告的情况下依旧有倒计时，通过替换成有广告的数据以跳过开屏
 */
 
-let $ = kokoryh();
+// let $ = kokoryh();
+//
+// if (typeof $response !== 'undefined') {
+//     removeAds();
+// } else {
+//     removeValue();
+// }
 
-if (typeof $response !== 'undefined') {
-    removeAds();
-} else {
-    removeValue();
-}
+removeAds();
 
 function removeAds() {
     let obj = JSON.parse($response.body);
@@ -47,6 +50,7 @@ function uuid() {
 function fakeData() {
     return {
         "code": "00",
+        "rid": uuid(),
         "materialsList": [{
             "billId": "250",
             "billMaterialsId": "114514",
@@ -62,7 +66,6 @@ function fakeData() {
             "pn": "0061",
             "creativeType": 1
         }],
-        "rid": uuid(),
         "advertParam": {
             "skipTime": 0,
             "showSkipBtn": 1,
