@@ -30,9 +30,9 @@ function removeAds() {
             handleSplashNew(obj);
         } else if (obj.materialsList.length > 1) {
             obj.materialsList = [{}];
-        } else {
-            obj = fakeData()
         }
+    } else {
+        obj = fakeData()
     }
     $done({body: JSON.stringify(obj)});
 }
