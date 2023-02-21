@@ -37,17 +37,41 @@ function removeAds() {
     $done({body: JSON.stringify(obj)});
 }
 
+function uuid() {
+    return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8)
+        return v.toString(16);
+    })
+}
+
 function fakeData() {
     return {
         "code": "00",
         "materialsList": [{
-            "title": "傻逼12306",
-            "billId": "250",
-            "billMaterialsId": "114514",
-            "filePath": "h"
+            "billId": "4705",
+            "billMaterialsId": "6317",
+            "filePath": "null",
+            "title": "12306酒店",
+            "linkUri": "app#60000014#/www/hotel-activity.html?showTitleBar=false&hotelFromPage=12306_sy_ggw&activityId=100043",
+            "linkType": 3,
+            "viewUrlList": ["https://ad.12306.cn/ad/mon/mzc?bid=4705&appId=2&mid=6317&pn=0063&n=1&ct=0&cn=CH&reqDate=1670762668338&rid=e2f930654b784e9dad0b804692a2d222&did=E5D2D21C-AEB7-4402-A9D4-391A8FE0C07F&t=1"],
+            "clickUrlList": ["https://ad.12306.cn/ad/mon/mzc?bid=4705&appId=2&mid=6317&pn=0063&n=1&ct=0&cn=CH&reqDate=1670762668338&rid=e2f930654b784e9dad0b804692a2d222&did=E5D2D21C-AEB7-4402-A9D4-391A8FE0C07F&t=2"],
+            "textDesc": "",
+            "dplUrl": "",
+            "advNature": 4,
+            "pn": "0063",
+            "creativeType": 1
         }],
+        "rid": uuid(),
         "advertParam": {
-            "skipTime": 0
+            "skipTime": 0,
+            "showSkipBtn": 1,
+            "skipTimeAgain": 1,
+            "chacheTime": 600000,
+            "fixedscreen": 3,
+            "isDefault": 0,
+            "displayNumDi": 1,
+            "index": 2
         }
     }
 }
