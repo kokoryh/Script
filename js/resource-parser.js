@@ -1,5 +1,5 @@
 /**
- ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2023-01-11 19:00⟧
+ ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2023-02-08 13:15⟧
  ----------------------------------------------------------
  🛠 发现 𝐁𝐔𝐆 请反馈: https://t.me/Shawn_Parser_Bot
  ⛳️ 关注 🆃🅶 相关频道: https://t.me/QuanX_API
@@ -311,7 +311,7 @@ var flag = 1
 function Parser() {
     type0 = Type_Check(content0); //  类型判断
     //$notify(type0)
-    if (type0 != "web" && type0 != "wrong-field"){
+    if (type0 != "web" && type0 != "wrong-field" && type0 != "JS-0"){
         try {
             //$notify(type0,"hh")
             if (Pdbg){
@@ -435,6 +435,8 @@ function ResourceParse() {
         openlink = {"open-url": ADDres}
         $notify("⚠️ 该链接为完整配置文件, 请点击此通知跳转", "添加配置中的有效远程资源👇 ["+ PProfile+"]", ADDres, openlink)
         flag = -1;
+        total = ""
+    } else if (type0 == "JS-0") {
         total = ""
     }
 
@@ -646,7 +648,8 @@ function Type_Check(subs) {
         typec = "sub-http"
         type = "sub-http"
     } else if (/\.js/.test(link0)) { // xjb添加js脚本的行为
-        $notify("⚠️ 你导入的链接内容为 JS 脚本","🚥 脚本内未有重写注释，无法解析使用", link0)
+        $notify("⚠️ 你导入的链接内容为 JS 脚本","🚥 脚本内未有重写规则，无法解析使用", " 请⚠️不要⚠️跑来解析器🤖️反馈 \n"+link0)
+        type = "JS-0"
     } //else if (typeQ == "URI")
     // 用于通知判断类型，debug
     if(typeU == "X"){
@@ -1739,7 +1742,7 @@ function VR2QX(subs, Pudp, Ptfo, Pcert0, PTls13) {
         host = host!="{}" && host ? "obfs-host=" + host + ", " : ""
         obfs = obfs + host
     } else if (obfs=="grpc") {
-        $notify("⚠️ 暂不支持 grpc 类型 vmess节点，已忽略此条", "", subs)
+        $notify("⚠️ Quantumult X 暂不支持 grpc 类型 vmess节点，已忽略此条", "", subs)
         pdrop = 1
     }
     if (obfs.indexOf("obfs=over-tls") != -1 || obfs.indexOf("obfs=wss") != -1) {
@@ -1844,7 +1847,7 @@ function Fobfs(jsonl, Pcert0, PTls13) {
         obfsi.push(obfs0, host0 + uri0);
         return obfsi.join(", ")
     } else if (jsonl.net !="tcp"){ // 过滤掉 h2/http 等类型
-        $notify("⚠️ Quantumult X 不支持该类型节点", jsonl.net, JSON.stringify(jsonl))
+        $notify("⚠️ Quantumult X 不支持该类型节点", "vmess + " + jsonl.net, JSON.stringify(jsonl))
         return "NOT-SUPPORTTED"
     } else if (jsonl.net =="tcp" && jsonl.type != "none" && jsonl.type != "") {
         return "NOT-SUPPORTTED"
@@ -2449,6 +2452,8 @@ function get_emoji(emojip, sname) {
         "🇨🇾": ["CY","塞浦路斯", "Cyprus"],
         "🇨🇷": ["哥斯达黎加", "Costa Rica"],
         "🇹🇳": ["突尼斯", "Tunisia"],
+        "🇻🇦": ["梵蒂冈"],
+        "🇷🇼": ["卢旺达"],
         "🇵🇦": ["巴拿马","巴拿馬", "Panama"],
         "🇮🇷": ["伊朗", "Iran"],
         "🇯🇴": ["约旦", "約旦", "Jordan"],
