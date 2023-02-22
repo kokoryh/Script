@@ -16,7 +16,7 @@
 */
 
 // let $ = kokoryh();
-//
+
 // if (typeof $response !== 'undefined') {
 //     removeAds();
 // } else {
@@ -29,11 +29,19 @@ function removeAds() {
     let body;
     let obj = JSON.parse($request.body);
     if (obj.placementNo === "0007") {
-        body = '{"materialsList":[{"billMaterialsId":"255","filePath":"h","creativeType":1}],"advertParam":{"skipTime":1}}'
+        body = '{"materialsList":[{"billMaterialsId":"255","filePath":"h","creativeType":1}],"advertParam":{"skipTime":1}}';
     } else {
-        body = '{"code":"00","message":"无广告返回"}'
+        body = '{"code":"00","message":"无广告返回"}';
     }
-    $done({body})
+    if ($task) $done({body});
+    else $done({response: {body}})
+}
+
+function handleRequest() {
+    let headers = $request.headers;
+    let body = JSON.parse($request.body);
+    headers.placementNo = body.placementNo;
+    $done({headers});
 }
 
 function removeAdsOld() {
