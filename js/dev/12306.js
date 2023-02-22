@@ -32,6 +32,8 @@ function removeAds() {
         body = '{"materialsList":[{"billMaterialsId":"255","filePath":"h","creativeType":1}],"advertParam":{"skipTime":1}}';
     } else if (obj.placementNo === "G0054") {
         body = '{"code":"00","materialsList":[{}],"advertParam":{"skipTime":3000,"showSkipBtn":0,"skipTimeAgain":0,"chacheTime":600000,"fixedscreen":3,"isDefault":0,"displayNumDi":1,"index":2}}';
+    } else if (obj.placementNo === "0075") {
+        $done({})
     } else {
         body = '{"code":"00","message":"无广告返回"}';
     }
