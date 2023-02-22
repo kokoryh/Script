@@ -1044,10 +1044,12 @@ function URX2QX(subs) {
 
 function isEcho(str, list) {
     let res = false
-    for (const item of list) {
-        if (str.includes(item)) {
-            res = true
-            break
+    if (list?.length) {
+        for (const item of list) {
+            if (str.includes(item)) {
+                res = true
+                break
+            }
         }
     }
     return res
