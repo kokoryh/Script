@@ -157,6 +157,7 @@ SubFlow() //流量通知
 
 
 // 参数获取
+var Pecho = mark0 && para1.indexOf("echo=") != -1 ? (para1.split("echo=")[1].split("&")[0].split("+")).map(decodeURIComponent) : null; //将http-request转换为script-analyze-echo-response
 var Pin0 = mark0 && para1.indexOf("in=") != -1 ? (para1.split("in=")[1].split("&")[0].split("+")).map(decodeURIComponent) : null;
 var Pout0 = mark0 && (para.indexOf("#out=") != -1 || para.indexOf("&out=") != -1)? ((para.indexOf("#out=")!=-1? para.split("#out="): para.split("&out="))[1].split("&")[0].split("+")).map(decodeURIComponent) : null;
 var Psfilter = mark0 && para1.indexOf("sfilter=") != -1 ? Base64.decode(para1.split("sfilter=")[1].split("&")[0]) : null; // script filter
@@ -1041,6 +1042,17 @@ function URX2QX(subs) {
     return nrw
 }
 
+function isEcho(js, echoList) {
+    let res = false
+    for (const item of echoList) {
+        if (js.includes(item)) {
+            res = true
+            break
+        }
+    }
+    return res
+}
+
 //script&rewrite 转换成 Quantumult X
 function SCP2QX(subs) {
     var nrw = []
@@ -1067,6 +1079,8 @@ function SCP2QX(subs) {
                         type = "script-response-body "
                     } else if (type == "http-response" && subsi.indexOf("requires-body=1") == -1) {
                         type = "script-response-header "
+                    } else if (type == "http-request" && subsi.indexOf("requires-body=1") != -1 && isEcho(js, Pecho)) {
+                        type = "script-analyze-echo-response "
                     } else if (type == "http-request" && subsi.indexOf("requires-body=1") != -1) {
                         type = "script-request-body "
                     } else if (type == "http-request" && subsi.indexOf("requires-body=1") == -1) {
@@ -1113,6 +1127,8 @@ function SCP2QX(subs) {
                         type = "script-response-body "
                     } else if (type == "http-response" && subsi.indexOf("requires-body=1") == -1) {
                         type = "script-response-header "
+                    } else if (type == "http-request" && subsi.indexOf("requires-body=1") != -1 && isEcho(js, Pecho)) {
+                        type = "script-analyze-echo-response "
                     } else if (type == "http-request" && subsi.indexOf("requires-body=1") != -1) {
                         type = "script-request-body "
                     } else if (type == "http-request" && subsi.indexOf("requires-body=1") == -1) {
