@@ -1,8 +1,14 @@
 # 机场
 DOMAIN,rss.teacat001.xyz
-DOMAIN,dy.wangchen.xyz
+DOMAIN,dy.sbgfw.info
 DOMAIN,www.efcloud.cc
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
+
+# 代理软件激活检测
+DOMAIN-SUFFIX,quantumult.app
+DOMAIN-SUFFIX,nssurge.com
+DOMAIN-SUFFIX,surge-activation.com
+DOMAIN-SUFFIX,stash-activation.com
 
 # notion 数据源：https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Notion/Notion.list
 DOMAIN-SUFFIX,notion-static.com
@@ -11,11 +17,19 @@ DOMAIN-SUFFIX,notion.new
 DOMAIN-SUFFIX,notion.site
 DOMAIN-SUFFIX,notion.so
 
+# 南+
+DOMAIN,www.south-plus.net
+DOMAIN,www.summer-plus.net
+DOMAIN,bbs.imoutolove.me
+
+# 网页
+DOMAIN,www.colamanhua.com
+DOMAIN,hanime1.me
+DOMAIN-SUFFIX,asmr.one
+DOMAIN-SUFFIX,nhentai.net
+
 # codeberg
 DOMAIN-SUFFIX,codeberg.org
-
-# scriptable
-DOMAIN,gallery.scriptable.app
 
 # adguard
 DOMAIN,filters.adtidy.org
@@ -25,12 +39,6 @@ DOMAIN-SUFFIX,adguard.org
 DOMAIN,login.live.com
 DOMAIN,storage.live.com
 DOMAIN,edge.activity.windows.com
-
-# 代理软件激活检测
-DOMAIN-SUFFIX,quantumult.app
-DOMAIN-SUFFIX,nssurge.com
-DOMAIN-SUFFIX,surge-activation.com
-DOMAIN-SUFFIX,stash-activation.com
 
 # goodnotes
 DOMAIN-SUFFIX,mixpanel.com
@@ -43,15 +51,6 @@ DOMAIN-SUFFIX,notability.com
 
 # musedash
 DOMAIN-SUFFIX,peropero.net
-
-# 南+
-DOMAIN,www.summer-plus.net
-DOMAIN,bbs.imoutolove.me
-
-# 网页
-DOMAIN-SUFFIX,asmr.one
-DOMAIN-SUFFIX,nhentai.net
-DOMAIN,www.colamanhua.com
 
 # 一些乱七八糟的不知道干嘛用的
 DOMAIN,in.appcenter.ms

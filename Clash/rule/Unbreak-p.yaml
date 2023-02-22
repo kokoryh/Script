@@ -1,10 +1,10 @@
 payload:
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
   - DOMAIN,bbs.imoutolove.me
-  - DOMAIN,dy.wangchen.xyz
+  - DOMAIN,dy.sbgfw.info
   - DOMAIN,edge.activity.windows.com
   - DOMAIN,filters.adtidy.org
-  - DOMAIN,gallery.scriptable.app
+  - DOMAIN,hanime1.me
   - DOMAIN,in.appcenter.ms
   - DOMAIN,login.live.com
   - DOMAIN,mozilla.cloudflare-dns.com
@@ -12,6 +12,7 @@ payload:
   - DOMAIN,storage.live.com
   - DOMAIN,www.colamanhua.com
   - DOMAIN,www.efcloud.cc
+  - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,amazontrust.com

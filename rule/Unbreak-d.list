@@ -3,12 +3,12 @@
 DOMAIN,cdn.jsdelivr.net
 DOMAIN,fastly.jsdelivr.net
 
-# 飞极速在线
+# 网页
+DOMAIN,www.agemys.net
 DOMAIN-SUFFIX,feijisu20.com
 
 # 修正广告拦截的分流
 DOMAIN,ca.iadsdk.apple.com
-
 
 # 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list
 # Unbreak
