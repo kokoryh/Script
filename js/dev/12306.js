@@ -34,7 +34,7 @@ function removeAds() {
         body = '{"code":"00","message":"无广告返回"}';
     }
     if ('undefined' !== typeof $task) $done({body});
-    else $done({response: {status: 200, body}});
+    else $done({response: {body}});
 }
 
 function removeAdsOld() {
