@@ -1,8 +1,9 @@
-#-USER-AGENT,YouTube*
+-USER-AGENT,YouTube*
 
 # 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/YouTube.list
 # > YouTube
 USER-AGENT,com.google.ios.youtube*
+USER-AGENT,YouTube*
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,withyoutube.com
 DOMAIN-SUFFIX,youtu.be

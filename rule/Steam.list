@@ -1,5 +1,4 @@
-# @kokoryh 自行维护
-# Steam(ios端专用)
+# Steam iOS
 DOMAIN,steammobile.akamaized.net
 DOMAIN,steamcommunity-a.akamaihd.net
 DOMAIN-SUFFIX,st.dl.eccdnx.com
@@ -9,6 +8,8 @@ DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,steambroadcast.akamaized.net
 
 # 数据源：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
+# 内容：Steam
+# 数量：19条
 DOMAIN,steambroadcast.akamaized.net
 DOMAIN,steamcdn-a.akamaihd.net
 DOMAIN,steamcommunity-a.akamaihd.net

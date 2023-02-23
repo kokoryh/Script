@@ -1,13 +1,18 @@
 # @kokoryh 自行维护
+DOMAIN-SUFFIX,akadns.net
+DOMAIN-SUFFIX,apple.com.edgekey.net
 DOMAIN-SUFFIX,safebrowsing.apple
+
+-DOMAIN-KEYWORD,apple.com.akadns.net
+-DOMAIN-KEYWORD,apple.com.edgekey.net
+-DOMAIN-KEYWORD,apple-support.akadns.net
+-DOMAIN-KEYWORD,icloud.com.akadns.net
 
 # 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list
 DOMAIN-SUFFIX,aaplimg.com
-DOMAIN-SUFFIX,akadns.net
 DOMAIN-SUFFIX,apple.co
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.cn
-DOMAIN-SUFFIX,apple.com.edgekey.net
 DOMAIN-SUFFIX,apple-cloudkit.com
 DOMAIN-SUFFIX,apple-livephotoskit.com
 DOMAIN-SUFFIX,apple-mapkit.com
@@ -20,3 +25,7 @@ DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-KEYWORD,apple.com.akadns.net
+DOMAIN-KEYWORD,apple.com.edgekey.net
+DOMAIN-KEYWORD,apple-support.akadns.net
+DOMAIN-KEYWORD,icloud.com.akadns.net
