@@ -7,8 +7,6 @@ payload:
   - DOMAIN,mqtt.zhihu.com
   - DOMAIN,sugar.zhihu.com
   - DOMAIN-SUFFIX,music.163.com.163jiasu.com
-  - DOMAIN-SUFFIX,optimus-ads.amap.com
-  - DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
   - DOMAIN-SUFFIX,szbdyd.com
   - IP-CIDR,118.89.204.198/32,no-resolve
   - IP-CIDR,180.76.76.200/32,no-resolve
