@@ -1,7 +1,5 @@
-# @kokoryh 自行维护
 # cdn
-DOMAIN,cdn.jsdelivr.net
-DOMAIN,fastly.jsdelivr.net
+DOMAIN-SUFFIX,jsdelivr.net
 
 # 网页
 DOMAIN-SUFFIX,agemys.net

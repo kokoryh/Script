@@ -12,12 +12,10 @@ payload:
   - DOMAIN,app.appsflyer.com
   - DOMAIN,bdtj.tagtic.cn
   - DOMAIN,ca.iadsdk.apple.com
-  - DOMAIN,cdn.jsdelivr.net
   - DOMAIN,clientservices.googleapis.com
   - DOMAIN,dl.google.com
   - DOMAIN,dl.l.google.com
   - DOMAIN,fairplay.l.qq.com
-  - DOMAIN,fastly.jsdelivr.net
   - DOMAIN,livew.l.qq.com
   - DOMAIN,log.mmstat.com
   - DOMAIN,msg.umeng.com
@@ -31,3 +29,4 @@ payload:
   - DOMAIN-SUFFIX,blog.google
   - DOMAIN-SUFFIX,feijisu20.com
   - DOMAIN-SUFFIX,googletraveladservices.com
+  - DOMAIN-SUFFIX,jsdelivr.net

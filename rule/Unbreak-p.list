@@ -1,5 +1,6 @@
 # 机场
 DOMAIN,rss.teacat001.xyz
+DOMAIN,teacat.cloud
 DOMAIN,dy.sbgfw.info
 DOMAIN,www.efcloud.cc
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
@@ -35,11 +36,6 @@ DOMAIN-SUFFIX,codeberg.org
 DOMAIN,filters.adtidy.org
 DOMAIN-SUFFIX,adguard.org
 
-# Microsoft
-DOMAIN,login.live.com
-DOMAIN,storage.live.com
-DOMAIN,edge.activity.windows.com
-
 # goodnotes
 DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,goodnotes.email
@@ -51,6 +47,16 @@ DOMAIN-SUFFIX,notability.com
 
 # musedash
 DOMAIN-SUFFIX,peropero.net
+
+# Microsoft
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,live.net
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,windows.net
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,onenote.com
+DOMAIN-SUFFIX,onenote.net
 
 # 一些乱七八糟的不知道干嘛用的
 DOMAIN,in.appcenter.ms
