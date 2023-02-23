@@ -27,7 +27,7 @@ payload:
   - DOMAIN,update.googleapis.com
   - DOMAIN,vd.l.qq.com
   - DOMAIN,vi.l.qq.com
-  - DOMAIN,www.agemys.net
+  - DOMAIN-SUFFIX,agemys.net
   - DOMAIN-SUFFIX,blog.google
   - DOMAIN-SUFFIX,feijisu20.com
   - DOMAIN-SUFFIX,googletraveladservices.com

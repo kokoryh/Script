@@ -4,7 +4,7 @@ DOMAIN,cdn.jsdelivr.net
 DOMAIN,fastly.jsdelivr.net
 
 # 网页
-DOMAIN,www.agemys.net
+DOMAIN-SUFFIX,agemys.net
 DOMAIN-SUFFIX,feijisu20.com
 
 # 修正广告拦截的分流
