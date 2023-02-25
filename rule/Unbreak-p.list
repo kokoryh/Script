@@ -11,13 +11,6 @@ DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,stash-activation.com
 
-# notion 数据源：https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Notion/Notion.list
-DOMAIN-SUFFIX,notion-static.com
-DOMAIN-SUFFIX,notion.com
-DOMAIN-SUFFIX,notion.new
-DOMAIN-SUFFIX,notion.site
-DOMAIN-SUFFIX,notion.so
-
 # 南+
 DOMAIN,www.south-plus.net
 DOMAIN,www.summer-plus.net

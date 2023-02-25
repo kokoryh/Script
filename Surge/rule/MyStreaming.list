@@ -164,15 +164,11 @@ DOMAIN-SUFFIX,pornhub.com
 DOMAIN-SUFFIX,pornhubpremium.com
 DOMAIN-SUFFIX,pplusstatic.com
 DOMAIN-SUFFIX,primevideo.com
-DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,pv-cdn.net
-DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,skyking.com.tw
 DOMAIN-SUFFIX,smartmediarep.com
 DOMAIN-SUFFIX,sndcdn.com
 DOMAIN-SUFFIX,soundcloud.com
-DOMAIN-SUFFIX,spoti.fi
-DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tik-tokapi.com
 DOMAIN-SUFFIX,tiktok.com
@@ -197,7 +193,6 @@ DOMAIN-SUFFIX,youtubegaming.com
 DOMAIN-SUFFIX,youtubekids.com
 DOMAIN-SUFFIX,yt.be
 DOMAIN-SUFFIX,ytimg.com
-DOMAIN-KEYWORD,-spotify-com
 DOMAIN-KEYWORD,.hbogoasia.
 DOMAIN-KEYWORD,abematv.akamaized.net
 DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
@@ -208,7 +203,6 @@ DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,hamivideo.cdn.hinet.net
 DOMAIN-KEYWORD,jooxweb-api
 DOMAIN-KEYWORD,netflixdnstest
-DOMAIN-KEYWORD,spotify.com
 DOMAIN-KEYWORD,tiktokcdn-
 DOMAIN-KEYWORD,uk-live
 DOMAIN-KEYWORD,voddazn
@@ -257,7 +251,6 @@ USER-AGENT,Pandora*
 USER-AGENT,PeacockMobile*
 USER-AGENT,Prime%20Video*
 USER-AGENT,SoundCloud*
-USER-AGENT,Spotify*
 USER-AGENT,TIDAL*
 USER-AGENT,TVer-Release*
 USER-AGENT,TaiwanGood*
