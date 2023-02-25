@@ -29,9 +29,9 @@ function EnvInfo() {
 async function SwitchRegion(title, url, body) {
     const Group = $.read('BiliArea_Policy') || 'Bilibili';  // B站策略组名
     const CN = $.read('BiliArea_CN') || 'DIRECT';           // 直连子策略名
-    const TW = $.read('BiliArea_TW') || '台湾节点';          // 台湾子策略名
     const HK = $.read('BiliArea_HK') || '香港节点';          // 香港子策略名
-    const DF = $.read('BiliArea_DF') || 'FALLBACK';         // 备用子策略名
+    const TW = $.read('BiliArea_TW') || '台湾节点';          // 台湾子策略名
+    const DF = $.read('BiliArea_DF') || '台湾节点';          // 备用子策略名
     const off = $.read('BiliArea_disabled') || '';          // WiFi 黑名单
     const current = await $.getPolicy(Group);
     const area = (() => {

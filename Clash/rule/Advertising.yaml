@@ -162,6 +162,8 @@ payload:
   - DOMAIN,nadvideo2.baidu.com
   - DOMAIN,nex.163.com
   - DOMAIN,nsclick.baidu.com
+  - DOMAIN,optimus-ads.amap.com
+  - DOMAIN,optimus-ads.amap.com.w.alikunlun.com
   - DOMAIN,pangolin.snssdk.com
   - DOMAIN,pgdt.gtimg.cn
   - DOMAIN,pgdt.gtimg.com
@@ -247,8 +249,6 @@ payload:
   - DOMAIN-SUFFIX,l.qq.com
   - DOMAIN-SUFFIX,log.hunantv.com
   - DOMAIN-SUFFIX,music.163.com.163jiasu.com
-  - DOMAIN-SUFFIX,optimus-ads.amap.com
-  - DOMAIN-SUFFIX,optimus-ads.amap.com.w.alikunlun.com
   - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
   - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
   - DOMAIN-SUFFIX,pos.baidu.com

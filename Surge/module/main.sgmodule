@@ -1,17 +1,6 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
-# 淘宝
-# ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ - reject
-# 京东
-# ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
-# ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
-# ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/
-# 拼多多
-# ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
-# 微信公众号广告
-# ^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
-
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
@@ -35,8 +24,10 @@
 http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 # 美团外卖开屏
 http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/loadInfo\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
+# 微信公众号广告
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 # 扫描全能王破解
 http-response ^https:\/\/api(-cs)?\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, api*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, mp.weixin.qq.com, api*.intsig.net

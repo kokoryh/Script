@@ -24,10 +24,15 @@ DOMAIN,www.summer-plus.net
 DOMAIN,bbs.imoutolove.me
 
 # 网页
-DOMAIN,www.colamanhua.com
-DOMAIN,hanime1.me
+DOMAIN-SUFFIX,colamanhua.com
 DOMAIN-SUFFIX,asmr.one
 DOMAIN-SUFFIX,nhentai.net
+DOMAIN-SUFFIX,hanime1.me
+DOMAIN-SUFFIX,javbus.com
+DOMAIN-SUFFIX,missav.com
+DOMAIN-SUFFIX,avgle.com
+DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,av01.tv
 
 # codeberg
 DOMAIN-SUFFIX,codeberg.org

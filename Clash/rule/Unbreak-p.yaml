@@ -3,27 +3,32 @@ payload:
   - DOMAIN,bbs.imoutolove.me
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,filters.adtidy.org
-  - DOMAIN,hanime1.me
   - DOMAIN,in.appcenter.ms
   - DOMAIN,mozilla.cloudflare-dns.com
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,teacat.cloud
-  - DOMAIN,www.colamanhua.com
   - DOMAIN,www.efcloud.cc
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,amazontrust.com
   - DOMAIN-SUFFIX,asmr.one
+  - DOMAIN-SUFFIX,av01.tv
+  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,codeberg.org
+  - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,digicert.com
   - DOMAIN-SUFFIX,goodnotes.email
   - DOMAIN-SUFFIX,goodnotescloud.com
   - DOMAIN-SUFFIX,goodnotesplatform.com
   - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,hanime1.me
+  - DOMAIN-SUFFIX,jable.tv
+  - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live.net
+  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notability.com
