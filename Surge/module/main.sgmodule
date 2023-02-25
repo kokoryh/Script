@@ -17,17 +17,19 @@
 # 浙里办开屏
 ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject
 
+# 美团外卖开屏
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/(loadInfo|openscreen|startpicture)\?ad - reject
+^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
+
 [Map Local]
 
 [Script]
 # 12306开屏
 http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
-# 美团外卖开屏
-http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/loadInfo\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 # 微信公众号广告
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 # 扫描全能王破解
 http-response ^https:\/\/api(-cs)?\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, mp.weixin.qq.com, api*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, img.meituan.net, mp.weixin.qq.com, api*.intsig.net
