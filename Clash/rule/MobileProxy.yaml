@@ -78,6 +78,7 @@ payload:
   - DOMAIN-SUFFIX,api.ai
   - DOMAIN-SUFFIX,apigee.com
   - DOMAIN-SUFFIX,apple.news
+  - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,appspot.com
   - DOMAIN-SUFFIX,appsto.re
   - DOMAIN-SUFFIX,archive.fo

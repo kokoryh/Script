@@ -12,6 +12,7 @@ payload:
   - DOMAIN,www.summer-plus.net
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,amazontrust.com
+  - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,asmr.one
   - DOMAIN-SUFFIX,av01.tv
   - DOMAIN-SUFFIX,avgle.com
