@@ -3,12 +3,14 @@ payload:
   - DOMAIN,a771.dscq.akamai.net
   - DOMAIN,addons.mozilla.org
   - DOMAIN,amp-api.podcasts.apple.com
+  - DOMAIN,api.ndsxfkjfvhzdsfio.quest
   - DOMAIN,apple.comscoreresearch.com
   - DOMAIN,apps.apple.com
   - DOMAIN,assets1.xboxlive.com
   - DOMAIN,assets2.xboxlive.com
   - DOMAIN,az416426.vo.msecnd.net
   - DOMAIN,az668014.vo.msecnd.net
+  - DOMAIN,bbs.imoutolove.me
   - DOMAIN,beta.music.apple.com
   - DOMAIN,books.apple.com
   - DOMAIN,books.itunes.apple.com
@@ -16,11 +18,15 @@ payload:
   - DOMAIN,clubhouse.pubnubapi.com
   - DOMAIN,d3c33hcgiwev3.cloudfront.net
   - DOMAIN,disk.yandex.com
+  - DOMAIN,dy.sbgfw.info
+  - DOMAIN,filters.adtidy.org
   - DOMAIN,gateway.icloud.com
   - DOMAIN,github.global.ssl.fastly.net
+  - DOMAIN,in.appcenter.ms
   - DOMAIN,itunes.apple.com
   - DOMAIN,lab.skk.moe
   - DOMAIN,lookup-api.apple.com
+  - DOMAIN,mozilla.cloudflare-dns.com
   - DOMAIN,news-assets.apple.com
   - DOMAIN,news-client-search.apple.com
   - DOMAIN,news-client.apple.com
@@ -30,17 +36,30 @@ payload:
   - DOMAIN,ocsp.int-x3.letsencrypt.org
   - DOMAIN,payments-jp.amazon.com
   - DOMAIN,radio.itunes.apple.com
+  - DOMAIN,rss.teacat001.xyz
   - DOMAIN,s3-ap-northeast-1.amazonaws.com
   - DOMAIN,s3-ap-southeast-2.amazonaws.com
   - DOMAIN,search.yahoo.co.jp
+  - DOMAIN,steamcdn-a.akamaihd.net
+  - DOMAIN,steamcommunity-a.akamaihd.net
+  - DOMAIN,steammobile.akamaized.net
+  - DOMAIN,steampipe.akamaized.net
+  - DOMAIN,steamstore-a.akamaihd.net
+  - DOMAIN,steamusercontent-a.akamaihd.net
+  - DOMAIN,steamuserimages-a.akamaihd.net
+  - DOMAIN,teacat.cloud
   - DOMAIN,testflight.apple.com
   - DOMAIN,tv.apple.com
   - DOMAIN,wego.here.com
+  - DOMAIN,www.efcloud.cc
+  - DOMAIN,www.south-plus.net
+  - DOMAIN,www.summer-plus.net
   - DOMAIN-SUFFIX,9cache.com
   - DOMAIN-SUFFIX,9gag.com
   - DOMAIN-SUFFIX,abc.com
   - DOMAIN-SUFFIX,abc.xyz
   - DOMAIN-SUFFIX,accountkit.com
+  - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,admob.com
   - DOMAIN-SUFFIX,adsense.com
   - DOMAIN-SUFFIX,advertisercommunity.com
@@ -49,6 +68,7 @@ payload:
   - DOMAIN-SUFFIX,aimoon.com
   - DOMAIN-SUFFIX,aka.ms
   - DOMAIN-SUFFIX,amazon.co.jp
+  - DOMAIN-SUFFIX,amazontrust.com
   - DOMAIN-SUFFIX,ampproject.org
   - DOMAIN-SUFFIX,anchor.fm
   - DOMAIN-SUFFIX,android.com
@@ -65,7 +85,10 @@ payload:
   - DOMAIN-SUFFIX,archiveofourown.org
   - DOMAIN-SUFFIX,artstation.com
   - DOMAIN-SUFFIX,ask.com
+  - DOMAIN-SUFFIX,asmr.one
+  - DOMAIN-SUFFIX,av01.tv
   - DOMAIN-SUFFIX,avg.com
+  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,axios.com
   - DOMAIN-SUFFIX,bandcamp.com
   - DOMAIN-SUFFIX,bandwagonhost.com
@@ -106,11 +129,13 @@ payload:
   - DOMAIN-SUFFIX,clubhouseapi.com
   - DOMAIN-SUFFIX,clyp.it
   - DOMAIN-SUFFIX,cna.com.tw
+  - DOMAIN-SUFFIX,codeberg.org
   - DOMAIN-SUFFIX,coinbase.com
   - DOMAIN-SUFFIX,coincheck.com
   - DOMAIN-SUFFIX,coingecko.com
   - DOMAIN-SUFFIX,coinmarketcap.com
   - DOMAIN-SUFFIX,coinone.co.kr
+  - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,conoha.jp
   - DOMAIN-SUFFIX,coursehero.com
   - DOMAIN-SUFFIX,dailymotion.com
@@ -121,6 +146,7 @@ payload:
   - DOMAIN-SUFFIX,deviantart.com
   - DOMAIN-SUFFIX,deviantart.net
   - DOMAIN-SUFFIX,dialogflow.com
+  - DOMAIN-SUFFIX,digicert.com
   - DOMAIN-SUFFIX,disconnect.me
   - DOMAIN-SUFFIX,discord.com
   - DOMAIN-SUFFIX,discordapp.com
@@ -140,6 +166,7 @@ payload:
   - DOMAIN-SUFFIX,etherscan.io
   - DOMAIN-SUFFIX,f8.com
   - DOMAIN-SUFFIX,facebookmail.com
+  - DOMAIN-SUFFIX,fanatical.com
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
   - DOMAIN-SUFFIX,fb.watch
@@ -180,16 +207,22 @@ payload:
   - DOMAIN-SUFFIX,gmodules.com
   - DOMAIN-SUFFIX,go.dev
   - DOMAIN-SUFFIX,golang.org
+  - DOMAIN-SUFFIX,goodnotes.email
+  - DOMAIN-SUFFIX,goodnotescloud.com
+  - DOMAIN-SUFFIX,goodnotesplatform.com
   - DOMAIN-SUFFIX,goog
   - DOMAIN-SUFFIX,graphql.org
   - DOMAIN-SUFFIX,gravatar.com
+  - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,gvt0.com
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt3.com
   - DOMAIN-SUFFIX,hackmd.io
+  - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,heroku.com
   - DOMAIN-SUFFIX,hket.com
   - DOMAIN-SUFFIX,huffpost.com
+  - DOMAIN-SUFFIX,humblebundle.com
   - DOMAIN-SUFFIX,huobi.com
   - DOMAIN-SUFFIX,i-cable.com
   - DOMAIN-SUFFIX,ifixit.com
@@ -201,6 +234,8 @@ payload:
   - DOMAIN-SUFFIX,issuu.com
   - DOMAIN-SUFFIX,istockphoto.com
   - DOMAIN-SUFFIX,itasoftware.com
+  - DOMAIN-SUFFIX,jable.tv
+  - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,joinclubhouse.com
   - DOMAIN-SUFFIX,justpaste.it
   - DOMAIN-SUFFIX,kakao.com
@@ -209,6 +244,7 @@ payload:
   - DOMAIN-SUFFIX,kraken.com
   - DOMAIN-SUFFIX,kucoin.com
   - DOMAIN-SUFFIX,legra.ph
+  - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,licdn.com
   - DOMAIN-SUFFIX,line-apps.com
   - DOMAIN-SUFFIX,line-scdn.net
@@ -216,6 +252,8 @@ payload:
   - DOMAIN-SUFFIX,linkedin.com
   - DOMAIN-SUFFIX,liquid.com
   - DOMAIN-SUFFIX,listennotes.com
+  - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,live.net
   - DOMAIN-SUFFIX,livestream.com
   - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,mailchimp.com
@@ -227,7 +265,9 @@ payload:
   - DOMAIN-SUFFIX,mega.io
   - DOMAIN-SUFFIX,mega.nz
   - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,mixlr.com
+  - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,moon.fm
   - DOMAIN-SUFFIX,msn.com
   - DOMAIN-SUFFIX,mubi.com
@@ -240,7 +280,15 @@ payload:
   - DOMAIN-SUFFIX,newsweek.com
   - DOMAIN-SUFFIX,newyorker.com
   - DOMAIN-SUFFIX,newyorktimes.com
+  - DOMAIN-SUFFIX,nhentai.net
+  - DOMAIN-SUFFIX,notability.com
+  - DOMAIN-SUFFIX,notion-static.com
+  - DOMAIN-SUFFIX,notion.com
+  - DOMAIN-SUFFIX,notion.new
+  - DOMAIN-SUFFIX,notion.site
+  - DOMAIN-SUFFIX,notion.so
   - DOMAIN-SUFFIX,now.com
+  - DOMAIN-SUFFIX,nssurge.com
   - DOMAIN-SUFFIX,nyt.com
   - DOMAIN-SUFFIX,nytco.com
   - DOMAIN-SUFFIX,nytimes.com
@@ -249,12 +297,15 @@ payload:
   - DOMAIN-SUFFIX,nytstyle.com
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,office.com
+  - DOMAIN-SUFFIX,office.net
   - DOMAIN-SUFFIX,ok.ru
   - DOMAIN-SUFFIX,okex.com
   - DOMAIN-SUFFIX,okx.com
   - DOMAIN-SUFFIX,omny.fm
   - DOMAIN-SUFFIX,on2.com
-  - DOMAIN-SUFFIX,onedrive.live.com
+  - DOMAIN-SUFFIX,onenote.com
+  - DOMAIN-SUFFIX,onenote.net
   - DOMAIN-SUFFIX,openvpn.net
   - DOMAIN-SUFFIX,owltail.com
   - DOMAIN-SUFFIX,oxfordscholarship.com
@@ -264,9 +315,11 @@ payload:
   - DOMAIN-SUFFIX,pcloud.com
   - DOMAIN-SUFFIX,peing.net
   - DOMAIN-SUFFIX,periscope.tv
+  - DOMAIN-SUFFIX,peropero.net
   - DOMAIN-SUFFIX,pinimg.com
   - DOMAIN-SUFFIX,pixiv.net
   - DOMAIN-SUFFIX,pixiv.org
+  - DOMAIN-SUFFIX,playartifact.com
   - DOMAIN-SUFFIX,player.fm
   - DOMAIN-SUFFIX,podbean.com
   - DOMAIN-SUFFIX,poloniex.com
@@ -275,6 +328,7 @@ payload:
   - DOMAIN-SUFFIX,proxifier.com
   - DOMAIN-SUFFIX,pscp.tv
   - DOMAIN-SUFFIX,pximg.net
+  - DOMAIN-SUFFIX,quantumult.app
   - DOMAIN-SUFFIX,quora.com
   - DOMAIN-SUFFIX,quoracdn.net
   - DOMAIN-SUFFIX,qz.com
@@ -304,18 +358,28 @@ payload:
   - DOMAIN-SUFFIX,slideshare.net
   - DOMAIN-SUFFIX,smartmailcloud.com
   - DOMAIN-SUFFIX,smh.com.au
+  - DOMAIN-SUFFIX,smoot.apple.cn
   - DOMAIN-SUFFIX,smoot.apple.com
   - DOMAIN-SUFFIX,speakerdeck.com
   - DOMAIN-SUFFIX,spideroak.com
   - DOMAIN-SUFFIX,spiegel.de
+  - DOMAIN-SUFFIX,st.dl.eccdnx.com
   - DOMAIN-SUFFIX,startpage.com
+  - DOMAIN-SUFFIX,stash-activation.com
   - DOMAIN-SUFFIX,static-economist.com
+  - DOMAIN-SUFFIX,steam-chat.com
+  - DOMAIN-SUFFIX,steambroadcast.akamaized.net
   - DOMAIN-SUFFIX,steamcommunity.com
+  - DOMAIN-SUFFIX,steamgames.com
+  - DOMAIN-SUFFIX,steampowered.com
+  - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN-SUFFIX,steamstat.us
+  - DOMAIN-SUFFIX,steamstatic.com
   - DOMAIN-SUFFIX,steemit.com
   - DOMAIN-SUFFIX,straitstimes.com
   - DOMAIN-SUFFIX,streamable.com
-  - DOMAIN-SUFFIX,streaming.mediaservices.windows.net
   - DOMAIN-SUFFIX,substack.com
+  - DOMAIN-SUFFIX,surge-activation.com
   - DOMAIN-SUFFIX,sushi.com
   - DOMAIN-SUFFIX,swissinfo.ch
   - DOMAIN-SUFFIX,t.co
@@ -357,10 +421,13 @@ payload:
   - DOMAIN-SUFFIX,twitpic.com
   - DOMAIN-SUFFIX,twitter.com
   - DOMAIN-SUFFIX,twitter.jp
+  - DOMAIN-SUFFIX,underlords.com
   - DOMAIN-SUFFIX,uniswap.org
   - DOMAIN-SUFFIX,urbandictionary.com
+  - DOMAIN-SUFFIX,usertrust.com
   - DOMAIN-SUFFIX,ustream.tv
   - DOMAIN-SUFFIX,v2ex.com
+  - DOMAIN-SUFFIX,valvesoftware.com
   - DOMAIN-SUFFIX,venturebeat.com
   - DOMAIN-SUFFIX,viber.com
   - DOMAIN-SUFFIX,videopress.com
@@ -393,6 +460,8 @@ payload:
   - DOMAIN-SUFFIX,wikivoyage.org
   - DOMAIN-SUFFIX,wikiwand.com
   - DOMAIN-SUFFIX,wiktionary.org
+  - DOMAIN-SUFFIX,windows.com
+  - DOMAIN-SUFFIX,windows.net
   - DOMAIN-SUFFIX,wire.com
   - DOMAIN-SUFFIX,wireguard.com
   - DOMAIN-SUFFIX,wn.com

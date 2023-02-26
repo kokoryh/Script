@@ -1,9 +1,8 @@
-# cdn
-DOMAIN-SUFFIX,jsdelivr.net
-
 # 网页
 DOMAIN-SUFFIX,agemys.net
 DOMAIN-SUFFIX,feijisu20.com
+
+DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来
 
 # 修正广告拦截的分流
 DOMAIN,ca.iadsdk.apple.com

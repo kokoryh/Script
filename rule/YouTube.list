@@ -1,2 +1,4 @@
+DOMAIN-KEYWORD,youtube
+
 -USER-AGENT,YouTube*
 -USER-AGENT,*youtube*

@@ -1,8 +1,8 @@
+# 下面那4个keyword换成上面这两条
 DOMAIN-SUFFIX,akadns.net
 DOMAIN-SUFFIX,apple.com.edgekey.net
-DOMAIN-SUFFIX,safebrowsing.apple
 
 -DOMAIN-KEYWORD,apple.com.akadns.net
--DOMAIN-KEYWORD,apple.com.edgekey.net
 -DOMAIN-KEYWORD,apple-support.akadns.net
 -DOMAIN-KEYWORD,icloud.com.akadns.net
+-DOMAIN-KEYWORD,apple.com.edgekey.net

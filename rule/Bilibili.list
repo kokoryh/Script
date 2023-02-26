@@ -8,6 +8,9 @@ DOMAIN,app.bilibili.com
 DOMAIN,grpc.biliapi.net
 DOMAIN,m.bilibili.com
 DOMAIN,www.bilibili.com
-# 香港CDN
+# CDN
 DOMAIN,upos-hz-mirrorakam.akamaized.net
 DOMAIN,upos-sz-mirrorcosov.bilivideo.com
+
+-DOMAIN-KEYWORD,cn-hk-eq-bcache-
+-IP-CIDR,121.11.192.0/24,no-resolve

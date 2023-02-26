@@ -207,6 +207,7 @@ payload:
   - DOMAIN-KEYWORD,tiktokcdn-
   - DOMAIN-KEYWORD,uk-live
   - DOMAIN-KEYWORD,voddazn
+  - DOMAIN-KEYWORD,youtube
   - IP-CIDR,103.5.34.153/32,no-resolve
   - IP-CIDR,104.109.129.153/32,no-resolve
   - IP-CIDR,110.238.107.47/32,no-resolve

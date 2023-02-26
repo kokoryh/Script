@@ -7,8 +7,7 @@ DOMAIN,iadmusicmatvideo.music.126.net
 DOMAIN-SUFFIX,music.163.com.163jiasu.com
 
 # Bilibili
-# 垃圾CDN
-DOMAIN-SUFFIX,szbdyd.com
+DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
 IP-CIDR,203.107.1.1/24,no-resolve
 
 # 百度贴吧
