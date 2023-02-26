@@ -157,12 +157,16 @@ DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,dropboxapi.com
 DOMAIN-SUFFIX,dropboxusercontent.com
 DOMAIN-SUFFIX,duckduckgo.com
+DOMAIN-SUFFIX,e-hentai.org
 DOMAIN-SUFFIX,earthcam.com
 DOMAIN-SUFFIX,economist.com
 DOMAIN-SUFFIX,edx-cdn.org
+DOMAIN-SUFFIX,ehgt.org
+DOMAIN-SUFFIX,ehwiki.org
 DOMAIN-SUFFIX,encyclopedia.com
 DOMAIN-SUFFIX,engadget.com
 DOMAIN-SUFFIX,etherscan.io
+DOMAIN-SUFFIX,exhentai.org
 DOMAIN-SUFFIX,f8.com
 DOMAIN-SUFFIX,facebookmail.com
 DOMAIN-SUFFIX,fanatical.com
@@ -218,6 +222,8 @@ DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt3.com
 DOMAIN-SUFFIX,hackmd.io
 DOMAIN-SUFFIX,hanime1.me
+DOMAIN-SUFFIX,hath.network
+DOMAIN-SUFFIX,hentaiverse.org
 DOMAIN-SUFFIX,heroku.com
 DOMAIN-SUFFIX,hket.com
 DOMAIN-SUFFIX,huffpost.com
