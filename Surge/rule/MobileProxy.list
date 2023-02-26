@@ -10,6 +10,7 @@ DOMAIN,assets2.xboxlive.com
 DOMAIN,az416426.vo.msecnd.net
 DOMAIN,az668014.vo.msecnd.net
 DOMAIN,bbs.imoutolove.me
+DOMAIN,beta.apple.com
 DOMAIN,beta.music.apple.com
 DOMAIN,books.apple.com
 DOMAIN,books.itunes.apple.com
@@ -493,6 +494,7 @@ DOMAIN-KEYWORD,.blogspot.
 DOMAIN-KEYWORD,.facebook.
 DOMAIN-KEYWORD,.pinterest.
 DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,testflight
 IP-CIDR,103.2.30.0/23,no-resolve
 IP-CIDR,125.209.208.0/20,no-resolve
 IP-CIDR,147.92.128.0/17,no-resolve
