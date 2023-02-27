@@ -2,9 +2,17 @@
 DOMAIN-SUFFIX,agemys.net
 DOMAIN-SUFFIX,feijisu20.com
 
-DOMAIN-SUFFIX,peropero.net  // musedash
+# goodnotes
+DOMAIN-SUFFIX,mixpanel.com
+DOMAIN-SUFFIX,goodnotes.email
+DOMAIN-SUFFIX,goodnotescloud.com
+DOMAIN-SUFFIX,goodnotesplatform.com
 
-DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来
+# notability
+DOMAIN-SUFFIX,notability.com
 
 # 修正广告拦截的分流
 DOMAIN,ca.iadsdk.apple.com
+
+DOMAIN-SUFFIX,peropero.net  // musedash
+DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来

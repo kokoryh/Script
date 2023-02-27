@@ -1,11 +1,12 @@
 # 机场
-DOMAIN,rss.teacat001.xyz
 DOMAIN,teacat.cloud
+DOMAIN,rss.teacat001.xyz
 DOMAIN,dy.sbgfw.info
 DOMAIN,www.efcloud.cc
+DOMAIN,ikuuu.co
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 
-# 代理软件激活检测
+# 代理软件
 DOMAIN-SUFFIX,quantumult.app
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,surge-activation.com
@@ -27,21 +28,9 @@ DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,av01.tv
 
-# codeberg
-DOMAIN-SUFFIX,codeberg.org
-
 # adguard
 DOMAIN,filters.adtidy.org
 DOMAIN-SUFFIX,adguard.org
-
-# goodnotes
-DOMAIN-SUFFIX,mixpanel.com
-DOMAIN-SUFFIX,goodnotes.email
-DOMAIN-SUFFIX,goodnotescloud.com
-DOMAIN-SUFFIX,goodnotesplatform.com
-
-# notability
-DOMAIN-SUFFIX,notability.com
 
 # Microsoft
 DOMAIN-SUFFIX,live.com

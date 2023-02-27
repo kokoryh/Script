@@ -22,6 +22,7 @@ DOMAIN,dy.sbgfw.info
 DOMAIN,filters.adtidy.org
 DOMAIN,gateway.icloud.com
 DOMAIN,github.global.ssl.fastly.net
+DOMAIN,ikuuu.co
 DOMAIN,in.appcenter.ms
 DOMAIN,itunes.apple.com
 DOMAIN,lab.skk.moe
@@ -130,7 +131,6 @@ DOMAIN-SUFFIX,cloudcone.com
 DOMAIN-SUFFIX,clubhouseapi.com
 DOMAIN-SUFFIX,clyp.it
 DOMAIN-SUFFIX,cna.com.tw
-DOMAIN-SUFFIX,codeberg.org
 DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,coincheck.com
 DOMAIN-SUFFIX,coingecko.com
@@ -212,9 +212,6 @@ DOMAIN-SUFFIX,gmail.com
 DOMAIN-SUFFIX,gmodules.com
 DOMAIN-SUFFIX,go.dev
 DOMAIN-SUFFIX,golang.org
-DOMAIN-SUFFIX,goodnotes.email
-DOMAIN-SUFFIX,goodnotescloud.com
-DOMAIN-SUFFIX,goodnotesplatform.com
 DOMAIN-SUFFIX,goog
 DOMAIN-SUFFIX,graphql.org
 DOMAIN-SUFFIX,gravatar.com
@@ -274,7 +271,6 @@ DOMAIN-SUFFIX,mega.nz
 DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,mixlr.com
-DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,moon.fm
 DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,mubi.com
@@ -288,7 +284,6 @@ DOMAIN-SUFFIX,newsweek.com
 DOMAIN-SUFFIX,newyorker.com
 DOMAIN-SUFFIX,newyorktimes.com
 DOMAIN-SUFFIX,nhentai.net
-DOMAIN-SUFFIX,notability.com
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.new
