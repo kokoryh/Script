@@ -2,6 +2,8 @@
 DOMAIN-SUFFIX,agemys.net
 DOMAIN-SUFFIX,feijisu20.com
 
+DOMAIN-SUFFIX,peropero.net  // musedash
+
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来
 
 # 修正广告拦截的分流
