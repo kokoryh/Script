@@ -1064,7 +1064,7 @@ function SCP2QX(subs) {
     for (var i = 0; i < subs.length; i++) {
         try {
             if (subs[i].slice(0, 8) == "hostname") {
-                hn = subs[i].replace(/\%.*\%/g, "")
+                hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
                 nrw.push(hn)
             }
             var SC = ["type=", ".js", "pattern=", "script-path="]
