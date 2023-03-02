@@ -2,7 +2,6 @@ payload:
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
   - DOMAIN,bbs.imoutolove.me
   - DOMAIN,dy.sbgfw.info
-  - DOMAIN,filters.adtidy.org
   - DOMAIN,ikuuu.co
   - DOMAIN,in.appcenter.ms
   - DOMAIN,mozilla.cloudflare-dns.com
@@ -11,14 +10,19 @@ payload:
   - DOMAIN,www.efcloud.cc
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
+  - DOMAIN,zerossl.ocsp.sectigo.com
+  - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard.org
+  - DOMAIN-SUFFIX,adtidy.org
   - DOMAIN-SUFFIX,amazontrust.com
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,asmr.one
   - DOMAIN-SUFFIX,av01.tv
   - DOMAIN-SUFFIX,avgle.com
+  - DOMAIN-SUFFIX,azure.com
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,digicert.com
+  - DOMAIN-SUFFIX,gfx.ms
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,jable.tv
@@ -27,6 +31,8 @@ payload:
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live.net
   - DOMAIN-SUFFIX,missav.com
+  - DOMAIN-SUFFIX,msauth.net
+  - DOMAIN-SUFFIX,msftauth.net
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notion-static.com
   - DOMAIN-SUFFIX,notion.com
@@ -45,3 +51,4 @@ payload:
   - DOMAIN-SUFFIX,usertrust.com
   - DOMAIN-SUFFIX,windows.com
   - DOMAIN-SUFFIX,windows.net
+  - DOMAIN-KEYWORD,microsoft

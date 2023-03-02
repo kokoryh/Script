@@ -29,8 +29,19 @@ DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,av01.tv
 
 # adguard
-DOMAIN,filters.adtidy.org
+DOMAIN-SUFFIX,adtidy.org
 DOMAIN-SUFFIX,adguard.org
+DOMAIN-SUFFIX,adguard.com
+DOMAIN,zerossl.ocsp.sectigo.com // 作用待研究
+
+# Microsoft Authenticator
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,gfx.ms
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-KEYWORD,microsoft
+DOMAIN,in.appcenter.ms // 作用待研究
 
 # Microsoft
 DOMAIN-SUFFIX,live.com

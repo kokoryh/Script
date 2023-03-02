@@ -2,8 +2,8 @@
 DOMAIN,steammobile.akamaized.net
 DOMAIN,steamcommunity-a.akamaihd.net
 DOMAIN-SUFFIX,s.team
-DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steamcommunity.com

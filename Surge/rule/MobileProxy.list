@@ -19,7 +19,6 @@ DOMAIN,clubhouse.pubnubapi.com
 DOMAIN,d3c33hcgiwev3.cloudfront.net
 DOMAIN,disk.yandex.com
 DOMAIN,dy.sbgfw.info
-DOMAIN,filters.adtidy.org
 DOMAIN,gateway.icloud.com
 DOMAIN,github.global.ssl.fastly.net
 DOMAIN,ikuuu.co
@@ -54,14 +53,17 @@ DOMAIN,wego.here.com
 DOMAIN,www.efcloud.cc
 DOMAIN,www.south-plus.net
 DOMAIN,www.summer-plus.net
+DOMAIN,zerossl.ocsp.sectigo.com
 DOMAIN-SUFFIX,9cache.com
 DOMAIN-SUFFIX,9gag.com
 DOMAIN-SUFFIX,abc.com
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,accountkit.com
+DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adguard.org
 DOMAIN-SUFFIX,admob.com
 DOMAIN-SUFFIX,adsense.com
+DOMAIN-SUFFIX,adtidy.org
 DOMAIN-SUFFIX,advertisercommunity.com
 DOMAIN-SUFFIX,aex.com
 DOMAIN-SUFFIX,aicoin.com
@@ -91,6 +93,7 @@ DOMAIN-SUFFIX,av01.tv
 DOMAIN-SUFFIX,avg.com
 DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,axios.com
+DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,bandcamp.com
 DOMAIN-SUFFIX,bandwagonhost.com
 DOMAIN-SUFFIX,bbc.com
@@ -199,6 +202,7 @@ DOMAIN-SUFFIX,genius.com
 DOMAIN-SUFFIX,getoutline.org
 DOMAIN-SUFFIX,getsync.com
 DOMAIN-SUFFIX,gfw.report
+DOMAIN-SUFFIX,gfx.ms
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,git.io
 DOMAIN-SUFFIX,githack.com
@@ -271,6 +275,8 @@ DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,mixlr.com
 DOMAIN-SUFFIX,moon.fm
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,mubi.com
 DOMAIN-SUFFIX,myspace.com
@@ -491,6 +497,7 @@ DOMAIN-KEYWORD,.blogspot.
 DOMAIN-KEYWORD,.facebook.
 DOMAIN-KEYWORD,.pinterest.
 DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,microsoft
 DOMAIN-KEYWORD,testflight
 IP-CIDR,103.2.30.0/23,no-resolve
 IP-CIDR,125.209.208.0/20,no-resolve
