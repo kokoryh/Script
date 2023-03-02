@@ -1,3 +1,10 @@
+# 百度贴吧
+IP-CIDR,180.76.76.200/32,no-resolve
+
+# Bilibili
+DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
+IP-CIDR,203.107.1.1/24,no-resolve
+
 # 高德地图
 DOMAIN,amdc.m.taobao.com
 
@@ -5,13 +12,6 @@ DOMAIN,amdc.m.taobao.com
 DOMAIN,iadmusicmat.music.126.net
 DOMAIN,iadmusicmatvideo.music.126.net
 DOMAIN-SUFFIX,music.163.com.163jiasu.com
-
-# Bilibili
-DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
-IP-CIDR,203.107.1.1/24,no-resolve
-
-# 百度贴吧
-IP-CIDR,180.76.76.200/32,no-resolve
 
 # 知乎
 USER-AGENT,AVOS*

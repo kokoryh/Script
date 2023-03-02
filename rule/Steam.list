@@ -1,8 +1,11 @@
 # Steam iOS
 DOMAIN,steammobile.akamaized.net
 DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN-SUFFIX,s.team
+DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net

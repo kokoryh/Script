@@ -14,5 +14,6 @@ DOMAIN-SUFFIX,notability.com
 # 修正广告拦截的分流
 DOMAIN,ca.iadsdk.apple.com
 
+# 杂项
 DOMAIN-SUFFIX,peropero.net  // musedash
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来

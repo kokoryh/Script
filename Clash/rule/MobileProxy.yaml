@@ -48,7 +48,6 @@ payload:
   - DOMAIN,steampipe.akamaized.net
   - DOMAIN,steamstore-a.akamaihd.net
   - DOMAIN,steamusercontent-a.akamaihd.net
-  - DOMAIN,steamuserimages-a.akamaihd.net
   - DOMAIN,teacat.cloud
   - DOMAIN,testflight.apple.com
   - DOMAIN,tv.apple.com
@@ -349,6 +348,7 @@ payload:
   - DOMAIN-SUFFIX,rocksdb.org
   - DOMAIN-SUFFIX,rsshub.app
   - DOMAIN-SUFFIX,rthk.hk
+  - DOMAIN-SUFFIX,s.team
   - DOMAIN-SUFFIX,schema.org
   - DOMAIN-SUFFIX,scmp.com
   - DOMAIN-SUFFIX,scribd.com
@@ -369,6 +369,7 @@ payload:
   - DOMAIN-SUFFIX,startpage.com
   - DOMAIN-SUFFIX,stash-activation.com
   - DOMAIN-SUFFIX,static-economist.com
+  - DOMAIN-SUFFIX,steam-api.com
   - DOMAIN-SUFFIX,steam-chat.com
   - DOMAIN-SUFFIX,steambroadcast.akamaized.net
   - DOMAIN-SUFFIX,steamcommunity.com
@@ -377,6 +378,7 @@ payload:
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,steamstat.us
   - DOMAIN-SUFFIX,steamstatic.com
+  - DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
   - DOMAIN-SUFFIX,steemit.com
   - DOMAIN-SUFFIX,straitstimes.com
   - DOMAIN-SUFFIX,streamable.com

@@ -1,29 +1,25 @@
-# 高德地图
-DOMAIN,amdc.m.taobao.com
-
-# 网易云音乐
-DOMAIN,iadmusicmat.music.126.net
-DOMAIN,iadmusicmatvideo.music.126.net
-DOMAIN-SUFFIX,music.163.com.163jiasu.com
-
-# Bilibili
-DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
-IP-CIDR,203.107.1.1/24,no-resolve
+# Apple
+DOMAIN-SUFFIX,iadsdk.apple.com
 
 # Baidu
 DOMAIN,afd.baidu.com
 DOMAIN,als.baidu.com
 DOMAIN,nsclick.baidu.com
 
-# 字节跳动
-DOMAIN,ad.toutiao.com
-DOMAIN,dsp.toutiao.com
-DOMAIN,pangolin.snssdk.com
-DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
-DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+# Bilibili
+DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
+IP-CIDR,203.107.1.1/24,no-resolve
 
-# Apple
-DOMAIN-SUFFIX,iadsdk.apple.com
+# 高德地图
+DOMAIN,amdc.m.taobao.com
+
+# Google
+DOMAIN,ads.youtube.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googleadservices.com
+
+# 酷我
+DOMAIN,mobilead.kuwo.cn
 
 # 腾讯
 DOMAIN,pgdt.gtimg.com
@@ -34,13 +30,17 @@ DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,l.qq.com
 
-# 酷我
-DOMAIN,mobilead.kuwo.cn
+# 网易云音乐
+DOMAIN,iadmusicmat.music.126.net
+DOMAIN,iadmusicmatvideo.music.126.net
+DOMAIN-SUFFIX,music.163.com.163jiasu.com
 
-# Google
-DOMAIN,ads.youtube.com
-DOMAIN-SUFFIX,doubleclick.net
-DOMAIN-SUFFIX,googleadservices.com
+# 字节跳动
+DOMAIN,ad.toutiao.com
+DOMAIN,dsp.toutiao.com
+DOMAIN,pangolin.snssdk.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
 
 # 其他
 DOMAIN,iyes.youku.com
