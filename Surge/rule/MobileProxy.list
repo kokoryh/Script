@@ -17,6 +17,7 @@ DOMAIN,books.itunes.apple.com
 DOMAIN,cloud-cdn-digitalocean-com.global.ssl.fastly.net
 DOMAIN,clubhouse.pubnubapi.com
 DOMAIN,d3c33hcgiwev3.cloudfront.net
+DOMAIN,dhh.lol
 DOMAIN,disk.yandex.com
 DOMAIN,dy.sbgfw.info
 DOMAIN,gateway.icloud.com
@@ -32,6 +33,7 @@ DOMAIN,news-client-search.apple.com
 DOMAIN,news-client.apple.com
 DOMAIN,news-edge.apple.com
 DOMAIN,news-events.apple.com
+DOMAIN,nssurge.zendesk.com
 DOMAIN,nytimes.map.fastly.net
 DOMAIN,ocsp.int-x3.letsencrypt.org
 DOMAIN,payments-jp.amazon.com
@@ -373,6 +375,8 @@ DOMAIN-SUFFIX,spiegel.de
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,startpage.com
 DOMAIN-SUFFIX,stash-activation.com
+DOMAIN-SUFFIX,stash.wiki
+DOMAIN-SUFFIX,stash.ws
 DOMAIN-SUFFIX,static-economist.com
 DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,steam-chat.com
@@ -488,6 +492,7 @@ DOMAIN-SUFFIX,z-lib.org
 DOMAIN-SUFFIX,zaobao.com
 DOMAIN-SUFFIX,zaobao.com.sg
 DOMAIN-SUFFIX,zb.com
+DOMAIN-SUFFIX,zdassets.com
 DOMAIN-SUFFIX,zello.com
 DOMAIN-SUFFIX,zeronet.io
 DOMAIN-SUFFIX,zophar.net

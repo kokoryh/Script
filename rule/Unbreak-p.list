@@ -1,16 +1,36 @@
 # 机场
+# Teacat
 DOMAIN,teacat.cloud
 DOMAIN,rss.teacat001.xyz
+# 大航海
+DOMAIN,dhh.lol
 DOMAIN,dy.sbgfw.info
+# EF Cloud
 DOMAIN,www.efcloud.cc
+# iKuuu
 DOMAIN,ikuuu.co
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 
-# 代理软件
+# 代理软件官网 & 激活检测
+# Quantumult X
 DOMAIN-SUFFIX,quantumult.app
+# Surge
+DOMAIN,nssurge.zendesk.com
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,surge-activation.com
+DOMAIN-SUFFIX,zdassets.com
+#DOMAIN,sessions.bugsnag.com // Others 数据反馈？
+#DOMAIN-SUFFIX,bugsnag.com
+# Stash
+DOMAIN-SUFFIX,stash.ws
+DOMAIN-SUFFIX,stash.wiki
 DOMAIN-SUFFIX,stash-activation.com
+
+# AdGuard
+DOMAIN-SUFFIX,adguard.org
+DOMAIN-SUFFIX,adguard.com
+DOMAIN-SUFFIX,adtidy.org
+DOMAIN,zerossl.ocsp.sectigo.com // Others
 
 # 南+
 DOMAIN,www.south-plus.net
@@ -28,12 +48,6 @@ DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,av01.tv
 
-# adguard
-DOMAIN-SUFFIX,adtidy.org
-DOMAIN-SUFFIX,adguard.org
-DOMAIN-SUFFIX,adguard.com
-DOMAIN,zerossl.ocsp.sectigo.com // 作用待研究
-
 # Microsoft Authenticator
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,gfx.ms
@@ -41,7 +55,7 @@ DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-KEYWORD,microsoft
-DOMAIN,in.appcenter.ms // 作用待研究
+DOMAIN,in.appcenter.ms // Others
 
 # Microsoft
 DOMAIN-SUFFIX,live.com
@@ -54,6 +68,8 @@ DOMAIN-SUFFIX,onenote.com
 DOMAIN-SUFFIX,onenote.net
 
 # 一些乱七八糟的不知道干嘛用的
+# DOMAIN-SUFFIX,bugsnag.com // Others 数据分析商？
+DOMAIN,zerossl.ocsp.sectigo.com // Others
 DOMAIN,in.appcenter.ms
 DOMAIN,mozilla.cloudflare-dns.com
 DOMAIN-SUFFIX,appsflyer.com
