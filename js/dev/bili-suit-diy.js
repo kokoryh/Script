@@ -1,6 +1,6 @@
 /*
 B站装扮diy
-版本：1.8.6
+版本：1.8.7
 脚本兼容: Quantumult X, Surge
 作者：@kokoryh
 
@@ -51,6 +51,7 @@ let $ = kokoryh();
 let body = $response.body;
 if (body) {
     var obj = JSON.parse(body);
+    obj.common_equip = undefined;
     let type = getType(obj);
     let user_equip = $.getValue("bili_user_equip");
     let load_equip = $.getValue("bili_load_equip");
