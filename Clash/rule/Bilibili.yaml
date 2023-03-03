@@ -1,9 +1,6 @@
 payload:
-  - DOMAIN,api.biliapi.com
-  - DOMAIN,api.biliapi.net
-  - DOMAIN,app.biliapi.com
-  - DOMAIN,app.biliapi.net
-  - DOMAIN,grpc.biliapi.net
   - DOMAIN,upos-hz-mirrorakam.akamaized.net
+  - DOMAIN-SUFFIX,biliapi.com
+  - DOMAIN-SUFFIX,biliapi.net
   - DOMAIN-SUFFIX,bilibili.com
   - DOMAIN-SUFFIX,bilivideo.com

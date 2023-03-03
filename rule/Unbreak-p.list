@@ -49,26 +49,7 @@ DOMAIN-SUFFIX,adtidy.org
 DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard
 
 # Bark
-DOMAIN,api.day.app
-
-# Microsoft Authenticator
-DOMAIN-SUFFIX,azure.com
-DOMAIN-SUFFIX,gfx.ms
-DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,msauth.net
-DOMAIN-SUFFIX,msftauth.net
-DOMAIN-KEYWORD,microsoft
-DOMAIN,in.appcenter.ms // Others
-
-# Microsoft
-DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,live.net
-DOMAIN-SUFFIX,windows.com
-DOMAIN-SUFFIX,windows.net
-DOMAIN-SUFFIX,office.com
-DOMAIN-SUFFIX,office.net
-DOMAIN-SUFFIX,onenote.com
-DOMAIN-SUFFIX,onenote.net
+DOMAIN-SUFFIX,day.app
 
 # Others
 DOMAIN,sessions.bugsnag.com // Others Surge 数据反馈？

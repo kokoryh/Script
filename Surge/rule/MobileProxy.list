@@ -2,7 +2,6 @@ DOMAIN,a248.e.akamai.net
 DOMAIN,a771.dscq.akamai.net
 DOMAIN,addons.mozilla.org
 DOMAIN,amp-api.podcasts.apple.com
-DOMAIN,api.day.app
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 DOMAIN,apple.comscoreresearch.com
 DOMAIN,apps.apple.com
@@ -147,6 +146,7 @@ DOMAIN-SUFFIX,conoha.jp
 DOMAIN-SUFFIX,coursehero.com
 DOMAIN-SUFFIX,dailymotion.com
 DOMAIN-SUFFIX,daum.net
+DOMAIN-SUFFIX,day.app
 DOMAIN-SUFFIX,deadline.com
 DOMAIN-SUFFIX,debug.com
 DOMAIN-SUFFIX,depositphotos.com
@@ -176,6 +176,7 @@ DOMAIN-SUFFIX,engadget.com
 DOMAIN-SUFFIX,etherscan.io
 DOMAIN-SUFFIX,exhentai.org
 DOMAIN-SUFFIX,f8.com
+DOMAIN-SUFFIX,facebook.com
 DOMAIN-SUFFIX,facebookmail.com
 DOMAIN-SUFFIX,fanatical.com
 DOMAIN-SUFFIX,fb.com
@@ -240,6 +241,7 @@ DOMAIN-SUFFIX,ifixit.com
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,independent.co.uk
 DOMAIN-SUFFIX,inoreader.com
+DOMAIN-SUFFIX,instagr.am
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,is.gd
 DOMAIN-SUFFIX,issuu.com
@@ -433,6 +435,7 @@ DOMAIN-SUFFIX,tutanota.com
 DOMAIN-SUFFIX,tweetdeck.com
 DOMAIN-SUFFIX,twimg.co
 DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twimg.org
 DOMAIN-SUFFIX,twitpic.com
 DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,twitter.jp
@@ -504,8 +507,10 @@ DOMAIN-KEYWORD,.blogspot.
 DOMAIN-KEYWORD,.facebook.
 DOMAIN-KEYWORD,.pinterest.
 DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,instagram
 DOMAIN-KEYWORD,microsoft
 DOMAIN-KEYWORD,testflight
+DOMAIN-KEYWORD,twitter
 IP-CIDR,103.2.30.0/23,no-resolve
 IP-CIDR,125.209.208.0/20,no-resolve
 IP-CIDR,147.92.128.0/17,no-resolve

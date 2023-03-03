@@ -1,4 +1,3 @@
-DOMAIN,api.day.app
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 DOMAIN,bbs.imoutolove.me
 DOMAIN,dhh.lol
@@ -22,20 +21,15 @@ DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,asmr.one
 DOMAIN-SUFFIX,av01.tv
 DOMAIN-SUFFIX,avgle.com
-DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,colamanhua.com
+DOMAIN-SUFFIX,day.app
 DOMAIN-SUFFIX,digicert.com
-DOMAIN-SUFFIX,gfx.ms
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,hanime1.me
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,javbus.com
 DOMAIN-SUFFIX,lencr.org
-DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,live.net
 DOMAIN-SUFFIX,missav.com
-DOMAIN-SUFFIX,msauth.net
-DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
@@ -43,10 +37,6 @@ DOMAIN-SUFFIX,notion.new
 DOMAIN-SUFFIX,notion.site
 DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,nssurge.com
-DOMAIN-SUFFIX,office.com
-DOMAIN-SUFFIX,office.net
-DOMAIN-SUFFIX,onenote.com
-DOMAIN-SUFFIX,onenote.net
 DOMAIN-SUFFIX,quantumult.app
 DOMAIN-SUFFIX,smoot.apple.cn
 DOMAIN-SUFFIX,stash-activation.com
@@ -54,7 +44,4 @@ DOMAIN-SUFFIX,stash.wiki
 DOMAIN-SUFFIX,stash.ws
 DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,usertrust.com
-DOMAIN-SUFFIX,windows.com
-DOMAIN-SUFFIX,windows.net
 DOMAIN-SUFFIX,zdassets.com
-DOMAIN-KEYWORD,microsoft
