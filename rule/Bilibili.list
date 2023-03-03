@@ -12,5 +12,8 @@ DOMAIN,www.bilibili.com
 DOMAIN,upos-hz-mirrorakam.akamaized.net
 DOMAIN,upos-sz-mirrorcosov.bilivideo.com
 
+DOMAIN-SUFFIX,bilivideo.com
+DOMAIN-SUFFIX,bilibili.com
+
 -DOMAIN-KEYWORD,cn-hk-eq-bcache-
 -IP-CIDR,121.11.192.0/24,no-resolve

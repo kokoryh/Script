@@ -3,6 +3,7 @@ payload:
   - DOMAIN,a771.dscq.akamai.net
   - DOMAIN,addons.mozilla.org
   - DOMAIN,amp-api.podcasts.apple.com
+  - DOMAIN,api.day.app
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
   - DOMAIN,apple.comscoreresearch.com
   - DOMAIN,apps.apple.com

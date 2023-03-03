@@ -48,6 +48,9 @@ DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adtidy.org
 DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard
 
+# Bark
+DOMAIN,api.day.app
+
 # Microsoft Authenticator
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,gfx.ms
