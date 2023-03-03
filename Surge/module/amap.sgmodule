@@ -3,8 +3,8 @@
 
 # 修改自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
-# 这条必须屏蔽，否则模块无效
-# amdc\.m\.taobao\.com - reject
+# qx解析器参数：#ntf=0&out=self_use&replace=#qx@
+#qx amdc\.m\.taobao\.com AMap|Cainiao url-and-header reject
 
 [URL Rewrite]
 # 通用广告请求

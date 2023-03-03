@@ -26,7 +26,7 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
 } else if (url.includes("amdc/mobileDispatch")) {  // 高德地图 | 菜鸟
     let header = $request.headers
     let ua = header["User-Agent"] || header["user-agent"]
-    if (ua.includes("Amap") || ua.includes("Cainiao")) $done()
+    if (ua.includes("AMap") || ua.includes("Cainiao")) $done()
     else $done({})
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
