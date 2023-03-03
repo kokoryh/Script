@@ -17,6 +17,7 @@ payload:
   - DOMAIN-SUFFIX,bamgrid.com
   - DOMAIN-SUFFIX,bilibili.tv
   - DOMAIN-SUFFIX,biliintl.com
+  - DOMAIN-SUFFIX,branch.io
   - DOMAIN-SUFFIX,byteoversea.com
   - DOMAIN-SUFFIX,disney-plus.net
   - DOMAIN-SUFFIX,disneyplus.com
@@ -51,6 +52,7 @@ payload:
   - DOMAIN-SUFFIX,phprcdn.com
   - DOMAIN-SUFFIX,pornhub.com
   - DOMAIN-SUFFIX,pornhubpremium.com
+  - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,tik-tokapi.com
   - DOMAIN-SUFFIX,tiktok.com
   - DOMAIN-SUFFIX,tiktokcdn.com
