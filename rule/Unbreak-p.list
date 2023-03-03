@@ -48,3 +48,5 @@ DOMAIN-SUFFIX,adtidy.org
 # Apps
 DOMAIN-SUFFIX,day.app // Bark
 DOMAIN-SUFFIX,fileball.app // Fileball
+
+DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，故写进来

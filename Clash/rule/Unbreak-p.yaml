@@ -31,6 +31,7 @@ payload:
   - DOMAIN-SUFFIX,notion.so
   - DOMAIN-SUFFIX,nssurge.com
   - DOMAIN-SUFFIX,quantumult.app
+  - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,stash-activation.com
   - DOMAIN-SUFFIX,stash.wiki
   - DOMAIN-SUFFIX,stash.ws
