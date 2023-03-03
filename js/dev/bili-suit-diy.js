@@ -51,7 +51,7 @@ let $ = kokoryh();
 let body = $response.body;
 if (body) {
     var obj = JSON.parse(body);
-    obj.common_equip = undefined;
+    obj.data.common_equip = undefined;
     let type = getType(obj);
     let user_equip = $.getValue("bili_user_equip");
     let load_equip = $.getValue("bili_load_equip");
