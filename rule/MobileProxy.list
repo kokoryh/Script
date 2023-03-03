@@ -17,3 +17,23 @@ DOMAIN-SUFFIX,office.com
 DOMAIN-SUFFIX,office.net
 DOMAIN-SUFFIX,onenote.com
 DOMAIN-SUFFIX,onenote.net
+
+# Final
+DOMAIN,api.revenuecat.com  // 查询内购？
+DOMAIN,sessions.bugsnag.com // Others Surge 数据反馈？
+DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard网页
+DOMAIN,api.sprig.com // Others GoodNotes
+DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
+DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
+DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
+
+DOMAIN,in.appcenter.ms  // Others 好多app都有
+DOMAIN-SUFFIX,amazontrust.com  // 好多app都有
+DOMAIN-SUFFIX,appsflyer.com  // 好多app都有
+DOMAIN-SUFFIX,lencr.org  // 好多app都有
+
+DOMAIN,mozilla.cloudflare-dns.com
+DOMAIN-SUFFIX,usertrust.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,smoot.apple.cn
+DOMAIN-SUFFIX,digicert.com
