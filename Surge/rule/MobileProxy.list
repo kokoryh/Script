@@ -3,6 +3,7 @@ DOMAIN,a771.dscq.akamai.net
 DOMAIN,addons.mozilla.org
 DOMAIN,amp-api.podcasts.apple.com
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
+DOMAIN,api.revenuecat.com
 DOMAIN,apple.comscoreresearch.com
 DOMAIN,apps.apple.com
 DOMAIN,assets1.xboxlive.com
@@ -74,6 +75,7 @@ DOMAIN-SUFFIX,aimoon.com
 DOMAIN-SUFFIX,aka.ms
 DOMAIN-SUFFIX,amazon.co.jp
 DOMAIN-SUFFIX,amazontrust.com
+DOMAIN-SUFFIX,amplitude.com
 DOMAIN-SUFFIX,ampproject.org
 DOMAIN-SUFFIX,anchor.fm
 DOMAIN-SUFFIX,android.com
@@ -189,6 +191,7 @@ DOMAIN-SUFFIX,fbworkmail.com
 DOMAIN-SUFFIX,feedburner.com
 DOMAIN-SUFFIX,feeder.co
 DOMAIN-SUFFIX,feedly.com
+DOMAIN-SUFFIX,fileball.app
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,flickr.com
 DOMAIN-SUFFIX,flipboard.com
@@ -240,6 +243,7 @@ DOMAIN-SUFFIX,i-cable.com
 DOMAIN-SUFFIX,ifixit.com
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,independent.co.uk
+DOMAIN-SUFFIX,ingest.sentry.io
 DOMAIN-SUFFIX,inoreader.com
 DOMAIN-SUFFIX,instagr.am
 DOMAIN-SUFFIX,instagram.com
@@ -280,6 +284,7 @@ DOMAIN-SUFFIX,mega.nz
 DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,mixlr.com
+DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,moon.fm
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msftauth.net

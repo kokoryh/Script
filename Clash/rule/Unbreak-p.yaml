@@ -1,5 +1,6 @@
 payload:
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
+  - DOMAIN,api.revenuecat.com
   - DOMAIN,bbs.imoutolove.me
   - DOMAIN,dhh.lol
   - DOMAIN,dy.sbgfw.info
@@ -18,6 +19,7 @@ payload:
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,adtidy.org
   - DOMAIN-SUFFIX,amazontrust.com
+  - DOMAIN-SUFFIX,amplitude.com
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,asmr.one
   - DOMAIN-SUFFIX,av01.tv
@@ -25,12 +27,15 @@ payload:
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
   - DOMAIN-SUFFIX,digicert.com
+  - DOMAIN-SUFFIX,fileball.app
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,hanime1.me
+  - DOMAIN-SUFFIX,ingest.sentry.io
   - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,missav.com
+  - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notion-static.com
   - DOMAIN-SUFFIX,notion.com

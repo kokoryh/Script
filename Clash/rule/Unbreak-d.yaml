@@ -35,7 +35,6 @@ payload:
   - DOMAIN-SUFFIX,googletraveladservices.com
   - DOMAIN-SUFFIX,jsdelivr.com
   - DOMAIN-SUFFIX,jsdelivr.net
-  - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,notability.com
   - DOMAIN-SUFFIX,peropero.net
   - DOMAIN-SUFFIX,safebrowsing.apple

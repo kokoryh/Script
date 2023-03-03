@@ -48,19 +48,26 @@ DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adtidy.org
 DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard
 
-# Bark
-DOMAIN-SUFFIX,day.app
+# Apps
+DOMAIN-SUFFIX,day.app // Bark
+DOMAIN-SUFFIX,fileball.app // Fileball
 
 # Others
+DOMAIN,api.revenuecat.com  // 查询内购？
+DOMAIN,in.appcenter.ms  // Others 好多app都有
 DOMAIN,sessions.bugsnag.com // Others Surge 数据反馈？
-DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard
+DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard网页
 
-DOMAIN,in.appcenter.ms
+DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
+DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
+DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
+
+DOMAIN-SUFFIX,amazontrust.com  // 好多app都有
+DOMAIN-SUFFIX,appsflyer.com  // 好多app都有
+
 DOMAIN,mozilla.cloudflare-dns.com
-DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,usertrust.com
-DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,smoot.apple.cn
 DOMAIN-SUFFIX,digicert.com
