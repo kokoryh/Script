@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
 IP-CIDR,203.107.1.1/24,no-resolve
 
 # 高德地图
-DOMAIN,amdc.m.taobao.com
+#DOMAIN,amdc.m.taobao.com
 
 # Google
 DOMAIN,ads.youtube.com

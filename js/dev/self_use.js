@@ -23,6 +23,11 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     obj["advertisement_num"] = 0
     obj["advertisement_info"] = []
     body = JSON.stringify(obj)
+} else if (url.includes("amdc/mobileDispatch")) {  // 高德地图 | 菜鸟
+    let header = $request.headers
+    let ua = header["User-Agent"] || header["user-agent"]
+    if (ua.includes("Amap") || ua.includes("Cainiao")) $done()
+    else $done({})
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
 } else {
