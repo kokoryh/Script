@@ -42,9 +42,15 @@ DOMAIN,sub-store.vercel.app  // SubStore
 DOMAIN-SUFFIX,day.app // Bark
 DOMAIN-SUFFIX,fileball.app // Fileball
 DOMAIN-SUFFIX,mess-lab.com // Http Catcher
+DOMAIN,sdk.fra-01.braze.eu // Spark
+DOMAIN,www.gravatar.com // Spark
+DOMAIN,http-inputs-notion.splunkcloud.com  // Notion
 
 # Gitlab
 DOMAIN-SUFFIX,gitlab.com
 
 # 杂项
+DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
+
+# 待处理

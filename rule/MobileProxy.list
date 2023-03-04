@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
 DOMAIN,in.appcenter.ms
 DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,usertrust.com
 

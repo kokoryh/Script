@@ -10,6 +10,9 @@ DOMAIN,iadmusicmat.music.126.net
 DOMAIN,iadmusicmatvideo.music.126.net
 DOMAIN-SUFFIX,music.163.com.163jiasu.com
 
+# 微博
+DOMAIN,boot.biz.weibo.com
+
 # 知乎
 USER-AGENT,AVOS*
 DOMAIN,appcloud2.in.zhihu.com

@@ -16,6 +16,7 @@ payload:
   - DOMAIN,gateway.icloud.com
   - DOMAIN,gspe1-ssl.ls.apple.com
   - DOMAIN,hls.itunes.apple.com
+  - DOMAIN,http-inputs-notion.splunkcloud.com
   - DOMAIN,ikuuu.co
   - DOMAIN,in.appcenter.ms
   - DOMAIN,itunes.apple.com
@@ -29,7 +30,9 @@ payload:
   - DOMAIN,radio.itunes.apple.com
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,sandbox.itunes.apple.com
+  - DOMAIN,sdk.fra-01.braze.eu
   - DOMAIN,sessions.bugsnag.com
+  - DOMAIN,statuse.digitalcertvalidation.com
   - DOMAIN,steamcdn-a.akamaihd.net
   - DOMAIN,steamcommunity-a.akamaihd.net
   - DOMAIN,steammobile.akamaized.net
@@ -41,6 +44,7 @@ payload:
   - DOMAIN,testflight.apple.com
   - DOMAIN,tv.apple.com
   - DOMAIN,www.efcloud.net
+  - DOMAIN,www.gravatar.com
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
   - DOMAIN,zerossl.ocsp.sectigo.com
@@ -71,6 +75,7 @@ payload:
   - DOMAIN-SUFFIX,apple.news
   - DOMAIN-SUFFIX,apps.apple.com
   - DOMAIN-SUFFIX,appsflyer.com
+  - DOMAIN-SUFFIX,appsflyersdk.com
   - DOMAIN-SUFFIX,appspot.com
   - DOMAIN-SUFFIX,appsto.re
   - DOMAIN-SUFFIX,aspnetcdn.com
