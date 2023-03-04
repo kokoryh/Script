@@ -4,7 +4,6 @@ payload:
   - DOMAIN,dhh.lol
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,ikuuu.co
-  - DOMAIN,nssurge.zendesk.com
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,teacat.cloud
   - DOMAIN,www.efcloud.cc
@@ -19,9 +18,11 @@ payload:
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
   - DOMAIN-SUFFIX,fileball.app
+  - DOMAIN-SUFFIX,gitlab.com
   - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,javbus.com
+  - DOMAIN-SUFFIX,mess-lab.com
   - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notion-static.com
@@ -30,6 +31,7 @@ payload:
   - DOMAIN-SUFFIX,notion.site
   - DOMAIN-SUFFIX,notion.so
   - DOMAIN-SUFFIX,nssurge.com
+  - DOMAIN-SUFFIX,outbound.io
   - DOMAIN-SUFFIX,quantumult.app
   - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,stash-activation.com
@@ -37,3 +39,7 @@ payload:
   - DOMAIN-SUFFIX,stash.ws
   - DOMAIN-SUFFIX,surge-activation.com
   - DOMAIN-SUFFIX,zdassets.com
+  - DOMAIN-SUFFIX,zdusercontent.com
+  - DOMAIN-SUFFIX,zendesk.com
+  - DOMAIN-SUFFIX,zndsk.com
+  - DOMAIN-SUFFIX,zopim.com

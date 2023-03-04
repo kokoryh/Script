@@ -5,9 +5,6 @@ IP-CIDR,180.76.76.200/32,no-resolve
 DOMAIN-SUFFIX,szbdyd.com  // 垃圾CDN
 IP-CIDR,203.107.1.1/24,no-resolve
 
-# 高德地图
-#DOMAIN,amdc.m.taobao.com
-
 # 网易云音乐
 DOMAIN,iadmusicmat.music.126.net
 DOMAIN,iadmusicmatvideo.music.126.net

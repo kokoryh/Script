@@ -1,22 +1,16 @@
-# 本规则仅供iOS端减少微软app的final而存在
-# Microsoft Authenticator
-DOMAIN-SUFFIX,azure.com
-DOMAIN-SUFFIX,gfx.ms
-DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,msauth.net
-DOMAIN-SUFFIX,msftauth.net
-DOMAIN-KEYWORD,microsoft
-DOMAIN,in.appcenter.ms // Others
+-USER-AGENT,AppleNews*
+-USER-AGENT,com.apple.news*
+-USER-AGENT,com.apple.trustd*
 
-# Microsoft
-DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,live.net
-DOMAIN-SUFFIX,windows.com
-DOMAIN-SUFFIX,windows.net
-DOMAIN-SUFFIX,office.com
-DOMAIN-SUFFIX,office.net
-DOMAIN-SUFFIX,onenote.com
-DOMAIN-SUFFIX,onenote.net
+# Dropbox
+DOMAIN-SUFFIX,dropbox.com
+DOMAIN-SUFFIX,dropboxapi.com
+DOMAIN-SUFFIX,dropboxusercontent.com
+
+# duckduckgo
+DOMAIN-SUFFIX,duckduckgo.com
+
+DOMAIN-SUFFIX,v2ex.com
 
 # Final
 DOMAIN,api.revenuecat.com  // 查询内购？
