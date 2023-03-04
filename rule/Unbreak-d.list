@@ -2,19 +2,19 @@
 DOMAIN-SUFFIX,agemys.net
 DOMAIN-SUFFIX,feijisu20.com
 
-# goodnotes
+# Goodnotes
 DOMAIN-SUFFIX,goodnotes.email
 DOMAIN-SUFFIX,goodnotescloud.com
 DOMAIN-SUFFIX,goodnotesplatform.com
 
-# notability
+# Notability
 DOMAIN-SUFFIX,notability.com
 
-# 修正广告拦截的分流
+# 修正广告拦截
 DOMAIN,ca.iadsdk.apple.com
 
 # 杂项
-DOMAIN-SUFFIX,peropero.net  // musedash
+DOMAIN-SUFFIX,peropero.net  // MuseDash
 
 # 待处理
 # applemusic.com

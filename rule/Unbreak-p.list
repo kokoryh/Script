@@ -24,14 +24,8 @@ DOMAIN-SUFFIX,stash-activation.com
 
 # 网页
 DOMAIN-SUFFIX,colamanhua.com
-DOMAIN-SUFFIX,asmr.one
 DOMAIN-SUFFIX,nhentai.net
-DOMAIN-SUFFIX,hanime1.me
 DOMAIN-SUFFIX,javbus.com
-DOMAIN-SUFFIX,missav.com
-DOMAIN-SUFFIX,avgle.com
-DOMAIN-SUFFIX,jable.tv
-DOMAIN-SUFFIX,av01.tv
 
 # 南+
 DOMAIN,www.south-plus.net
@@ -44,6 +38,7 @@ DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adtidy.org
 
 # Apps
+DOMAIN,sub-store.vercel.app  // SubStore
 DOMAIN-SUFFIX,day.app // Bark
 DOMAIN-SUFFIX,fileball.app // Fileball
 DOMAIN-SUFFIX,mess-lab.com // Http Catcher

@@ -78,6 +78,9 @@ payload:
   - DOMAIN-SUFFIX,amazonuniversity.jobs
   - DOMAIN-SUFFIX,amazonvideo.com
   - DOMAIN-SUFFIX,ameba.jp
+  - DOMAIN-SUFFIX,asmr.one
+  - DOMAIN-SUFFIX,av01.tv
+  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,bahamut.com.tw
   - DOMAIN-SUFFIX,bam.nr-data.net
   - DOMAIN-SUFFIX,bamgrid.com
@@ -142,6 +145,7 @@ payload:
   - DOMAIN-SUFFIX,go.com
   - DOMAIN-SUFFIX,googlevideo.com
   - DOMAIN-SUFFIX,hamivideo.hinet.net
+  - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,happyon.jp
   - DOMAIN-SUFFIX,hayabusa.io
   - DOMAIN-SUFFIX,hayabusa.media
@@ -168,6 +172,7 @@ payload:
   - DOMAIN-SUFFIX,iq.com
   - DOMAIN-SUFFIX,itv.com
   - DOMAIN-SUFFIX,itvstatic.com
+  - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,japonx.com
   - DOMAIN-SUFFIX,japonx.net
   - DOMAIN-SUFFIX,japonx.tv
@@ -186,6 +191,7 @@ payload:
   - DOMAIN-SUFFIX,linetv.tw
   - DOMAIN-SUFFIX,litv.tv
   - DOMAIN-SUFFIX,media-amazon.com
+  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
   - DOMAIN-SUFFIX,muscdn.com
   - DOMAIN-SUFFIX,musical.ly

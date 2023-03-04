@@ -14,6 +14,9 @@ payload:
   - DOMAIN,uts-api.itunes.apple.com
   - DOMAIN,youtubei.googleapis.com
   - DOMAIN,yt3.ggpht.com
+  - DOMAIN-SUFFIX,asmr.one
+  - DOMAIN-SUFFIX,av01.tv
+  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,bamgrid.com
   - DOMAIN-SUFFIX,bilibili.tv
   - DOMAIN-SUFFIX,biliintl.com
@@ -26,9 +29,12 @@ payload:
   - DOMAIN-SUFFIX,ext-twitch.tv
   - DOMAIN-SUFFIX,fast.com
   - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,ibytedtos.com
   - DOMAIN-SUFFIX,ipstatp.com
+  - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,jtvnw.net
+  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,muscdn.com
   - DOMAIN-SUFFIX,musical.ly
   - DOMAIN-SUFFIX,netflix.com

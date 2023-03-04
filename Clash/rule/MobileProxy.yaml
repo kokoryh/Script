@@ -36,6 +36,7 @@ payload:
   - DOMAIN,steampipe.akamaized.net
   - DOMAIN,steamstore-a.akamaihd.net
   - DOMAIN,steamusercontent-a.akamaihd.net
+  - DOMAIN,sub-store.vercel.app
   - DOMAIN,teacat.cloud
   - DOMAIN,testflight.apple.com
   - DOMAIN,tv.apple.com
@@ -72,11 +73,8 @@ payload:
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,appspot.com
   - DOMAIN-SUFFIX,appsto.re
-  - DOMAIN-SUFFIX,asmr.one
   - DOMAIN-SUFFIX,aspnetcdn.com
   - DOMAIN-SUFFIX,assets-yammer.com
-  - DOMAIN-SUFFIX,av01.tv
-  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,azure.com
   - DOMAIN-SUFFIX,azure.net
   - DOMAIN-SUFFIX,azureedge.net
@@ -137,7 +135,6 @@ payload:
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
   - DOMAIN-SUFFIX,gvt3.com
-  - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,hath.network
   - DOMAIN-SUFFIX,hentaiverse.org
   - DOMAIN-SUFFIX,hockeyapp.net
@@ -147,7 +144,6 @@ payload:
   - DOMAIN-SUFFIX,instagr.am
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,itasoftware.com
-  - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,live.com
@@ -155,7 +151,6 @@ payload:
   - DOMAIN-SUFFIX,lync.com
   - DOMAIN-SUFFIX,mediawiki.org
   - DOMAIN-SUFFIX,mess-lab.com
-  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,msappproxy.net
   - DOMAIN-SUFFIX,msauth.net
@@ -222,7 +217,6 @@ payload:
   - DOMAIN-SUFFIX,skypeassets.com
   - DOMAIN-SUFFIX,skypeforbusiness.com
   - DOMAIN-SUFFIX,smartmailcloud.com
-  - DOMAIN-SUFFIX,smoot.apple.cn
   - DOMAIN-SUFFIX,smoot.apple.com
   - DOMAIN-SUFFIX,st.dl.eccdnx.com
   - DOMAIN-SUFFIX,staffhub.ms

@@ -5,6 +5,7 @@ payload:
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,ikuuu.co
   - DOMAIN,rss.teacat001.xyz
+  - DOMAIN,sub-store.vercel.app
   - DOMAIN,teacat.cloud
   - DOMAIN,www.efcloud.net
   - DOMAIN,www.south-plus.net
@@ -12,18 +13,12 @@ payload:
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,adtidy.org
-  - DOMAIN-SUFFIX,asmr.one
-  - DOMAIN-SUFFIX,av01.tv
-  - DOMAIN-SUFFIX,avgle.com
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
   - DOMAIN-SUFFIX,fileball.app
   - DOMAIN-SUFFIX,gitlab.com
-  - DOMAIN-SUFFIX,hanime1.me
-  - DOMAIN-SUFFIX,jable.tv
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,mess-lab.com
-  - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notion-static.com
   - DOMAIN-SUFFIX,notion.com

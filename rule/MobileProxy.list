@@ -7,27 +7,24 @@ DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,dropboxapi.com
 DOMAIN-SUFFIX,dropboxusercontent.com
 
-# duckduckgo
+# 网页
 DOMAIN-SUFFIX,duckduckgo.com
-
 DOMAIN-SUFFIX,v2ex.com
 
 # Final
 DOMAIN,api.revenuecat.com  // 查询内购？
-DOMAIN,sessions.bugsnag.com // Others Surge 数据反馈？
-DOMAIN,zerossl.ocsp.sectigo.com // Others AdGuard网页
+DOMAIN,sessions.bugsnag.com // Surge 数据反馈？
+DOMAIN,zerossl.ocsp.sectigo.com // AdGuard网页
 DOMAIN,api.sprig.com // Others GoodNotes
 DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
 DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
 DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
 
-DOMAIN,in.appcenter.ms  // Others 好多app都有
-DOMAIN-SUFFIX,amazontrust.com  // 好多app都有
-DOMAIN-SUFFIX,appsflyer.com  // 好多app都有
-DOMAIN-SUFFIX,lencr.org  // 好多app都有
+# 好多app都有的
+DOMAIN,in.appcenter.ms
+DOMAIN-SUFFIX,amazontrust.com
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,usertrust.com
 
 DOMAIN,mozilla.cloudflare-dns.com
-DOMAIN-SUFFIX,usertrust.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,smoot.apple.cn
-DOMAIN-SUFFIX,digicert.com
