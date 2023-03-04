@@ -1,0 +1,52 @@
+# 数据源：https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list
+# > Alphabet
+DOMAIN-SUFFIX,abc.xyz
+DOMAIN-SUFFIX,admob.com
+DOMAIN-SUFFIX,adsense.com
+DOMAIN-SUFFIX,advertisercommunity.com
+DOMAIN-SUFFIX,ampproject.org
+DOMAIN-SUFFIX,android.com
+DOMAIN-SUFFIX,androidify.com
+DOMAIN-SUFFIX,androidtv.com
+DOMAIN-SUFFIX,api.ai
+DOMAIN-SUFFIX,apigee.com
+DOMAIN-SUFFIX,appspot.com
+DOMAIN-SUFFIX,blogblog.com
+DOMAIN-SUFFIX,blogger.com
+DOMAIN-SUFFIX,chrome.com
+DOMAIN-SUFFIX,chromium.org
+DOMAIN-SUFFIX,debug.com
+DOMAIN-SUFFIX,dialogflow.com
+DOMAIN-SUFFIX,feedburner.com
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,g.co
+DOMAIN-SUFFIX,getoutline.org
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,gmail.com
+DOMAIN-SUFFIX,gmodules.com
+# DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,gvt0.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,itasoftware.com
+DOMAIN-SUFFIX,on2.com
+DOMAIN-SUFFIX,recaptcha.net
+DOMAIN-SUFFIX,schema.org
+DOMAIN-SUFFIX,tensorflow.org
+DOMAIN-SUFFIX,tenor.com
+DOMAIN-SUFFIX,tfhub.dev
+DOMAIN-SUFFIX,tiltbrush.com
+DOMAIN-SUFFIX,waymo.com
+DOMAIN-SUFFIX,web.dev
+DOMAIN-SUFFIX,webmproject.org
+DOMAIN-SUFFIX,webrtc.org
+DOMAIN-SUFFIX,widevine.com
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+DOMAIN-SUFFIX,zynamics.com
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,.blogspot.
+DOMAIN-SUFFIX,goog
+
+# > Alphabet
+DOMAIN-SUFFIX,go.dev
+DOMAIN-SUFFIX,golang.org
