@@ -16,7 +16,6 @@ payload:
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,gateway.icloud.com
   - DOMAIN,gspe1-ssl.ls.apple.com
-  - DOMAIN,hls.itunes.apple.com
   - DOMAIN,http-inputs-notion.splunkcloud.com
   - DOMAIN,ikuuu.co
   - DOMAIN,in.appcenter.ms
@@ -296,11 +295,6 @@ payload:
   - DOMAIN-SUFFIX,yahoo.com
   - DOMAIN-SUFFIX,yammer.com
   - DOMAIN-SUFFIX,yammerusercontent.com
-  - DOMAIN-SUFFIX,youtu.be
-  - DOMAIN-SUFFIX,youtube-nocookie.com
-  - DOMAIN-SUFFIX,youtube.com
-  - DOMAIN-SUFFIX,yt.be
-  - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-SUFFIX,zdassets.com
   - DOMAIN-SUFFIX,zdusercontent.com
   - DOMAIN-SUFFIX,zendesk.com

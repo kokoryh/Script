@@ -47,7 +47,6 @@ payload:
   - DOMAIN,ktpx.amazon.com
   - DOMAIN,link.theplatform.com
   - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net
-  - DOMAIN,music.youtube.com
   - DOMAIN,mytvsuperlimited.hb.omtrdc.net
   - DOMAIN,mytvsuperlimited.sc.omtrdc.net
   - DOMAIN,netflix.com.edgesuite.net
@@ -72,6 +71,7 @@ payload:
   - DOMAIN-SUFFIX,abema.io
   - DOMAIN-SUFFIX,abema.tv
   - DOMAIN-SUFFIX,aboutamazon.com
+  - DOMAIN-SUFFIX,adobedtm.com
   - DOMAIN-SUFFIX,aiv-cdn.net
   - DOMAIN-SUFFIX,aiv-delivery.net
   - DOMAIN-SUFFIX,amazon.jobs
@@ -84,7 +84,9 @@ payload:
   - DOMAIN-SUFFIX,bahamut.com.tw
   - DOMAIN-SUFFIX,bam.nr-data.net
   - DOMAIN-SUFFIX,bamgrid.com
+  - DOMAIN-SUFFIX,bbc.co
   - DOMAIN-SUFFIX,bbc.co.uk
+  - DOMAIN-SUFFIX,bbc.com
   - DOMAIN-SUFFIX,bbc.net.uk
   - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
   - DOMAIN-SUFFIX,bbci.co
@@ -144,6 +146,7 @@ payload:
   - DOMAIN-SUFFIX,gamer.com.tw
   - DOMAIN-SUFFIX,go.com
   - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,gvt2.com
   - DOMAIN-SUFFIX,hamivideo.hinet.net
   - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,happyon.jp
@@ -159,6 +162,7 @@ payload:
   - DOMAIN-SUFFIX,hbonow.com
   - DOMAIN-SUFFIX,himalaya.com
   - DOMAIN-SUFFIX,hjholdings.jp
+  - DOMAIN-SUFFIX,hulu.com
   - DOMAIN-SUFFIX,hulu.hb.omtrdc.net
   - DOMAIN-SUFFIX,hulu.jp
   - DOMAIN-SUFFIX,hulu.sc.omtrdc.net
@@ -183,6 +187,7 @@ payload:
   - DOMAIN-SUFFIX,japronx.vip
   - DOMAIN-SUFFIX,joox.com
   - DOMAIN-SUFFIX,js-agent.newrelic.com
+  - DOMAIN-SUFFIX,jtvnw.net
   - DOMAIN-SUFFIX,kfs.io
   - DOMAIN-SUFFIX,kkbox.com
   - DOMAIN-SUFFIX,kkbox.com.tw
@@ -219,12 +224,18 @@ payload:
   - DOMAIN-SUFFIX,nimg.jp
   - DOMAIN-SUFFIX,nowe.com
   - DOMAIN-SUFFIX,nowestatic.com
+  - DOMAIN-SUFFIX,ocnttv.com
   - DOMAIN-SUFFIX,ott.hinet.net
+  - DOMAIN-SUFFIX,overcast.fm
   - DOMAIN-SUFFIX,p-cdn.us
   - DOMAIN-SUFFIX,pandora.com
   - DOMAIN-SUFFIX,paramountplus.com
   - DOMAIN-SUFFIX,pbs.org
   - DOMAIN-SUFFIX,peacocktv.com
+  - DOMAIN-SUFFIX,phncdn.com
+  - DOMAIN-SUFFIX,phprcdn.com
+  - DOMAIN-SUFFIX,pornhub.com
+  - DOMAIN-SUFFIX,pornhubpremium.com
   - DOMAIN-SUFFIX,pplusstatic.com
   - DOMAIN-SUFFIX,primevideo.com
   - DOMAIN-SUFFIX,prod.hjholdings.tv
@@ -236,6 +247,8 @@ payload:
   - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,skyking.com.tw
   - DOMAIN-SUFFIX,smartmediarep.com
+  - DOMAIN-SUFFIX,sndcdn.com
+  - DOMAIN-SUFFIX,soundcloud.com
   - DOMAIN-SUFFIX,spoti.fi
   - DOMAIN-SUFFIX,spotify.com
   - DOMAIN-SUFFIX,spotifycdn.com
@@ -248,9 +261,12 @@ payload:
   - DOMAIN-SUFFIX,tiktok.com
   - DOMAIN-SUFFIX,tiktokcdn.com
   - DOMAIN-SUFFIX,tiktokv.com
+  - DOMAIN-SUFFIX,ttvnw.net
   - DOMAIN-SUFFIX,tv.apple.com
+  - DOMAIN-SUFFIX,tvb.com
   - DOMAIN-SUFFIX,tver.jp
   - DOMAIN-SUFFIX,twitch-ext.rootonline.de
+  - DOMAIN-SUFFIX,twitch.tv
   - DOMAIN-SUFFIX,twitchcdn.net
   - DOMAIN-SUFFIX,uplynk.com
   - DOMAIN-SUFFIX,viu.com
@@ -260,9 +276,14 @@ payload:
   - DOMAIN-SUFFIX,wetvinfo.com
   - DOMAIN-SUFFIX,withyoutube.com
   - DOMAIN-SUFFIX,yb.uncn.jp
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,youtube-nocookie.com
+  - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,youtubeeducation.com
   - DOMAIN-SUFFIX,youtubegaming.com
   - DOMAIN-SUFFIX,youtubekids.com
+  - DOMAIN-SUFFIX,yt.be
+  - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-KEYWORD,-spotify-com
   - DOMAIN-KEYWORD,.hbogoasia.
   - DOMAIN-KEYWORD,abematv.akamaized.net
@@ -281,7 +302,10 @@ payload:
   - DOMAIN-KEYWORD,rthklive
   - DOMAIN-KEYWORD,spotify.com
   - DOMAIN-KEYWORD,tiktokcdn-
+  - DOMAIN-KEYWORD,ttvnw
+  - DOMAIN-KEYWORD,uk-live
   - DOMAIN-KEYWORD,voddazn
+  - DOMAIN-KEYWORD,youtube
   - IP-CIDR,103.5.34.153/32,no-resolve
   - IP-CIDR,103.87.204.0/22,no-resolve
   - IP-CIDR,104.109.129.153/32,no-resolve
