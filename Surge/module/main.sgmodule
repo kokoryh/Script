@@ -1,12 +1,6 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
-[General]
-skip-proxy = %APPEND% www.abchina.com.cn
-always-real-ip = %APPEND% *.cmpassport.com, id6.me, open.e.189.cn
-dns-server = %APPEND% system
-wifi-assist = true
-
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
