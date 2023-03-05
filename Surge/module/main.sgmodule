@@ -2,6 +2,7 @@
 #!desc=iphone专用
 
 [General]
+wifi-assist = true
 skip-proxy = %APPEND% www.abchina.com.cn
 always-real-ip = %APPEND% *.cmpassport.com, id6.me, open.e.189.cn
 dns-server = %APPEND% system
