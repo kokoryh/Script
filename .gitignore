@@ -7,7 +7,7 @@ test.js
 /rule/config*
 /js/dev/conf_2_url_scheme.js
 /js/dev/format_rule*
-/js/dev/generate_icon_json.js
+/js/dev/generate*
 /js/dev/input
 /js/dev/output
 /js/dev/decode.js
