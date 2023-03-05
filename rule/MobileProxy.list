@@ -25,6 +25,7 @@ DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
 
 # 好多app都有的
 DOMAIN,in.appcenter.ms
+DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,appsflyersdk.com
