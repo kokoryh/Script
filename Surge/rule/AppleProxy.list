@@ -24,6 +24,3 @@ DOMAIN-SUFFIX,appsto.re
 DOMAIN-SUFFIX,blobstore.apple.com
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,smoot.apple.com
-USER-AGENT,AppleNews*
-USER-AGENT,com.apple.news*
-USER-AGENT,com.apple.trustd*

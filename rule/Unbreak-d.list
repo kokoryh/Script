@@ -17,5 +17,8 @@ DOMAIN,ca.iadsdk.apple.com
 DOMAIN-SUFFIX,peropero.net  // MuseDash
 DOMAIN-SUFFIX,2550505.com // MGClub
 
+# Final
+DOMAIN,crt.trust-provider.cn
+
 # 待处理
 # DOMAIN,ocsp.godaddy.com
