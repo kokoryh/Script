@@ -89,6 +89,7 @@ DOMAIN-SUFFIX,blobstore.apple.com
 DOMAIN-SUFFIX,blogblog.com
 DOMAIN-SUFFIX,blogger.com
 DOMAIN-SUFFIX,booth.pm
+DOMAIN-SUFFIX,branch.io
 DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,chrome.com
 DOMAIN-SUFFIX,chromium.org
@@ -138,7 +139,6 @@ DOMAIN-SUFFIX,gstatic.cn
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,gvt0.com
 DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gvt3.com
 DOMAIN-SUFFIX,hath.network
 DOMAIN-SUFFIX,hentaiverse.org
@@ -214,6 +214,7 @@ DOMAIN-SUFFIX,redditmedia.com
 DOMAIN-SUFFIX,s.team
 DOMAIN-SUFFIX,safebrowsing.apple
 DOMAIN-SUFFIX,schema.org
+DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,sfbassets.com
 DOMAIN-SUFFIX,sfx.ms
 DOMAIN-SUFFIX,sharepoint.com

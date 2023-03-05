@@ -23,6 +23,8 @@ DOMAIN-SUFFIX,stash.wiki
 DOMAIN-SUFFIX,stash-activation.com
 
 # 网页
+DOMAIN-SUFFIX,duckduckgo.com
+DOMAIN-SUFFIX,v2ex.com
 DOMAIN-SUFFIX,colamanhua.com
 DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,javbus.com
@@ -37,6 +39,17 @@ DOMAIN-SUFFIX,adguard.org
 DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adtidy.org
 
+# Dropbox
+DOMAIN-SUFFIX,dropbox.com
+DOMAIN-SUFFIX,dropboxapi.com
+DOMAIN-SUFFIX,dropboxusercontent.com
+
+# Gitlab
+DOMAIN-SUFFIX,gitlab.com
+
+# 杂项
+DOMAIN-SUFFIX,yahoo.com
+
 # Apps
 DOMAIN,sub-store.vercel.app  // SubStore
 DOMAIN-SUFFIX,day.app // Bark
@@ -46,12 +59,31 @@ DOMAIN,sdk.fra-01.braze.eu // Spark
 DOMAIN,www.gravatar.com // Spark
 DOMAIN,http-inputs-notion.splunkcloud.com  // Notion
 
-# Gitlab
-DOMAIN-SUFFIX,gitlab.com
-
 # Final
 DOMAIN,api.statsig.com
 DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
+DOMAIN,api.revenuecat.com  // 查询内购？
+DOMAIN,sessions.bugsnag.com // Surge 数据反馈？
+DOMAIN,zerossl.ocsp.sectigo.com // AdGuard网页
+DOMAIN,api.sprig.com // Others GoodNotes
+DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
+DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
+DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
+# Spotify
+DOMAIN-SUFFIX,branch.io
+DOMAIN-SUFFIX,scorecardresearch.com
+
+
+# 好多app都有的
+DOMAIN,in.appcenter.ms
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,amazontrust.com
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,appsflyersdk.com
+DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,usertrust.com
+
+DOMAIN,mozilla.cloudflare-dns.com
 
 # 待处理

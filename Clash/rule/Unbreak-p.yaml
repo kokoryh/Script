@@ -1,13 +1,18 @@
 payload:
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
+  - DOMAIN,api.revenuecat.com
+  - DOMAIN,api.sprig.com
   - DOMAIN,api.statsig.com
   - DOMAIN,bbs.imoutolove.me
   - DOMAIN,dhh.lol
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,http-inputs-notion.splunkcloud.com
   - DOMAIN,ikuuu.co
+  - DOMAIN,in.appcenter.ms
+  - DOMAIN,mozilla.cloudflare-dns.com
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,sdk.fra-01.braze.eu
+  - DOMAIN,sessions.bugsnag.com
   - DOMAIN,statuse.digitalcertvalidation.com
   - DOMAIN,sub-store.vercel.app
   - DOMAIN,teacat.cloud
@@ -15,15 +20,29 @@ payload:
   - DOMAIN,www.gravatar.com
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
+  - DOMAIN,zerossl.ocsp.sectigo.com
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,adtidy.org
+  - DOMAIN-SUFFIX,amazonaws.com
+  - DOMAIN-SUFFIX,amazontrust.com
+  - DOMAIN-SUFFIX,amplitude.com
+  - DOMAIN-SUFFIX,appsflyer.com
+  - DOMAIN-SUFFIX,appsflyersdk.com
+  - DOMAIN-SUFFIX,branch.io
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
+  - DOMAIN-SUFFIX,dropbox.com
+  - DOMAIN-SUFFIX,dropboxapi.com
+  - DOMAIN-SUFFIX,dropboxusercontent.com
+  - DOMAIN-SUFFIX,duckduckgo.com
   - DOMAIN-SUFFIX,fileball.app
   - DOMAIN-SUFFIX,gitlab.com
+  - DOMAIN-SUFFIX,ingest.sentry.io
   - DOMAIN-SUFFIX,javbus.com
+  - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,mess-lab.com
+  - DOMAIN-SUFFIX,mixpanel.com
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,notion-static.com
   - DOMAIN-SUFFIX,notion.com
@@ -34,10 +53,14 @@ payload:
   - DOMAIN-SUFFIX,outbound.io
   - DOMAIN-SUFFIX,quantumult.app
   - DOMAIN-SUFFIX,safebrowsing.apple
+  - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,stash-activation.com
   - DOMAIN-SUFFIX,stash.wiki
   - DOMAIN-SUFFIX,stash.ws
   - DOMAIN-SUFFIX,surge-activation.com
+  - DOMAIN-SUFFIX,usertrust.com
+  - DOMAIN-SUFFIX,v2ex.com
+  - DOMAIN-SUFFIX,yahoo.com
   - DOMAIN-SUFFIX,zdassets.com
   - DOMAIN-SUFFIX,zdusercontent.com
   - DOMAIN-SUFFIX,zendesk.com
