@@ -50,6 +50,7 @@ DOMAIN,http-inputs-notion.splunkcloud.com  // Notion
 DOMAIN-SUFFIX,gitlab.com
 
 # 杂项
+DOMAIN,api.statsig.com
 DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
 
