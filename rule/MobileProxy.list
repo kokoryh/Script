@@ -11,6 +11,8 @@ DOMAIN-SUFFIX,dropboxusercontent.com
 DOMAIN-SUFFIX,duckduckgo.com
 DOMAIN-SUFFIX,v2ex.com
 
+DOMAIN-SUFFIX,yahoo.com
+
 # Final
 DOMAIN,api.revenuecat.com  // 查询内购？
 DOMAIN,sessions.bugsnag.com // Surge 数据反馈？
