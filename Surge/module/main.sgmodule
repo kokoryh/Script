@@ -1,6 +1,11 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
+[General]
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 127.0.0.0/8, 100.64.0.0/10, 224.0.0.0/4, fe80::/10, localhost, *.local, injections.adguard.org, local.adguard.org, www.abchina.com.cn, cable.auth.com, captive.apple.com, *.crashlytics.com
+always-real-ip = cable.auth.com, *.cmpassport.com, id6.me, open.e.189.cn
+dns-server = 223.5.5.5, 119.29.29.29, system
+
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
