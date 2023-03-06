@@ -71,7 +71,7 @@ if (url.includes("Dynamic/DynAll")) {
         let adRegex = new RegExp(bili_dynamic.blackRegex);  // 广告关键词
         let noForwordWhiteRegex = new RegExp(bili_dynamic.noForwordWhiteRegex);  // 白名单(非转发动态)
         let realWhiteRegex = new RegExp(bili_dynamic.whiteRegex);  // 真-白名单
-        let upFilter = bili_dynamic.split(',').map(Number)    // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
+        let upFilter = bili_dynamic.upFilter.split(',').map(Number)    // 在upFilter内的up主只会显示视频动态，其他动态将被过滤
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             let content = JSON.stringify(item.extend.origDesc);
             let noForwordWhite = noForwordWhiteRegex.test(content);
