@@ -38,7 +38,7 @@ if (url.includes("Dynamic/DynAll")) {
         "hideUpList": "false",
         "blackRegex": "拼多多.*补贴",
         "noForwordWhiteRegex": "互动抽奖",
-        "whiteRegex": "$占位符",
+        "whiteRegex": "占位符",
         "upFilter": ""
     };
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
