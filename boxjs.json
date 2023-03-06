@@ -214,7 +214,7 @@
         {
           "id": "@bili_proto.dynamic.whiteRegex",
           "name": "白名单正则",
-          "val": "",
+          "val": "$占位符",
           "type": "text",
           "placeholder": "",
           "desc": "看不懂或不会写正则的不要填！保留正则匹配到的动态，请将所有关键词合并为一条正则。"

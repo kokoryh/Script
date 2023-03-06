@@ -38,7 +38,7 @@ if (url.includes("Dynamic/DynAll")) {
         "hideUpList": "false",
         "blackRegex": "拼多多.*补贴",
         "noForwordWhiteRegex": "互动抽奖",
-        "whiteRegex": "",
+        "whiteRegex": "$占位符",
         "upFilter": ""
     };
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
@@ -221,13 +221,15 @@ function intToUint8Array(num) {
 function kokoryh() {
     const isQuanX = 'undefined' !== typeof $task;
     const isSurge = 'undefined' !== typeof $httpClient;
+    const isLoon = 'undefined' !== typeof $loon;
     const getValue = (key) => {
         if (isQuanX) return $prefs.valueForKey(key);
-        if (isSurge) return $persistentStore.read(key);
+        if (isSurge || isLoon) return $persistentStore.read(key);
     }
     return {
         isQuanX,
         isSurge,
+        isLoon,
         getValue
     }
 }
