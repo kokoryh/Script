@@ -242,13 +242,9 @@ proxy-groups:
       - US
 
 rule-providers:
-  Unbreak-d:
+  Unbreak:
     <<: *rule-provider-template
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-d.yaml
-
-  Unbreak-p:
-    <<: *rule-provider-template
-    url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Unbreak-p.yaml
 
   StreamingJP:
     <<: *rule-provider-template
@@ -283,8 +279,7 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/kokoryh/Script/master/Clash/rule/Lan.yaml
 
 rules:
-  - RULE-SET,Unbreak-d,DIRECT
-  - RULE-SET,Unbreak-p,全球加速
+  - RULE-SET,Unbreak,DIRECT
   - RULE-SET,StreamingJP,🇯🇵 日本节点
   - RULE-SET,Streaming,国际媒体
   - RULE-SET,Steam,Steam
