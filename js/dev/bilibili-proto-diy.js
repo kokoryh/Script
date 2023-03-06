@@ -38,7 +38,7 @@ if (url.includes("Dynamic/DynAll")) {
         "hideUpList": "false",
         "blackRegex": "拼多多.*补贴",
         "noForwordWhiteRegex": "互动抽奖",
-        "whiteRegex": "占位符",
+        "whiteRegex": "",
         "upFilter": ""
     };
     const dynAllReplyType = biliRoot.lookupType("bilibili.app.dynamic.DynAllReply");
@@ -75,7 +75,7 @@ if (url.includes("Dynamic/DynAll")) {
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
             let content = JSON.stringify(item.extend.origDesc);
             let noForwordWhite = noForwordWhiteRegex.test(content);
-            if ((noForwordWhite && item.cardType !== 1) || realWhiteRegex.test(content)) {  // 始终保留真-白名单内的动态和含 noForwordWhiteRegex 关键词的非转发动态
+            if ((noForwordWhite && item.cardType !== 1) || (bili_dynamic.whiteRegex && realWhiteRegex.test(content))) {  // 始终保留真-白名单内的动态和含 noForwordWhiteRegex 关键词的非转发动态
                 return true;
             }
 
