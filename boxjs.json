@@ -167,6 +167,67 @@
           "desc": "下拉出现的加载动画"
         }
       ]
+    },
+    {
+      "name": "Proto设置",
+      "id": "BiliProtoDIY",
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/bili-proto-diy.js",
+      "icons": [
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png",
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"
+      ],
+      "keys": [
+        "@bili_proto.dynamic"
+      ],
+      "settings": [
+        {
+          "id": "@bili_proto.dynamic.showUpList",
+          "name": "始终显示最常访问",
+          "val": false,
+          "type": "boolean",
+          "desc": "此选项为true时将始终显示动态页上方的最常访问。此选项的优先级高于隐藏最常访问。两个选项都为false时将在只有关注列表内有直播时显示最常访问。"
+        },
+        {
+          "id": "@bili_proto.dynamic.hideUpList",
+          "name": "隐藏最常访问",
+          "val": false,
+          "type": "boolean",
+          "desc": "此选项为true时将隐藏动态页上方的最常访问。两个选项都为false时将在只有关注列表内有直播时显示最常访问。"
+        },
+        {
+          "id": "@bili_proto.dynamic.blackRegex",
+          "name": "黑名单正则",
+          "val": "拼多多.*补贴",
+          "type": "text",
+          "placeholder": "",
+          "desc": "看不懂或不会写正则的不要填！过滤正则匹配到的动态，请将所有关键词合并为一条正则。"
+        },
+        {
+          "id": "@bili_proto.dynamic.noForwordWhiteRegex",
+          "name": "非转发动态的白名单正则",
+          "val": "互动抽奖",
+          "type": "text",
+          "placeholder": "",
+          "desc": "看不懂或不会写正则的不要填！保留正则匹配到的非转发动态，请将所有关键词合并为一条正则。"
+        },
+        {
+          "id": "@bili_proto.dynamic.whiteRegex",
+          "name": "白名单正则",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "看不懂或不会写正则的不要填！保留正则匹配到的动态，请将所有关键词合并为一条正则。"
+        },
+        {
+          "id": "@bili_proto.dynamic.upFilter",
+          "name": "过滤非视频动态的UP主列表",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "只能输入UP主的ID，以英文逗号隔开"
+        }
+      ]
     }
   ]
 }
