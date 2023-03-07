@@ -628,8 +628,6 @@ payload:
   - DOMAIN-SUFFIX,zopim.com
   - DOMAIN-SUFFIX,zynamics.com
   - DOMAIN-SUFFIX,zyxel.com
-  - DOMAIN-KEYWORD,.blogspot.
-  - DOMAIN-KEYWORD,.facebook.
   - DOMAIN-KEYWORD,.pinterest.
   - DOMAIN-KEYWORD,1drv
   - DOMAIN-KEYWORD,1e100
