@@ -153,7 +153,6 @@ if (url.includes("Dynamic/DynAll")) {
         }
     }
 
-    // needProcessFlag = true
     if (needProcessFlag) {
         let tIconMap = viewReplyObj.tIcon;
         for (const i in tIconMap) {

@@ -9,6 +9,8 @@ DOMAIN,beta.apple.com
 DOMAIN,beta.music.apple.com
 DOMAIN,books.apple.com
 DOMAIN,books.itunes.apple.com
+DOMAIN,cdn.iframe.ly
+DOMAIN,cdn.polyfill.io
 DOMAIN,cvws.icloud-content.com
 DOMAIN,developer.apple.com
 DOMAIN,dhh.lol
@@ -20,7 +22,6 @@ DOMAIN,ikuuu.co
 DOMAIN,in.appcenter.ms
 DOMAIN,itunes.apple.com
 DOMAIN,lookup-api.apple.com
-DOMAIN,mozilla.cloudflare-dns.com
 DOMAIN,news-assets.apple.com
 DOMAIN,news-client-search.apple.com
 DOMAIN,news-client.apple.com
@@ -39,6 +40,7 @@ DOMAIN,steampipe.akamaized.net
 DOMAIN,steamstore-a.akamaihd.net
 DOMAIN,steamusercontent-a.akamaihd.net
 DOMAIN,sub-store.vercel.app
+DOMAIN,surge.mitsea.com
 DOMAIN,teacat.cloud
 DOMAIN,testflight.apple.com
 DOMAIN,tv.apple.com
@@ -95,6 +97,9 @@ DOMAIN-SUFFIX,chrome.com
 DOMAIN-SUFFIX,chromium.org
 DOMAIN-SUFFIX,cloudapp.net
 DOMAIN-SUFFIX,cloudappsecurity.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,colamanhua.com
 DOMAIN-SUFFIX,day.app
 DOMAIN-SUFFIX,debug.com

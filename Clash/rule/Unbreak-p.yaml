@@ -4,17 +4,19 @@ payload:
   - DOMAIN,api.sprig.com
   - DOMAIN,api.statsig.com
   - DOMAIN,bbs.imoutolove.me
+  - DOMAIN,cdn.iframe.ly
+  - DOMAIN,cdn.polyfill.io
   - DOMAIN,dhh.lol
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,http-inputs-notion.splunkcloud.com
   - DOMAIN,ikuuu.co
   - DOMAIN,in.appcenter.ms
-  - DOMAIN,mozilla.cloudflare-dns.com
   - DOMAIN,rss.teacat001.xyz
   - DOMAIN,sdk.fra-01.braze.eu
   - DOMAIN,sessions.bugsnag.com
   - DOMAIN,statuse.digitalcertvalidation.com
   - DOMAIN,sub-store.vercel.app
+  - DOMAIN,surge.mitsea.com
   - DOMAIN,teacat.cloud
   - DOMAIN,www.efcloud.net
   - DOMAIN,www.gravatar.com
@@ -30,6 +32,9 @@ payload:
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,appsflyersdk.com
   - DOMAIN-SUFFIX,branch.io
+  - DOMAIN-SUFFIX,cloudflare-dns.com
+  - DOMAIN-SUFFIX,cloudflare.com
+  - DOMAIN-SUFFIX,cloudfront.net
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
   - DOMAIN-SUFFIX,dropbox.com

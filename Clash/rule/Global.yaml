@@ -16,6 +16,8 @@ payload:
   - DOMAIN,beta.music.apple.com
   - DOMAIN,books.apple.com
   - DOMAIN,books.itunes.apple.com
+  - DOMAIN,cdn.iframe.ly
+  - DOMAIN,cdn.polyfill.io
   - DOMAIN,cloud-cdn-digitalocean-com.global.ssl.fastly.net
   - DOMAIN,clubhouse.pubnubapi.com
   - DOMAIN,dhh.lol
@@ -29,7 +31,6 @@ payload:
   - DOMAIN,itunes.apple.com
   - DOMAIN,lab.skk.moe
   - DOMAIN,lookup-api.apple.com
-  - DOMAIN,mozilla.cloudflare-dns.com
   - DOMAIN,news-assets.apple.com
   - DOMAIN,news-client-search.apple.com
   - DOMAIN,news-client.apple.com
@@ -49,6 +50,7 @@ payload:
   - DOMAIN,steamusercontent-a.akamaihd.net
   - DOMAIN,steamuserimages-a.akamaihd.net
   - DOMAIN,sub-store.vercel.app
+  - DOMAIN,surge.mitsea.com
   - DOMAIN,teacat.cloud
   - DOMAIN,testflight.apple.com
   - DOMAIN,tv.apple.com
@@ -160,6 +162,8 @@ payload:
   - DOMAIN-SUFFIX,chrome.com
   - DOMAIN-SUFFIX,chromium.org
   - DOMAIN-SUFFIX,cloudcone.com
+  - DOMAIN-SUFFIX,cloudflare-dns.com
+  - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,cloudfront.net
   - DOMAIN-SUFFIX,clubhouseapi.com
   - DOMAIN-SUFFIX,clyp.it

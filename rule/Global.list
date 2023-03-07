@@ -15,6 +15,7 @@ DOMAIN,api.ndsxfkjfvhzdsfio.quest
 # Quantumult X
 DOMAIN-SUFFIX,quantumult.app
 # Surge
+DOMAIN,surge.mitsea.com
 DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,surge-activation.com
 # Stash
@@ -38,6 +39,10 @@ DOMAIN,bbs.imoutolove.me
 DOMAIN-SUFFIX,adguard.org
 DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adtidy.org
+
+# Cloudflare
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare-dns.com
 
 # Dropbox
 DOMAIN-SUFFIX,dropbox.com
@@ -74,7 +79,6 @@ DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
 DOMAIN-SUFFIX,branch.io
 DOMAIN-SUFFIX,scorecardresearch.com
 
-
 # 好多app都有的
 DOMAIN,in.appcenter.ms
 DOMAIN-SUFFIX,amazonaws.com
@@ -84,6 +88,7 @@ DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,usertrust.com
 
-DOMAIN,mozilla.cloudflare-dns.com
-
 # 待处理
+DOMAIN,cdn.iframe.ly
+DOMAIN,cdn.polyfill.io
+DOMAIN-SUFFIX,cloudfront.net
