@@ -22,7 +22,6 @@ payload:
   - DOMAIN,www.gravatar.com
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
-  - DOMAIN,zerossl.ocsp.sectigo.com
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard.org
   - DOMAIN-SUFFIX,adtidy.org
@@ -55,6 +54,7 @@ payload:
   - DOMAIN-SUFFIX,notion.site
   - DOMAIN-SUFFIX,notion.so
   - DOMAIN-SUFFIX,nssurge.com
+  - DOMAIN-SUFFIX,ocsp.sectigo.com
   - DOMAIN-SUFFIX,outbound.io
   - DOMAIN-SUFFIX,quantumult.app
   - DOMAIN-SUFFIX,safebrowsing.apple

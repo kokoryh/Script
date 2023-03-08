@@ -57,7 +57,6 @@ DOMAIN,wego.here.com
 DOMAIN,www.efcloud.net
 DOMAIN,www.south-plus.net
 DOMAIN,www.summer-plus.net
-DOMAIN,zerossl.ocsp.sectigo.com
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-SUFFIX,1password.com
 DOMAIN-SUFFIX,2mdn.net
@@ -383,6 +382,7 @@ DOMAIN-SUFFIX,nytimes.com
 DOMAIN-SUFFIX,nytimg.com
 DOMAIN-SUFFIX,nytlog.com
 DOMAIN-SUFFIX,nytstyle.com
+DOMAIN-SUFFIX,ocsp.sectigo.com
 DOMAIN-SUFFIX,oculus.com
 DOMAIN-SUFFIX,oculuscdn.com
 DOMAIN-SUFFIX,ok.ru

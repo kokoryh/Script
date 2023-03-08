@@ -70,7 +70,6 @@ DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
 DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
 DOMAIN,api.revenuecat.com  // 查询内购？
 DOMAIN,sessions.bugsnag.com // Surge 数据反馈？
-DOMAIN,zerossl.ocsp.sectigo.com // AdGuard网页
 DOMAIN,api.sprig.com // Others GoodNotes
 DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
 DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
@@ -86,6 +85,7 @@ DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,ocsp.sectigo.com
 DOMAIN-SUFFIX,usertrust.com
 
 # 待处理

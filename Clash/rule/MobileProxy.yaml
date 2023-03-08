@@ -49,7 +49,6 @@ payload:
   - DOMAIN,www.gravatar.com
   - DOMAIN,www.south-plus.net
   - DOMAIN,www.summer-plus.net
-  - DOMAIN,zerossl.ocsp.sectigo.com
   - DOMAIN-SUFFIX,1e100.net
   - DOMAIN-SUFFIX,2mdn.net
   - DOMAIN-SUFFIX,aadrm.com
@@ -187,6 +186,7 @@ payload:
   - DOMAIN-SUFFIX,nssurge.com
   - DOMAIN-SUFFIX,o365weve.com
   - DOMAIN-SUFFIX,oaspapps.com
+  - DOMAIN-SUFFIX,ocsp.sectigo.com
   - DOMAIN-SUFFIX,office.com
   - DOMAIN-SUFFIX,office.net
   - DOMAIN-SUFFIX,office365.com
