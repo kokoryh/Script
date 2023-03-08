@@ -110,7 +110,6 @@ if (url.includes("Dynamic/DynAll")) {
             16235896,       // 岚fl
             33261052,       // 咸鱼暗天70
             316381099,      // 鹿乃ちゃん
-            454880479,      // 郭思宇爱吃鱼
             698029620       // 兰音Reine
         ];
         dynAllReplyObj.dynamicList.list = dynAllReplyObj.dynamicList.list.filter(item => {
