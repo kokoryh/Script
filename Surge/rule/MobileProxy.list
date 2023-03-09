@@ -1,8 +1,6 @@
 DOMAIN,amp-api.podcasts.apple.com
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 DOMAIN,api.revenuecat.com
-DOMAIN,api.sprig.com
-DOMAIN,api.statsig.com
 DOMAIN,apple.comscoreresearch.com
 DOMAIN,bbs.imoutolove.me
 DOMAIN,beta.apple.com
@@ -229,11 +227,13 @@ DOMAIN-SUFFIX,skypeassets.com
 DOMAIN-SUFFIX,skypeforbusiness.com
 DOMAIN-SUFFIX,smartmailcloud.com
 DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,sprig.com
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,staffhub.ms
 DOMAIN-SUFFIX,stash-activation.com
 DOMAIN-SUFFIX,stash.wiki
 DOMAIN-SUFFIX,stash.ws
+DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steambroadcast.akamaized.net

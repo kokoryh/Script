@@ -65,18 +65,17 @@ DOMAIN,www.gravatar.com // Spark
 DOMAIN,http-inputs-notion.splunkcloud.com  // Notion
 
 # Final
-DOMAIN,api.statsig.com
-DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
-DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
 DOMAIN,api.revenuecat.com  // 查询内购？
 DOMAIN,sessions.bugsnag.com // Surge 数据反馈？
-DOMAIN,api.sprig.com // Others GoodNotes
-DOMAIN-SUFFIX,mixpanel.com  // Others GoodNotes
-DOMAIN-SUFFIX,amplitude.com  // Others GoodNotes
+DOMAIN,statuse.digitalcertvalidation.com // 跟ocsp.digicert.com有关
 DOMAIN-SUFFIX,ingest.sentry.io // Others qinglong
+DOMAIN-SUFFIX,safebrowsing.apple  // 这条一直走final，且大概率DNS Error，故写进来
 # Spotify
 DOMAIN-SUFFIX,branch.io
 DOMAIN-SUFFIX,scorecardresearch.com
+# GoodNotes
+DOMAIN-SUFFIX,amplitude.com
+DOMAIN-SUFFIX,mixpanel.com
 
 # 好多app都有的
 DOMAIN,in.appcenter.ms
@@ -84,11 +83,13 @@ DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,appsflyersdk.com
+DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,ocsp.sectigo.com
+DOMAIN-SUFFIX,sprig.com
+DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,usertrust.com
 
 # 待处理
 DOMAIN,cdn.iframe.ly
 DOMAIN,cdn.polyfill.io
-DOMAIN-SUFFIX,cloudfront.net

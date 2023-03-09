@@ -3,8 +3,6 @@ DOMAIN,addons.mozilla.org
 DOMAIN,amp-api.podcasts.apple.com
 DOMAIN,api.ndsxfkjfvhzdsfio.quest
 DOMAIN,api.revenuecat.com
-DOMAIN,api.sprig.com
-DOMAIN,api.statsig.com
 DOMAIN,apple.comscoreresearch.com
 DOMAIN,apps.apple.com
 DOMAIN,assets1.xboxlive.com
@@ -472,6 +470,7 @@ DOMAIN-SUFFIX,speakerdeck.com
 DOMAIN-SUFFIX,spideroak.com
 DOMAIN-SUFFIX,spiegel.de
 DOMAIN-SUFFIX,spoprod-a.akamaihd.net
+DOMAIN-SUFFIX,sprig.com
 DOMAIN-SUFFIX,spring.io
 DOMAIN-SUFFIX,spring.net
 DOMAIN-SUFFIX,stackoverflow.com
@@ -481,6 +480,7 @@ DOMAIN-SUFFIX,stash.wiki
 DOMAIN-SUFFIX,stash.ws
 DOMAIN-SUFFIX,static-economist.com
 DOMAIN-SUFFIX,staticflickr.com
+DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,steamgames.com

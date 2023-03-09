@@ -1,8 +1,6 @@
 payload:
   - DOMAIN,api.ndsxfkjfvhzdsfio.quest
   - DOMAIN,api.revenuecat.com
-  - DOMAIN,api.sprig.com
-  - DOMAIN,api.statsig.com
   - DOMAIN,bbs.imoutolove.me
   - DOMAIN,cdn.iframe.ly
   - DOMAIN,cdn.polyfill.io
@@ -59,9 +57,11 @@ payload:
   - DOMAIN-SUFFIX,quantumult.app
   - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,scorecardresearch.com
+  - DOMAIN-SUFFIX,sprig.com
   - DOMAIN-SUFFIX,stash-activation.com
   - DOMAIN-SUFFIX,stash.wiki
   - DOMAIN-SUFFIX,stash.ws
+  - DOMAIN-SUFFIX,statsig.com
   - DOMAIN-SUFFIX,surge-activation.com
   - DOMAIN-SUFFIX,usertrust.com
   - DOMAIN-SUFFIX,v2ex.com
