@@ -2,7 +2,7 @@
 #!desc=iphone专用
 
 [General]
-force-http-engine-hosts = %INSERT% 103.37.*:0
+force-http-engine-hosts = %INSERT% 103.37.*:0, 203.76.*:0
 
 [URL Rewrite]
 # Redirect Google Search Service
