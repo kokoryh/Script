@@ -1,6 +1,9 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
+[General]
+force-http-engine-hosts = %INSERT% 103.37.*:0
+
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
@@ -17,7 +20,7 @@
 # 浙里办开屏
 ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject
 
-# 美团外卖开屏
+# 美团外卖开屏(103.37.*)
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/(loadInfo|openscreen|startpicture)\?ad - reject
 ^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
