@@ -1,6 +1,9 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
+[General]
+force-http-engine-hosts = %INSERT% 103.37.*:0
+
 [URL Rewrite]
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
