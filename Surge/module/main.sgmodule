@@ -20,6 +20,7 @@
 # 美团外卖开屏
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/(loadInfo|openscreen|startpicture)\?ad - reject
 ^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
+^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
 
 [Map Local]
 
@@ -32,4 +33,4 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,s
 http-response ^https:\/\/api(-cs)?\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, img.meituan.net, mp.weixin.qq.com, api*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, wmapi.meituan.com, img.meituan.net, www.meituan.com, mp.weixin.qq.com, api*.intsig.net
