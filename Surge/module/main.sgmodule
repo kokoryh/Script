@@ -20,11 +20,8 @@ force-http-engine-hosts = %INSERT% 103.37.*:0
 # 浙里办开屏
 ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject
 
-# 美团外卖开屏(不能开定位), 103.37.*:0
-^http:\/\/s3plus\.meituan\.net\/v\d\/.+brandcpt - reject
-^http:\/\/wmapi\.meituan\.com\/api\/v\d\/(loadInfo|openscreen|startpicture)\?ad - reject
-^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
-^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad - reject
+# 美团外卖开屏, 103.37.*:0
+^https?:\/\/.*\.meituan\.(com|net)\/(api\/)?(v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|.*(bizad|brand.pt)) - reject
 
 [Map Local]
 
