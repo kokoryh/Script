@@ -1,5 +1,5 @@
-#!name=1-Block Port & Protocol
-#!desc=屏蔽特定端口 & 协议
+#!name=1-Block
+#!desc=屏蔽特定端口 & 协议 & 域名
 
 # 屏蔽UDP 443端口
 # AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
@@ -11,3 +11,5 @@
 DEST-PORT,4480,REJECT-NO-DROP
 DEST-PORT,4483,REJECT-NO-DROP
 DEST-PORT,9102,REJECT-NO-DROP
+# 这条会暴力请求
+DOMAIN,www.googleadservices.com,REJECT-DROP

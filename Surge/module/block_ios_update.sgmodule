@@ -3,7 +3,7 @@
 
 [Rule]
 # 屏蔽系统更新
-DOMAIN,mesu.apple.com,REJECT
-DOMAIN,gdmf.apple.com,REJECT
-DOMAIN,updates-http.cdn-apple.com,REJECT
-DOMAIN,xp.apple.com,REJECT
+DOMAIN,mesu.apple.com,REJECT-DROP
+DOMAIN,gdmf.apple.com,REJECT-DROP
+DOMAIN,updates-http.cdn-apple.com,REJECT-DROP
+DOMAIN,xp.apple.com,REJECT-DROP
