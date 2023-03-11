@@ -141,6 +141,7 @@ payload:
   - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com
   - DOMAIN-SUFFIX,ext-twitch.tv
   - DOMAIN-SUFFIX,fast.com
+  - DOMAIN-SUFFIX,feijisu20.com
   - DOMAIN-SUFFIX,fox.com
   - DOMAIN-SUFFIX,foxdcg.com
   - DOMAIN-SUFFIX,gamer.com.tw
