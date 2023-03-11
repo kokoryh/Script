@@ -11,5 +11,6 @@
 DEST-PORT,4480,REJECT-NO-DROP
 DEST-PORT,4483,REJECT-NO-DROP
 DEST-PORT,9102,REJECT-NO-DROP
-# 这条会暴力请求
+# 暴力请求
 DOMAIN,www.googleadservices.com,REJECT-DROP
+DOMAIN,googleads.g.doubleclick.net,REJECT-DROP
