@@ -17,7 +17,7 @@ DOMAIN-SUFFIX,peropero.net  // MuseDash
 DOMAIN-SUFFIX,2550505.com // MGClub
 
 # Final
-DOMAIN,btrace.qq.com
+DOMAIN,btrace.qq.com  // dns返0.0.0.1
 DOMAIN,crt.trust-provider.cn
 
 # 待处理
