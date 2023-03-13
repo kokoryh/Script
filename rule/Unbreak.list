@@ -12,6 +12,9 @@ DOMAIN-SUFFIX,notability.com
 # 修正广告拦截
 DOMAIN,ca.iadsdk.apple.com
 
+# Emby
+DOMAIN,cdn.misakaf.org
+
 # 杂项
 DOMAIN-SUFFIX,peropero.net  // MuseDash
 DOMAIN-SUFFIX,2550505.com // MGClub

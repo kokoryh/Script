@@ -74,6 +74,7 @@ DOMAIN-SUFFIX,adtidy.org
 DOMAIN-SUFFIX,advertisercommunity.com
 DOMAIN-SUFFIX,aex.com
 DOMAIN-SUFFIX,ahcdn.com
+DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,aicoin.com
 DOMAIN-SUFFIX,aimoon.com
 DOMAIN-SUFFIX,aka.ms
@@ -120,6 +121,7 @@ DOMAIN-SUFFIX,bibox.com
 DOMAIN-SUFFIX,binance.cc
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,binance.me
+DOMAIN-SUFFIX,binance.us
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bit.ly
 DOMAIN-SUFFIX,bit.no.com
@@ -486,6 +488,7 @@ DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,steamgames.com
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamstat.us
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steemit.com
 DOMAIN-SUFFIX,storage.live.com
@@ -556,7 +559,6 @@ DOMAIN-SUFFIX,underlords.com
 DOMAIN-SUFFIX,uniswap.org
 DOMAIN-SUFFIX,unsplash.com
 DOMAIN-SUFFIX,urbandictionary.com
-DOMAIN-SUFFIX,us
 DOMAIN-SUFFIX,usertrust.com
 DOMAIN-SUFFIX,ustream.tv
 DOMAIN-SUFFIX,v2ex.com

@@ -13,6 +13,7 @@ payload:
   - DOMAIN,cbsplaylistserver.aws.syncbak.com
   - DOMAIN,cbsservice.aws.syncbak.com
   - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net
+  - DOMAIN,cf3.misakaf.org
   - DOMAIN,content.jwplatform.com
   - DOMAIN,d1v5ir2lpwr8os.cloudfront.net
   - DOMAIN,d1xfray82862hr.cloudfront.net
@@ -92,6 +93,7 @@ payload:
   - DOMAIN-SUFFIX,bbci.co
   - DOMAIN-SUFFIX,bbci.co.uk
   - DOMAIN-SUFFIX,bidi.net.uk
+  - DOMAIN-SUFFIX,biggggg.com
   - DOMAIN-SUFFIX,biliintl.com
   - DOMAIN-SUFFIX,braze.com
   - DOMAIN-SUFFIX,byteoversea.com
@@ -148,6 +150,7 @@ payload:
   - DOMAIN-SUFFIX,go.com
   - DOMAIN-SUFFIX,googlevideo.com
   - DOMAIN-SUFFIX,gvt2.com
+  - DOMAIN-SUFFIX,haiwaikan.com
   - DOMAIN-SUFFIX,hamivideo.hinet.net
   - DOMAIN-SUFFIX,hanime1.me
   - DOMAIN-SUFFIX,happyon.jp
@@ -173,6 +176,7 @@ payload:
   - DOMAIN-SUFFIX,ibytedtos.com
   - DOMAIN-SUFFIX,indazn.com
   - DOMAIN-SUFFIX,indaznlab.com
+  - DOMAIN-SUFFIX,iole.tv
   - DOMAIN-SUFFIX,ipstatp.com
   - DOMAIN-SUFFIX,iq.com
   - DOMAIN-SUFFIX,itv.com
@@ -199,11 +203,15 @@ payload:
   - DOMAIN-SUFFIX,media-amazon.com
   - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,mudvod.tv
   - DOMAIN-SUFFIX,muscdn.com
   - DOMAIN-SUFFIX,musical.ly
   - DOMAIN-SUFFIX,my5.tv
   - DOMAIN-SUFFIX,mytvsuper.com
   - DOMAIN-SUFFIX,naver.com
+  - DOMAIN-SUFFIX,nbys.tv
+  - DOMAIN-SUFFIX,nbys1.tv
+  - DOMAIN-SUFFIX,nbyy.tv
   - DOMAIN-SUFFIX,netflix.com
   - DOMAIN-SUFFIX,netflix.net
   - DOMAIN-SUFFIX,netflixdnstest0.com
@@ -216,6 +224,7 @@ payload:
   - DOMAIN-SUFFIX,netflixdnstest7.com
   - DOMAIN-SUFFIX,netflixdnstest8.com
   - DOMAIN-SUFFIX,netflixdnstest9.com
+  - DOMAIN-SUFFIX,newpppp.com
   - DOMAIN-SUFFIX,nflxext.com
   - DOMAIN-SUFFIX,nflximg.com
   - DOMAIN-SUFFIX,nflximg.net
@@ -223,9 +232,18 @@ payload:
   - DOMAIN-SUFFIX,nflxvideo.net
   - DOMAIN-SUFFIX,nicovideo.jp
   - DOMAIN-SUFFIX,nimg.jp
+  - DOMAIN-SUFFIX,nivod.tv
+  - DOMAIN-SUFFIX,nivodi.tv
+  - DOMAIN-SUFFIX,nivodz.com
   - DOMAIN-SUFFIX,nowe.com
   - DOMAIN-SUFFIX,nowestatic.com
   - DOMAIN-SUFFIX,ocnttv.com
+  - DOMAIN-SUFFIX,olehd.com
+  - DOMAIN-SUFFIX,olelive.com
+  - DOMAIN-SUFFIX,olevod.com
+  - DOMAIN-SUFFIX,olevod.io
+  - DOMAIN-SUFFIX,olevod.tv
+  - DOMAIN-SUFFIX,olevodtv.com
   - DOMAIN-SUFFIX,ott.hinet.net
   - DOMAIN-SUFFIX,overcast.fm
   - DOMAIN-SUFFIX,p-cdn.us
@@ -273,6 +291,7 @@ payload:
   - DOMAIN-SUFFIX,viu.com
   - DOMAIN-SUFFIX,viu.now.com
   - DOMAIN-SUFFIX,viu.tv
+  - DOMAIN-SUFFIX,vod360.net
   - DOMAIN-SUFFIX,wetv.vip
   - DOMAIN-SUFFIX,wetvinfo.com
   - DOMAIN-SUFFIX,withyoutube.com
@@ -298,7 +317,9 @@ payload:
   - DOMAIN-KEYWORD,japronx
   - DOMAIN-KEYWORD,jooxweb-api
   - DOMAIN-KEYWORD,netflixdnstest
+  - DOMAIN-KEYWORD,nivod
   - DOMAIN-KEYWORD,nowtv100
+  - DOMAIN-KEYWORD,olevod
   - DOMAIN-KEYWORD,rthklive
   - DOMAIN-KEYWORD,spotify.com
   - DOMAIN-KEYWORD,tiktokcdn-
@@ -339,3 +360,4 @@ payload:
   - IP-CIDR,66.197.128.0/17,no-resolve
   - IP-CIDR,69.53.224.0/19,no-resolve
   - IP-CIDR,8.41.4.0/24,no-resolve
+  - IP-CIDR,202.61.255.248/32

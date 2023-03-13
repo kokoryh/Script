@@ -75,6 +75,7 @@ payload:
   - DOMAIN-SUFFIX,advertisercommunity.com
   - DOMAIN-SUFFIX,aex.com
   - DOMAIN-SUFFIX,ahcdn.com
+  - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,aicoin.com
   - DOMAIN-SUFFIX,aimoon.com
   - DOMAIN-SUFFIX,aka.ms
@@ -121,6 +122,7 @@ payload:
   - DOMAIN-SUFFIX,binance.cc
   - DOMAIN-SUFFIX,binance.com
   - DOMAIN-SUFFIX,binance.me
+  - DOMAIN-SUFFIX,binance.us
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bit.ly
   - DOMAIN-SUFFIX,bit.no.com
@@ -487,6 +489,7 @@ payload:
   - DOMAIN-SUFFIX,steamgames.com
   - DOMAIN-SUFFIX,steampowered.com
   - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN-SUFFIX,steamstat.us
   - DOMAIN-SUFFIX,steamstatic.com
   - DOMAIN-SUFFIX,steemit.com
   - DOMAIN-SUFFIX,storage.live.com
@@ -557,7 +560,6 @@ payload:
   - DOMAIN-SUFFIX,uniswap.org
   - DOMAIN-SUFFIX,unsplash.com
   - DOMAIN-SUFFIX,urbandictionary.com
-  - DOMAIN-SUFFIX,us
   - DOMAIN-SUFFIX,usertrust.com
   - DOMAIN-SUFFIX,ustream.tv
   - DOMAIN-SUFFIX,v2ex.com

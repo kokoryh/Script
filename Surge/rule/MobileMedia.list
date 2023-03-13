@@ -1,5 +1,6 @@
 DOMAIN,apm-misaka.biliapi.net
 DOMAIN,cdn.registerdisney.go.com
+DOMAIN,cf3.misakaf.org
 DOMAIN,hls-amt.itunes.apple.com
 DOMAIN,hls.itunes.apple.com
 DOMAIN,netflix.com.edgesuite.net
@@ -99,3 +100,4 @@ IP-CIDR,64.120.128.0/17,no-resolve
 IP-CIDR,66.197.128.0/17,no-resolve
 IP-CIDR,69.53.224.0/19,no-resolve
 IP-CIDR,8.41.4.0/24,no-resolve
+IP-CIDR,202.61.255.248/32
