@@ -21,7 +21,7 @@ force-http-engine-hosts = %INSERT% 103.37.*:0
 ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject
 
 # 美团外卖开屏
-^https?:\/\/.*\.meituan\.(com|net)\/(api\/v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|.*(bizad|brand.pt)) - reject
+^https?:\/\/.*\.meituan\.(com|net)\/(api\/v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|bizad|.*brand.pt) - reject
 
 [Map Local]
 
