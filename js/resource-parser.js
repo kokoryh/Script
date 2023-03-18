@@ -1057,6 +1057,7 @@ function isEcho(str, list) {
 
 //script&rewrite 转换成 Quantumult X
 function SCP2QX(subs) {
+    let hostname = []
     var nrw = []
     var rw = ""
     subs = subs.split("\n").map(x => x.trim().replace(/\s+/g," "))
@@ -1064,8 +1065,9 @@ function SCP2QX(subs) {
     for (var i = 0; i < subs.length; i++) {
         try {
             if (subs[i].slice(0, 8) == "hostname") {
-                hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
-                nrw.push(hn)
+                let hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
+                hn = hn.split('=')[1].split(/,\s*/)
+                hostname = Array.from(new Set(hostname.concat(hn)))
             }
             var SC = ["type=", ".js", "pattern=", "script-path="]
             var NoteK = ["//", "#", ";"]; //排除注释项
@@ -1147,6 +1149,7 @@ function SCP2QX(subs) {
             $notify("❌️解析此条时出现错误，已忽略",subs[i],err)
         }
     }
+    if(hostname.length) nrw.push(`hostname = ${hostname.join(', ')}`)
     return nrw
 }
 // 如果 URL-Regex 跟 rewrite/script 都需要
