@@ -1,5 +1,5 @@
 /**
- ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2023-02-28 08:30⟧
+ ☑️ 资源解析器 ©𝐒𝐡𝐚𝐰𝐧  ⟦2023-03-18 21:10⟧
  ----------------------------------------------------------
  🛠 发现 𝐁𝐔𝐆 请反馈: https://t.me/Shawn_Parser_Bot
  ⛳️ 关注 🆃🅶 相关频道: https://t.me/QuanX_API
@@ -1066,7 +1066,7 @@ function SCP2QX(subs) {
         try {
             if (subs[i].slice(0, 8) == "hostname") {
                 let hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
-                hn = hn.split('=')[1].split(/,\s*/)
+                hn = hn.split('=')[1].split(/,\s*/).map(i => i.trim())
                 hostname = Array.from(new Set(hostname.concat(hn)))
             }
             var SC = ["type=", ".js", "pattern=", "script-path="]
