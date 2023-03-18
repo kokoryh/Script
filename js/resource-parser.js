@@ -1064,9 +1064,8 @@ function SCP2QX(subs) {
     for (var i = 0; i < subs.length; i++) {
         try {
             if (subs[i].slice(0, 8) == "hostname") {
-                let hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
-                hn = hn.split('=')[1].split(/,\s*/).map(i => i.trim())
-                hostname = Array.from(new Set(hostname.concat(hn)))
+                hn = subs[i].replace(/\%.*\%/g, "").replace(/\:\d*/g,"")
+                nrw.push(hn)
             }
             var SC = ["type=", ".js", "pattern=", "script-path="]
             var NoteK = ["//", "#", ";"]; //排除注释项
