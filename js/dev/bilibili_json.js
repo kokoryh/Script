@@ -58,21 +58,28 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
         },
         {
             "id": 545,
-            "name": "动画",
+            "name": "追番",
             "uri": "bilibili://pgc/home",
             "tab_id": "bangumi",
             "pos": 4
         },
         {
+            "id": 774,
+            "name": "动画",
+            "uri": "bilibili://following/home_activity_tab/6544",
+            "tab_id": "anime",
+            "pos": 5
+        }
+    ]
+    if (obj.data?.bottom?.length > 3) {
+        const bottomList = [177, 179, 181]
+        obj.data.tab[4] = {
             "id": 151,
             "name": "影视",
             "uri": "bilibili://pgc/cinema-tab",
             "tab_id": "film",
             "pos": 5
         }
-    ]
-    if (obj.data?.bottom?.length > 3) {
-        const bottomList = [177, 179, 181]
         obj.data.top = [{
             "id": 176,
             "icon": "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
