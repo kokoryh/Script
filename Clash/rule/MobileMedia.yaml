@@ -2,6 +2,7 @@ payload:
   - DOMAIN,apm-misaka.biliapi.net
   - DOMAIN,cdn.registerdisney.go.com
   - DOMAIN,cf3.misakaf.org
+  - DOMAIN,embyplus.org
   - DOMAIN,hls-amt.itunes.apple.com
   - DOMAIN,hls.itunes.apple.com
   - DOMAIN,netflix.com.edgesuite.net
@@ -9,6 +10,7 @@ payload:
   - DOMAIN,p-bstarstatic.akamaized.net
   - DOMAIN,p.bstarstatic.com
   - DOMAIN,play-edge.itunes.apple.com
+  - DOMAIN,s2.amazing910.top
   - DOMAIN,tv.applemusic.com
   - DOMAIN,upos-bstar-mirrorakam.akamaized.net
   - DOMAIN,upos-bstar1-mirrorakam.akamaized.net

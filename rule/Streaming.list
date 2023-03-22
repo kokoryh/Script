@@ -9,4 +9,6 @@ DOMAIN-SUFFIX,feijisu20.com
 
 # Emby
 DOMAIN,cf3.misakaf.org  // MisakaF
+DOMAIN,embyplus.org  // 纸片人小站
+DOMAIN,s2.amazing910.top // Jellyfin
 IP-CIDR,202.61.255.248/32  // Mulgore

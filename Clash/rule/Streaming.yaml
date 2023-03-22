@@ -25,6 +25,7 @@ payload:
   - DOMAIN,dai3fd1oh325y.cloudfront.net
   - DOMAIN,dmqdd6hw24ucf.cloudfront.net
   - DOMAIN,edge.api.brightcove.com
+  - DOMAIN,embyplus.org
   - DOMAIN,fls-na.amazon.com
   - DOMAIN,gamer-cds.cdn.hinet.net
   - DOMAIN,gamer2-cds.cdn.hinet.net
@@ -56,6 +57,7 @@ payload:
   - DOMAIN,p.bstarstatic.com
   - DOMAIN,play-edge.itunes.apple.com
   - DOMAIN,players.brightcove.net
+  - DOMAIN,s2.amazing910.top
   - DOMAIN,s3-ap-southeast-1.amazonaws.com
   - DOMAIN,theater-kktv.cdn.hinet.net
   - DOMAIN,tv.applemusic.com
