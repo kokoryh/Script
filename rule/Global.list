@@ -52,6 +52,11 @@ DOMAIN-SUFFIX,dropboxusercontent.com
 # Gitlab
 DOMAIN-SUFFIX,gitlab.com
 
+# Jsdelivr
+DOMAIN-SUFFIX,esm.run
+DOMAIN-SUFFIX,jsdelivr.com
+DOMAIN-SUFFIX,jsdelivr.net
+
 # 杂项
 DOMAIN-SUFFIX,yahoo.com
 

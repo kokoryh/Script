@@ -212,6 +212,7 @@ payload:
   - DOMAIN-SUFFIX,elastic.com
   - DOMAIN-SUFFIX,encyclopedia.com
   - DOMAIN-SUFFIX,engadget.com
+  - DOMAIN-SUFFIX,esm.run
   - DOMAIN-SUFFIX,etherscan.io
   - DOMAIN-SUFFIX,eu
   - DOMAIN-SUFFIX,eurekavpt.com
@@ -310,6 +311,8 @@ payload:
   - DOMAIN-SUFFIX,jitpack.io
   - DOMAIN-SUFFIX,joinclubhouse.com
   - DOMAIN-SUFFIX,jp
+  - DOMAIN-SUFFIX,jsdelivr.com
+  - DOMAIN-SUFFIX,jsdelivr.net
   - DOMAIN-SUFFIX,justpaste.it
   - DOMAIN-SUFFIX,kakao.com
   - DOMAIN-SUFFIX,kakaocdn.net

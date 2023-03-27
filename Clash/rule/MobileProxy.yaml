@@ -113,6 +113,7 @@ payload:
   - DOMAIN-SUFFIX,edgesuite.net
   - DOMAIN-SUFFIX,ehgt.org
   - DOMAIN-SUFFIX,ehwiki.org
+  - DOMAIN-SUFFIX,esm.run
   - DOMAIN-SUFFIX,exhentai.org
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,fanatical.com
@@ -155,6 +156,8 @@ payload:
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,itasoftware.com
   - DOMAIN-SUFFIX,javbus.com
+  - DOMAIN-SUFFIX,jsdelivr.com
+  - DOMAIN-SUFFIX,jsdelivr.net
   - DOMAIN-SUFFIX,lencr.org
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live.net

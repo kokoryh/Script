@@ -37,10 +37,13 @@ DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,dropboxapi.com
 DOMAIN-SUFFIX,dropboxusercontent.com
 DOMAIN-SUFFIX,duckduckgo.com
+DOMAIN-SUFFIX,esm.run
 DOMAIN-SUFFIX,fileball.app
 DOMAIN-SUFFIX,gitlab.com
 DOMAIN-SUFFIX,ingest.sentry.io
 DOMAIN-SUFFIX,javbus.com
+DOMAIN-SUFFIX,jsdelivr.com
+DOMAIN-SUFFIX,jsdelivr.net
 DOMAIN-SUFFIX,lencr.org
 DOMAIN-SUFFIX,mess-lab.com
 DOMAIN-SUFFIX,mixpanel.com
