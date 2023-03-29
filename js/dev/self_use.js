@@ -29,8 +29,7 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     if (ua.includes("AMap") || ua.includes("Cainiao")) {
         if ('undefined' !== typeof $task) $done({status: 'HTTP/1.1 404 Not Found'})
         else $done()
-    }
-    else $done({})
+    } else $done({})
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
 } else {
