@@ -14,6 +14,8 @@ DOMAIN,ca.iadsdk.apple.com
 
 # Emby
 DOMAIN,cdn.misakaf.org
+DOMAIN,cu.poloemby.xyz
+DOMAIN,sp.pololine.ml
 
 # 杂项
 DOMAIN-SUFFIX,peropero.net  // MuseDash
