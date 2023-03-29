@@ -139,6 +139,7 @@ if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
     let obj = JSON.parse($response.body)
     if (obj.data?.vip && !obj.data.vip.status) {
         obj.data.vip.type = 2
+        obj.data.vip.role = 3
         obj.data.vip.status = 1
         obj.data.vip.vip_pay_type = 1
         obj.data.vip.due_date = 4669824160000
