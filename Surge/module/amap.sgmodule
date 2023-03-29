@@ -2,8 +2,6 @@
 #!desc=需全新应用
 
 # 修改自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
-# QX请使用：https://raw.githubusercontent.com/kokoryh/Script/master/QuantumultX/rewrite/amap.conf
-# 不要对这个模块用解析器
 
 [URL Rewrite]
 # 通用广告请求
