@@ -306,6 +306,70 @@
           "desc": "WiFi名称以逗号分隔, 名单内将跳过策略切换"
         }
       ]
+    },
+    {
+      "name": "☁️ Cloudflare 1.1.1.1",
+      "id": "Cloudflare.1dot1dot1dot1",
+      "author": "@VirgilClyne",
+      "icons": [
+        "https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/d3/c5/bb/d3c5bbed-08d4-481c-8585-f7d2e45abd5f/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png",
+        "https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/d3/c5/bb/d3c5bbed-08d4-481c-8585-f7d2e45abd5f/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png"
+      ],
+      "descs_html": [
+        "不同运行方式所要填写的内容也不相同",
+        "使用说明请见<a href=\"https://github.com/VirgilClyne/Cloudflare/wiki/☁-1.1.1.1-by-Cloudflare-with-WARP#使用说明\">使用说明</a>",
+        "填写完成后请先点击此页面底端右下角的\"保存\"后，再到App中执行后续操作。"
+      ],
+      "keys": [
+        "@Cloudflare.1dot1dot1dot1.Settings",
+        "@Cloudflare.1dot1dot1dot1.Caches"
+      ],
+      "settings": [
+        {
+          "id": "@Cloudflare.1dot1dot1dot1.Settings.Switch",
+          "name": "总功能开关",
+          "val": true,
+          "type": "boolean",
+          "desc": "是否启用此模块"
+        },
+        {
+          "id": "@Cloudflare.1dot1dot1dot1.Settings.setupMode",
+          "name": "1.1.1.1: 运行方式/setupMode",
+          "val": "ChangeKeypair",
+          "type": "radios",
+          "items": [
+            {
+              "key": "ChangeKeypair",
+              "label": "更换公钥(用自定义密钥对)(公钥 & 注册ID & 令牌)/Change Public Key(with custom Keypair)(Public Key & Registration Id/id & Token)"
+            }
+          ],
+          "desc": "请选择运行模式"
+        },
+        {
+          "id": "@Cloudflare.1dot1dot1dot1.Settings.Verify.RegistrationId",
+          "name": "WARP: 注册ID(设备ID/客户端ID/配置文件ID)/Registration Id(Device ID/Client ID/Config ID)",
+          "val": "",
+          "type": "text",
+          "placeholder": "123e4567-e89b-12d3-a456-426614174000",
+          "desc": "设备ID, UUID, 请妥善保管，注册新设备时可以自己通过UUID生成器生成，每个设备和对应配置文件的唯一身份识别代码，不填写的话视为新设备注册，会自动生成，一个设备生成一个配置文件，想找回配置文件可以通过设备ID找回"
+        },
+        {
+          "id": "@WireGuard.VPN.Settings.PrivateKey",
+          "name": "WireGuard: 私钥/Private Key",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "在Wireguard的iOS客户端里新建隧道，生成一个密钥对，私钥贴在这里，公钥贴下面"
+        },
+        {
+          "id": "@WireGuard.VPN.Settings.PublicKey",
+          "name": "WireGuard: 公钥/Public Key",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "desc": "在Wireguard的iOS客户端里新建隧道，生成一个密钥对，公钥贴在这里，私钥贴上面"
+        }
+      ]
     }
   ]
 }
