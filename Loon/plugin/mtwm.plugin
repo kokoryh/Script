@@ -1,0 +1,14 @@
+#!name=3-美团外卖去广告
+#!desc=去除开屏广告
+#!author=kokoryh
+#!homepage=
+#!icon=
+
+[General]
+force-http-engine-hosts = 101.236.*:0, 103.37.*:0, 119.29.*:0, 203.76.*:0
+
+[Rewrite]
+^https?:\/\/.*\.meituan\.(com|net)\/(api\/v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|bizad|.*brand.pt) - reject
+
+[MITM]
+hostname = img.meituan.net, www.meituan.com
