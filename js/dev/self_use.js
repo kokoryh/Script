@@ -3,9 +3,17 @@ let body = null
 
 if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     let obj = JSON.parse($response.body)
-    if (obj.data?.operate) {
-        obj.data.operate = null
-        body = JSON.stringify(obj)
+    if (url.includes('HomeFeed')) {
+        if (obj.data?.feeds) {
+            obj.data.feeds = obj.data.feeds.filter(item => {
+                return !(item.type === 15 && item.type === 30)
+            })
+        }
+    } else if (url.includes('AppInit')) {
+        if (obj.data?.operate) {
+            obj.data.operate = null
+            body = JSON.stringify(obj)
+        }
     }
 } else if (url.includes("wmapi.meituan.com")) {  // 美团外卖
     let obj = JSON.parse($response.body)

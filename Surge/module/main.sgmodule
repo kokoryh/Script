@@ -1,6 +1,8 @@
 #!name=0-自用主模块(iphone)
 #!desc=iphone专用
 
+# 美团IP：101.236.*:0, 103.37.*:0, 119.29.*:0, 203.76.*:0
+
 [General]
 force-http-engine-hosts = %INSERT% 103.37.*:0
 
