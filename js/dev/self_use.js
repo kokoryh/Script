@@ -8,6 +8,7 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
             obj.data.feeds = obj.data.feeds.filter(item => {
                 return !(item.type === 15 || item.type === 30)
             })
+            body = JSON.stringify(obj)
         }
     } else if (url.includes('AppInit')) {
         if (obj.data?.operate) {
