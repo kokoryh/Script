@@ -6,7 +6,7 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     if (url.includes('HomeFeed')) {
         if (obj.data?.feeds) {
             obj.data.feeds = obj.data.feeds.filter(item => {
-                return !(item.type === 15 && item.type === 30)
+                return !(item.type === 15 || item.type === 30)
             })
         }
     } else if (url.includes('AppInit')) {
