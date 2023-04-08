@@ -6,7 +6,7 @@
 #### [教程频道](https://t.me/xiaoxiaoyunxi)
 ## 功能性分流
 [屏蔽iOS更新](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Frule%2FBlockiOSUpdate.list%2C%20tag%3D%E5%B1%8F%E8%94%BDiOS%E6%9B%B4%E6%96%B0%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)  
-[微信直连](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FNobyDa%2FScript%2Fmaster%2FSurge%2FWeChat.list%23out%3DKEYWORD%2C%20tag%3D%E5%BE%AE%E4%BF%A1%E7%9B%B4%E8%BF%9E%2C%20force-policy%3Ddirect%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)  
+[微信直连](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2FNobyDa%2FScript%2Fmaster%2FSurge%2FWeChat.list%23ntf%3D0%26out%3DKEYWORD%2C%20tag%3D%E5%BE%AE%E4%BF%A1%E7%9B%B4%E8%BF%9E%2C%20force-policy%3Ddirect%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D)  
 ## 去广告分流
 [广告拦截](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fkokoryh%2FScript%2Fmaster%2FSurge%2Frule%2FAdvertising.list%2C%20tag%3D%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%2C%20force-policy%3Dreject%2C%20update-interval%3D172800%2C%20opt-parser%3Dtrue%2C%20enabled%3Dtrue%22%5D%7D) ，推荐添加，包含[神机去广告](https://github.com/DivineEngine/Profiles/tree/master) 和各app去广告分流补充  
 #### 以下几条包含大量分流，且存在误杀情况，请自行判断是否添加。分流去广告的能力十分有限
