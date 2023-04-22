@@ -107,15 +107,20 @@ if (url.includes("valueadded/alimama/splash_screen")) {  // 开屏广告
 } else if (url.includes("search/nearbyrec_smart")) {  // 附近页面
     let obj = JSON.parse($response.body)
     if (obj.data?.modules) {
-        let module = [
-            "coupon",           // 右下角广告
-            "scene",            // 热词底下的广告横幅
-            "activity",         // 热词底下的活动推荐，如指南，0元领水果之类的
-            "commodity_rec"     // 超值套餐
+        obj.data.modules = [
+            "head",
+            "search_hot_words",
+            "feed_rec"
         ]
-        obj.data.modules = obj.data.modules.filter(item => {
-            return !module.includes(item)
-        })
+        // let module = [
+        //     "coupon",           // 右下角广告
+        //     "scene",            // 热词底下的广告横幅
+        //     "activity",         // 热词底下的活动推荐，如指南，0元领水果之类的
+        //     "commodity_rec"     // 超值套餐
+        // ]
+        // obj.data.modules = obj.data.modules.filter(item => {
+        //     return !module.includes(item)
+        // })
         body = JSON.stringify(obj)
     }
 } else {
