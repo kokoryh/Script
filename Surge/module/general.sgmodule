@@ -1,0 +1,7 @@
+#!name=1-General
+#!desc=通用配置
+
+[General]
+exclude-simple-hostnames = true
+skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, sequoia.apple.com, seed-sequoia.siri.apple.com, www.baidu.com, www.abchina.com.cn, injections.adguard.org, local.adguard.org, cable.auth.com, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/4, fe80::/10
+always-real-ip = cable.auth.com, *.cmpassport.com, id6.me, open.e.189.cn, localhost.ptlogin2.qq.com
