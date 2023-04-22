@@ -1,7 +1,7 @@
 #!name=1-HTTP API
-#!desc=允许本地程序访问HTTP API
+#!desc=允许WiFi网络访问HTTP API
 
 [General]
-http-api = kokoryh@127.0.0.1:6171
+http-api = kokoryh@0.0.0.0:25500
 http-api-tls = false
 http-api-web-dashboard = true
