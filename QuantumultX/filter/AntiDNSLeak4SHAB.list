@@ -6,24 +6,24 @@
 # 该说是可笑呢？还是可悲呢？
 
 # DNS Leak from Shadowrocket Default
-HOST-SUFFIX,dnsleaktest.com,PROXY
-HOST-SUFFIX,dnsleak.com,PROXY
-HOST-SUFFIX,expressvpn.com,PROXY
-HOST-SUFFIX,nordvpn.com,PROXY
-HOST-SUFFIX,surfshark.com,PROXY
-HOST-SUFFIX,ipleak.net,PROXY
-HOST-SUFFIX,perfect-privacy.com,PROXY
-HOST-SUFFIX,browserleaks.com,PROXY
-HOST-SUFFIX,browserleaks.org,PROXY
-HOST-SUFFIX,vpnunlimited.com,PROXY
-HOST-SUFFIX,whoer.net,PROXY
-HOST-SUFFIX,whrq.net,PROXY
+HOST-SUFFIX,dnsleaktest.com,proxy
+HOST-SUFFIX,dnsleak.com,proxy
+HOST-SUFFIX,expressvpn.com,proxy
+HOST-SUFFIX,nordvpn.com,proxy
+HOST-SUFFIX,surfshark.com,proxy
+HOST-SUFFIX,ipleak.net,proxy
+HOST-SUFFIX,perfect-privacy.com,proxy
+HOST-SUFFIX,browserleaks.com,proxy
+HOST-SUFFIX,browserleaks.org,proxy
+HOST-SUFFIX,vpnunlimited.com,proxy
+HOST-SUFFIX,whoer.net,proxy
+HOST-SUFFIX,whrq.net,proxy
 
-# astrill
-HOST-SUFFIX,astrill.com,PROXY
-HOST-SUFFIX,astrill.org,PROXY
-HOST-SUFFIX,dnsleak.asn247.net,PROXY
+# Astrill
+HOST-SUFFIX,astrill.com,proxy
+HOST-SUFFIX,astrill.org,proxy
+HOST-SUFFIX,dnsleak.asn247.net,proxy
 
-# surfshark
-HOST-SUFFIX,surfshark.com,PROXY
-HOST-SUFFIX,surfsharkdns.com,PROXY
+# Surfshark
+HOST-SUFFIX,surfshark.com,proxy
+HOST-SUFFIX,surfsharkdns.com,proxy

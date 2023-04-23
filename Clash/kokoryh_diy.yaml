@@ -122,7 +122,7 @@ proxy-provider-template: &proxy-provider-template
 url-test-template: &url-test-template
   type: url-test
   interval: 3600
-  url: 'http://www.gstatic.com/generate_204'
+  url: http://www.gstatic.com/generate_204
   lazy: true
 
 rule-provider-template: &rule-provider-template
@@ -152,12 +152,12 @@ proxy-providers:
     <<: *ProxyList
 
 proxy-groups:
-  - name: "PROXY"
+  - name: PROXY
     type: select
     use:
       - ProxyList
 
-  - name: "全球加速"
+  - name: 全球加速
     type: select
     proxies:
       - FALLBACK
@@ -167,7 +167,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇸 美国节点
 
-  - name: "国际媒体"
+  - name: 国际媒体
     type: select
     proxies:
       - PROXY
@@ -175,14 +175,14 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - 🇺🇸 美国节点
 
-  - name: "Steam"
+  - name: Steam
     type: select
     proxies:
       - DIRECT
       - PROXY
       - 全球加速
 
-  - name: "Bilibili"
+  - name: Bilibili
     type: select
     proxies:
       - DIRECT
@@ -190,7 +190,7 @@ proxy-groups:
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
 
-  - name: "OneDrive"
+  - name: OneDrive
     type: select
     proxies:
       - DIRECT
@@ -198,7 +198,7 @@ proxy-groups:
       - 🇭🇰 香港节点
       - 🇺🇸 美国节点
 
-  - name: "黑白名单"
+  - name: 黑白名单
     type: select
     proxies:
       - 全球加速
@@ -210,32 +210,32 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇸 美国节点
 
-  - name: "FALLBACK"
+  - name: FALLBACK
     type: fallback
-    url: 'http://www.gstatic.com/generate_204'
+    url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
       - ProxyList
 
-  - name: "🇭🇰 香港节点"
+  - name: 🇭🇰 香港节点
     <<: *url-test-template
     tolerance: 50
     use:
       - HK
 
-  - name: "🇹🇼 台湾节点"
+  - name: 🇹🇼 台湾节点
     <<: *url-test-template
     tolerance: 50
     use:
       - TW
 
-  - name: "🇯🇵 日本节点"
+  - name: 🇯🇵 日本节点
     <<: *url-test-template
     tolerance: 100
     use:
       - JP
 
-  - name: "🇺🇸 美国节点"
+  - name: 🇺🇸 美国节点
     <<: *url-test-template
     tolerance: 100
     use:

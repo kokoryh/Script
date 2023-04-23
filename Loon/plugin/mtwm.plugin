@@ -4,6 +4,8 @@
 #!homepage=https://github.com/kokoryh/Script/tree/master/Loon/plugin
 #!icon=https://raw.githubusercontent.com/kokoryh/Script/master/images/mtwm.png
 
+# 本插件不适用于Surge，原因见：https://community.nssurge.com/d/1594-force-http-engine-hosts
+
 [General]
 force-http-engine-hosts = 101.236.*:0, 103.37.*:0, 119.29.*:0, 203.76.*:0
 
