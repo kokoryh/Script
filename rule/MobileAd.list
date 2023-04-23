@@ -12,6 +12,7 @@ IP-CIDR,203.107.1.1/24,no-resolve
 
 # Google
 DOMAIN,ads.youtube.com
+DOMAIN,googleads.g.doubleclick-cn.net
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,googleadservices.com
 

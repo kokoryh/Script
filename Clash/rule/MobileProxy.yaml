@@ -100,7 +100,6 @@ payload:
   - DOMAIN-SUFFIX,cloudflare-dns.com
   - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,cloudfront.net
-  - DOMAIN-SUFFIX,cms-twdigitalassets.com
   - DOMAIN-SUFFIX,colamanhua.com
   - DOMAIN-SUFFIX,day.app
   - DOMAIN-SUFFIX,debug.com

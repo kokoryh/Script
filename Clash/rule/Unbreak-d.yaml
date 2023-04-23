@@ -1,4 +1,5 @@
 payload:
+  - DOMAIN,ad.12306.cn
   - DOMAIN,alt1-mtalk.google.com
   - DOMAIN,alt2-mtalk.google.com
   - DOMAIN,alt3-mtalk.google.com
@@ -7,6 +8,7 @@ payload:
   - DOMAIN,alt6-mtalk.google.com
   - DOMAIN,alt7-mtalk.google.com
   - DOMAIN,alt8-mtalk.google.com
+  - DOMAIN,amdc.m.taobao.com
   - DOMAIN,analytics.strava.com
   - DOMAIN,app.adjust.com
   - DOMAIN,app.appsflyer.com

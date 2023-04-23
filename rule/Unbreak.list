@@ -11,6 +11,8 @@ DOMAIN-SUFFIX,notability.com
 
 # 修正广告拦截
 DOMAIN,ca.iadsdk.apple.com
+DOMAIN,amdc.m.taobao.com
+DOMAIN,ad.12306.cn
 
 # Emby
 DOMAIN,cdn.misakaf.org
