@@ -1,16 +1,13 @@
 let url = $request.url
 let body = null
 
-if (url.includes('app.bilibili.com/x/v2/splash/list')) {  // 开屏广告
+if (url.includes('app.bilibili.com/x/v2/splash/')) {  // 开屏广告
     let obj = JSON.parse($response.body)
-    if (obj.data?.list) {
-        for (let item of obj.data.list) {
-            item.duration = 0  // 显示时间
-            item.begin_time = 2240150400  // 2040 年
-            item.end_time = 2240150400
-        }
-        body = JSON.stringify(obj)
+    if (obj.data?.show) {
+        obj.data.show = []
     }
+    body = JSON.stringify(obj)
+
 } else if (url.includes('app.bilibili.com/x/v2/feed/index?')) {  // 推荐去广告，最后问号不能去掉，以免匹配到story模式
     let obj = JSON.parse($response.body)
     if (obj.data?.items) {

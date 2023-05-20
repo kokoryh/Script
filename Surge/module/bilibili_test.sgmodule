@@ -26,7 +26,7 @@
 # 装扮DIY
 bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili-suit-diy.js
 # 开屏广告 | 推荐页banner和广告 | 我的页面 | 1080P | 热搜 | 标签栏
-bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/list|feed\/index|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab\/v2),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js
+bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab\/v2),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js
 # 视频播放页广告 | 动态页广告 | 播放器选项
 bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$,requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili-proto.js
 # 直播间推广
