@@ -75,6 +75,7 @@ payload:
   - DOMAIN-SUFFIX,abema.tv
   - DOMAIN-SUFFIX,aboutamazon.com
   - DOMAIN-SUFFIX,adobedtm.com
+  - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,aiv-cdn.net
   - DOMAIN-SUFFIX,aiv-delivery.net
   - DOMAIN-SUFFIX,amazon.jobs
@@ -104,6 +105,7 @@ payload:
   - DOMAIN-SUFFIX,cbsi.com
   - DOMAIN-SUFFIX,cbsivideo.com
   - DOMAIN-SUFFIX,cdn.optimizely.com
+  - DOMAIN-SUFFIX,challenges.cloudflare.com
   - DOMAIN-SUFFIX,channel4.com
   - DOMAIN-SUFFIX,channel5.com
   - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
@@ -246,6 +248,8 @@ payload:
   - DOMAIN-SUFFIX,olevod.io
   - DOMAIN-SUFFIX,olevod.tv
   - DOMAIN-SUFFIX,olevodtv.com
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
   - DOMAIN-SUFFIX,ott.hinet.net
   - DOMAIN-SUFFIX,overcast.fm
   - DOMAIN-SUFFIX,p-cdn.us
@@ -275,6 +279,7 @@ payload:
   - DOMAIN-SUFFIX,spotifycdn.com
   - DOMAIN-SUFFIX,spotifycdn.net
   - DOMAIN-SUFFIX,streaks.jp
+  - DOMAIN-SUFFIX,stripe.com
   - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
   - DOMAIN-SUFFIX,tidal.com
   - DOMAIN-SUFFIX,tidalhifi.com
@@ -306,7 +311,7 @@ payload:
   - DOMAIN-SUFFIX,youtubekids.com
   - DOMAIN-SUFFIX,yt.be
   - DOMAIN-SUFFIX,ytimg.com
-  - DOMAIN-KEYWORD,-spotify-com
+  - DOMAIN-KEYWORD,-spotify-
   - DOMAIN-KEYWORD,abematv.akamaized.net
   - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
   - DOMAIN-KEYWORD,avoddashs
@@ -322,9 +327,10 @@ payload:
   - DOMAIN-KEYWORD,nivod
   - DOMAIN-KEYWORD,nowtv100
   - DOMAIN-KEYWORD,olevod
+  - DOMAIN-KEYWORD,openai
   - DOMAIN-KEYWORD,rthklive
   - DOMAIN-KEYWORD,spotify.com
-  - DOMAIN-KEYWORD,tiktokcdn-
+  - DOMAIN-KEYWORD,tiktokcdn
   - DOMAIN-KEYWORD,ttvnw
   - DOMAIN-KEYWORD,uk-live
   - DOMAIN-KEYWORD,voddazn

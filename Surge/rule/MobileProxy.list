@@ -86,6 +86,8 @@ DOMAIN-SUFFIX,azureedge.net
 DOMAIN-SUFFIX,azureiotcentral.com
 DOMAIN-SUFFIX,azurerms.com
 DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,bing.net
+DOMAIN-SUFFIX,bingapis.com
 DOMAIN-SUFFIX,blobstore.apple.com
 DOMAIN-SUFFIX,blogblog.com
 DOMAIN-SUFFIX,blogger.com

@@ -83,7 +83,7 @@ payload:
   - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
   - DOMAIN-KEYWORD,dualstack.apiproxy-
   - DOMAIN-KEYWORD,netflixdnstest
-  - DOMAIN-KEYWORD,tiktokcdn-
+  - DOMAIN-KEYWORD,tiktokcdn
   - DOMAIN-KEYWORD,ttvnw
   - DOMAIN-KEYWORD,youtube
   - IP-CIDR,103.87.204.0/22,no-resolve
