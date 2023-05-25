@@ -2,9 +2,12 @@
 #!desc=iphone专用
 
 # 美团IP：101.236.*:0, 103.37.*:0, 119.29.*:0, 203.76.*:0
+# force-http-engine-hosts = %INSERT% 103.37.*:0
+
+# 美团外卖开屏, img.meituan.net, www.meituan.com
+# ^https?:\/\/.*\.meituan\.(com|net)\/(api\/v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|bizad|.*brand.pt) - reject
 
 [General]
-force-http-engine-hosts = %INSERT% 103.37.*:0
 
 [URL Rewrite]
 # Redirect Google Search Service
@@ -22,9 +25,6 @@ force-http-engine-hosts = %INSERT% 103.37.*:0
 # 浙里办开屏
 ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject
 
-# 美团外卖开屏
-^https?:\/\/.*\.meituan\.(com|net)\/(api\/v\d\/(loadInfo|openscreen|startpicture|appstatus)\?ad|bizad|.*brand.pt) - reject
-
 [Map Local]
 
 [Script]
@@ -36,4 +36,4 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,s
 http-response ^https:\/\/api(-cs)?\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 
 [MITM]
-hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, img.meituan.net, www.meituan.com, mp.weixin.qq.com, api*.intsig.net
+hostname = %INSERT% www.google.cn, exhentai.org, pan.baidu.com, client.app.coc.10086.cn, portal.zjzwfw.gov.cn, ad.12306.cn, mp.weixin.qq.com, api*.intsig.net

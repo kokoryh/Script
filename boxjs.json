@@ -370,6 +370,34 @@
           "desc": "在Wireguard的iOS客户端里新建隧道，生成一个密钥对，公钥贴在这里，私钥贴上面"
         }
       ]
+    },
+    {
+      "name": "出站模式切换",
+      "id": "OutboundModeChange",
+      "author": "@kokoryh",
+      "repo": "https://github.com/kokoryh/Script/blob/master/js/dev/network_change.js",
+      "icons": [
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/Proxy.png",
+        "https://raw.githubusercontent.com/kokoryh/Script/master/images/Proxy.png"
+      ],
+      "keys": [
+        "direct_ssid",
+        "proxy_ssid"
+      ],
+      "settings": [
+        {
+          "id": "direct_ssid",
+          "name": "直连ssid",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "proxy_ssid",
+          "name": "全局ssid",
+          "val": "",
+          "type": "text"
+        }
+      ]
     }
   ]
 }
