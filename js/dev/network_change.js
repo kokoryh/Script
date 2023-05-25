@@ -1,3 +1,5 @@
+// network-changed = script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/network_change.js,type=event,event-name=network-changed
+
 !(async () => {
     const ssid = $network.wifi.ssid;
     const directMode = {'mode': 'direct'};
@@ -16,7 +18,7 @@
             await changeRunningMode(ruleMode);
         }
     }
-    $done();
+    $done({});
 })();
 
 function readSsid(key) {
