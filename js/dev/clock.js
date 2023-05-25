@@ -1,10 +1,10 @@
 const $ = kokoryh();
 const date = new Date();
 if (date.getDay() !== 6) {
-    $.notify('打卡');
+    $.notify('打卡', '', '');
 } else {
     if (new Date(date.getTime() + 7 * 86400 * 1000).getMonth() !== date.getMonth()) {
-        $.notify('打卡');
+        $.notify('打卡', '', '');
     }
 }
 $done();
