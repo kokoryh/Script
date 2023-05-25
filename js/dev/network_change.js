@@ -1,5 +1,5 @@
+// 对应持久化数据字段direct_ssid和proxy_ssid，多个ssid用英文逗号隔开，不要加空格
 // network-changed = script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/network_change.js,type=event,event-name=network-changed
-// 对应持久化数据字段direct_ssid和proxy_ssid
 
 !(async () => {
     const ssid = $network.wifi.ssid;
