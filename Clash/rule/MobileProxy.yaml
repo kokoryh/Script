@@ -32,7 +32,6 @@ payload:
   - DOMAIN,sdk.fra-01.braze.eu
   - DOMAIN,sessions.bugsnag.com
   - DOMAIN,statuse.digitalcertvalidation.com
-  - DOMAIN,steamcdn-a.akamaihd.net
   - DOMAIN,steamcommunity-a.akamaihd.net
   - DOMAIN,steammobile.akamaized.net
   - DOMAIN,steampipe.akamaized.net

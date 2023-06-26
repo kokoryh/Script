@@ -82,6 +82,7 @@ DOMAIN-SUFFIX,amazonuniversity.jobs
 DOMAIN-SUFFIX,amazonvideo.com
 DOMAIN-SUFFIX,ameba.jp
 DOMAIN-SUFFIX,asmr.one
+DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,av01.tv
 DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,bahamut.com.tw
@@ -107,6 +108,7 @@ DOMAIN-SUFFIX,cdn.optimizely.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,channel4.com
 DOMAIN-SUFFIX,channel5.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
 DOMAIN-SUFFIX,cws-hulu.conviva.com
 DOMAIN-SUFFIX,cws.conviva.com
@@ -143,9 +145,11 @@ DOMAIN-SUFFIX,dssott.com
 DOMAIN-SUFFIX,dzcdn.net
 DOMAIN-SUFFIX,edgedatg.com
 DOMAIN-SUFFIX,encoretvb.com
+DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com
 DOMAIN-SUFFIX,ext-twitch.tv
 DOMAIN-SUFFIX,fast.com
+DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,feijisu20.com
 DOMAIN-SUFFIX,fox.com
 DOMAIN-SUFFIX,foxdcg.com
@@ -177,8 +181,11 @@ DOMAIN-SUFFIX,huluad.com
 DOMAIN-SUFFIX,huluim.com
 DOMAIN-SUFFIX,hulustream.com
 DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,indazn.com
 DOMAIN-SUFFIX,indaznlab.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,iole.tv
 DOMAIN-SUFFIX,ipstatp.com
 DOMAIN-SUFFIX,iq.com
@@ -268,6 +275,7 @@ DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,pv-cdn.net
 DOMAIN-SUFFIX,qobuz.com
 DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,seattlespheres.com
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,skyking.com.tw
 DOMAIN-SUFFIX,smartmediarep.com

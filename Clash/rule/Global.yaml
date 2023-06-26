@@ -41,7 +41,6 @@ payload:
   - DOMAIN,sessions.bugsnag.com
   - DOMAIN,statuse.digitalcertvalidation.com
   - DOMAIN,steambroadcast.akamaized.net
-  - DOMAIN,steamcdn-a.akamaihd.net
   - DOMAIN,steamcommunity-a.akamaihd.net
   - DOMAIN,steampipe.akamaized.net
   - DOMAIN,steamstore-a.akamaihd.net
