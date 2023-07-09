@@ -1,10 +1,5 @@
 payload:
-  - DOMAIN,api.pixivlite.cn
-  - DOMAIN-SUFFIX,bravedefault.com
   - DOMAIN-SUFFIX,local
-  - IP-CIDR,210.140.131.222/32,no-resolve
-  - IP-CIDR,210.140.139.132/30,no-resolve
-  - IP-CIDR,210.140.92.0/24,no-resolve
   - IP-CIDR,10.0.0.0/8
   - IP-CIDR,100.64.0.0/10
   - IP-CIDR,127.0.0.0/8
