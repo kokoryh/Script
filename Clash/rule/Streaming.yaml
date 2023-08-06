@@ -79,6 +79,7 @@ payload:
   - DOMAIN-SUFFIX,aiv-cdn.net
   - DOMAIN-SUFFIX,aiv-delivery.net
   - DOMAIN-SUFFIX,amazon.jobs
+  - DOMAIN-SUFFIX,amazontools.com
   - DOMAIN-SUFFIX,amazonuniversity.jobs
   - DOMAIN-SUFFIX,amazonvideo.com
   - DOMAIN-SUFFIX,ameba.jp
@@ -151,7 +152,6 @@ payload:
   - DOMAIN-SUFFIX,ext-twitch.tv
   - DOMAIN-SUFFIX,fast.com
   - DOMAIN-SUFFIX,featuregates.org
-  - DOMAIN-SUFFIX,feijisu20.com
   - DOMAIN-SUFFIX,fox.com
   - DOMAIN-SUFFIX,foxdcg.com
   - DOMAIN-SUFFIX,gamer.com.tw
@@ -360,6 +360,7 @@ payload:
   - IP-CIDR,203.74.95.131/32,no-resolve
   - IP-CIDR,203.74.95.139/32,no-resolve
   - IP-CIDR,203.74.95.153/32,no-resolve
+  - IP-CIDR,203.75.84.0/24,no-resolve
   - IP-CIDR,207.45.72.0/22,no-resolve
   - IP-CIDR,208.75.76.0/22,no-resolve
   - IP-CIDR,210.201.32.11/32,no-resolve

@@ -23,6 +23,7 @@ DOMAIN,s2.amazing910.top // Jellyfin
 # 杂项
 DOMAIN-SUFFIX,peropero.net  // MuseDash
 DOMAIN-SUFFIX,2550505.com // MGClub
+DOMAIN-SUFFIX,feijisu20.com
 
 # Final
 DOMAIN,btrace.qq.com  // dns返0.0.0.1
