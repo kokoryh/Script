@@ -82,10 +82,12 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('ipad不去除upList');
     } else if (!dynAllReplyObj.upList) {
         console.log('upList为空');
-    } else if (dynAllReplyObj.upList.showLiveNum !== 0 && dynAllReplyObj.upList.listSecond?.length) {
-        dynAllReplyObj.upList.listSecond[dynAllReplyObj.upList.listSecond.length - 1].separator = true;
-        dynAllReplyObj.upList.list.unshift(...dynAllReplyObj.upList.listSecond);
-        dynAllReplyObj.upList.listSecond = null;
+    } else if (dynAllReplyObj.upList.showLiveNum !== 0) {
+        if (dynAllReplyObj.upList.listSecond?.length) {
+            dynAllReplyObj.upList.listSecond[dynAllReplyObj.upList.listSecond.length - 1].separator = true;
+            dynAllReplyObj.upList.list.unshift(...dynAllReplyObj.upList.listSecond);
+            dynAllReplyObj.upList.listSecond = null;
+        }
         console.log('有直播,不去除upList');
         // dynAllReplyObj.upList.title = '正在直播';
         // dynAllReplyObj.upList.moreLabel.title = '我的关注';
