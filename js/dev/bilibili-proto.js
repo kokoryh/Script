@@ -82,7 +82,7 @@ if (url.includes("Dynamic/DynAll")) {
         console.log('ipad不去除upList');
     } else if (!dynAllReplyObj.upList) {
         console.log('upList为空');
-    } else if (dynAllReplyObj.upList.showLiveNum !== 0) {
+    } else if (dynAllReplyObj.upList.showLiveNum !== 0 && dynAllReplyObj.upList.listSecond?.length) {
         dynAllReplyObj.upList.listSecond[dynAllReplyObj.upList.listSecond.length - 1].separator = true;
         dynAllReplyObj.upList.list.unshift(...dynAllReplyObj.upList.listSecond);
         dynAllReplyObj.upList.listSecond = null;
