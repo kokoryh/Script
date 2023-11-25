@@ -83,6 +83,7 @@ if (url.includes("Dynamic/DynAll")) {
     } else if (!dynAllReplyObj.upList) {
         console.log('upList为空');
     } else if (dynAllReplyObj.upList.showLiveNum !== 0) {
+        dynAllReplyObj.upList.listSecond[dynAllReplyObj.upList.listSecond.length - 1].separator = true;
         dynAllReplyObj.upList.list.unshift(...dynAllReplyObj.upList.listSecond);
         dynAllReplyObj.upList.listSecond = null;
         console.log('有直播,不去除upList');
