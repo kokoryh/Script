@@ -41,6 +41,12 @@ if (url.includes("manga.bilibili.com")) {  // 哔哩漫画
     } else $done({})
 } else if (url.includes("intsig.net/purchase")) {  // 扫描全能王
     body = '{"data":{"psnl_vip_property":{"expiry":"3287462400"}}}'
+} else if (url.includes("oauth.secure.pixiv.net")) {  // Pixiv
+    let obj = JSON.parse($response.body)
+    if (obj.user) {
+        obj.user.is_premium = true;
+    }
+    body = JSON.stringify(obj)
 } else {
     console.log("匹配到其他url：\n" + url)
 }
