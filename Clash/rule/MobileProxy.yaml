@@ -8,19 +8,28 @@ payload:
   - DOMAIN,beta.music.apple.com
   - DOMAIN,books.apple.com
   - DOMAIN,books.itunes.apple.com
+  - DOMAIN,cdn.apple-cloudkit.com
   - DOMAIN,cdn.iframe.ly
   - DOMAIN,cdn.polyfill.io
   - DOMAIN,cvws.icloud-content.com
   - DOMAIN,developer.apple.com
+  - DOMAIN,devimages-cdn.apple.com
+  - DOMAIN,devstreaming-cdn.apple.com
   - DOMAIN,dhh.lol
+  - DOMAIN,docs-assets.developer.apple.com
   - DOMAIN,dy.sbgfw.info
   - DOMAIN,gateway.icloud.com
   - DOMAIN,gspe1-ssl.ls.apple.com
+  - DOMAIN,hls-svod.itunes.apple.com
   - DOMAIN,http-inputs-notion.splunkcloud.com
   - DOMAIN,ikuuu.co
   - DOMAIN,in.appcenter.ms
   - DOMAIN,itunes.apple.com
+  - DOMAIN,js-cdn.music.apple.com
   - DOMAIN,lookup-api.apple.com
+  - DOMAIN,mask-api.icloud.com
+  - DOMAIN,mask-h2.icloud.com
+  - DOMAIN,mask.icloud.com
   - DOMAIN,news-assets.apple.com
   - DOMAIN,news-client-search.apple.com
   - DOMAIN,news-client.apple.com
@@ -80,6 +89,7 @@ payload:
   - DOMAIN-SUFFIX,appsto.re
   - DOMAIN-SUFFIX,aspnetcdn.com
   - DOMAIN-SUFFIX,assets-yammer.com
+  - DOMAIN-SUFFIX,audio-ssl.itunes.apple.com
   - DOMAIN-SUFFIX,azure.com
   - DOMAIN-SUFFIX,azure.net
   - DOMAIN-SUFFIX,azureedge.net
@@ -93,6 +103,7 @@ payload:
   - DOMAIN-SUFFIX,blogger.com
   - DOMAIN-SUFFIX,booth.pm
   - DOMAIN-SUFFIX,branch.io
+  - DOMAIN-SUFFIX,cdn-apple.com
   - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,chrome.com
   - DOMAIN-SUFFIX,chromium.org
@@ -149,6 +160,8 @@ payload:
   - DOMAIN-SUFFIX,gvt3.com
   - DOMAIN-SUFFIX,hath.network
   - DOMAIN-SUFFIX,hentaiverse.org
+  - DOMAIN-SUFFIX,hls-amt.itunes.apple.com
+  - DOMAIN-SUFFIX,hls.itunes.apple.com
   - DOMAIN-SUFFIX,hockeyapp.net
   - DOMAIN-SUFFIX,hotmail.com
   - DOMAIN-SUFFIX,humblebundle.com
@@ -190,6 +203,7 @@ payload:
   - DOMAIN-SUFFIX,nssurge.com
   - DOMAIN-SUFFIX,o365weve.com
   - DOMAIN-SUFFIX,oaspapps.com
+  - DOMAIN-SUFFIX,ocsp.apple.com
   - DOMAIN-SUFFIX,ocsp.sectigo.com
   - DOMAIN-SUFFIX,office.com
   - DOMAIN-SUFFIX,office.net
