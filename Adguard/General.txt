@@ -1,0 +1,5 @@
+! 新版B站主页顶部提示条
+bilibili.com###i_cecream > div.adblock-tips
+
+! AGE动漫每日通知弹窗
+/age/statics/js/notice.js?v=$script,third-party
