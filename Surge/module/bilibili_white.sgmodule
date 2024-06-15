@@ -1,5 +1,6 @@
-#!name=2-Bilibili增强(白色B站)
+#!name=Bilibili增强(白色B站)
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
+#!category=Enhance
 
 [URL Rewrite]
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject

@@ -1,6 +1,7 @@
-#!name=3-网易云音乐去广告
+#!name=网易云音乐去广告
 #!desc=去除开屏、搜索页和评论区广告
 #!author=Keywos, kokoryh
+#!category=ADBlock
 
 # 本模块仅供自用，并不适合大多数人。建议使用：https://raw.githubusercontent.com/Keywos/rule/main/module/wyy.sgmodule
 # qx使用请自行添加解析器参数：#ntf=0&inhn=music

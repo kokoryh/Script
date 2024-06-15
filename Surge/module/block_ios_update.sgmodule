@@ -1,5 +1,6 @@
-#!name=1.5-Block iOS Update
+#!name=Block iOS Update
 #!desc=屏蔽系统更新
+#!category=Extra
 
 [Rule]
 # 屏蔽系统更新

@@ -1,5 +1,6 @@
-#!name=1.2-TUN Mode
+#!name=TUN Mode
 #!desc=开启TUN模式
+#!category=Extra
 
 [General]
 compatibility-mode = 3

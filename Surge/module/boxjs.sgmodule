@@ -1,5 +1,6 @@
-#!name=5-BoxJs
+#!name=BoxJs
 #!desc=http://boxjs.com
+#!category=Plugin
 
 [General]
 force-http-engine-hosts = %INSERT% boxjs.com

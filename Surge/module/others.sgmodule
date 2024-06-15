@@ -1,5 +1,6 @@
-#!name=0-自用其他模块
+#!name=自用其他模块
 #!desc=需要时开启
+#!category=General
 
 [URL Rewrite]
 # 屏蔽更新弹窗

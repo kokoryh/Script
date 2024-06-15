@@ -1,5 +1,6 @@
-#!name=3-小红书去广告
+#!name=小红书去广告
 #!desc=去除广告和水印
+#!category=ADBlock
 
 # 修改自：https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/xiaohongshu.snippet
 

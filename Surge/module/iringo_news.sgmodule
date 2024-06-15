@@ -1,10 +1,11 @@
-#!name=2-iRingo for News
+#!name=iRingo for News
 #!desc=自定义Apple News的地区
 #!openUrl=http://boxjs.com/#/app/iRingo.News
 #!author=VirgilClyne
 #!homepage=https://github.com/VirgilClyne
 #!manual=https://github.com/VirgilClyne/iRingo/wiki/📰News
 #!icon=https://www.apple.com/v/apple-news/i/images/shared/icon_news_plus__c9r2qvl6xfqu_large.png
+#!category=Enhance
 
 [Script]
 News = type=http-request, pattern=^https?:\/\/news-(edge|events)\.apple\.com\/(v1\/configs|analyticseventsv2\/async)(\?.*)?$, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/beta/js/News.request.beta.js

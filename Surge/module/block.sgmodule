@@ -1,5 +1,6 @@
-#!name=1.5-Block
+#!name=Block
 #!desc=屏蔽特定端口 & 协议 & 域名
+#!category=Extra
 
 # 屏蔽UDP 443端口
 # AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP

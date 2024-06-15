@@ -1,5 +1,6 @@
-#!name=0-Redirect
+#!name=Redirect
 #!desc=重定向模块
+#!category=General
 
 [URL Rewrite]
 # Redirect Github to Gitlab

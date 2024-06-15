@@ -1,5 +1,6 @@
-#!name=2-京东比价(通知版)
+#!name=京东比价(通知版)
 #!desc=京东历史价格
+#!category=Enhance
 
 [Script]
 http-response ^https?:\/\/api\.m\.jd\.com\/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=1,script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jdjf_price.js

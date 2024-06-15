@@ -1,6 +1,7 @@
-#!name=5-SubStore
+#!name=SubStore
 #!desc=高级订阅管理工具
 #!author=Peng-YM
+#!category=Plugin
 
 [Script]
 Sub-Store Core=type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120,ability=http-client-policy

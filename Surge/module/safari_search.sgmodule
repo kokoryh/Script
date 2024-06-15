@@ -1,5 +1,6 @@
-#!name=2-Safari全能搜索
+#!name=Safari全能搜索
 #!desc=关键词+空格+命令，需把搜索引擎设置为 duckduckgo
+#!category=Enhance
 
 # 修改自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Q-Search.conf
 

@@ -1,5 +1,6 @@
-#!name=0.1-Force HTTP Engine
+#!name=Force HTTP Engine
 #!desc=强制 HTTP 引擎处理通往所有主机的所有端口请求
+#!category=General
 
 [General]
 force-http-engine-hosts = *:0

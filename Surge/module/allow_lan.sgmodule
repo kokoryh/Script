@@ -1,5 +1,6 @@
-#!name=1.4-Allow Lan
+#!name=Allow Lan
 #!desc=作为其他设备的代理服务器
+#!category=Extra
 
 [General]
 allow-wifi-access = true

@@ -1,5 +1,6 @@
-#!name=2-Bilibili模块测试
+#!name=Bilibili模块测试
 #!desc=测试专用
+#!category=Enhance
 
 # 重定向香港CDN为腾讯云
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302

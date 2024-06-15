@@ -1,5 +1,6 @@
-#!name=3-Pixiv去广告
+#!name=Pixiv去广告
 #!desc=Pixiv去广告
+#!category=ADBlock
 
 [Script]
 http-response ^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
