@@ -101,14 +101,27 @@ if (url.includes('app.bilibili.com/x/v2/splash/')) {  // 开屏广告
     */
     let obj = JSON.parse($response.body)
     if (obj.data?.sections_v2) {
-        const itemList = [396, 397, 398, 399, 402, 404, 407, 410, 494, 495, 496, 497, 500, 501]
+        const nameList = [
+            '离线缓存',
+            '历史记录',
+            '我的收藏',
+            '稍后再看',
+            '个性装扮',
+            '我的钱包',
+            '联系客服',
+            '设置',
+        ];
+        // const itemList = [396, 397, 398, 399, 402, 404, 407, 410, 494, 495, 496, 497, 500, 501]
         obj.data.sections_v2.forEach(element => {
             if (["创作中心", "創作中心"].includes(element.title)) {
                 element.title = undefined
                 element.type = undefined
             }
+            // element.items = element.items.filter(e => {
+            //     return itemList.includes(e.id)
+            // })
             element.items = element.items.filter(e => {
-                return itemList.includes(e.id)
+                return nameList.includes(e.title);
             })
             element.button = {}
             element.be_up_title = undefined
