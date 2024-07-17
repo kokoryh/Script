@@ -4,6 +4,7 @@
 
 [URL Rewrite]
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
+^https:\/\/app\.bilibili\.com\/x\/vip\/ads\/materials - reject
 
 [Map Local]
 ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
