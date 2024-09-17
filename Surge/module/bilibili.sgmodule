@@ -3,7 +3,7 @@
 #!category=Enhance
 
 [URL Rewrite]
-^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
+^https:\/\/(grpc|app)\.(biliapi|bilibili)\.(net|com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ - reject
 
 [Map Local]
