@@ -40,61 +40,61 @@ if (url.includes("app.bilibili.com/x/v2/splash/")) {
     {
       id: 731,
       name: "直播",
-      uri: "bilibili://live/home",
       tab_id: "直播tab",
+      uri: "bilibili://live/home",
       pos: 1,
     },
     {
       id: 477,
       name: "推荐",
-      uri: "bilibili://pegasus/promo",
       tab_id: "推荐tab",
+      uri: "bilibili://pegasus/promo",
       pos: 2,
       default_selected: 1,
     },
     {
       id: 478,
       name: "热门",
-      uri: "bilibili://pegasus/hottopic",
       tab_id: "热门tab",
+      uri: "bilibili://pegasus/hottopic",
       pos: 3,
     },
     {
       id: 545,
       name: "追番",
-      uri: "bilibili://pgc/home",
       tab_id: "bangumi",
+      uri: "bilibili://pgc/home",
       pos: 4,
     },
     {
       id: 774,
       name: "动画",
-      uri: "bilibili://following/home_activity_tab/6544",
       tab_id: "anime",
+      uri: "bilibili://following/home_activity_tab/6544",
       pos: 5,
     },
   ];
   if (obj.data?.bottom?.length > 3) {
-    const bottomList = [177, 179, 181];
     obj.data.tab[4] = {
       id: 151,
       name: "影视",
-      uri: "bilibili://pgc/cinema-tab",
       tab_id: "film",
+      uri: "bilibili://pgc/cinema-tab",
       pos: 5,
     };
     obj.data.top = [
       {
         id: 176,
-        icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
-        tab_id: "消息Top",
         name: "消息",
+        tab_id: "消息Top",
         uri: "bilibili://link/im_home",
+        icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
         pos: 1,
       },
     ];
+    const bottomList = ['首页', '动态', '我的'];
     obj.data.bottom = obj.data.bottom.filter((e) => {
-      return bottomList.includes(e.id);
+      return bottomList.includes(e.name);
     });
   }
   body = JSON.stringify(obj);
@@ -238,19 +238,24 @@ if (url.includes("app.bilibili.com/x/v2/splash/")) {
       element.items = element.items.filter((e) => {
         return nameList.includes(e.title);
       });
+      if (element.title === '推荐服务') {
+        element.items.push({
+          id: 622,
+          title: "会员购",
+          icon: "http://i0.hdslb.com/bfs/archive/19c794f01def1a267b894be84427d6a8f67081a9.png",
+          common_op_item: {},
+          uri: "bilibili://mall/home",
+        });
+      }
       element.button = {};
-      element.be_up_title = undefined;
-      element.tip_icon = undefined;
-      element.tip_title = undefined;
+      delete element.be_up_title;
+      delete element.tip_icon;
+      delete element.tip_title;
     });
-    if (obj.data?.live_tip) {
-      obj.data.live_tip = {};
-    }
-    if (obj.data?.answer) {
-      obj.data.answer = {};
-    }
-    obj.data.vip_section = undefined;
-    obj.data.vip_section_v2 = undefined;
+    delete obj.data?.answer;
+    delete obj.data?.live_tip;
+    delete obj.data?.vip_section;
+    delete obj.data?.vip_section_v2;
     if (!obj.data.vip.status) {
       obj.data.vip_type = 2;
       obj.data.vip.type = 2;
