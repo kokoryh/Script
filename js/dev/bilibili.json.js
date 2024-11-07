@@ -12,7 +12,7 @@ try {
         "account/myinfo": handleAccountMyInfo,
     };
 
-    for (let route of routeHandlerMap) {
+    for (let route in routeHandlerMap) {
         if (url.includes(route)) {
             routeHandlerMap[route](body);
             break;
