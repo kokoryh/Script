@@ -7,8 +7,7 @@
 ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
 
 [Body Rewrite]
-http-response-jq ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(list|show) '.data.show = []'
-http-response-jq ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/event\/list2 '.data.event_list = []'
+http-response-jq ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(list|show|event\/list2) '. as $body | .[("show", "event_list") | select($body[.])] = []'
 http-response-jq ^https:\/\/api\.bili(bili\.com|api\.net)\/pgc\/page\/(bangumi|cinema\/tab\?) '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
 http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByUser 'del(.data.play_together_info, .data.play_together_info_v2)'
 http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom 'del(.data.activity_banner_info) | .data.shopping_info.is_show = 0 | .data.show_reserve_status = false | .data.reserve_info.show_reserve_status = false | .data.function_card.wish_list_card = null | .data.function_card.follow_card = null | .data.new_tab_info.outer_list |= if . then map(select(.biz_id != 33)) end'
