@@ -1,6 +1,6 @@
 #!name=Bilibili模块测试
 #!desc=测试专用
-#!category=Enhance
+#!category=Enhancement
 
 # 重定向香港CDN为腾讯云
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
@@ -10,32 +10,56 @@
 # ^https:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
 [URL Rewrite]
-# 屏蔽搜索框关键词
-^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
-# 屏蔽IP请求
-^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+# HD版大会员广告
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
 
 [Map Local]
-# 屏蔽首页右上活动
-^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_activity.json" header="Content-Type: application/json"
-# 屏蔽直播间广告浮窗
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 首页右上活动
+^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
+# 热搜
+^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
+# 直播间广告浮窗
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="content-type: application/json; charset=utf-8"
 # B漫开屏 | 底栏广告
-^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.Comic\/(Flash|ListFlash|GetActivityTab|GetBubbles) data="{"code":0,"msg":"","data":null}" header="content-type: application/json"
+
+[Body Rewrite]
+# 开屏广告
+http-response-jq ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(list|show|event\/list2) '.data as $data | .data[("show", "event_list") | select($data[.])] = []'
+# 番剧页 & 观影页广告
+http-response-jq ^https:\/\/api\.bili(bili\.com|api\.net)\/pgc\/page\/(bangumi|cinema\/tab\?) '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
+# 直播间推广
+http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoBy(User|Room) '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
+# B漫广告
+http-response-jq ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.(Comic\/AppInit|Home\/HomeFeed) '.data as $data | .data[("activity_tab", "flash", "operate") | select($data[.])] = null | if .data.feeds then .data.feeds |= map(select(.type | IN(15, 30) | not)) end'
 
 [Script]
-# 装扮DIY
-bili-skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili-suit-diy.js
-# 开屏广告 | 推荐页banner和广告 | 我的页面 | 1080P | 热搜 | 标签栏
-bili-json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index|account\/(mine|myinfo\?)|search\/square)|resource\/show\/tab\/v2),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js
-# 视频播放页广告 | 动态页广告 | 播放器选项
-bili-proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$,requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili-proto.js
-# 直播间推广
-bili-live = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js
-# 番剧页 & 观影页广告
-bili-bangumi = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bilibili_json.js
-# 自动换区
-bili-region = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/dev/bili_auto_region.js
+# 皮肤
+bilibili.skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
+# 推荐页banner和广告 | 我的页面
+bilibili.json = type=http-response,pattern=^https:\/\/app\.bili(bili\.com|api\.net)\/x\/(resource\/show\/tab\/v2|v2\/feed\/index(\/story)?\?|v2\/account\/(mine|myinfo\?)),requires-body=1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.json.js
+# 青少年弹窗
+bilibili.teenager = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 搜索栏placeholder
+bilibili.defaultWords = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 热门
+bilibili.popular = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 动态
+bilibili.dynAll = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 播放页广告
+bilibili.view = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/(View|ViewProgress|TFInfo)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 播放器设置
+bilibili.playView = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 播放页广告 ViewUnite
+bilibili.viewUnite = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.viewunite\.v1\.View\/(View|ViewProgress|RelatesFeed)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 播放器设置 ViewUnite
+bilibili.playViewUnite = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 搜索结果
+bilibili.searchAll = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 弹幕
+bilibili.dmView = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+# 评论区
+bilibili.mainList = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 
 [MITM]
-hostname = %INSERT% grpc.biliapi.net, ap*.bilibili.com, manga.bilibili.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, app.biliapi.net, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, manga.bilibili.com

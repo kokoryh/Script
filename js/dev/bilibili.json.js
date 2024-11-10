@@ -93,10 +93,10 @@ function handleFeedIndex(body) {
     if (Array.isArray(body.data.items)) {
         body.data.items = body.data.items.filter((item) => {
             return (
-                !item.banner_item &&
+                !item.banner_item &&  // 移除头部banner
                 !item.ad_info &&
-                !item.card_goto?.includes("ad") &&
-                ["small_cover_v2", "large_cover_v1", "large_cover_single_v9"].includes(
+                !item.card_goto?.startsWith("ad") &&
+                ["small_cover_v2", "large_cover_single_v9", "large_cover_v1"].includes(  // 前两种为ios类型，后一种为平板类型
                     item.card_type
                 )
             );
@@ -108,7 +108,7 @@ function handleFeedIndex(body) {
 function handleFeedIndexStory(body) {
     if (Array.isArray(body.data.items)) {
         body.data.items = body.data.items.filter((item) => {
-            return !item.ad_info && !item.card_goto?.includes("ad");
+            return !item.ad_info && !item.card_goto?.startsWith("ad");
         });
     }
     $done({ body: JSON.stringify(body) });
