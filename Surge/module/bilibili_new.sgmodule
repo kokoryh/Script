@@ -1,10 +1,11 @@
-#!name=Bilibili增强（JQ版）
+#!name=Bilibili增强
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 #!category=Enhancement
 
 [Map Local]
 ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/top\/activity data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
 ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_cart_status\? data-type=text data="{"code":0,"message":"0","ttl":1,"data":{"status":0}}" header="content-type: application/json; charset=utf-8"
 
 [Body Rewrite]
 http-response-jq ^https:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(list|show|event\/list2) '.data as $data | .data[("list", "show", "event_list") | select($data[.])] = []'
