@@ -6,6 +6,7 @@ try {
 
     const routeHandlerMap = {
         "resource/show/tab/v2": handleLayout,
+        "v2/splash/": handleSplash,
         "feed/index?": handleFeedIndex,
         "feed/index/story?": handleFeedIndexStory,
         "account/mine": handleAccountMine,
@@ -86,6 +87,15 @@ function handleLayout(body) {
             bottomList.includes(e.name)
         );
     }
+    $done({ body: JSON.stringify(body) });
+}
+
+function handleSplash(body) {
+    ["show", "event_list"].forEach(key => {
+        if (body.data?.[key]) {
+            body.data[key] = [];
+        }
+    })
     $done({ body: JSON.stringify(body) });
 }
 
