@@ -13,7 +13,7 @@ try {
         "account/myinfo": handleAccountMyInfo,
     };
 
-    for (let route in routeHandlerMap) {
+    for (const route in routeHandlerMap) {
         if (url.includes(route)) {
             routeHandlerMap[route](body);
             break;
@@ -76,11 +76,11 @@ function handleLayout(body) {
     ];
     if (body.data.bottom?.length > 3) {
         body.data.tab[4] = {
+            pos: 5,
             id: 151,
             name: "影视",
             tab_id: "film",
             uri: "bilibili://pgc/cinema-tab",
-            pos: 5,
         };
         const bottomList = ["首页", "动态", "我的"];
         body.data.bottom = body.data.bottom.filter((e) =>
@@ -92,7 +92,7 @@ function handleLayout(body) {
 
 function handleSplash(body) {
     ["show", "event_list"].forEach(key => {
-        if (body.data?.[key]) {
+        if (body.data[key]) {
             body.data[key] = [];
         }
     })
