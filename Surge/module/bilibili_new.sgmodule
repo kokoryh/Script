@@ -5,6 +5,8 @@
 [Rule]
 DOMAIN,api.biliapi.net,REJECT,pre-matching
 DOMAIN,app.biliapi.net,REJECT,pre-matching
+DOMAIN,api.biliapi.com,REJECT,pre-matching
+DOMAIN,app.biliapi.com,REJECT,pre-matching
 
 [Map Local]
 ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
