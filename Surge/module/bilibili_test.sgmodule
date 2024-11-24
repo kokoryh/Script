@@ -8,11 +8,10 @@
 # OR,((AND,((OR,((DOMAIN-KEYWORD,cn-), (DOMAIN-KEYWORD,mcdn))), (DOMAIN-KEYWORD,bilivideo.c))), (DEST-PORT,4480)),REJECT-NO-DROP
 # B漫装扮
 # ^https:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
-[Rule]
-DOMAIN,api.biliapi.net,REJECT,pre-matching
-DOMAIN,app.biliapi.net,REJECT,pre-matching
 
 [URL Rewrite]
+# 重定向
+^https:\/\/ap(?:p|i)\.biliapi\.(?:net|com) https://app.bilibili.com 307
 # HD版大会员广告
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
 
@@ -65,4 +64,4 @@ bilibili.dmView = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|ap
 bilibili.mainList = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, manga.bilibili.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.biliapi.com, api.biliapi.com, app.biliapi.net, api.biliapi.net, api.live.bilibili.com, manga.bilibili.com
