@@ -15,6 +15,7 @@ DOMAIN,app.biliapi.net,REJECT,pre-matching
 DOMAIN,api.biliapi.com,REJECT,pre-matching
 DOMAIN,app.biliapi.com,REJECT,pre-matching
 
+[URL Rewrite]
 # HD版大会员广告
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
 
