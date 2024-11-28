@@ -9,10 +9,11 @@
 # B漫装扮
 # ^https:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Space\/GetMySuit\? data="https://raw.githubusercontent.com/kokoryh/Script/master/data/bili_manga_suit.json"
 
-[URL Rewrite]
-# 重定向
-^https:\/\/(?:app|api)\.biliapi\.(?:com|net)\/(x\/v2|x\/resource|bilibili) https://app.bilibili.com\/$1 307
-^https:\/\/(?:app|api)\.biliapi\.(?:com|net)\/(pgc\/page) https://api.bilibili.com\/$1 307
+[Rule]
+DOMAIN,api.biliapi.net,REJECT,pre-matching
+DOMAIN,app.biliapi.net,REJECT,pre-matching
+DOMAIN,api.biliapi.com,REJECT,pre-matching
+DOMAIN,app.biliapi.com,REJECT,pre-matching
 
 # HD版大会员广告
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
@@ -68,4 +69,4 @@ bilibili.dmView = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|ap
 bilibili.mainList = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.biliapi.com, api.biliapi.com, app.biliapi.net, api.biliapi.net, api.live.bilibili.com, manga.bilibili.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, manga.bilibili.com
