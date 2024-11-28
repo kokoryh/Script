@@ -11,7 +11,9 @@
 
 [URL Rewrite]
 # 重定向
-^https:\/\/(?:app|api)\.biliapi\.(?:net|com)\/x\/(resource|v2\/(?:splash|search\/square|feed\/index|account)) https://app.bilibili.com\/x\/$1 307
+^https:\/\/(?:app|api)\.biliapi\.(?:com|net)\/(x\/v2|x\/resource|bilibili) https://app.bilibili.com\/$1 307
+^https:\/\/(?:app|api)\.biliapi\.(?:com|net)\/(pgc\/page) https://api.bilibili.com\/$1 307
+
 # HD版大会员广告
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
 
