@@ -1,4 +1,4 @@
-#!name=哔哩哔哩插件测试
+#!name=哔哩哔哩去广告
 #!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。
 #!openUrl=https://apps.apple.com/app/id736536022
 #!author=Maasea[https://github.com/Maasea],RuCu6[https://github.com/RuCu6],kokoryh[https://github.com/kokoryh],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
