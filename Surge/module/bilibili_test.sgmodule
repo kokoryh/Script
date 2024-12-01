@@ -2,7 +2,7 @@
 #!desc=测试专用
 #!category=Enhancement
 #!arguments=动态最常访问:auto
-#!arguments-desc=动态最常访问: [show, hide, auto]\n- show: 始终显示\n- hide: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示
+#!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示
 
 # 重定向香港CDN为腾讯云
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
