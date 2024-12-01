@@ -1,8 +1,8 @@
 #!name=Bilibili模块测试
 #!desc=测试专用
 #!category=Enhancement
-#!arguments=动态-显示最常访问:auto
-#!arguments-desc=动态-显示最常访问：[true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示
+#!arguments=[动态] 最常访问:auto
+#!arguments-desc=[动态] 最常访问: [auto, true, false]\n- auto: 仅当列表中存在直播状态时显示\n- true: 始终显示\n- false: 始终隐藏
 
 # 重定向香港CDN为腾讯云
 # ^http:\/\/upos-hz-mirrorakam\.akamaized\.net http://upos-sz-mirrorcos.bilivideo.com 302
@@ -55,7 +55,7 @@ bilibili.defaultWords = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.
 # 热门
 bilibili.popular = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 # 动态
-bilibili.dynAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js,argument="{"showUpList":"{{{动态-显示最常访问}}}"}"
+bilibili.dynAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js,argument="{"showUpList":"{{{[动态] 最常访问}}}"}"
 # 播放页广告
 bilibili.view = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 # 播放器设置
