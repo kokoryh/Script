@@ -1,12 +1,14 @@
 #!name=Bilibili增强
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 #!category=Enhancement
+#!arguments=动态最常访问:auto
+#!arguments-desc=动态最常访问: [show, hide, auto]\n- show: 始终显示\n- hide: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示
 
 [Rule]
-# DOMAIN,api.biliapi.net,REJECT,pre-matching
-# DOMAIN,app.biliapi.net,REJECT,pre-matching
-# DOMAIN,api.biliapi.com,REJECT,pre-matching
-# DOMAIN,app.biliapi.com,REJECT,pre-matching
+DOMAIN,api.biliapi.net,REJECT,pre-matching
+DOMAIN,app.biliapi.net,REJECT,pre-matching
+DOMAIN,api.biliapi.com,REJECT,pre-matching
+DOMAIN,app.biliapi.com,REJECT,pre-matching
 
 [Map Local]
 ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
@@ -24,7 +26,7 @@ bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:
 bilibili.teenager = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 bilibili.defaultWords = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 bilibili.popular = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-bilibili.dynAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
+bilibili.dynAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js,argument="{"showUpList":"{{{动态最常访问}}}"}"
 bilibili.view = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 bilibili.playView = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 bilibili.viewUnite = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
