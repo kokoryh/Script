@@ -17,12 +17,10 @@ DOMAIN,app.biliapi.net,REJECT,pre-matching
 DOMAIN,api.biliapi.com,REJECT,pre-matching
 DOMAIN,app.biliapi.com,REJECT,pre-matching
 
-[URL Rewrite]
-# HD版大会员广告
-^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials - reject
-
 [Map Local]
-# 首页右上角活动
+# HD版大会员广告
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
+# 首页右上角活动 && 热搜
 ^https:\/\/app\.bilibili\.com\/x\/(resource\/top\/activity|v2\/search\/square) data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
 # 热搜
 # ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
