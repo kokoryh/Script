@@ -23,48 +23,48 @@ DOMAIN,app.biliapi.com,REJECT,pre-matching
 # 首页右上角活动 && 热搜
 ^https:\/\/app\.bilibili\.com\/x\/(?:resource\/top\/activity|v2\/search\/square) data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
 # 直播间推广
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping data-type=text data="{}" header="content-type: application/json"
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="content-type: application/json"
 # B漫开屏 && 底栏广告
 ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.Comic\/(?:Flash|ListFlash|GetActivityTab|GetBubbles) data-type=text data="{"code":0,"msg":"","data":null}" header="content-type: application/json"
 
 [Body Rewrite]
 # 开屏广告
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:list|show|event\/list2) '.data as $data | .data[("show", "event_list") | select($data[.])] = []'
-# 番剧页广告 && 观影页广告
+# 番剧Tab广告 && 观影Tab广告
 http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab\?) '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
 # 直播推荐
 http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed\? 'if .data.card_list then .data.card_list |= map(select(.card_type != "banner_v2")) end'
 # 直播间浮窗
-http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoBy(?:User|Room) '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0], [["room_info", "live_status"], 0], [["guard_info", "achievement_level"], 1], [["guard_info", "anchor_guard_achieve_level"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
+http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoBy(?:User|Room) '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
 # B漫广告
 http-response-jq ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.(?:Comic\/AppInit|Home\/HomeFeed) '.data as $data | .data[("activity_tab", "flash", "operate") | select($data[.])] = null | if .data.feeds then .data.feeds |= map(select(.type | IN(15, 30) | not)) end'
 
 [Script]
 # 皮肤
-bilibili.skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
+bilibili.skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
 # Tab栏 && 推荐页 && 我的页面
-bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/feed\/index(?:\/story)?\?|v2\/account\/(?:mine|myinfo\?)),requires-body=1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.json.js
+bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/feed\/index(?:\/story)?\?|v2\/account\/(?:mine|myinfo\?)),requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.json.js
 # 青少年弹窗
 bilibili.teenager = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 搜索栏Placeholder
+# 搜索栏
 bilibili.defaultWords = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 # 热门
 bilibili.popular = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 # 动态
 bilibili.dynAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js,argument="{"showUpList":"{{{动态最常访问}}}"}"
-# 播放页广告
+# 视频广告
 bilibili.view = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 播放器设置
+# 视频播放设置
 bilibili.playView = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 播放页广告 ViewUnite
+# 视频广告
 bilibili.viewUnite = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 播放器设置 ViewUnite
+# 视频播放设置
 bilibili.playViewUnite = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 # 搜索结果
 bilibili.searchAll = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 弹幕 && 云视听
+# 视频弹幕
 bilibili.dmView = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
-# 评论区
+# 视频评论区
 bilibili.mainList = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 
 [MITM]
