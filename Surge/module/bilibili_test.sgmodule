@@ -23,9 +23,9 @@ DOMAIN,app.biliapi.com,REJECT,pre-matching
 
 [Map Local]
 # 首页右上角活动
-^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
+^https:\/\/app\.bilibili\.com\/x\/(resource\/top\/activity|v2\/search\/square) data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
 # 热搜
-^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
+# ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square data-type=text data="{"code":0,"message":"0","ttl":1,"data":[{"type":"history","title":"搜索历史"}]}" header="content-type: application/json; charset=utf-8|bili-status-code: 0"
 # 直播间推广
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="content-type: application/json; charset=utf-8"
 # B漫开屏 && 底栏广告
