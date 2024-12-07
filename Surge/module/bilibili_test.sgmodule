@@ -25,7 +25,7 @@ DOMAIN,app.biliapi.com,REJECT,pre-matching
 # 直播间推广
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="content-type: application/json"
 # B漫开屏 && 底栏广告
-^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.Comic\/(?:Flash|ListFlash|GetActivityTab|GetBubbles) data-type=text data="{"code":0,"msg":"","data":null}" header="content-type: application/json"
+^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.Comic\/(?:Flash|ListFlash|GetActivityTab|GetBubbles) data-type=text data="{}" header="content-type: application/json"
 
 [Body Rewrite]
 # 开屏广告
