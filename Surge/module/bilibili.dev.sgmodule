@@ -11,7 +11,7 @@ DOMAIN,api.biliapi.com,REJECT,pre-matching
 DOMAIN,app.biliapi.com,REJECT,pre-matching
 
 [Map Local]
-^https:\/\/ap.\.bilibili\.com\/x\/(?:resource\/top\/activity|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
+^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/top\/activity|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="content-type: application/json"
 ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.Comic\/(?:Flash|ListFlash|GetActivityTab|GetBubbles)\? data-type=text data="{}" header="content-type: application/json"
 
