@@ -1,8 +1,8 @@
 try {
     const url = $request.url;
     let body = $response.body;
-    if (!body) $done({});
     body = JSON.parse(body);
+    if (!body?.data) $done({});
 
     const routeHandlerMap = {
         "resource/show/tab/v2": handleLayout,
