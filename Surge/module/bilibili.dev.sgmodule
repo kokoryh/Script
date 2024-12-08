@@ -22,7 +22,7 @@ http-response-jq ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v1\.(?:Comic\/Ap
 
 [Script]
 bilibili.skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
-bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine|myinfo(?:\/ipad)?)))\?,requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.json.js
+bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?,requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.json.js
 bilibili.protobuf = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList)$,argument="{"showUpList":"{{{动态最常访问}}}"}",requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js
 
 [MITM]
