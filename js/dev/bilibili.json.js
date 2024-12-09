@@ -1,12 +1,12 @@
 try {
     const url = $request.url;
     let body = $response.body;
+    if (!body) $done({});
     body = JSON.parse(body);
-    if (!body?.data) $done({});
 
     const routeHandlerMap = {
         "resource/show/tab/v2": handleLayout,
-        "v2/splash/": handleSplash,
+        "v2/splash": handleSplash,
         "feed/index?": handleFeedIndex,
         "feed/index/story?": handleFeedIndexStory,
         "account/mine": handleAccountMine,
@@ -22,7 +22,6 @@ try {
 } catch (e) {
     console.log(e.toString());
 } finally {
-    console.log(`Unmatched url: ${url}`);
     $done({});
 }
 
@@ -92,6 +91,7 @@ function handleLayout(body) {
 }
 
 function handleSplash(body) {
+    if (!body.data) return;
     ["show", "event_list"].forEach(key => {
         if (body.data[key]) {
             body.data[key] = [];
