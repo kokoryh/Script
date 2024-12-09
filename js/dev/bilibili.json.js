@@ -118,9 +118,13 @@ function handleFeedIndex(body) {
 
 function handleFeedIndexStory(body) {
     if (Array.isArray(body.data.items)) {
-        body.data.items = body.data.items.filter((item) => {
-            return !item.ad_info && !item.card_goto?.startsWith("ad");
-        });
+        body.data.items = body.data.items.reduce((res, item) => {
+            if (!item.ad_info && !item.card_goto?.startsWith("ad")) {
+                delete item.story_cart_icon;
+                res.push(item);
+            }
+            return res;
+        }, []);
     }
     $done({ body: JSON.stringify(body) });
 }
