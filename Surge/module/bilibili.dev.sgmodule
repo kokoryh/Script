@@ -5,10 +5,10 @@
 #!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示
 
 [Rule]
-DOMAIN,api.biliapi.net,REJECT,pre-matching
-DOMAIN,app.biliapi.net,REJECT,pre-matching
 DOMAIN,api.biliapi.com,REJECT,pre-matching
 DOMAIN,app.biliapi.com,REJECT,pre-matching
+DOMAIN,api.biliapi.net,REJECT,pre-matching
+DOMAIN,app.biliapi.net,REJECT,pre-matching
 
 [Map Local]
 ^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/top\/activity|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="content-type: application/json; charset=utf-8|bili-status-code: -404"
