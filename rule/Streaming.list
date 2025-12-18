@@ -5,9 +5,3 @@ DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,av01.tv
-
-# Emby
-DOMAIN,cf3.misakaf.org  // MisakaF
-DOMAIN,df.poloemby.xyz  // Polo
-DOMAIN,embyplus.org  // 纸片人小站
-IP-CIDR,202.61.255.248/32  // Mulgore
