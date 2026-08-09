@@ -318,6 +318,7 @@ payload:
   - DOMAIN-SUFFIX,windowsazure.com
   - DOMAIN-SUFFIX,windowsupdate.com
   - DOMAIN-SUFFIX,wunderlist.com
+  - DOMAIN-SUFFIX,x.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
   - DOMAIN-SUFFIX,yahoo.com
   - DOMAIN-SUFFIX,yammer.com

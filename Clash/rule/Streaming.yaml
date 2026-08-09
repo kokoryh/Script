@@ -13,7 +13,6 @@ payload:
   - DOMAIN,cbsplaylistserver.aws.syncbak.com
   - DOMAIN,cbsservice.aws.syncbak.com
   - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net
-  - DOMAIN,cf3.misakaf.org
   - DOMAIN,content.jwplatform.com
   - DOMAIN,d1v5ir2lpwr8os.cloudfront.net
   - DOMAIN,d1xfray82862hr.cloudfront.net
@@ -23,10 +22,8 @@ payload:
   - DOMAIN,d3196yreox78o9.cloudfront.net
   - DOMAIN,d349g9zuie06uo.cloudfront.net
   - DOMAIN,dai3fd1oh325y.cloudfront.net
-  - DOMAIN,df.poloemby.xyz
   - DOMAIN,dmqdd6hw24ucf.cloudfront.net
   - DOMAIN,edge.api.brightcove.com
-  - DOMAIN,embyplus.org
   - DOMAIN,fls-na.amazon.com
   - DOMAIN,gamer-cds.cdn.hinet.net
   - DOMAIN,gamer2-cds.cdn.hinet.net
@@ -377,4 +374,3 @@ payload:
   - IP-CIDR,66.197.128.0/17,no-resolve
   - IP-CIDR,69.53.224.0/19,no-resolve
   - IP-CIDR,8.41.4.0/24,no-resolve
-  - IP-CIDR,202.61.255.248/32

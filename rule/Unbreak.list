@@ -15,10 +15,6 @@ DOMAIN,amdc.m.taobao.com
 DOMAIN,ad.12306.cn
 
 # Emby
-DOMAIN,cdn.misakaf.org
-DOMAIN,cu.poloemby.xyz
-DOMAIN,sp.pololine.ml
-DOMAIN,s2.amazing910.top // Jellyfin
 
 # 杂项
 DOMAIN-SUFFIX,peropero.net  // MuseDash
